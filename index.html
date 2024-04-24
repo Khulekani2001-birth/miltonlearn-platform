@@ -172,6 +172,17 @@
         </select>
       </div>
       <div class="col-md-6">
+        <label for="subject" class="form-label">Level of Study</label>
+        <select class="form-select" id="level" name="level" required>
+          <option value="">Select your level</option>
+          <option value="Mathematics">IGCSE</option>
+          <option value="Computer Science">EGCSE</option>
+          <option value="Computer Science">AS Level</option>
+          <option value="Computer Science">A Level</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="col-md-6">
         <label for="subject" class="form-label">Subject</label>
         <select class="form-select" id="subject" name="subject" required>
           <option value="">Select a subject</option>
@@ -204,7 +215,7 @@
       var time = document.getElementById('time').value;
       var subject = document.getElementById('subject').value;
       var details = document.getElementById('details').value;
-      
+      var level = document.getElementById('level').value;
       var templateParams = {
         fullName: fullName,
         reply_to: email,
