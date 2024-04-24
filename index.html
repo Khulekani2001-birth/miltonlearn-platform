@@ -229,6 +229,7 @@
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
         .then(function(response) {
            console.log('Email sent successfully:', response);
+           document.getElementById('tutorForm').reset();
            // Optionally, show a success message to the user
            alert('Request sent successfully!');
         }, function(error) {
