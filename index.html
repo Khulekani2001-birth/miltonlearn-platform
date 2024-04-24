@@ -139,7 +139,19 @@
         <a class="nav-link fw-bold py-1 px-0" href="/about.html">About</a>
       </nav>
     </div>
+    
   </header>
+<!-- Success alert -->
+<div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+  Request sent successfully!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<!-- Error alert -->
+<div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+  Failed to make tutor request. Please check if you filled details correctly.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
   <main class="px-3">
     <h1>Welcome!</h1>
@@ -233,6 +245,9 @@
       <div class="col-12">
         <button type="button" onclick="sendEmail()" class="btn btn-lg btn-light fw-bold border-white bg-white">Request Tutor</button>
       </div>
+      <div id="loading" class="spinner-border text-primary" role="status" style="display: none;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </form>
   </main>
   <script>
@@ -243,6 +258,9 @@
   
   <script>
     function sendEmail() {
+        // Show loading spinner
+      document.getElementById('loading').style.display = 'block';
+      
       var studentName = document.getElementById('studentName').value;
       var parentName = document.getElementById('parentName').value;
       var email = document.getElementById('email').value;
@@ -272,13 +290,27 @@
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
         .then(function(response) {
            console.log('Email sent successfully:', response);
-           
-           // Optionally, show a success message to the user
-           alert('Request sent successfully!');
+           // Hide loading spinner
+           document.getElementById('loading').style.display = 'none';
+           // Show success alert
+           document.getElementById('successAlert').style.display = 'block';
+
+           // Hide success alert after 5 seconds
+             setTimeout(function() {
+             document.getElementById('successAlert').style.display = 'none';
+             }, 5000);
         }, function(error) {
            console.error('Request sending failed:', error);
            // Optionally, show an error message to the user
-           alert('Failed to make tutor request. Please check if you filled details correctly.');
+          // Hide loading spinner
+           document.getElementById('loading').style.display = 'none';
+           // Show error alert
+       document.getElementById('errorAlert').style.display = 'block';
+
+       // Hide error alert after 5 seconds
+       setTimeout(function() {
+         document.getElementById('errorAlert').style.display = 'none';
+       }, 5000);
         });
     }
   </script>
