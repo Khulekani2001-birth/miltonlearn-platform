@@ -163,11 +163,11 @@
         <label for="time" class="form-label">Time</label>
         <select class="form-select" id="time" name="time" required>
           <option value="">Select a time</option>
-          <option value="08:00 AM">18:00</option>
-          <option value="09:00 AM">19:00</option>
-          <option value="10:00 AM">20:00</option>
-          <option value="11:00 AM">21:00</option>
-          <option value="12:00 PM">22:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
           <!-- Add more options as needed -->
         </select>
       </div>
@@ -175,10 +175,10 @@
         <label for="level" class="form-label">Level of Study</label>
         <select class="form-select" id="level" name="level" required>
           <option value="">Select your level of study</option>
-          <option value="Mathematics">IGCSE</option>
-          <option value="Computer Science">EGCSE</option>
-          <option value="Computer Science">AS Level</option>
-          <option value="Computer Science">A Level</option>
+          <option value="IGCSE">IGCSE</option>
+          <option value="EGCSE">EGCSE</option>
+          <option value="AS Level">AS Level</option>
+          <option value="A Level">A Level</option>
           <!-- Add more options as needed -->
         </select>
       </div>
@@ -213,24 +213,25 @@
       var phoneNumber = document.getElementById('phoneNumber').value;
       var day = document.getElementById('day').value;
       var time = document.getElementById('time').value;
+      var level = document.getElementById('level').value;
       var subject = document.getElementById('subject').value;
       var details = document.getElementById('details').value;
-      var level = document.getElementById('level').value;
+
       var templateParams = {
         fullName: fullName,
         reply_to: email,
         phoneNumber: phoneNumber,
         day: day,
         time: time,
-        subject: subject,
         level: level,
+        subject: subject,
         details: details
       };
-  
+      document.getElementById('tutorForm').reset();
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
         .then(function(response) {
            console.log('Email sent successfully:', response);
-           document.getElementById('tutorForm').reset();
+           
            // Optionally, show a success message to the user
            alert('Request sent successfully!');
         }, function(error) {
