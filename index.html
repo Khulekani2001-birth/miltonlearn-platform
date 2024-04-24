@@ -131,23 +131,45 @@
 
   <main class="px-3">
     <h1>Welcome!</h1>
-    <p class="lead">Welcome to MiltonLearn, where we offer premier online tutoring services across a range of subjects, including Cambridge IGCSE, AS, and A Level Mathematics and Computer Science. Whether you're seeking assistance in these subjects or any other area, our dedicated tutors are here to help you excel in your studies. With our commitment to providing personalized and effective online tutoring, you can achieve your academic goals from anywhere with an internet connection.</p>
+    <p class="lead">Welcome to MiltonLearn, where we offer premier online tutoring services across a range of subjects, including Cambridge IGCSE, AS, and A Level Mathematics and Computer Science. 
+      Whether you're seeking assistance in these subjects or any other area, our dedicated tutors are here to help you excel in your studies. 
+      With our commitment to providing personalized and effective online tutoring, you can achieve your academic goals from anywhere with an internet connection.
+    </p>
+    <hr>
+    <p class="lead"> Complete the form below and we will contact you as soon as possible with the best tutor for your needs!</p>
     
     <form id="tutorForm" class="row g-3">
       <div class="col-md-6">
-        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="fullName" name="fullName" required>
+        <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="parentName" name="parentName" required>
+      </div>
+      <div class="col-md-6">
+        <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="studentName" name="studentName" required>
       </div>
       <div class="col-md-6">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email">
       </div>
       <div class="col-md-6">
-        <label for="phoneNumber" class="form-label">Phone Number <span class="text-danger">*</span></label>
-        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+        <label for="parentNumber" class="form-label">Parent Phone Number <span class="text-danger">*</span></label>
+        <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
       </div>
       <div class="col-md-6">
-        <label for="day" class="form-label">Day</label>
+        <label for="studentNumber" class="form-label">Student Phone Number <span class="text-danger">*</span></label>
+        <input type="tel" class="form-control" id="studentNumber" name="studentNumber" required>
+      </div>
+      <div class="col-md-6">
+        <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
+        <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
+          <option value="">Select below</option>
+          <option value="Parent">Parent</option>
+          <option value="Student">Student</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="day" class="form-label">Day  <span class="text-danger">*</span></label>
         <select class="form-select" id="day" name="day" required>
           <option value="">Select a day</option>
           <option value="Monday">Monday</option>
@@ -161,7 +183,7 @@
       </div>
       <div class="col-md-6">
         <label for="time" class="form-label">Time</label>
-        <select class="form-select" id="time" name="time" required>
+        <select class="form-select" id="time" name="time">
           <option value="">Select a time</option>
           <option value="18:00">18:00</option>
           <option value="19:00">19:00</option>
@@ -172,7 +194,7 @@
         </select>
       </div>
       <div class="col-md-6">
-        <label for="level" class="form-label">Level of Study</label>
+        <label for="level" class="form-label">Level of Study  <span class="text-danger">*</span></label>
         <select class="form-select" id="level" name="level" required>
           <option value="">Select your level of study</option>
           <option value="IGCSE">IGCSE</option>
@@ -188,6 +210,7 @@
           <option value="">Select a subject</option>
           <option value="Mathematics">Mathematics</option>
           <option value="Computer Science">Computer Science</option>
+          <option value="Information Communication Technology">Information Communication Technology</option>
           <!-- Add more options as needed -->
         </select>
       </div>
@@ -208,24 +231,30 @@
   
   <script>
     function sendEmail() {
-      var fullName = document.getElementById('fullName').value;
+      var studentName = document.getElementById('studentName').value;
+      var parentName = document.getElementById('parentName').value;
       var email = document.getElementById('email').value;
-      var phoneNumber = document.getElementById('phoneNumber').value;
+      var parentNumber = document.getElementById('parentNumber').value;
+      var studentNumber = document.getElementById('studentNumber').value;
       var day = document.getElementById('day').value;
       var time = document.getElementById('time').value;
       var level = document.getElementById('level').value;
       var subject = document.getElementById('subject').value;
       var details = document.getElementById('details').value;
+      var parentOrStudent = document.getElementById('parentOrStudent').value;
 
       var templateParams = {
-        fullName: fullName,
+        studentName: studentName,
+        parentName: parentName,
         reply_to: email,
-        phoneNumber: phoneNumber,
+        parentNumber: parentNumber,
+        studentNumber: studentNumber,
         day: day,
         time: time,
         level: level,
         subject: subject,
-        details: details
+        details: details,
+        parentOrStudent: parentOrStudent
       };
       document.getElementById('tutorForm').reset();
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
