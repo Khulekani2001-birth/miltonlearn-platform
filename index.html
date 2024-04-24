@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head><script src="color-modes.js"></script>
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -14,8 +14,10 @@
     <link href="myPic.jpg" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
+
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -116,10 +118,6 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
     </svg>
-
-
-
-    
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
@@ -133,19 +131,103 @@
 
   <main class="px-3">
     <h1>Welcome!</h1>
-    <p class="lead"> Meet Milton, your premier online tutor specializing in Cambridge IGCSE, AS, and A Level Mathematics and Computer Science. 
-      With extensive experience as an online tutor and educator, combined with the distinction of being ranked top in the World in the AS Level Mathematics Final examination, Milton offers a world-class tutoring experience. 
-      Book now for an unparalleled tutoring experience from anywhere with an internet connection.</p>
-    <p class="lead">
-        <a href="mailto:milton@miltonlearn.com" class="btn btn-lg btn-light fw-bold border-white bg-white">Book Now!</a>
-    </p>
-    <div class="contact-info">
-        <img src="myPic.jpg" alt="Your Picture" class="img-fluid rounded-circle" style="width: 250px;">
-        <p><i class="bi bi-envelope"></i> Email: <a href="mailto:milton@miltonlearn.com">milton@miltonlearn.com</a> </p>
-        <p><i class="bi bi-phone"></i> Phone: <a href="tel:+27839678191">+27839678191</a></p>
-        <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/miltonkngwenya" target="_blank">Milton (Khulekani) Ngwenya</a></p>
-    </div>
-</main>
+    <p class="lead">Welcome to MiltonLearn, where we offer premier online tutoring services across a range of subjects, including Cambridge IGCSE, AS, and A Level Mathematics and Computer Science. Whether you're seeking assistance in these subjects or any other area, our dedicated tutors are here to help you excel in your studies. With our commitment to providing personalized and effective online tutoring, you can achieve your academic goals from anywhere with an internet connection.</p>
+    
+    <form id="tutorForm" class="row g-3">
+      <div class="col-md-6">
+        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="fullName" name="fullName" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="col-md-6">
+        <label for="phoneNumber" class="form-label">Phone Number <span class="text-danger">*</span></label>
+        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+      </div>
+      <div class="col-md-6">
+        <label for="day" class="form-label">Day</label>
+        <select class="form-select" id="day" name="day" required>
+          <option value="">Select a day</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="time" class="form-label">Time</label>
+        <select class="form-select" id="time" name="time" required>
+          <option value="">Select a time</option>
+          <option value="08:00 AM">18:00</option>
+          <option value="09:00 AM">19:00</option>
+          <option value="10:00 AM">20:00</option>
+          <option value="11:00 AM">21:00</option>
+          <option value="12:00 PM">22:00</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="subject" class="form-label">Subject</label>
+        <select class="form-select" id="subject" name="subject" required>
+          <option value="">Select a subject</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Computer Science">Computer Science</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="details" class="form-label">Details</label>
+        <textarea class="form-control" id="details" name="details" rows="3" required></textarea>
+      </div>
+      <div class="col-12">
+        <button type="button" onclick="sendEmail()" class="btn btn-primary">Request Tutor</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    (function(){
+      emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
+    })();
+  </script>
+  
+  <script>
+    function sendEmail() {
+      var fullName = document.getElementById('fullName').value;
+      var email = document.getElementById('email').value;
+      var phoneNumber = document.getElementById('phoneNumber').value;
+      var day = document.getElementById('day').value;
+      var time = document.getElementById('time').value;
+      var subject = document.getElementById('subject').value;
+      var details = document.getElementById('details').value;
+      
+      var templateParams = {
+        fullName: fullName,
+        reply_to: email,
+        phoneNumber: phoneNumber,
+        day: day,
+        time: time,
+        subject: subject,
+        details: details
+      };
+  
+      emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
+        .then(function(response) {
+           console.log('Email sent successfully:', response);
+           // Optionally, show a success message to the user
+           alert('Email sent successfully!');
+        }, function(error) {
+           console.error('Email sending failed:', error);
+           // Optionally, show an error message to the user
+           alert('Failed to make tutor request. Please check if you filled details correctly.');
+        });
+    }
+  </script>
+  
 
 
 <footer class="mt-auto text-white-50">
