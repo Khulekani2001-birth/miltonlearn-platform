@@ -146,6 +146,50 @@
         width: 100%;
       }
     }
+
+    .testimonial-card {
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .testimonial-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card h5 {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .sliding-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .sliding-wrapper {
+      display: flex;
+      width: 200%;
+      animation: slide 20s linear infinite;
+    }
+
+    .sliding-wrapper .testimonial-card {
+      flex: 1;
+      min-width: 25%;
+    }
   </style>
 </head>
 
@@ -158,7 +202,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        
         <li class="nav-item">
           <a class="nav-link" href="/request_tutor.html">Tutoring</a>
         </li>
@@ -189,80 +232,72 @@
         <div class="col-md-6">
           <img src="logo.png" alt="Mission Image" class="img-fluid" style="height: 350px; width: 350px;">
         </div>
-
-        <div class="col-md-12 center">
-          <h2 class="text-center">Contact Us</h2>
-          <form id="contactForm" class="row g-3">
-            <div class="col-md-12">
-              <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="col-md-12">
-              <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="col-md-12">
-              <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-              <br>
-            </div>
-            <div class="col-12 text-center">
-              <button type="button" onclick="sendContactEmail()" class="btn btn-lg btn-primary">Send Message</button>
-            </div>
-            <div id="loading" class="spinner-border text-primary" role="status" style="display: none;">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </form><br>
-          <div class="text-center">
-            <p><i class="bi bi-envelope"></i> Email: <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a></p>
-            <p><i class="bi bi-phone"></i> Phone: <a href="tel:+27839678191">+27839678191</a></p>
-            <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">MiltonLearn</a></p>
-          </div>
-        </div>
       </div>
+      <hr>
+        <div class="col-md-12 center">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Feedback About MiltonLearn</h2>
+            </div>
+            <div class="sliding-container">
+              <div class="sliding-wrapper">
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_1.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_2.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_4.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_5.jpg" alt="Testimonial">
+                  
+                </div>
+                <!-- Repeat testimonials to create an infinite loop effect -->
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_2.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_3.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_4.png" alt="Testimonial">
+                  
+                </div>
+                <div class="testimonial-card">
+                  <img src="imgs/testimony_5.jpg" alt="Testimonial">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row mt-5">
+            <div class="col-md-12 text-center">
+              <h3>Unlock Your Child's Potential with Expert Tutors</h3>
+              <p>At MiltonLearn, we offer personalized tutoring services tailored to meet your child's unique learning needs. Our experienced tutors are dedicated to helping students excel in their studies, build confidence, and achieve their academic goals.</p>
+              <p>Whether your child needs help with specific subjects, exam preparation, or overall academic support, our tutors are here to provide expert guidance and support every step of the way.</p>
+              <a href="/request_tutor.html" class="btn btn-lg btn-success">Request a Tutor!</a>
+            </div>
+          </div>
+          <br>
+        </div>
+        
+      
+      </div>
+    </div>
   </div>
 
-</div>
-<footer>
+  <footer>
     <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
   </footer>
-  <script>
-    (function(){
-      emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
-    })();
-
-    function sendContactEmail() {
-      // Show loading spinner
-      document.getElementById('loading').style.display = 'block';
-      
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var message = document.getElementById('message').value;
-
-      var templateParams = {
-        name: name,
-        email: email,
-        message: message
-      };
-      
-      document.getElementById('contactForm').reset();
-      
-      emailjs.send('service_jytz61d', 'template_lcunkpm', templateParams)
-        .then(function(response) {
-          console.log('Email sent successfully:', response);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show success alert
-          alert('Your message has been sent successfully!');
-        }, function(error) {
-          console.error('Message sending failed:', error);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show error alert
-          alert('Failed to send message. Please try again.');
-        });
-    }
-  </script>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
