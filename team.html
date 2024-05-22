@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiltonLearn · Meet the Team</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container-fluid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #f5f5f5;
+      padding: 1rem 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+
+    .navbar-brand {
+      color: #343a40 !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      color: #007bff !important;
+    }
+
+    .nav-link {
+      color: #343a40 !important;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #007bff !important;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-toggler-icon {
+      color: #000000;
+    }
+
+    .team-member {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .team-member h5 {
+      margin: 10px 0;
+      font-size: 1.25rem;
+    }
+
+    .team-member p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+      }
+
+      .team-member img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .team-member h5 {
+        font-size: 1rem;
+      }
+
+      .team-member p {
+        font-size: 0.875rem;
+      }
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      color: #343a40;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    footer:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky">
+    <a class="navbar-brand" href="/index.html">MiltonLearn</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">...</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="request_tutor.html">Tutoring</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="team.html">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="container mt-5">
+      <h1 class="text-center">Meet the Team</h1>
+      <p class="text-center">Our team of dedicated professionals at MiltonLearn is committed to providing top-quality education and support. Each member brings unique skills and expertise to help students excel in their studies and achieve their academic goals. Meet the passionate educators who make MiltonLearn the best place for personalized learning.</p>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 team-member">
+          <img src="imgs/milton.jpg" alt="Milton Khulekani Ngwenya">
+          <h5>Milton Khulekani Ngwenya</h5>
+          <p>Mathematics, Computer Science and Physics Tutor<br>Top in the World in AS Level Mathematics | BSc in Mathematics and Computer Science, University of Cape Town</p>
+        </div>
+        <div class="col-md-4 team-member">
+          <img src="imgs/sphe.jpg" alt="Siphelele Vilakati">
+          <h5>Siphelele Vilakati</h5>
+          <p>Mathematics, Economics and Chemistry Tutor<br>BSc Hons in Computational and Applied Mathematics, Wits University | Bachelor of Economic Science graduate</p>
+        </div>
+        <div class="col-md-4 team-member">
+          <img src="imgs/sphokazi.jpg" alt="Siphokazi Nkonde">
+          <h5>Siphokazi Nkonde</h5>
+          <p>Accounting, Biology and Chemistry Tutor<br>BSc (Hons) in Property Studies, University of Cape Town | Golden Key Member</p>
+        </div>
+        <!-- Add more team members as needed -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
