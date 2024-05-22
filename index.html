@@ -145,6 +145,10 @@
       .description-text {
         width: 100%;
       }
+
+      .testimonial-card {
+        min-width: 100% !important;
+      }
     }
 
     .testimonial-card {
@@ -154,13 +158,13 @@
       background-color: #ffffff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      flex: 1;
     }
 
     .testimonial-card img {
       width: 100%;
       height: auto;
       border-radius: 5px;
-      margin-bottom: 10px;
     }
 
     .testimonial-card h5 {
@@ -189,6 +193,14 @@
     .sliding-wrapper .testimonial-card {
       flex: 1;
       min-width: 25%;
+    }
+
+    @media (max-width: 768px) {
+      .sliding-wrapper {
+        flex-direction: column;
+        width: 100%;
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -222,65 +234,56 @@
             <h2>Our Mission</h2>
             <p>At MiltonLearn, our mission is to innovate and develop learning technologies and solutions that will reshape education for the better. 
               We strive to keep students engaged and excited about learning by providing them with cutting-edge technology, advanced tutorial classes and study resources.
-            </p>
-            <h2>Collaboration</h2>
-            <p>We believe in the power of collaboration. 
-              If you are an educator, developer, or organization looking to collaborate, we would love to hear from you. 
-              Together, we can create impactful solutions for the future of education.</p>
-          </div>
+              
+            <h2>Our Tutoring</h2>
+            <p>MiltonLearn is run by Milton Khulekani Ngwenya, who was awarded Top in the World in AS Level Mathematics, together with a team of highly qualified tutors. 
+              At our hearts we believe that you can only achieve great things when inspired. 
+              Our tutors instil life and confidence to our students through interactive online sessions, with gamefied experiences.
+              Our tutoring services support learners in Computer Science, Mathematics, Physics, and Chemistry at all levels of study.</p>
         </div>
         <div class="col-md-6">
           <img src="logo.png" alt="Mission Image" class="img-fluid" style="height: 350px; width: 350px;">
         </div>
-      </div>
-      <hr>
+
         <div class="col-md-12 center">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2>Feedback About MiltonLearn</h2>
+              <h2>What Clients Are Saying About MiltonLearn</h2>
             </div>
             <div class="sliding-container">
               <div class="sliding-wrapper">
                 <div class="testimonial-card">
                   <img src="imgs/testimony_1.png" alt="Testimonial">
-                  
                 </div>
                 <div class="testimonial-card">
                   <img src="imgs/testimony_2.png" alt="Testimonial">
-                  
                 </div>
                 <div class="testimonial-card">
                   <img src="imgs/testimony_4.png" alt="Testimonial">
-                  
                 </div>
                 <div class="testimonial-card">
                   <img src="imgs/testimony_5.jpg" alt="Testimonial">
-                  
                 </div>
                 <!-- Repeat testimonials to create an infinite loop effect -->
                 <div class="testimonial-card">
-                  <img src="imgs/testimony_2.png" alt="Testimonial">
-                  
+                  <img src="imgs/testimony_1.png" alt="Testimonial">
                 </div>
                 <div class="testimonial-card">
-                  <img src="imgs/testimony_3.png" alt="Testimonial">
-                  
+                  <img src="imgs/testimony_2.png" alt="Testimonial">
                 </div>
                 <div class="testimonial-card">
                   <img src="imgs/testimony_4.png" alt="Testimonial">
-                  
                 </div>
                 <div class="testimonial-card">
                   <img src="imgs/testimony_5.jpg" alt="Testimonial">
-                  
                 </div>
               </div>
             </div>
           </div>
-          <hr>
+
           <div class="row mt-5">
             <div class="col-md-12 text-center">
-              <h3>Unlock Your Child's Potential with Expert Tutors</h3>
+              <h3>Join us Today!</h3>
               <p>At MiltonLearn, we offer personalized tutoring services tailored to meet your child's unique learning needs. Our experienced tutors are dedicated to helping students excel in their studies, build confidence, and achieve their academic goals.</p>
               <p>Whether your child needs help with specific subjects, exam preparation, or overall academic support, our tutors are here to provide expert guidance and support every step of the way.</p>
               <a href="/request_tutor.html" class="btn btn-lg btn-success">Request a Tutor!</a>
@@ -288,8 +291,6 @@
           </div>
           <br>
         </div>
-        
-      
       </div>
     </div>
   </div>
@@ -297,7 +298,43 @@
   <footer>
     <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
   </footer>
-  
+  <script>
+    (function(){
+      emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
+    })();
+
+    function sendContactEmail() {
+      // Show loading spinner
+      document.getElementById('loading').style.display = 'block';
+      
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      var templateParams = {
+        name: name,
+        email: email,
+        message: message
+      };
+      
+      document.getElementById('contactForm').reset();
+      
+      emailjs.send('service_jytz61d', 'template_lcunkpm', templateParams)
+        .then(function(response) {
+          console.log('Email sent successfully:', response);
+          // Hide loading spinner
+          document.getElementById('loading').style.display = 'none';
+          // Show success alert
+          alert('Your message has been sent successfully!');
+        }, function(error) {
+          console.error('Message sending failed:', error);
+          // Hide loading spinner
+          document.getElementById('loading').style.display = 'none';
+          // Show error alert
+          alert('Failed to send message. Please try again.');
+        });
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
