@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiltonLearn · Welcome</title>
+  <title>MiltonLearn · ExamEase Sign Up</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="logo.png">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -242,61 +242,54 @@
 
   <div class="container-fluid">
     <div class="container mt-5">
-      <h1 class="text-center typing">Welcome to MiltonLearn!</h1>
+      <h1 class="text-center typing">Sign Up for ExamEase</h1>
       <hr>
       <div class="row">
-        <div class="col-md-6">
-          <div class="intro-text">
-            <h2>Our Mission</h2>
-            <p>At MiltonLearn, our mission is to innovate and develop learning technologies and solutions that will reshape education for the better. 
-              We strive to keep students engaged and excited about learning by providing them with cutting-edge technology, advanced tutorial classes and study resources.
-              
-            <h2>Our Tutoring</h2>
-            <p>MiltonLearn is run by Khulekani Ngwenya, who was awarded <a href="https://x.com/EswatiniGovern1/status/1341755761656029185" target="_blank">Top in the World in AS Level Mathematics</a>, together with a <a href="/team.html">team</a> of highly qualified tutors. 
-              At our hearts we believe that you can only achieve great things when inspired. 
-              Our tutors instil life and confidence to our students through interactive online sessions, with gamified experiences.
-              Our tutoring services support learners in STEM and Commerce subjects at all levels of study.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <img src="logo.png" alt="Mission Image" class="img-fluid" style="height: 350px; width: 350px;">
-        </div>
-
-        <div class="col-md-12 center">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2>What Clients Are Saying About MiltonLearn</h2>
+        <div class="col-md-12">
+          <form id="signUpForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" required>
             </div>
-            <div class="sliding-container">
-              <div class="sliding-wrapper">
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_1.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_2.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_4.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_5.jpg" alt="Testimonial">
-                </div>
-                <!-- Repeat testimonials to create an infinite loop effect -->
-                
-                </div>
-              </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email">
             </div>
-          </div>
-
-          <div class="row mt-5">
-            <div class="col-md-12 text-center">
-              <h3>Join us Today!</h3>
-              <p>At MiltonLearn, we offer personalized tutoring services tailored to meet your child's unique learning needs. Our experienced tutors are dedicated to helping students excel in their studies, build confidence, and achieve their academic goals.</p>
-              <p>Whether your child needs help with specific subjects, exam preparation, or overall academic support, our tutors are here to provide expert guidance and support every step of the way.</p>
-              <a href="/request_tutor.html" class="btn btn-lg btn-success">Request a Tutor!</a>
-            </div><br>
-          </div>
-          <br>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="phone" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="grade">Grade</label>
+              <select class="form-control" id="grade" required>
+                <option value="">Select your grade</option>
+                <option value="Grade 7">Grade 7</option>
+                <option value="Grade 8">Grade 8</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+                <option value="AS Level">AS Level</option>
+                <option value="A Level">A Level</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject">First Subject to Use for</label>
+              <select class="form-control" id="subject" required>
+                <option value="">Select the subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="ICT">ICT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Why do you want to use ExamEase?</label>
+              <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
         </div>
       </div>
     </div>
@@ -310,37 +303,36 @@
       emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
     })();
 
-    function sendContactEmail() {
-      // Show loading spinner
-      document.getElementById('loading').style.display = 'block';
+    document.getElementById('signUpForm').addEventListener('submit', function(event) {
+      event.preventDefault();
       
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
+      var grade = document.getElementById('grade').value;
+      var subject = document.getElementById('subject').value;
       var message = document.getElementById('message').value;
+      var phone = document.getElementById('phone').value;
 
       var templateParams = {
         name: name,
         email: email,
-        message: message
+        grade: grade,
+        subject: subject,
+        message: message,
+        phone: phone
       };
-      
-      document.getElementById('contactForm').reset();
-      
+
       emailjs.send('service_jytz61d', 'template_lcunkpm', templateParams)
         .then(function(response) {
           console.log('Email sent successfully:', response);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show success alert
-          alert('Your message has been sent successfully!');
+          alert('Your sign-up request has been sent successfully!');
         }, function(error) {
-          console.error('Message sending failed:', error);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show error alert
-          alert('Failed to send message. Please try again.');
+          console.error('Sign-up request failed:', error);
+          alert('Failed to send sign-up request. Please try again.');
         });
-    }
+
+      document.getElementById('signUpForm').reset();
+    });
   </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
