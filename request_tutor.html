@@ -1,315 +1,421 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MiltonLearn · Request a Tutor</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="description" content="MiltonLearn is reshaping education through innovative learning technologies. Discover our mission, vision, and how we're advancing education in Africa.">
+  <meta name="keywords" content="MiltonLearn, education technology, innovative learning, tutoring, ExamEase AI, STEM education">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="logo.png">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        },
-        svg: {
-            fontCache: 'global'
-        }
-    };
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
   <style>
+    :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #f5a623;
+      --text-color: #333333;
+      --bg-color: #f8f9fa;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f7f9fc;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container-fluid {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
     }
 
     .navbar {
-      background-color: #f5f5f5;
-      padding: 1rem 1.5rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 1020;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 0;
     }
 
     .navbar-brand {
-      color: #343a40 !important;
-      font-weight: bold;
+      font-weight: 700;
+      color: var(--primary-color) !important;
       font-size: 1.5rem;
-      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
     }
 
-    .navbar-brand:hover {
-      color: #007bff !important;
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
     }
 
     .nav-link {
-      color: #343a40 !important;
-      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-color) !important;
       transition: color 0.3s ease;
+      font-size: 1.1rem;
     }
 
     .nav-link:hover {
-      color: #007bff !important;
+      color: var(--primary-color) !important;
     }
 
-    .navbar-toggler {
-      border-color: rgba(0, 0, 0, 0.1);
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 60px 0;
     }
 
-    .navbar-toggler-icon {
-      color: #000000;
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-top: -50px;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: #e09400;
+      border-color: #e09400;
     }
 
     footer {
-      background-color: #f8f9fa;
-      color: #343a40;
+      background-color: #333333;
+      color: white;
       padding: 20px 0;
-      text-align: center;
-      width: 100%;
-      position: relative;
-      bottom: 0;
-      left: 0;
-      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+    .invalid-feedback {
+      display: none;
+      color: #dc3545;
+      font-size: 0.875em;
     }
 
-    footer:hover {
-      background-color: #e0e0e0;
+    .was-validated .form-control:invalid,
+    .form-control.is-invalid {
+      border-color: #dc3545;
+      padding-right: calc(1.5em + 0.75rem);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right calc(0.375em + 0.1875rem) center;
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
     }
 
-    .clean-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .was-validated .form-control:valid,
+    .form-control.is-valid {
+      border-color: #198754;
+      padding-right: calc(1.5em + 0.75rem);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right calc(0.375em + 0.1875rem) center;
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
     }
+    @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    @media (max-width: 768px) {
-      .navbar-brand {
-        font-size: 1.2rem;
+        .hero h1, .hero p, .hero .cta-buttons {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .navbar-brand {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MiltonLearn",
+        "url": "https://www.miltonlearn.com",
+        "logo": "https://www.miltonlearn.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+27839678191",
+          "contactType": "customer service",
+          "email": "info@miltonlearn.com"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/miltonlearn",
+          "https://www.facebook.com/MiltonLearn",
+          "https://www.twitter.com/MiltonLearn",
+          "https://www.instagram.com/MiltonLearn"
+        ]
       }
-
-      .nav-link {
-        font-size: 1rem;
-      }
-
-      .container-fluid {
-        padding: 0 15px;
-      }
-      
-    }
-  </style>
+    </script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G97ER561YN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-G97ER561YN');
-</script>
-
 <body>
-
-  <nav class="navbar navbar-expand-lg sticky">
-    <a class="navbar-brand" href="/index.html">MiltonLearn</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">...</span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/request_tutor.html">Tutoring</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/request_access.html">ExamEase</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/team.html">Team</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about.html">About</a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo" class="d-inline-block align-top">
+        MiltonLearn
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/request_tutor.html">Request a Tutor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.examease.miltonlearn.com" target="_blank">ExamEase AI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container-fluid">
-    
-    <div class="container mt-5">
-      
-       <!-- Pricing Plans Section -->
-       <div class="pricing-plans text-center mb-5">
-        <h1>Affordable Pricing Plans</h1>
-        <p>We offer competitive and affordable rates to ensure quality education for everyone.</p>
-        <p><a href="data/MiltonLearn_Tutoring_Services- Pricing List - ZAR.pdf" target="_blank" class="btn btn-outline-primary">Download Pricing List in ZAR</a> <a href="data/MiltonLearn_Tutoring_Services- Pricing List - USD.pdf" target="_blank" class="btn btn-outline-primary">Download Pricing List in USD</a></p>
-      </div>
-      <!-- End of Pricing Plans Section -->
-      <h1 class="text-center">Request a Tutor</h1>
-      <p class="text-center">Fill up the form below and we will contact you as soon as possible.</p>
+  <section class="hero text-center">
+    <div class="container">
+      <h1>Request a Tutor</h1>
+      <p class="lead">Get personalized learning support from our expert tutors</p>
+    </div>
+  </section>
 
-      <hr>
-      <form id="tutorForm" class="row g-3">
-        <div class="col-md-6">
-          <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="parentName" name="parentName" required>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 form-container">
+        <div class="pricing-plans text-center mb-5">
+          <h2>Affordable Pricing Plans</h2>
+          <p>We offer competitive and affordable rates to ensure quality education for everyone.</p>
+          <p>
+            <a href="data/MiltonLearn_Tutoring_Services- Pricing List - ZAR.pdf" target="_blank" class="btn btn-outline-primary me-2">Download Pricing List in ZAR</a>
+            <a href="data/MiltonLearn_Tutoring_Services- Pricing List - USD.pdf" target="_blank" class="btn btn-outline-primary">Download Pricing List in USD</a>
+          </p>
         </div>
-        <div class="col-md-6">
-          <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="studentName" name="studentName" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email">
-        </div>
-        <div class="col-md-6">
-          <label for="parentNumber" class="form-label">Parent Phone Number <span class="text-danger">*</span></label>
-          <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
-        </div>
-        <div class="col-md-6">
-          <label for="studentNumber" class="form-label">Student Phone Number <span class="text-danger">*</span></label>
-          <input type="tel" class="form-control" id="studentNumber" name="studentNumber" required>
-        </div>
-        <div class="col-md-6">
-          <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
-          <select class="custom-select" id="parentOrStudent" name="parentOrStudent" required>
-            <option value="" disabled selected>Select below</option>
-            <option value="Parent">Parent</option>
-            <option value="Student">Student</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="day" class="form-label">Day <span class="text-danger">*</span></label>
-          <select class="custom-select" id="day" name="day" required>
-            <option value="" disabled selected>Select a day</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
-          <select class="custom-select" id="level" name="level" required>
-            <option value="" disabled selected>Select your level of study</option>
-            <option value="IGCSE">IGCSE</option>
-            <option value="EGCSE">EGCSE</option>
-            <option value="CAPS">CAPS</option>
-            <option value="IEB">IEB</option>
-            <option value="AS Level">AS Level</option>
-            <option value="A Level">A Level</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="subject" class="form-label">Subject</label>
-          <select class="custom-select" id="subject" name="subject" required>
-            <option value="" disabled selected>Select a subject</option>
-            <option value="Biology">Biology</option>
-            <option value="Chemistry">Chemistry</option>
-            <option value="Computer Science">Computer Science</option>
-            <option value="Economics">Economics</option>
-            <option value="Information Communication Technology">Information Communication Technology</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="Physics">Physics</option>
-          </select>
-        </div>
-        <div class="col-md-12">
-          <label for="details" class="form-label">Additional Info </label>
-          <textarea class="form-control" id="details" name="details" rows="3" required></textarea>
-        </div>
-        <div class="col-12 text-center">
-            <br>
-          <button type="button" onclick="sendEmail()" class="btn btn-lg btn-primary">Request Tutor</button>
-        </div>
-        <div id="loading" class="spinner-border text-primary" role="status" style="display: none;">
+        <form id="tutorForm" class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="parentName" name="parentName" required>
+            <div class="invalid-feedback">
+              Please provide the parent/guardian's full name.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="studentName" name="studentName" required>
+            <div class="invalid-feedback">
+              Please provide the student's full name.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+            <div class="invalid-feedback">
+              Please provide a valid email address.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="parentNumber" class="form-label">Parent Phone Number <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
+            <div class="invalid-feedback">
+              Please provide the parent's phone number.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="studentNumber" class="form-label">Student Phone Number <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="studentNumber" name="studentNumber" required>
+            <div class="invalid-feedback">
+              Please provide the student's phone number.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
+            <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
+              <option value="" disabled selected>Select below</option>
+              <option value="Parent">Parent</option>
+              <option value="Student">Student</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select whether you are a parent or student.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="day" class="form-label">Day <span class="text-danger">*</span></label>
+            <select class="form-select" id="day" name="day" required>
+              <option value="" disabled selected>Select a day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a day.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
+            <select class="form-select" id="level" name="level" required>
+              <option value="" disabled selected>Select your level of study</option>
+              <option value="IGCSE">IGCSE</option>
+              <option value="EGCSE">EGCSE</option>
+              <option value="CAPS">CAPS</option>
+              <option value="IEB">IEB</option>
+              <option value="AS Level">AS Level</option>
+              <option value="A Level">A Level</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select your level of study.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="subject" class="form-label">Subject</label>
+            <select class="form-select" id="subject" name="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="Biology">Biology</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Economics">Economics</option>
+              <option value="Information Communication Technology">Information Communication Technology</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a subject.
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="details" class="form-label">Additional Info </label>
+            <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+            <div class="invalid-feedback">
+              Please provide additional information.
+            </div>
+          </div>
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Request Tutor</button>
+          </div>
+        </form>
+        <div id="loading" class="spinner-border text-primary mt-3" role="status" style="display: none;">
           <span class="visually-hidden">Loading...</span>
         </div>
-      </form>
-      <br>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
+      <div class="mt-3">
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (function(){
-      emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
+      emailjs.init("JR2sVi6C36Fta6Ddr");
     })();
 
+    // Form validation
+    (function () {
+      'use strict'
+
+      var form = document.getElementById('tutorForm')
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        event.stopPropagation()
+        
+        if (form.checkValidity()) {
+          sendEmail()
+        } else {
+          form.classList.add('was-validated')
+        }
+      }, false)
+    })()
+
     function sendEmail() {
-      // Show loading spinner
       document.getElementById('loading').style.display = 'block';
       
-      var studentName = document.getElementById('studentName').value;
-      var parentName = document.getElementById('parentName').value;
-      var email = document.getElementById('email').value;
-      var parentNumber = document.getElementById('parentNumber').value;
-      var studentNumber = document.getElementById('studentNumber').value;
-      var day = document.getElementById('day').value;
-      var level = document.getElementById('level').value;
-      var subject = document.getElementById('subject').value;
-      var details = document.getElementById('details').value;
-      var parentOrStudent = document.getElementById('parentOrStudent').value;
-
       var templateParams = {
-        studentName: studentName,
-        parentName: parentName,
-        reply_to: email,
-        parentNumber: parentNumber,
-        studentNumber: studentNumber,
-        day: day,
-        level: level,
-        subject: subject,
-        details: details,
-        parentOrStudent: parentOrStudent
+        studentName: document.getElementById('studentName').value,
+        parentName: document.getElementById('parentName').value,
+        reply_to: document.getElementById('email').value,
+        parentNumber: document.getElementById('parentNumber').value,
+        studentNumber: document.getElementById('studentNumber').value,
+        day: document.getElementById('day').value,
+        level: document.getElementById('level').value,
+        subject: document.getElementById('subject').value,
+        details: document.getElementById('details').value,
+        parentOrStudent: document.getElementById('parentOrStudent').value
       };
-      
-      document.getElementById('tutorForm').reset();
       
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
         .then(function(response) {
           console.log('Email sent successfully:', response);
-          // Hide loading spinner
           document.getElementById('loading').style.display = 'none';
-          // Show success alert
           alert('Your request has been sent successfully!');
+          document.getElementById('tutorForm').reset();
+          document.getElementById('tutorForm').classList.remove('was-validated');
         }, function(error) {
           console.error('Request sending failed:', error);
-          // Hide loading spinner
           document.getElementById('loading').style.display = 'none';
-          // Show error alert
           alert('Failed to send request. Please try again.');
         });
     }

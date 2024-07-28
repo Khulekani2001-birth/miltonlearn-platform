@@ -1,349 +1,266 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" class="h-100">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiltonLearn · Welcome</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="icon" type="image/x-icon" href="logo.png">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f7f9fc;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiltonLearn · Welcome</title>
+<meta name="description" content="MiltonLearn is reshaping education through innovative learning technologies. Discover our mission, vision, and how we're advancing education in Africa.">
+<meta name="keywords" content="MiltonLearn, education technology, innovative learning, tutoring, ExamEase AI, STEM education">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="logo.png">
+<style>
+  :root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0; /* Increased padding for a bigger navbar */
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.5rem; /* Increased font size */
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand img {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+    font-size: 1.1rem; /* Increased font size */
+  }
+
+  .nav-link:hover {
+    color: var(--primary-color) !important;
+  }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 100px 0;
     }
 
-    .container-fluid {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
     }
 
-    .navbar {
-      background-color: #f5f5f5;
-      padding: 1rem 1.5rem;
-      transition: background-color 0.3s ease;
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
     }
 
-    .sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 1020;
-    }
-
-    .navbar-brand {
-      color: #343a40 !important;
-      font-weight: bold;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-brand:hover {
-      color: #007bff !important;
-    }
-
-    .nav-link {
-      color: #343a40 !important;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: #007bff !important;
-    }
-
-    .navbar-toggler {
-      border-color: rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-toggler-icon {
-      color: #000000;
-    }
-
-    .typing {
-      overflow: hidden;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .15em;
-      animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      0% { width: 0; }
-      100% { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #343a40; }
-    }
-
-    .intro-text {
-      margin: 20px 0;
-    }
-
-    .product-image {
-      width: 100%;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .product-image:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #f8f9fa;
-      color: #343a40;
-      padding: 20px 0;
-      text-align: center;
-      width: 100%;
-      position: relative;
-      bottom: 0;
-      left: 0;
-      transition: background-color 0.3s ease;
-    }
-
-    footer:hover {
-      background-color: #e0e0e0;
-    }
-
-    .clean-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      .navbar-brand {
-        font-size: 1.2rem;
-      }
-
-      .nav-link {
-        font-size: 1rem;
-      }
-
-      .container-fluid {
-        padding: 0 15px;
-      }
-
-      .intro-text,
-      .description-text {
-        width: 100%;
-      }
-
-      .testimonial-card {
-        min-width: 100% !important;
-      }
+    .btn-primary:hover {
+      background-color: #e09400;
+      border-color: #e09400;
     }
 
     .testimonial-card {
-      margin: 15px;
-      padding: 20px;
+      background-color: white;
       border-radius: 10px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
       overflow: hidden;
-      flex: 1;
+    }
+    .btn-outline-light:hover {
+      color: var(--primary-color);
     }
 
+    .cta-buttons .btn {
+      margin: 0 10px;
+    }
     .testimonial-card img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
     }
 
-    .testimonial-card h5 {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #333;
+    .cta-section {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 80px 0;
     }
 
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    footer {
+      background-color: #333333;
+      color: white;
+      padding: 40px 0;
     }
+    @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .sliding-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
+        .hero h1, .hero p, .hero .cta-buttons {
+            animation: fadeInUp 1s ease-out;
+        }
 
-    .sliding-wrapper {
-      display: flex;
-      width: 200%;
-      animation: slide 20s linear infinite;
-    }
+        .navbar-brand {
+            transition: transform 0.3s ease;
+        }
 
-    .sliding-wrapper .testimonial-card {
-      flex: 1;
-      min-width: 25%;
-    }
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
 
-    @media (max-width: 768px) {
-      .sliding-wrapper {
-        flex-direction: column;
-        width: 100%;
-        animation: none;
-      }
-    }
-  </style>
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G97ER561YN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-G97ER561YN');
-</script>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg sticky">
-    <a class="navbar-brand" href="#">MiltonLearn</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">...</span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/request_tutor.html">Tutoring</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/request_access.html">ExamEase</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/team.html">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about.html">About</a>
-        </li>
-      </ul>
+<body class="d-flex flex-column h-100">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="MiltonLearn Logo" class="d-inline-block align-top">
+        MiltonLearn
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/request_tutor.html">Request a Tutor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.examease.miltonlearn.com" target="_blank">ExamEase AI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <div class="container mt-5">
-      <h1 class="text-center typing">Welcome to MiltonLearn!</h1>
-      <hr>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="intro-text">
-            <h2>Our Mission</h2>
-            <p>At MiltonLearn, our mission is to innovate and develop learning technologies and solutions that will reshape education for the better. 
-              We strive to keep students engaged and excited about learning by providing them with cutting-edge technology, advanced tutorial classes and study resources.
-              
-            <h2>Our Tutoring</h2>
-            <p>MiltonLearn is run by Khulekani Ngwenya, who was awarded <a href="https://x.com/EswatiniGovern1/status/1341755761656029185" target="_blank">Top in the World in AS Level Mathematics</a>, together with a <a href="/team.html">team</a> of highly qualified tutors. 
-              At our hearts we believe that you can only achieve great things when inspired. 
-              Our tutors instil life and confidence to our students through interactive online sessions, with gamified experiences.
-              Our tutoring services support learners in STEM and Commerce subjects at all levels of study.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <img src="logo.png" alt="Mission Image" class="img-fluid" style="height: 350px; width: 350px;">
-        </div>
-
-        <div class="col-md-12 center">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2>What Clients Are Saying About MiltonLearn</h2>
+  <main class="flex-shrink-0">
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">Welcome to MiltonLearn</h1>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">Innovating education through expert tutoring and AI-powered learning</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/request_tutor.html" class="btn btn-primary btn-lg">Request a Tutor</a>
+                <a href="https://www.examease.miltonlearn.com" target="_blank" class="btn btn-outline-light btn-lg">Try ExamEase AI</a>
             </div>
-            <div class="sliding-container">
-              <div class="sliding-wrapper">
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_1.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_2.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_4.png" alt="Testimonial">
-                </div>
-                <div class="testimonial-card">
-                  <img src="imgs/testimony_5.jpg" alt="Testimonial">
-                </div>
-                <!-- Repeat testimonials to create an infinite loop effect -->
-                
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-5">
-            <div class="col-md-12 text-center">
-              <h3>Join us Today!</h3>
-              <p>At MiltonLearn, we offer personalized tutoring services tailored to meet your child's unique learning needs. Our experienced tutors are dedicated to helping students excel in their studies, build confidence, and achieve their academic goals.</p>
-              <p>Whether your child needs help with specific subjects, exam preparation, or overall academic support, our tutors are here to provide expert guidance and support every step of the way.</p>
-              <a href="/request_tutor.html" class="btn btn-lg btn-success">Request a Tutor!</a>
-            </div><br>
-          </div>
-          <br>
         </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2 class="mb-4">Our Mission</h2>
+                    <p>At MiltonLearn, we're reshaping education through innovation and advanced learning technologies. Our goal is to keep students engaged and excited about learning, providing them with cutting-edge resources and expert guidance.</p>
+                    <h2 class="mt-5 mb-4">Our Tutoring</h2>
+                    <p>Led by Khulekani Ngwenya, awarded Top in the World in AS Level Mathematics, and BSc. Mathematics and Computer Science from the University of Cape Town. Our team of highly qualified tutors brings subjects to life. We offer interactive online sessions with gamified experiences, supporting learners in STEM and Commerce subjects at all levels.</p>
+                </div>
+                <div class="col-md-6 text-center" data-aos="fade-left">
+                    <img src="logo.png" alt="MiltonLearn Logo" class="img-fluid" style="max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <img src="imgs/testimony_1.png" alt="Testimonial 1" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <img src="imgs/testimony_2.png" alt="Testimonial 2" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <img src="imgs/testimony_4.png" alt="Testimonial 3" class="card-img-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section text-center">
+        <div class="container">
+            <h2 class="mb-4" data-aos="zoom-in">Ready to Excel in Your Studies?</h2>
+            <p class="lead mb-5" data-aos="zoom-in" data-aos-delay="100">Join MiltonLearn today and experience personalized tutoring tailored to your unique learning needs.</p>
+            <a href="/request_tutor.html" class="btn btn-light btn-lg" data-aos="zoom-in" data-aos-delay="200">Request a Tutor Now</a>
+        </div>
+    </section>
+</main>
+
+  <footer class="mt-auto py-3">
+    <div class="container text-center">
+      <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
+      <div class="mt-3">
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 MiltonLearn. All rights reserved.</p>
   </footer>
-  <script>
-    (function(){
-      emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace YOUR_USER_ID with your EmailJS user ID
-    })();
 
-    function sendContactEmail() {
-      // Show loading spinner
-      document.getElementById('loading').style.display = 'block';
-      
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var message = document.getElementById('message').value;
-
-      var templateParams = {
-        name: name,
-        email: email,
-        message: message
-      };
-      
-      document.getElementById('contactForm').reset();
-      
-      emailjs.send('service_jytz61d', 'template_lcunkpm', templateParams)
-        .then(function(response) {
-          console.log('Email sent successfully:', response);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show success alert
-          alert('Your message has been sent successfully!');
-        }, function(error) {
-          console.error('Message sending failed:', error);
-          // Hide loading spinner
-          document.getElementById('loading').style.display = 'none';
-          // Show error alert
-          alert('Failed to send message. Please try again.');
-        });
-    }
-  </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
