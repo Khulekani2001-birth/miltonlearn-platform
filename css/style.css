@@ -1,0 +1,197 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0; /* Increased padding for a bigger navbar */
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.5rem; /* Increased font size */
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand img {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+    font-size: 1.1rem; /* Increased font size */
+  }
+
+  .nav-link:hover {
+    color: var(--primary-color) !important;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+
+  .btn-primary:hover {
+    background-color: #e09400;
+    border-color: #e09400;
+  }
+
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .btn-outline-light:hover {
+    color: var(--primary-color);
+  }
+
+  .cta-buttons .btn {
+    margin: 0 10px;
+  }
+  .testimonial-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cta-section {
+    color: rgb(0, 0, 0);
+    padding: 80px 0;
+  }
+
+  footer {
+    background-color: #333333;
+    color: white;
+    padding: 40px 0;
+  }
+  @keyframes fadeInUp {
+          from {
+              opacity: 0;
+              transform: translateY(20px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .hero h1, .hero p, .hero .cta-buttons {
+          animation: fadeInUp 1s ease-out;
+      }
+
+      .navbar-brand {
+          transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover {
+          transform: scale(1.05);
+      }
+
+      .nav-link {
+          position: relative;
+      }
+
+      .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary-color);
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+          transform: scaleX(1);
+      }
+
+      .testimonial-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      }
+      .subjects-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+
+  
+  .subject-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .subject-list li {
+    margin-bottom: 10px;
+  }
+
+  .subject-icon {
+    color: var(--secondary-color);
+    margin-right: 10px;
+  }
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .subject-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .subject-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+  }
+
+  .key-feature {
+    font-style: italic;
+    color: var(--secondary-color);
+  }
+  .levels {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-top: 10px;
+  }
