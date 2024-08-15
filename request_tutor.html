@@ -69,6 +69,9 @@
             <a class="nav-link" href="/team.html">Team</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/about.html">About</a>
           </li>
         </ul>
@@ -89,11 +92,10 @@
     <div class="row justify-content-center">
       <div class="col-md-10 form-container">
         <div class="pricing-plans text-center mb-5">
-          <h2>Affordable Pricing Plans</h2>
-          <p>Sessions start from R270/hour with 20% discount when more than 6 total sessions per month.</p>
+          <h2>Tutoring Packages</h2>
+          <p>Choose from our range of tutoring packages designed to fit your needs.</p>
           <p>
-            <a href="data/MiltonLearn_Tutoring_Services- Pricing List - ZAR.pdf" target="_blank" class="btn btn-outline-primary me-2">Download Pricing List in Rands</a>
-            <a href="data/MiltonLearn_Tutoring_Services- Pricing List - USD.pdf" target="_blank" class="btn btn-outline-primary">Download Pricing List in USD</a>
+            <a href="pricing.html" class="btn btn-primary">View Pricing Details</a>
           </p>
         </div>
         <form id="tutorForm" class="row g-3 needs-validation" novalidate>
@@ -196,6 +198,19 @@
               Please select a subject.
             </div>
           </div>
+          <div class="col-md-6">
+            <label for="package" class="form-label">Select Package <span class="text-danger">*</span></label>
+            <select class="form-select" id="package" name="package" required>
+              <option value="" disabled selected>Choose a package</option>
+              <option value="Basic">Basic Package (R1080/month)</option>
+              <option value="Standard">Standard Package (R2160/month)</option>
+              <option value="Premium">Premium Package (R3240/month)</option>
+              <option value="PayAsYouGo">Pay-As-You-Go (R270/hour)</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a package.
+            </div>
+          </div>
           <div class="col-md-12">
             <label for="details" class="form-label">Additional Info </label>
             <textarea class="form-control" id="details" name="details" rows="3"></textarea>
@@ -270,7 +285,8 @@
         level: document.getElementById('level').value,
         subject: document.getElementById('subject').value,
         details: document.getElementById('details').value,
-        parentOrStudent: document.getElementById('parentOrStudent').value
+        parentOrStudent: document.getElementById('parentOrStudent').value,
+        package: document.getElementById('package').value
       };
       
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
