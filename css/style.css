@@ -527,3 +527,121 @@ footer {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
+.features {
+  padding: 80px 0;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.tech-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 80px 0;
+}
+
+.tech-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.tech-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  .hero {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(245, 166, 35, 0.8)), url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1.2s ease-out;
+  }
+  
+  .feature-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeInUp 1.2s ease-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-buttons .btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-buttons .btn-primary:hover {
+    background-color: #e09400;
+    transform: scale(1.05);
+  }
+  
+  .cta-buttons .btn-outline-light {
+    color: white;
+    border-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-buttons .btn-outline-light:hover {
+    background-color: white;
+    color: var(--primary-color);
+  }
+  
+}
+/* Hover effect for feature cards */
+.feature-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card .feature-icon {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+a.text-decoration-none:hover .feature-card {
+  background-color: #e3f2fd;
+}
