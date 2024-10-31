@@ -566,3 +566,44 @@ footer a:hover { color: var(--secondary-color); }
   margin-bottom: 20px;
 }
 
+.fancy-text {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+}
+.animated-text {
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+.highlight {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.7rem;
+  transform: scale(1.1);
+}
+.you-highlight {
+  color: #4bc0c8;
+  font-size: 1.7rem;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+.cartoon-animation {
+  margin-top: 10px;
+  height: 100px;
+  background-image: url('path/to/your/cartoon-character-or-icon.png'); /* Use a cartoon image for animation */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
