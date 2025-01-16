@@ -69,46 +69,99 @@
               <span class="animated-text you-highlight">YOU!</span> 🌟
           </p>
       </div><div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="https://www.mamtutor.com" class="btn btn-outline-light btn-lg" target="_blank">MAMTutor</a>
-          <a href="/request_tutor.html" class="btn btn-primary btn-lg me-3">Request a Tutor</a>
+          <a href="#products" class="btn btn-primary btn-lg me-3">Get Started</a>
         </div>
       </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-5">
+    <!-- Products Section -->
+    <section id="products" class="py-5">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5">Why Choose MiltonLearn?</h2>
+        <h2 class="text-center fw-bold mb-4">Our Products</h2>
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card text-center p-4 h-100">
-              <i class="bi bi-lightbulb icon mb-3"></i>
-              <h5 class="fw-bold">Personalized Learning</h5>
-              <p>Our AI-powered chatbot adapts to each student’s learning style, providing tailored explanations and exercises.</p>
+            <div class="card h-100 product-card">
+              <div class="card-body text-center p-3">
+                <div class="icon-wrapper mb-3">
+                  <i class="bi bi-journal-check" style="font-size: 2.5rem; color: #4A90E2;"></i>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-2">ExamEase</h3>
+                <p class="card-text mb-3">Your ultimate exam preparation companion. Practice with past papers and get instant AI feedback.</p>
+                <a href="https://www.examease.miltonlearn.com" class="btn btn-primary w-100" target="_blank">Request an Account</a>
+              </div>
             </div>
           </div>
+          
           <div class="col-md-4">
-            <div class="card text-center p-4 h-100">
-              <i class="bi bi-speedometer2 icon mb-3"></i>
-              <h5 class="fw-bold">Learn Faster</h5>
-              <p>Designed to make learning efficient and engaging, so students can master topics quicker and with confidence.</p>
+            <div class="card h-100 product-card">
+              <div class="card-body text-center p-3">
+                <div class="icon-wrapper mb-3">
+                  <i class="bi bi-robot" style="font-size: 2.5rem; color: #2ECC71;"></i>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-2">MAMTutor</h3>
+                <p class="card-text mb-3">24/7 AI-powered tutor for mathematics, physics, chemistry, computer science, etc.</p>
+                <a href="https://www.mamtutor.com" class="btn btn-primary w-100" target="_blank">Start Learning</a>
+              </div>
             </div>
           </div>
+          
           <div class="col-md-4">
-            <div class="card text-center p-4 h-100">
-              <i class="bi bi-chat-dots icon mb-3"></i>
-              <h5 class="fw-bold">Instant Support</h5>
-              <p>Whether it’s math, physics, chemistry, or computer science, MAMTutor is ready to help 24/7.</p>
+            <div class="card h-100 product-card">
+              <div class="card-body text-center p-3">
+                <div class="icon-wrapper mb-3">
+                  <i class="bi bi-person-video3" style="font-size: 2.5rem; color: #9B59B6;"></i>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-2">Request a Tutor</h3>
+                <p class="card-text mb-3">Connect with experienced tutors for personalized 1-on-1 learning sessions.</p>
+                <a href="/request_tutor.html" class="btn btn-primary w-100">Find a Tutor</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <style>
+        .product-card {
+          border: none;
+          border-radius: 12px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-wrapper {
+          background-color: rgba(74, 144, 226, 0.1);
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+        }
+        
+        .btn-primary {
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-weight: 600;
+        }
+        
+        #products .card-text {
+          color: #6c757d;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+      </style>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-5">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5">Words from MAMTutor Users</h2>
+        <h2 class="text-center fw-bold mb-5">Words from users</h2>
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card p-4 h-100">
@@ -137,7 +190,7 @@
       <div class="container">
         <h2 class="fw-bold">Experience AI-Powered Learning Today</h2>
         <p class="lead mb-4">Join thousands of students and educators transforming education with MiltonLearn.</p>
-        <a href="https://www.mamtutor.com/signup" class="btn btn-light btn-lg">Sign Up Free</a>
+        <a href="about.html" class="btn btn-light btn-lg">Contact us</a>
       </div>
     </section>
   </main>
