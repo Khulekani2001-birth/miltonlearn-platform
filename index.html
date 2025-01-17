@@ -42,79 +42,77 @@
 </nav>
 
   <main class="flex-shrink-0">
-<!-- Hero Section with Carousel -->
-<section class="hero">
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-    </div>
-    
-    <div class="carousel-inner">
-      <!-- MAMTutor Slide -->
-      <div class="carousel-item active">
-        <div class="carousel-content">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6 text-start">
-                <h1 class="display-4 fw-bold mb-4">MAMTutor</h1>
-                <p class="lead mb-4">
-                  Your 24/7 AI tutor for mathematics, physics, and more. 
-                  Get instant help with step-by-step explanations.
-                </p>
-                <div class="d-flex gap-3">
-                  <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try MAMTutor</a>
-                  <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
+  <!-- Hero Section with Carousel -->
+  <section class="hero" style="padding: 0rem 0;">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      </div>
+      
+      <div class="carousel-inner">
+        <!-- MAMTutor Slide -->
+        <div class="carousel-item active">
+          <div class="carousel-content">
+            <div class="container" >
+              <div class="row align-items-center">
+                <div class="col-lg-6 text-start">
+                  <h1 class="display-4 fw-bold mb-4">MAMTutor</h1>
+                  <p class="lead mb-4">
+                    Your 24/7 AI tutor for mathematics, physics, and more. 
+                    Get instant help with step-by-step explanations.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try MAMTutor</a>
+                    <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <img src="imgs/MAMTutor.jpg" alt="MAMTutor Interface" width="640" height="350" class="hero-image">
                 </div>
               </div>
-              <div class="col-lg-6">
-                <img src="imgs/MAMTutor.jpg" alt="MAMTutor Interface" width="640" height="350" class="hero-image">
-              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ExamEase Slide -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6 text-start">
+                  <h1 class="display-4 fw-bold mb-4">ExamEase</h1>
+                  <p class="lead mb-4">
+                    Practice past papers with AI-powered feedback. 
+                    Prepare smarter, not harder.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try ExamEase</a>
+                    <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero-image-wrapper">
+                    <img 
+                      src="imgs/ExamEase.jpg" alt="MAMTutor Interface" class="hero-image img-fluid">
+                  </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ExamEase Slide -->
-      <div class="carousel-item">
-        <div class="carousel-content">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6 text-start">
-                <h1 class="display-4 fw-bold mb-4">ExamEase</h1>
-                <p class="lead mb-4">
-                  Practice past papers with AI-powered feedback. 
-                  Prepare smarter, not harder.
-                </p>
-                <div class="d-flex gap-3">
-                  <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try ExamEase</a>
-                  <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="hero-image-wrapper">
-                  <img 
-                    src="imgs/ExamEase.jpg" alt="MAMTutor Interface" class="hero-image img-fluid">
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
-
-
+  </section>
 
     <!-- Products Section -->
     <section id="products" class="py-5">
