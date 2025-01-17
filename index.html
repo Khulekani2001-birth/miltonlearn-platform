@@ -1,173 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E4Y24C156P');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiltonLearn · Welcome</title>
-  <meta name="description" content="MiltonLearn is reshaping education through AI-powered personalized tutoring. Join the future of learning!">
+  <title>MiltonLearn</title>
+  <meta name="description" content="MiltonLearn is reshaping education through AI-powered personalized tutoring. Experience the future of learning with our innovative educational solutions.">
+  
+  <!-- Styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="logo.png">
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* Benefits Section */
-    #benefits .card { border: none; border-radius: 8px; background-color: var(--white); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-    #benefits .icon { font-size: 2.5rem; color: var(--primary-color); }
-    #benefits h5 { color: var(--primary-color); }
-
-    /* Testimonials Section */
-    #testimonials { background-color: var(--light-bg); }
-    #testimonials .card { border: none; background-color: var(--white); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-    #testimonials p { font-size: 0.9rem; color: var(--text-color); }
-
-    /* CTA Section */
-    .cta-section { background-color: var(--accent-bg); color: var(--white); padding: 4rem 0; }
-    .cta-section .btn { background-color: var(--secondary-color); font-weight: 600; }
-    .cta-section .btn:hover { background-color: #e09400; }
-
-    
-  </style>
 </head>
 
 <body class="d-flex flex-column h-100">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
-        MiltonLearn
+        <span class="brand-text">MiltonLearn</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.examease.miltonlearn.com">ExamEase</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="https://www.mamtutor.com" target="_blank">MAMTutor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="https://www.examease.miltonlearn.com" target="_blank">ExamEase</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="/about.html">About</a>
+          </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
 
   <main class="flex-shrink-0">
-    <section class="hero text-center">
-      <div class="container">
-        <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">Welcome to MiltonLearn</h1>
-        <div class="fancy-text" data-aos="fade-up" data-aos-delay="100">
-          <p class="lead mb-5">
-              <span class="animated-text">✨ Making </span>
-              <span class="animated-text highlight">Learning better</span>
-              <span class="animated-text"> for </span>
-              <span class="animated-text you-highlight">YOU!</span> 🌟
-          </p>
-      </div><div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#products" class="btn btn-primary btn-lg me-3">Get Started</a>
+<!-- Hero Section with Carousel -->
+<section class="hero">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    </div>
+    
+    <div class="carousel-inner">
+      <!-- MAMTutor Slide -->
+      <div class="carousel-item active">
+        <div class="carousel-content">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6 text-start">
+                <h1 class="display-4 fw-bold mb-4">MAMTutor</h1>
+                <p class="lead mb-4">
+                  Your 24/7 AI tutor for mathematics, physics, and more. 
+                  Get instant help with step-by-step explanations.
+                </p>
+                <div class="d-flex gap-3">
+                  <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try MAMTutor</a>
+                  <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <img src="imgs/MAMTutor.jpg" alt="MAMTutor Interface" width="640" height="350" class="hero-image">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- ExamEase Slide -->
+      <div class="carousel-item">
+        <div class="carousel-content">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6 text-start">
+                <h1 class="display-4 fw-bold mb-4">ExamEase</h1>
+                <p class="lead mb-4">
+                  Practice past papers with AI-powered feedback. 
+                  Prepare smarter, not harder.
+                </p>
+                <div class="d-flex gap-3">
+                  <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try ExamEase</a>
+                  <a href="about.html" class="btn btn-custom btn-outline-primary btn-lg">Learn More</a>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="hero-image-wrapper">
+                  <img 
+                    src="imgs/ExamEase.jpg" alt="MAMTutor Interface" class="hero-image img-fluid">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+
 
     <!-- Products Section -->
     <section id="products" class="py-5">
-      <div class="container">
-        <h2 class="text-center fw-bold mb-4">Our Products</h2>
+      <div class="container py-5">
+        <h2 class="text-center fw-bold mb-5">Our Products</h2>
         <div class="row g-4 justify-content-center">
           <div class="col-md-6">
-            <div class="card h-100 product-card">
-              <div class="card-body text-center p-3">
-                <div class="icon-wrapper mb-3">
-                  <i class="bi bi-journal-check" style="font-size: 2.5rem; color: #4A90E2;"></i>
-                </div>
-                <h3 class="card-title h5 fw-bold mb-2">ExamEase</h3>
-                <p class="card-text mb-3">Your ultimate exam preparation companion. Practice past paper questions grouped by topic and get instant AI feedback.</p>
-                <a href="https://www.examease.miltonlearn.com" class="btn btn-primary w-100" target="_blank">Request an Account</a>
+            <div class="product-card h-100">
+              <div class="icon-wrapper">
+                <i class="bi bi-journal-check" style="font-size: 2.5rem; color: var(--primary);"></i>
               </div>
+              <h3 class="h4 text-center fw-bold mb-3">ExamEase</h3>
+              <p class="text-muted text-center mb-4">
+                Your intelligent exam preparation companion. Practice with AI-curated past paper questions 
+                and receive instant, personalized feedback to optimize your learning journey.
+              </p>
+              <a href="https://www.examease.miltonlearn.com" class="btn btn-custom btn-primary w-100" target="_blank">
+                Get Started with ExamEase
+              </a>
             </div>
           </div>
           
           <div class="col-md-6">
-            <div class="card h-100 product-card">
-              <div class="card-body text-center p-3">
-                <div class="icon-wrapper mb-3">
-                  <i class="bi bi-robot" style="font-size: 2.5rem; color: #2ECC71;"></i>
-                </div>
-                <h3 class="card-title h5 fw-bold mb-2">MAMTutor</h3>
-                <p class="card-text mb-3">24/7 AI-powered tutor for mathematics, physics, chemistry, computer science, etc.</p>
-                <a href="https://www.mamtutor.com" class="btn btn-primary w-100" target="_blank">Start Learning</a>
+            <div class="product-card h-100">
+              <div class="icon-wrapper">
+                <i class="bi bi-robot" style="font-size: 2.5rem; color: var(--secondary);"></i>
               </div>
+              <h3 class="h4 text-center fw-bold mb-3">MAMTutor</h3>
+              <p class="text-muted text-center mb-4">
+                Access 24/7 AI-powered tutoring for mathematics, physics, chemistry, and computer science. 
+                Get step-by-step guidance and interactive problem-solving support.
+              </p>
+              <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary w-100" target="_blank">
+                Start Learning with MAMTutor
+              </a>
             </div>
           </div>
         </div>
       </div>
-      
-      <style>
-        .product-card {
-          border: none;
-          border-radius: 12px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .product-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .icon-wrapper {
-          background-color: rgba(74, 144, 226, 0.1);
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto;
-        }
-        
-        .btn-primary {
-          padding: 8px 16px;
-          border-radius: 8px;
-          font-weight: 600;
-        }
-        
-        #products .card-text {
-          color: #6c757d;
-          font-size: 0.9rem;
-          line-height: 1.5;
-        }
-      </style>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
+    <section id="testimonials">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5">Words from users</h2>
+        <h2 class="text-center fw-bold mb-5">Student Success Stories</h2>
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card p-4 h-100">
-              <p class="text-muted">“MAMTutor helped me finally understand how to work with percentages as I was struggling. It’s like having a personal tutor, anytime!”</p>
-              <h6 class="fw-bold mt-3">– Amo K., Bishops Prep Student</h6>
+            <div class="testimonial-card">
+              <p class="text-muted mb-4">
+                "MAMTutor helped me finally understand percentages when I was struggling. 
+                It's like having a personal tutor available anytime!"
+              </p>
+              <div class="d-flex align-items-center">
+                <div>
+                  <h6 class="fw-bold mb-1">Amo K.</h6>
+                  <small class="text-muted">Bishops Prep Student</small>
+                </div>
+              </div>
             </div>
           </div>
+          
           <div class="col-md-4">
-            <div class="card p-4 h-100">
-              <p class="text-muted">" I also got 80% for my recent test, I showed MAMTutor to one of my friends and he says it helps a lot more than ChatGPT”</p>
-              <h6 class="fw-bold mt-3">– Zanda H., Bishops College Student</h6>
+            <div class="testimonial-card">
+              <p class="text-muted mb-4">
+                "I achieved 80% in my recent test! I showed MAMTutor to my friend, and he agrees 
+                it's far more helpful than ChatGPT for learning."
+              </p>
+              <div class="d-flex align-items-center">
+                <div>
+                  <h6 class="fw-bold mb-1">Zanda H.</h6>
+                  <small class="text-muted">Bishops College Student</small>
+                </div>
+              </div>
             </div>
           </div>
+          
           <div class="col-md-4">
-            <div class="card p-4 h-100">
-              <p class="text-muted">“I have used MAMTutor as a guide to calculate some assignment problems for 1st year Maths and it gave excellent explanations and steps which I followed and got the right answers.”</p>
-              <h6 class="fw-bold mt-3">– Mthantazo S., UCT Student</h6>
+            <div class="testimonial-card">
+              <p class="text-muted mb-4">
+                "I've used MAMTutor for my first-year Mathematics assignments. Its detailed explanations 
+                and step-by-step guidance helped me achieve the correct solutions."
+              </p>
+              <div class="d-flex align-items-center">
+                <div>
+                  <h6 class="fw-bold mb-1">Mthantazo S.</h6>
+                  <small class="text-muted">UCT Student</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -177,30 +212,59 @@
     <!-- CTA Section -->
     <section class="cta-section text-center">
       <div class="container">
-        <h2 class="fw-bold">Experience AI-Powered Learning Today</h2>
-        <p class="lead mb-4">Join thousands of students and educators transforming education with MiltonLearn.</p>
-        <a href="about.html" class="btn btn-light btn-lg">Contact us</a>
+        <h2 class="fw-bold mb-4">Transform Your Learning Journey Today</h2>
+        <p class="lead mb-5">
+          Join thousands of students and educators who are already experiencing 
+          the future of education with MiltonLearn.
+        </p>
+        <a href="about.html" class="btn btn-custom btn-light btn-lg">
+          Get Started Now
+        </a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container text-center">
-      <p>&copy; <span id="current-year"></span> MiltonLearn. All rights reserved.</p>
-      <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-      <div class="mt-3">
-        <a href="https://www.facebook.com/miltonlearn/" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/miltonlearn/" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">Contact Us</h5>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+26878404553">+268 7840 4553</a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="mt-3">
-        <p class="mb-1">☎️ Cell: <a href="tel:+26878404553" class="text-white">+268 7840 4553</a></p>
-        <p>✉️ Email: <a href="mailto:info@miltonlearn.com" class="text-white">info@miltonlearn.com</a></p>
-      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">
+        © <span id="current-year"></span> MiltonLearn. All rights reserved.
+      </p>
     </div>
-</footer>
+  </footer>
 
-
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

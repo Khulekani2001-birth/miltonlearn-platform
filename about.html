@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us · MiltonLearn</title>
+  <meta name="description" content="MiltonLearn is reshaping education through AI-powered tutoring. Discover our mission, goals, and the story behind our journey.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="css/style.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
   <script>
@@ -9,16 +19,6 @@
     gtag('js', new Date());
     gtag('config', 'G-E4Y24C156P');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us · MiltonLearn</title>
-  <meta name="description" content="MiltonLearn is reshaping education through AI-powered tutoring. Discover our mission, goals, and the story behind our journey.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="logo.png">
-  <link rel="stylesheet" href="css/style.css">
-
   <style>    /* Content Sections */
     .content-section { padding: 2rem; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 2rem; }
     .founder-quote { font-style: italic; background-color: #e9ecef; padding: 1rem; border-left: 4px solid #4a90e2; border-radius: 4px; margin-top: 1.5rem; }
@@ -33,26 +33,32 @@
   </style>
 </head>
 
-<body>
+<body >
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="/index.html">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
-        MiltonLearn
+        <span class="brand-text">MiltonLearn</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.examease.miltonlearn.com">ExamEase</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-          
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="https://www.mamtutor.com" target="_blank">MAMTutor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="https://www.examease.miltonlearn.com" target="_blank">ExamEase</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="/about.html">About</a>
+          </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
+<main class="flex-shrink-0">
 
   <section class="hero">
     <div class="container">
@@ -117,22 +123,43 @@
       </div>
     </div>
   </div>
-
-  <footer>
-    <div class="container text-center">
-      <p>&copy; <span id="current-year"></span> MiltonLearn. All rights reserved.</p>
-      <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-      <div class="mt-3">
-        <a href="https://www.facebook.com/miltonlearn/" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/miltonlearn/" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
+</main>
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">Contact Us</h5>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+26878404553">+268 7840 4553</a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="mt-3">
-        <p class="mb-1">☎️ Cell: <a href="tel:+26878404553" class="text-white">+268 7840 4553</a></p>
-        <p>✉️ Email: <a href="mailto:info@miltonlearn.com" class="text-white">info@miltonlearn.com</a></p>
-      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">
+        © <span id="current-year"></span> MiltonLearn. All rights reserved.
+      </p>
     </div>
-</footer>
+  </footer>
 
 
   <!-- Scripts -->
