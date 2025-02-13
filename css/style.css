@@ -332,3 +332,303 @@ footer a:hover {
     max-height: 200px;
   }
 }
+
+/* Pricing Cards */
+.pricing-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card .card-body {
+  padding: 1.25rem 1rem;
+}
+
+.pricing-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.pricing-card .card-subtitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .card-subtitle .text-muted {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.pricing-card ul {
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card ul li {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.pricing-card .card-footer {
+  background-color: transparent;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+
+.pricing-card .btn-primary {
+  width: 100%;
+  padding: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+/* Popular Package Styling */
+.popular-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: -2rem;
+  background: #4CAF50;
+  color: white;
+  padding: 0.25rem 3rem;
+  transform: rotate(45deg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-card {
+    margin-bottom: 1.5rem;
+  }
+}
+/* General Styles */
+
+
+.hero h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Timeline Styling */
+.timeline-horizontal {
+  padding: 2rem 0;
+  overflow-x: auto;
+}
+
+.timeline-container {
+  display: flex;
+  min-width: max-content;
+  padding: 1rem;
+}
+
+.timeline-step {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.timeline-step:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2193b0;
+}
+
+/* Form Container Styling */
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control, .form-select {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 0 0.2rem rgba(33, 147, 176, 0.25);
+}
+
+/* Subject Cards Styling */
+.subject-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+}
+
+.subject-icon {
+  font-size: 2.5rem;
+  color: #2193b0;
+  margin-bottom: 1rem;
+}
+
+.subject-card h3 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.key-feature {
+  color: #2193b0;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.levels {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Success Modal Styling */
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.custom-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+/* Button Styling */
+.btn-primary {
+  background: #2193b0;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #1b7a8d;
+  transform: translateY(-2px);
+}
+
+/* Testimonials Section */
+.exciting-news {
+  background: #f8f9fa;
+}
+
+.testimonial-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .timeline-step {
+    width: 160px;
+  }
+  
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .hero {
+    padding: 2rem 0;
+  }
+}
