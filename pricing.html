@@ -22,32 +22,50 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
 
-<body class="d-flex flex-column h-100">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="/index.html">
-        <img src="logo.png" alt="MiltonLearn Logo">
-        <span class="brand-text">MiltonLearn</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://www.mamtutor.com" target="_blank">MAMTutor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="/about.html">About</a>
-          </li>
-        </ul>
+  <body class="d-flex flex-column">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+          <img src="logo.png" alt="MiltonLearn Logo">
+          <span class="brand-text">MiltonLearn</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
+                <li><a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="/request_tutor.html">Tutoring</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="/about.html">About</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-</nav>
+    </nav>
+    
+    <style>
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Optional: Add a small delay to prevent accidental triggering */
+    .dropdown-menu {
+      margin-top: 0;
+      transition: all 0.2s;
+    }
+    </style>
 
   <section class="hero text-center">
     <div class="container">
@@ -64,8 +82,8 @@
             <h3 class="card-title">Basic Package</h3>
             <h4 class="card-subtitle mb-2">R1080<span class="text-muted h5">/month</span></h4>
             <ul class="list-unstyled">
-              <li>Access to study notes and resources</li>
-              <li>1 x Weekly one-on-one tutoring session (60 minutes each)</li>
+              <li>Limited access to MAMTutor Premium</li>
+              <li>4 x Monthly one-on-one tutoring sessions via Zoom (60 minutes each)</li>
               <li>Weekly homework</li>
               <li>WhatsApp support</li>
             </ul>
@@ -83,10 +101,10 @@
             <h4 class="card-subtitle mb-2">R2160<span class="text-muted h5">/month</span></h4>
             <ul class="list-unstyled">
               <li>All Basic Package features</li>
-              <li>2 x Weekly one-on-one tutoring sessions (60 minutes each)</li>
+              <li>8 x Monthly one-on-one tutoring sessions via Zoom (60 minutes each)</li>
               <li>Personalized study plan</li>
               <li>Access to bootcamp/group study sessions</li>
-              <li>Priority WhatsApp support</li>
+              <li>Unlimited access to MAMTutor Premium</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -101,10 +119,10 @@
             <h4 class="card-subtitle mb-2">R3240<span class="text-muted h5">/month</span></h4>
             <ul class="list-unstyled">
               <li>All Standard Package features</li>
-              <li>3 x Weekly one-on-one tutoring sessions (60 minutes each)</li>
+              <li>12 x Monthly one-on-one tutoring sessions (60 minutes each)</li>
               <li>24/7 on-demand tutoring support</li>
               <li>Custom-tailored curriculum</li>
-              <li>Progress tracking and monthly performance reports</li>
+              <li>Unlimited access to MAMTutor and ExamEase Premium</li>
             </ul>
           </div>
           <div class="card-footer">

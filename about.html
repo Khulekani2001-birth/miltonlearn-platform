@@ -55,6 +55,7 @@
 </head>
 
 <body >
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/index.html">
@@ -66,11 +67,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://www.mamtutor.com" target="_blank">MAMTutor</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
+              <li><a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a>
+            <a class="nav-link nav-custom" href="/request_tutor.html">Tutoring</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-custom" href="/about.html">About</a>
@@ -78,7 +85,19 @@
         </ul>
       </div>
     </div>
-</nav>
+  </nav>
+  
+  <style>
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Add a small delay to prevent accidental triggering */
+  .dropdown-menu {
+    margin-top: 0;
+    transition: all 0.2s;
+  }
+  </style>
 <main class="flex-shrink-0">
 
   <section class="hero">

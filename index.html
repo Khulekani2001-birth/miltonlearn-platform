@@ -35,11 +35,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://www.mamtutor.com" target="_blank">MAMTutor</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
+              <li><a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-custom" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a>
+            <a class="nav-link nav-custom" href="/request_tutor.html">Tutoring</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-custom" href="/about.html">About</a>
@@ -47,7 +53,19 @@
         </ul>
       </div>
     </div>
-</nav>
+  </nav>
+  
+  <style>
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Add a small delay to prevent accidental triggering */
+  .dropdown-menu {
+    margin-top: 0;
+    transition: all 0.2s;
+  }
+  </style>
 
   <main class="flex-shrink-0">
   <!-- Hero Section with Carousel -->
@@ -56,6 +74,7 @@
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
       </div>
       
       <div class="carousel-inner">
@@ -81,7 +100,7 @@
             </div>
           </div>
         </div>
-
+        
         <!-- ExamEase Slide -->
         <div class="carousel-item">
           <div class="carousel-content">
@@ -99,10 +118,35 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="hero-image-wrapper">
-                    <img 
-                      src="imgs/ExamEase.jpg" alt="MAMTutor Interface" class="hero-image img-fluid">
+                    <img src="imgs/ExamEase.jpg" alt="MAMTutor Interface" class="hero-image img-fluid">
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Tutoring Slide -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6 text-start">
+                  <h1 class="display-4 fw-bold mb-4">Personal Tutoring</h1>
+                  <p class="lead mb-4">
+                    Do you prefer a person tutor than an AI?
+                    Get one-on-one support from an experienced tutor.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a href="/request_tutor.html" class="btn btn-custom btn-primary btn-lg">Request a Tutor</a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero-image-wrapper">
+                    <img src="imgs/Tutoring.jpg" alt="Personal Tutoring" class="hero-image img-fluid">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
