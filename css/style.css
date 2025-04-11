@@ -632,3 +632,30 @@ footer a:hover {
     padding: 2rem 0;
   }
 }
+.scroll-arrow {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary, #3498db);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.scroll-arrow i {
+  font-size: 24px;
+}
+
+.scroll-arrow:hover {
+  background-color: var(--secondary, #2980b9);
+}

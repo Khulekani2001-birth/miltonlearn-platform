@@ -69,7 +69,8 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
+              Get Started
+
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
@@ -127,11 +128,13 @@
         <div class="content-section">
           <h2 class="section-title">Words from the Founder</h2>
           <blockquote class="founder-quote">
-            "When I was in high school, I struggled academically, once scoring 13% in a mathematics test. 
-            With the guidance of a mentor, and educational technology learning tools, I improved dramatically, eventually achieving the 
+            "When I was in high school, I struggled academically, until the guidance of a mentor, and use of educational technology tools, which led me to
+             improve dramatically, eventually achieving the 
             <a href='https://www.facebook.com/EswatiniGov/posts/243630570463783/' target='_blank'>Top in The World</a> 
-            award in AS Level Mathematics. Today, our team is dedicated to providing students with the support and 
-            resources they need to excel and reach their full potential. We also do not leave teachers behind by providing the best tools to make their jobs easier."
+            award in AS Level Mathematics. Noticing such, I fell in love with online learning, the fact that you can learn at your pace, anywhere and at anytime. 
+            One thing missing, was learning at the best way for my character - I needed learning that can be moulded to my needs and experiences, I needed learning that was in line with my interests and passions.
+            Today, our team is dedicated to providing students with the educational tools they need to excel and reach their full potential whilst also seeing the bigger picture of their goals. 
+            We do not leave teachers behind. We also develop tools that make the admin jobs of teachers easier and allow them to focus on the job that matters."
           </blockquote>
           <p class="founder-details">~ Khulekani Ngwenya, Founder & CEO, MiltonLearn</p>
         </div>
@@ -276,6 +279,37 @@
           alert('Failed to send message. Please try again.');
         });
     }
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollArrow = document.getElementById('scrollArrow');
+      let lastScrollTop = 0;
+      
+      // Function to handle scroll events
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Show arrow when scrolling down and past 300px
+        if (currentScroll > 300) {
+          scrollArrow.style.opacity = '1';
+          scrollArrow.style.visibility = 'visible';
+        } else {
+          scrollArrow.style.opacity = '0';
+          scrollArrow.style.visibility = 'hidden';
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+      
+      // Smooth scroll to bottom when clicking the arrow
+      scrollArrow.addEventListener('click', function() {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
+  <div id="scrollArrow" class="scroll-arrow">
+    <i class="bi bi-arrow-down-circle-fill"></i>
+  </div>
 </body>
 </html>

@@ -37,7 +37,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
+              Get Started
             </a>
             <!--<li class="nav-item">
               <a class="nav-link nav-custom" href="/request_tutor.html">Tutoring</a>
@@ -145,10 +145,11 @@
       <h2 class="text-center fw-bold mb-5">The Future of Teaching and Learning is Here</h2>
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <h3>AI-Powered Learning Revolution</h3>
-          <p class="lead">MiltonLearn is at the forefront of educational technology, combining advanced AI with pedagogical expertise to create learning experiences that adapt to each student's unique needs.</p>
+          <h3>Education in a Personalized way</h3>
+          <p class="lead">MiltonLearn is at the forefront of educational technology, combining advanced technology
+             with teaching and learning expertise to create learning experiences that adapt to each student's unique needs.</p>
           <ul class="list-unstyled">
-            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalized learning experiences</li>
+            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalized responses to questions</li>
             <li><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time assessment feedback</li>
             <li><i class="bi bi-check-circle-fill text-success me-2"></i> Adaptive difficulty progression</li>
             <li><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 accessible learning support</li>
@@ -161,33 +162,10 @@
     </div>
   </section>
 
-  <section id="achievements" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-4">Learn from the Best</h2>
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <div class="achievement-card mb-4">
-            <h3>World-Class Academic Excellence</h3>
-            <ul class="list-unstyled">
-              <li>🏆 Ranked #1 Globally in AS Level Mathematics, 2019</li>
-              <li>🎓 Developed by experts in Mathematics and Computer Science from the University of Cape Town</li>
-              <li>💡 Data-driven approach to educational technology</li>
-              <li>🚀 Continuous platform evolution based on learning science</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="testimonial-card">
-            <p class="lead">"Our commitment to excellence comes from deep expertise in both education and technology. We understand what truly works in digital learning environments and have built platforms that adapt to each student's unique learning journey."</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Offerings Section -->
   <section id="products" class="py-5">
-    <div class="container py-5">
+    <div class="container">
       <h2 class="text-center fw-bold mb-5">Our Educational Technology Solutions</h2>
       <div class="row g-4 justify-content-center">
         <div class="col-md-6">
@@ -422,6 +400,37 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollArrow = document.getElementById('scrollArrow');
+      let lastScrollTop = 0;
+      
+      // Function to handle scroll events
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Show arrow when scrolling down and past 300px
+        if (currentScroll > 300) {
+          scrollArrow.style.opacity = '1';
+          scrollArrow.style.visibility = 'visible';
+        } else {
+          scrollArrow.style.opacity = '0';
+          scrollArrow.style.visibility = 'hidden';
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+      
+      // Smooth scroll to bottom when clicking the arrow
+      scrollArrow.addEventListener('click', function() {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
+  <div id="scrollArrow" class="scroll-arrow">
+    <i class="bi bi-arrow-down-circle-fill"></i>
+  </div>
 </body>
 </html>
