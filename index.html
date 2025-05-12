@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MiltonLearn - The Future of Educational Technology</title>
-  <meta name="description" content="MiltonLearn is reshaping education through AI-powered learning solutions. Experience the future of educational technology with our innovative platforms.">
+  <meta name="description" content="MiltonLearn is reshaping education through AI-powered learning solutions and professional tutoring. Book your free math tutoring session with Milton today.">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
   <script>
@@ -20,6 +20,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="logo.png">
   <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Additional styles for tutoring section */
+    .free-session-banner {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: -20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .free-session-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('imgs/pattern.png');
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .tutoring-cta {
+      transition: all 0.3s ease;
+    }
+    
+    .tutoring-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .promo-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff5722;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transform: rotate(5deg);
+      z-index: 2;
+    }
+    
+    .highlight-text {
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -88,332 +146,192 @@
   </style>
 
   <main class="flex-shrink-0">
-  <!-- Hero Section with Carousel -->
-  <section class="hero" style="padding: 0rem 0;">
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-      </div>
-      
-      <div class="carousel-inner">
-        <!-- MAMTutor Slide -->
-        <div class="carousel-item active">
-          <div class="carousel-content">
-            <div class="container" >
-              <div class="row align-items-center">
-                <div class="col-lg-6 text-start">
-                  <h1 class="display-4 fw-bold mb-4">MAMTutor</h1>
-                  <p class="lead mb-4">
-                    Revolutionary AI-powered learning assistant for mathematics, physics, and more. 
-                    Get instant help with step-by-step explanations anytime, anywhere.
-                  </p>
-                  <div class="d-flex gap-3">
-                    <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try MAMTutor</a>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <img src="imgs/MAMTutor.jpg" alt="MAMTutor Interface" width="640" height="350" class="hero-image">
-                </div>
-              </div>
-            </div>
+    <!-- Free Tutoring Session Banner - NEW ADDITION -->
+    <div class="container mt-4">
+      <div class="free-session-banner">
+        <span class="promo-badge">Limited Time!</span>
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h3 class="mb-2">Book Your First Free Math Tutoring Session</h3>
+            <p class="mb-0">Get started with personalized help in Maths from our expert founder before starting your R150 regular sessions in Eswatini. Group discounts available!</p>
           </div>
-        </div>
-        
-        <!-- ExamEase Slide -->
-        <div class="carousel-item">
-          <div class="carousel-content">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-lg-6 text-start">
-                  <h1 class="display-4 fw-bold mb-4">ExamEase</h1>
-                  <p class="lead mb-4">
-                    Intelligent exam preparation platform with AI-powered feedback. 
-                    Practice smarter and master concepts faster with personalized learning paths.
-                  </p>
-                  <div class="d-flex gap-3">
-                    <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary btn-lg" target="_blank">Try ExamEase</a>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="hero-image-wrapper">
-                    <img src="imgs/ExamEase.jpg" alt="ExamEase Interface" class="hero-image img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+            <a href="/request_tutor.html" class="btn btn-light btn-lg tutoring-cta">
+              <i class="bi bi-calendar-check me-2"></i>Book Free Session
+            </a>
           </div>
         </div>
       </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </section>
+    
+    <!-- Replace the current carousel section with this static hero section -->
 
-  <!-- Future of Learning Section -->
-  <section id="future-learning" class="py-5">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">The Future of Teaching and Learning is Here</h2>
-      <div class="row align-items-center mb-5">
-        <div class="col-md-6">
-          <h3>Education in a Personalized way</h3>
-          <p class="lead">MiltonLearn is at the forefront of educational technology, combining advanced technology
-             with teaching and learning expertise to create learning experiences that adapt to each student's unique needs.</p>
-          <ul class="list-unstyled">
-            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalized responses to questions</li>
-            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time assessment feedback</li>
-            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Adaptive difficulty progression</li>
-            <li><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 accessible learning support</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <img src="/imgs/edtech.jpg" alt="AI Learning Technology" class="img-fluid rounded shadow">
+<!-- Replace the current carousel section with this static hero section (no images) -->
+
+<!-- Static Hero Section -->
+<section class="hero py-5">
+  <div class="container">
+    <!-- Main Headline -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Complete Education Solutions</h1>
+      <p class="lead">AI-powered learning platforms and expert tutoring services in one place</p>
+    </div>
+    
+    <!-- Three Service Cards -->
+    <div class="row g-4">
+
+      <!-- Tutoring Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-danger mt-3 me-3">FREE FIRST SESSION</span>
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <div class="icon-wrapper d-inline-flex justify-content-center align-items-center rounded-circle bg-light p-3 mb-3" style="width: 80px; height: 80px;">
+                <i class="bi bi-person-workspace" style="font-size: 2.5rem; color: var(--primary);"></i>
+              </div>
+              <h2 class="h3 fw-bold">Expert Tutoring</h2>
+              <div class="small text-muted mb-3">Personalized learning support</div>
+            </div>
+            <p>One-on-one and group tutoring sessions in Eswatini with experienced tutors for all subjects and educational levels.</p>
+            <ul class="mt-3 mb-4">
+              <li><strong>Book your first math session</strong></li>
+              <li>Regular sessions just R150 each</li>
+              <li>Special monthly and group discounts available</li>
+            </ul>
+            <div class="text-center mt-4">
+              <a href="/request_tutor.html" class="btn btn-custom btn-primary">Book Free Session</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-
-  <!-- Offerings Section -->
-  <section id="products" class="py-5">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Our Educational Technology Solutions</h2>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6">
-          <div class="product-card h-100">
-            <div class="icon-wrapper">
-              <i class="bi bi-robot" style="font-size: 2.5rem; color: var(--secondary);"></i>
+      <!-- MAMTutor Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <div class="icon-wrapper d-inline-flex justify-content-center align-items-center rounded-circle bg-light p-3 mb-3" style="width: 80px; height: 80px;">
+                <i class="bi bi-robot" style="font-size: 2.5rem; color: var(--secondary);"></i>
+              </div>
+              <h2 class="h3 fw-bold">MAMTutor</h2>
+              <div class="small text-muted mb-3">AI-powered learning assistant</div>
             </div>
-            <h3 class="h4 text-center fw-bold mb-3">MAMTutor</h3>
-            <p class="text-muted text-center mb-4">
-              Access 24/7 AI-powered learning for mathematics, physics, chemistry, and computer science. 
-              Get step-by-step guidance, interactive problem-solving, and adaptive learning paths.
-            </p>
-            <ul class="mb-4">
+            <p>Get instant help with mathematics, physics, chemistry, and computer science problems with step-by-step explanations.</p>
+            <ul class="mt-3 mb-4">
               <li>Natural language interaction</li>
               <li>Step-by-step problem solving</li>
               <li>Handwritten questions upload</li>
-              <li>Multiple approaches to solutions</li>
             </ul>
-            <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary w-100" target="_blank">
-              Start Learning with MAMTutor
-            </a>
+            <div class="text-center mt-4">
+              <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary" target="_blank">Try MAMTutor</a>
+            </div>
           </div>
         </div>
-        
-        <div class="col-md-6">
-          <div class="product-card h-100">
-            <div class="icon-wrapper">
-              <i class="bi bi-journal-check" style="font-size: 2.5rem; color: var(--primary);"></i>
+      </div>
+      
+      <!-- ExamEase Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <div class="icon-wrapper d-inline-flex justify-content-center align-items-center rounded-circle bg-light p-3 mb-3" style="width: 80px; height: 80px;">
+                <i class="bi bi-journal-check" style="font-size: 2.5rem; color: var(--primary);"></i>
+              </div>
+              <h2 class="h3 fw-bold">ExamEase</h2>
+              <div class="small text-muted mb-3">Intelligent exam preparation</div>
             </div>
-            <h3 class="h4 text-center fw-bold mb-3">ExamEase</h3>
-            <p class="text-muted text-center mb-4">
-              Your intelligent exam preparation platform. Practice with AI-curated past paper questions 
-              and receive instant, personalized feedback to optimize your learning journey.
-            </p>
-            <ul class="mb-4">
-              <li>Instant feedback to natural language responses</li>
+            <p>Practice with AI-curated past paper questions and receive personalized feedback to optimize your exam preparation.</p>
+            <ul class="mt-3 mb-4">
+              <li>Instant analysis of responses</li>
               <li>Personalized question selection</li>
               <li>Progress tracking and analytics</li>
-              <li>Topic questions with hints and learning assistant</li>
             </ul>
-            <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary w-100" target="_blank">
-              Get Started with ExamEase
-            </a>
+            <div class="text-center mt-4">
+              <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-primary" target="_blank">Try ExamEase</a>
+            </div>
           </div>
         </div>
       </div>
+      
+      
     </div>
-  </section>
-
-  <!-- Technology Section -->
-  <section id="technology" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Our Educational Technology</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="tech-card text-center">
-            <div class="icon-wrapper mb-3">
-              <i class="bi bi-cpu" style="font-size: 2.5rem; color: var(--primary);"></i>
-            </div>
-            <h3 class="h5 fw-bold">Advanced AI Models</h3>
-            <p>Purpose-built large language models specifically trained on educational content and pedagogical approaches.</p>
-          </div>
+    
+    <!-- Full-Width Free Session Highlight -->
+    <div class="mt-5 p-4 bg-primary text-white rounded-3 shadow">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h3 class="fw-bold mb-2">Learn Math - Book Your FREE Session Today!</h3>
+          <p class="mb-0">Get personalized tutoring from our expert founder before starting your R150 regular sessions. Group discounts available.</p>
         </div>
-        
-        <div class="col-md-4">
-          <div class="tech-card text-center">
-            <div class="icon-wrapper mb-3">
-              <i class="bi bi-graph-up" style="font-size: 2.5rem; color: var(--secondary);"></i>
-            </div>
-            <h3 class="h5 fw-bold">Learning Analytics</h3>
-            <p>Real-time tracking of student performance with actionable insights to adapt learning pathways.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="tech-card text-center">
-            <div class="icon-wrapper mb-3">
-              <i class="bi bi-person-check" style="font-size: 2.5rem; color: var(--accent);"></i>
-            </div>
-            <h3 class="h5 fw-bold">Adaptive Learning</h3>
-            <p>Systems that adjust difficulty, content, and pace based on individual student performance and learning style.</p>
-          </div>
+        <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+          <a href="/request_tutor.html" class="btn btn-light btn-lg">
+            <i class="bi bi-calendar-check me-2"></i>Book Now
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Student Success Stories</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <p class="text-muted mb-4">
-              "MAMTutor helped me finally understand percentages when I was struggling. 
-              It's like having access to expert knowledge available anytime!"
+    <!-- Future of Learning Section -->
+    <section id="future-learning" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">The Future of Teaching and Learning is Here</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6">
+            <h3>Education in a Personalized way</h3>
+            <p class="lead">MiltonLearn is at the forefront of learning and teaching, combining advanced technology
+               with teaching and learning expertise to create learning experiences that adapt to each student's unique needs.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalized responses to questions</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time assessment feedback</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Adaptive difficulty progression</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 accessible learning support</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <img src="/imgs/edtech.jpg" alt="AI Learning Technology" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+          
+    <!-- Footer -->
+    <footer class="mt-auto">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 text-center text-md-start">
+            <h5 class="mb-3">Contact Us</h5>
+            <p class="mb-2">
+              <i class="bi bi-telephone me-2"></i>
+              <a href="tel:+26878404553">+268 7840 4553</a>
             </p>
-            <div class="d-flex align-items-center">
-              <div>
-                <h6 class="fw-bold mb-1">Amo K.</h6>
-                <small class="text-muted">Bishops Prep Student</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <p class="text-muted mb-4">
-              "I achieved 80% in my recent test! I showed MAMTutor to my friend, and he agrees 
-              it's far more helpful than ChatGPT for learning mathematics."
+            <p class="mb-0">
+              <i class="bi bi-envelope me-2"></i>
+              <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
             </p>
-            <div class="d-flex align-items-center">
-              <div>
-                <h6 class="fw-bold mb-1">Zanda H.</h6>
-                <small class="text-muted">Bishops College Student</small>
-              </div>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <h5 class="mb-3">Follow Us</h5>
+            <div class="social-links">
+              <a href="https://www.facebook.com/miltonlearn/" target="_blank">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/miltonlearn/" target="_blank">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
             </div>
           </div>
         </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <p class="text-muted mb-4">
-              "I've used MAMTutor for my first-year Mathematics assignments. Its detailed explanations 
-              and step-by-step guidance helped me achieve the correct solutions."
-            </p>
-            <div class="d-flex align-items-center">
-              <div>
-                <h6 class="fw-bold mb-1">Mthantazo S.</h6>
-                <small class="text-muted">UCT Student</small>
-              </div>
-            </div>
-          </div>
-        </div>
+        <hr class="my-4">
+        <p class="text-center mb-0">
+          © <span id="current-year"></span> MiltonLearn. All rights reserved.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <!-- Future Vision Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Our Vision for the Future of Education</h2>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="vision-card">
-            <h3>Democratizing Quality Education</h3>
-            <p>We envision a world where high-quality, personalized education is accessible to everyone, regardless of geographical location or economic background. By leveraging AI technology, we're making expert-level educational support available 24/7 at a fraction of traditional costs.</p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="vision-card">
-            <h3>Personalized Learning Journeys</h3>
-            <p>Our platforms adapt to each student's unique needs, learning style, and pace. This personalization ensures concepts are truly mastered before moving forward, creating stronger foundations for advanced learning.</p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="vision-card">
-            <h3>Data-Driven Education</h3>
-            <p>By collecting and analyzing learning data, we continuously improve our platforms and provide insights that help students understand their strengths and areas for improvement.</p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="vision-card">
-            <h3>AI-Enhanced Learning</h3>
-            <p>We're leveraging the latest advances in artificial intelligence to create educational experiences that were previously impossible, including intelligent tutoring systems that understand not just what students know, but how they think.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Transform Your Learning Journey Today</h2>
-      <p class="lead mb-5">
-        Join thousands of students who are already experiencing 
-        the future of education with MiltonLearn's AI-powered platforms.
-      </p>
-      <div class="d-flex justify-content-center gap-3">
-        <a href="https://www.mamtutor.com" class="btn btn-custom btn-primary btn-lg" target="_blank">
-          Try MAMTutor
-        </a>
-        <a href="https://examease.miltonlearn.com" class="btn btn-custom btn-light btn-lg" target="_blank">
-          Try ExamEase
-        </a>
-      </div>
-    </div>
-  </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="mt-auto">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-6 text-center text-md-start">
-          <h5 class="mb-3">Contact Us</h5>
-          <p class="mb-2">
-            <i class="bi bi-telephone me-2"></i>
-            <a href="tel:+26878404553">+268 7840 4553</a>
-          </p>
-          <p class="mb-0">
-            <i class="bi bi-envelope me-2"></i>
-            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
-          </p>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <h5 class="mb-3">Follow Us</h5>
-          <div class="social-links">
-            <a href="https://www.facebook.com/miltonlearn/" target="_blank">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/miltonlearn/" target="_blank">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
-              <i class="bi bi-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <hr class="my-4">
-      <p class="text-center mb-0">
-        © <span id="current-year"></span> MiltonLearn. All rights reserved.
-      </p>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

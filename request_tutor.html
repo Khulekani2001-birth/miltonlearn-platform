@@ -87,75 +87,10 @@
     }
     </style>
 
-  <section class="hero text-center">
-    <div class="container">
-      <h1>Request a Tutor</h1>
-      <div class="fancy-text" data-aos="fade-up" data-aos-delay="100">
-        <p class="lead mb-5">Get personalized learning support from an expert tutor</p>
-    </div>
-  </section>
+
 
   <section class="py-4">
     <div class="container">
-
-      <section class="how-we-work bg-light py-4">
-        
-        <div class="container">
-          <h2 class="text-center mb-4">How Do We Tutor?</h2>
-          <div class="alert alert-info text-center">
-            <strong>Note for students outside Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
-          </div>
-          <div class="timeline-horizontal">
-            <div class="timeline-container">
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">📝</div>
-                  <div class="timeline-title">Step 1</div>
-                  <p class="timeline-description">Fill in your <a href="#tutorFormCard">tutor request</a> details</p>
-                </div>
-              </div>
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">📱</div>
-                  <div class="timeline-title">Step 2</div>
-                  <p class="timeline-description">We contact you within 24 hours via email, SMS, WhatsApp, or Call</p>
-                </div>
-              </div>
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">🗓️</div>
-                  <div class="timeline-title">Step 3</div>
-                  <p class="timeline-description">Arrange meeting details and online platform; Zoom, Teams or Google Meet</p>
-                </div>
-              </div>
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">🎉</div>
-                  <div class="timeline-title">Step 4</div>
-                  <p class="timeline-description">Enjoy your free first meeting</p>
-                </div>
-              </div>
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">🔄</div>
-                  <div class="timeline-title">Step 5</div>
-                  <p class="timeline-description">Set recurring meeting frequency</p>
-                </div>
-              </div>
-              <div class="timeline-step">
-                <div class="timeline-content">
-                  <div class="timeline-icon">💳</div>
-                  <div class="timeline-title">Step 6</div>
-                  <p class="timeline-description">Monthly invoices sent out to parents for payments</p>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10 form-container" id="tutorFormCard">
@@ -200,8 +135,8 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)<span class="text-danger">*</span></label>
-                <input type="tel" class="form-control" id="studentNumber" name="studentNumber" required>
+                <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)</label>
+                <input type="tel" class="form-control" id="studentNumber" name="studentNumber" optional>
                 <div class="invalid-feedback">
                   Please provide the student's phone number.
                 </div>
@@ -212,9 +147,21 @@
                   <option value="" disabled selected>Select below</option>
                   <option value="Parent">Parent</option>
                   <option value="Student">Student</option>
+                  <option value="Other">Other</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select whether you are a parent or student.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="meetingLocation" class="form-label">Preferred Meeting Location <span class="text-danger">*</span></label>
+                <select class="form-select" id="meetingLocation" name="meetingLocation" required>
+                  <option value="" disabled selected>Select a location</option>
+                  <option value="Online">Online (Zoom, Teams, or Google Meet)</option>
+                  <option value="Center">At Center (Ngwane Park, Kashali pass Goje store behind red Mobile Money spaza)</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select your preferred meeting location.
                 </div>
               </div>
               <div class="col-md-6">
@@ -238,12 +185,12 @@
                 <select class="form-select" id="level" name="level" required>
                   <option value="" disabled selected>Select your level of study</option>
                   <option value="Grade 7">Grade 7</option>
-                  <option value="Grade 8">Grade 8</option>
-                  <option value="Grade 9">Grade 9</option>
-                  <option value="Grade 10">Grade 10</option>
-                  <option value="Grade 11">Grade 11</option>
-                  <option value="Grade 12">Grade 12</option>
-                  <option value="IGCSE">IGCSE</option>
+                  <option value="Grade 8">Grade 8 /Form 1</option>
+                  <option value="Grade 9">Grade 9 / Form 2</option>
+                  <option value="Grade 10">Grade 10 / Form 3</option>
+                  <option value="Grade 11">Grade 11 / Form 4</option>
+                  <option value="Grade 12">Grade 12 / Form 5</option>
+                  <option value="IGCSE">IGCSE / EGCSE / IEB</option>
                   <option value="AS Level">AS Level</option>
                   <option value="A Level">A Level</option>
                   <option value="Other Grade">Other (Please specify under Additional Info)</option>
@@ -301,64 +248,8 @@
         </div>
       </div>
     </br>
-      <h2 class="text-center mb-5">Subjects We Offer</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="700">
-          <div class="subject-card text-center">
-            <i class="bi bi-tree subject-icon"></i>
-            <h3>Biology</h3>
-            <p>Discover the <span class="highlight">wonders of life</span> and <span class="highlight">ecosystems</span>.</p>
-            <p class="key-feature">Interactive dissection labs</p>
-            <p class="levels">Secondary, IGCSE, AS/A Levels</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="subject-card text-center">
-            <i class="bi bi-radioactive subject-icon"></i>
-            <h3>Chemistry</h3>
-            <p>Dive into <span class="highlight">molecules</span> and <span class="highlight">reactions</span>.</p>
-            <p class="key-feature">Virtual lab simulations</p>
-            <p class="levels">Secondary, IGCSE, AS/A Levels</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="subject-card text-center">
-            <i class="bi bi-laptop subject-icon"></i>
-            <h3>Computer Science and ICT</h3>
-            <p>Master <span class="highlight">programming</span> and <span class="highlight">algorithms</span>.</p>
-            <p class="key-feature">Real-world coding projects</p>
-            <p class="levels">Secondary, IGCSE, AS/A Levels</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="subject-card text-center">
-            <i class="bi bi-graph-up subject-icon"></i>
-            <h3>Economics</h3>
-            <p>Understand <span class="highlight">markets</span> and <span class="highlight">financial systems</span>.</p>
-            <p class="key-feature">Case study analysis</p>
-            <p class="levels">Secondary, IGCSE</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
-          <div class="subject-card text-center">
-            <i class="bi bi-calculator subject-icon"></i>
-            <h3>Mathematics</h3>
-            <p>From <span class="highlight">algebra</span> to <span class="highlight">calculus</span>, we cover all levels.</p>
-            <p class="key-feature">Problem-solving techniques</p>
-            <p class="levels">Primary, Secondary, IGCSE, AS/A Levels</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-          <div class="subject-card text-center">
-            <i class="bi bi-lightning-charge subject-icon"></i>
-            <h3>Physics</h3>
-            <p>Explore <span class="highlight">matter</span> and <span class="highlight">energy</span> with expert guidance.</p>
-            <p class="key-feature">Hands-on experiments</p>
-            <p class="levels">Secondary, IGCSE, AS/A Levels</p>
-          </div>
-        </div>
-      </div>
   </section>
+  
   <section class="exciting-news py-5">
     <div class="container">
         <h2 class="text-center mb-5 exciting-title" data-aos="fade-up">🌟 Reviews 🌟</h2>
@@ -469,7 +360,8 @@
         subject: document.getElementById('subject').value,
         details: document.getElementById('details').value,
         parentOrStudent: document.getElementById('parentOrStudent').value,
-        package: document.getElementById('package').value
+        package: document.getElementById('package').value,
+        meetingLocation: document.getElementById('meetingLocation').value
       };
       
       emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
