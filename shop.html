@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiltonLearn Shop - Coming Soon</title>
+  <meta name="description" content="The MiltonLearn Shop will soon offer high-quality study resources and educational materials. Stay tuned for our launch.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E4Y24C156P');
+  </script>
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Additional styles for the shop page */
+    .coming-soon-container {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 60px 30px;
+      border-radius: 15px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .coming-soon-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('imgs/pattern.png');
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .coming-soon-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .coming-soon-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-weight: bold;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
+    }
+    
+    .product-category {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .product-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-category-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .product-category-icon i {
+      color: white;
+      font-size: 24px;
+    }
+    
+    .notification-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .btn-custom {
+      padding: 12px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo">
+        <span class="brand-text">MiltonLearn</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle products-dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-grid me-2"></i>Our Products
+            </a>
+            <ul class="dropdown-menu products-dropdown-menu">
+              <li>
+                <a class="dropdown-item product-dropdown-item" href="https://www.mamtutor.com" target="_blank">
+                  <div class="product-icon">
+                    <i class="bi bi-robot"></i>
+                  </div>
+                  <div class="product-info">
+                    <h6 class="product-title">MAMTutor</h6>
+                    <p class="product-desc">AI-powered learning assistant</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item product-dropdown-item" href="https://examease.miltonlearn.com" target="_blank">
+                  <div class="product-icon">
+                    <i class="bi bi-journal-check"></i>
+                  </div>
+                  <div class="product-info">
+                    <h6 class="product-title">ExamEase</h6>
+                    <p class="product-desc">Intelligent exam preparation</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom active" href="/shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom" href="/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Add a small delay to prevent accidental triggering */
+  .dropdown-menu {
+    margin-top: 0;
+    transition: all 0.2s;
+  }
+  </style>
+
+  <main class="flex-shrink-0">
+    <div class="container my-5">
+      <!-- Coming Soon Section -->
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">MiltonLearn Shop</h1>
+        <p class="lead">Your one-stop destination for quality educational resources</p>
+      </div>
+      
+      <div class="coming-soon-container text-center text-white">
+        <div class="coming-soon-content">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <h2 class="display-5 fw-bold mb-4">Our Shop is Under Construction</h2>
+          <p class="lead mb-4">We're working hard to bring you high-quality study resources and educational materials to enhance your learning experience.</p>
+          <div class="countdown-timer mb-5">
+            <div class="row justify-content-center">
+              <div class="col-auto text-center px-4">
+                <div class="h1 mb-0">
+                  <i class="bi bi-cart-check"></i>
+                </div>
+                <div class="small text-white-50">Launching Soon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- What to Expect Section -->
+      <section class="my-5">
+        <h2 class="text-center fw-bold mb-5">What to Expect</h2>
+        
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="product-category text-center">
+              <div class="product-category-icon mx-auto">
+                <i class="bi bi-book"></i>
+              </div>
+              <h3 class="h4 mb-3">Study Guides</h3>
+              <p>Comprehensive study guides for various subjects, designed to simplify complex concepts and help you master your coursework.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="product-category text-center">
+              <div class="product-category-icon mx-auto">
+                <i class="bi bi-journal-text"></i>
+              </div>
+              <h3 class="h4 mb-3">Practice Materials</h3>
+              <p>High-quality practice questions, past papers, and worksheets to help you prepare effectively for exams and assessments.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="product-category text-center">
+              <div class="product-category-icon mx-auto">
+                <i class="bi bi-pc-display"></i>
+              </div>
+              <h3 class="h4 mb-3">Digital Resources</h3>
+              <p>Interactive digital resources, software, and learning tools to enhance your educational experience with technology.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Notification Form -->
+      <section class="my-5">
+        <div class="notification-form">
+          <h3 class="text-center mb-4">Get Notified When We Launch</h3>
+          <p class="text-center mb-4">Subscribe to receive updates about our shop launch and be the first to access our educational resources.</p>
+          
+          <form class="row g-3 justify-content-center" action="https://formsubmit.co/48090d7f1262d34d3daf5c913146ecf8" method="POST">
+            <!-- Form configuration -->
+            <input type="hidden" name="_subject" value="New Shop Launch Notification Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thank-you.html">
+            
+            <div class="col-md-8">
+              <input type="email" name="email" class="form-control form-control-lg" placeholder="Your email address" required>
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-primary btn-lg w-100 btn-custom">Notify Me</button>
+            </div>
+            <div class="col-12 text-center mt-3">
+              <small class="text-muted">We respect your privacy and will never share your information.</small>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <!-- FAQ Section -->
+      <section class="my-5">
+        <h2 class="text-center fw-bold mb-5">Frequently Asked Questions</h2>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="shopFAQ">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    When will the shop be launched?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#shopFAQ">
+                  <div class="accordion-body">
+                    We're currently working on curating high-quality educational resources and expect to launch our shop in the coming months. Subscribe to our notification list to be among the first to know when we go live!
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    What types of products will be available?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#shopFAQ">
+                  <div class="accordion-body">
+                    Our shop will feature a wide range of educational products including digital study guides, practice materials, worksheets, exam preparation resources, and interactive learning tools designed to enhance your educational journey.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Will the resources be available internationally?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#shopFAQ">
+                  <div class="accordion-body">
+                    Yes! As most of our resources will be digital, they will be available for purchase internationally. We're committed to making quality educational resources accessible to learners worldwide.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">Contact Us</h5>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+26878404553">+268 7840 4553</a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">
+        © <span id="current-year"></span> MiltonLearn. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
