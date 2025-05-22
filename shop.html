@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiltonLearn Shop - Coming Soon</title>
-  <meta name="description" content="The MiltonLearn Shop will soon offer high-quality study resources and educational materials. Stay tuned for our launch.">
+  <title>MiltonLearn Shop - Educational Resources</title>
+  <meta name="description" content="Shop high-quality study resources and educational materials from MiltonLearn. Topical past exam questions and study guides available.">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
   <script>
@@ -22,93 +22,175 @@
   <link rel="stylesheet" href="css/style.css">
   
   <style>
-    /* Additional styles for the shop page */
-    .coming-soon-container {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      padding: 60px 30px;
-      border-radius: 15px;
-      margin: 40px 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .coming-soon-container::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url('imgs/pattern.png');
-      opacity: 0.1;
-      z-index: 0;
-    }
-    
-    .coming-soon-content {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .coming-soon-badge {
-      display: inline-block;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-      font-weight: bold;
-      padding: 8px 20px;
-      border-radius: 30px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(5px);
-    }
-    
-    .product-category {
+    /* Product Card Styles */
+    .product-card {
       background: white;
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 25px;
       margin-bottom: 25px;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-    
-    .product-category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .product-category-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid #f0f0f0;
+      height: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 600;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
       margin-bottom: 15px;
     }
     
-    .product-category-icon i {
+    .coming-soon-badge {
+      background: linear-gradient(45deg, #6c757d, #495057);
+    }
+    
+    .product-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .product-icon i {
       color: white;
-      font-size: 24px;
+      font-size: 28px;
     }
     
-    .notification-form {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 15px;
     }
     
-    .btn-custom {
+    .btn-buy {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border: none;
+      color: white;
       padding: 12px 25px;
       font-weight: 600;
+      border-radius: 8px;
       transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      margin-top: auto;
     }
     
-    .btn-custom:hover {
+    .btn-buy:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      color: white;
+      text-decoration: none;
+    }
+    
+    .btn-coming-soon {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    
+    .btn-coming-soon:hover {
+      transform: none;
+      background: #6c757d;
+    }
+    
+    .product-features {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+    
+    .product-features li {
+      padding: 5px 0;
+      color: #666;
+    }
+    
+    .product-features li i {
+      color: var(--primary);
+      margin-right: 8px;
+    }
+    
+    .shop-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 60px 0;
+      margin-bottom: 50px;
+      border-radius: 0 0 30px 30px;
+    }
+    
+    .category-filter {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+      background: white;
+      border: 2px solid #e9ecef;
+      color: #6c757d;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 5px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    
+    /* Preview Modal Styles */
+    .preview-image-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .preview-image-container img {
+      transition: transform 0.3s ease;
+    }
+    
+    .preview-image-container:hover img {
+      transform: scale(1.02);
+    }
+    
+    .preview-caption {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .preview-caption h6 {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .modal-xl {
+      max-width: 1200px;
+    }
+    
+    .btn-outline-primary {
+      border-width: 2px;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -171,7 +253,6 @@
     display: block;
   }
   
-  /* Optional: Add a small delay to prevent accidental triggering */
   .dropdown-menu {
     margin-top: 0;
     transition: all 0.2s;
@@ -179,140 +260,203 @@
   </style>
 
   <main class="flex-shrink-0">
-    <div class="container my-5">
-      <!-- Coming Soon Section -->
-      <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold">MiltonLearn Shop</h1>
-        <p class="lead">Your one-stop destination for quality educational resources</p>
+    <!-- Shop Header -->
+    <div class="shop-header">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">MiltonLearn Shop</h1>
+        <p class="lead mb-0">High-quality educational resources to enhance your learning journey</p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <!-- Category Filter -->
+      <div class="category-filter text-center">
+        <h5 class="mb-3">Browse by Subject</h5>
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="mathematics">Mathematics</button>
+        <button class="filter-btn" data-filter="computer-science">Computer Science</button>
+        <button class="filter-btn" data-filter="physics">Physics</button>
       </div>
       
-      <div class="coming-soon-container text-center text-white">
-        <div class="coming-soon-content">
-          <span class="coming-soon-badge">Coming Soon</span>
-          <h2 class="display-5 fw-bold mb-4">Our Shop is Under Construction</h2>
-          <p class="lead mb-4">We're working hard to bring you high-quality study resources and educational materials to enhance your learning experience.</p>
-          <div class="countdown-timer mb-5">
-            <div class="row justify-content-center">
-              <div class="col-auto text-center px-4">
-                <div class="h1 mb-0">
-                  <i class="bi bi-cart-check"></i>
-                </div>
-                <div class="small text-white-50">Launching Soon</div>
-              </div>
+      <!-- Products Grid -->
+      <div class="row g-4 mb-5">
+        <!-- AS Pure 1 - Available -->
+        <div class="col-lg-4 col-md-6" data-category="mathematics">
+          <div class="product-card">
+            <span class="product-badge">Available Now</span>
+            <div class="product-icon">
+              <i class="bi bi-calculator"></i>
             </div>
+            <h3 class="h4 mb-3">AS Pure Mathematics 1</h3>
+            <p class="text-muted mb-3">Comprehensive topical past exam questions booklet covering all Pure Mathematics 1 topics for AS Level students.</p>
+            
+            <ul class="product-features">
+              <li><i class="bi bi-check-circle-fill"></i> Topic-organized questions</li>
+              <li><i class="bi bi-check-circle-fill"></i> Past exam papers included</li>
+              <li><i class="bi bi-check-circle-fill"></i> Detailed solutions</li>
+              <li><i class="bi bi-check-circle-fill"></i> Exam board aligned</li>
+            </ul>
+            
+            <div class="product-price">R350.00</div>
+            <a href="https://paystack.com/buy/as-pure-1-topical-questions-booklet-dglrdi" target="_blank" class="btn-buy w-100">
+              <i class="bi bi-cart-plus me-2"></i>Buy Now
+            </a>
+          </div>
+        </div>
+        
+        <!-- AS Pure 2 - Coming Soon -->
+        <div class="col-lg-4 col-md-6" data-category="mathematics">
+          <div class="product-card">
+            <span class="product-badge coming-soon-badge">Coming Soon</span>
+            <div class="product-icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h3 class="h4 mb-3">AS Pure Mathematics 2</h3>
+            <p class="text-muted mb-3">Topical past exam questions for AS Pure Mathematics 2, covering advanced algebraic and calculus topics.</p>
+            
+            <ul class="product-features">
+              <li><i class="bi bi-hourglass-split"></i> Topic-organized questions</li>
+              <li><i class="bi bi-hourglass-split"></i> Past exam papers included</li>
+              <li><i class="bi bi-hourglass-split"></i> Detailed solutions</li>
+              <li><i class="bi bi-hourglass-split"></i> Exam board aligned</li>
+            </ul>
+            
+            <div class="product-price">Coming Soon</div>
+            <button class="btn-buy btn-coming-soon w-100" disabled>
+              <i class="bi bi-clock me-2"></i>Coming Soon
+            </button>
+          </div>
+        </div>
+        
+        <!-- AS Computer Science 1 - Coming Soon -->
+        <div class="col-lg-4 col-md-6" data-category="computer-science">
+          <div class="product-card">
+            <span class="product-badge coming-soon-badge">Coming Soon</span>
+            <div class="product-icon">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h3 class="h4 mb-3">AS Computer Science 1</h3>
+            <p class="text-muted mb-3">Topical past exam questions for AS Computer Science Paper 1, covering programming fundamentals and theory.</p>
+            
+            <ul class="product-features">
+              <li><i class="bi bi-hourglass-split"></i> Programming concepts</li>
+              <li><i class="bi bi-hourglass-split"></i> Data structures & algorithms</li>
+              <li><i class="bi bi-hourglass-split"></i> Past exam questions</li>
+              <li><i class="bi bi-hourglass-split"></i> Detailed explanations</li>
+            </ul>
+            
+            <div class="product-price">Coming Soon</div>
+            <button class="btn-buy btn-coming-soon w-100" disabled>
+              <i class="bi bi-clock me-2"></i>Coming Soon
+            </button>
+          </div>
+        </div>
+        
+        <!-- AS Computer Science 2 - Coming Soon -->
+        <div class="col-lg-4 col-md-6" data-category="computer-science">
+          <div class="product-card">
+            <span class="product-badge coming-soon-badge">Coming Soon</span>
+            <div class="product-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h3 class="h4 mb-3">AS Computer Science 2</h3>
+            <p class="text-muted mb-3">Topical past exam questions for AS Computer Science Paper 2, focusing on practical programming and problem-solving.</p>
+            
+            <ul class="product-features">
+              <li><i class="bi bi-hourglass-split"></i> Practical programming</li>
+              <li><i class="bi bi-hourglass-split"></i> Problem-solving techniques</li>
+              <li><i class="bi bi-hourglass-split"></i> Code analysis questions</li>
+              <li><i class="bi bi-hourglass-split"></i> Step-by-step solutions</li>
+            </ul>
+            
+            <div class="product-price">Coming Soon</div>
+            <button class="btn-buy btn-coming-soon w-100" disabled>
+              <i class="bi bi-clock me-2"></i>Coming Soon
+            </button>
+          </div>
+        </div>
+        
+        <!-- AS Physics 2 - Coming Soon -->
+        <div class="col-lg-4 col-md-6" data-category="physics">
+          <div class="product-card">
+            <span class="product-badge coming-soon-badge">Coming Soon</span>
+            <div class="product-icon">
+              <i class="bi bi-lightning"></i>
+            </div>
+            <h3 class="h4 mb-3">AS Physics 2</h3>
+            <p class="text-muted mb-3">Topical past exam questions for AS Physics Paper 2, covering electricity, waves, and modern physics concepts.</p>
+            
+            <ul class="product-features">
+              <li><i class="bi bi-hourglass-split"></i> Electricity & magnetism</li>
+              <li><i class="bi bi-hourglass-split"></i> Waves & optics</li>
+              <li><i class="bi bi-hourglass-split"></i> Modern physics</li>
+              <li><i class="bi bi-hourglass-split"></i> Detailed mark schemes</li>
+            </ul>
+            
+            <div class="product-price">Coming Soon</div>
+            <button class="btn-buy btn-coming-soon w-100" disabled>
+              <i class="bi bi-clock me-2"></i>Coming Soon
+            </button>
           </div>
         </div>
       </div>
       
-      <!-- What to Expect Section -->
+      <!-- Newsletter Signup -->
+      <section class="my-5 py-5" style="background: #f8f9fa; border-radius: 15px;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h3 class="mb-4">Stay Updated on New Releases</h3>
+              <p class="mb-4">Be the first to know when new study resources become available. Get notified about upcoming releases and special offers.</p>
+              
+              <form class="row g-3 justify-content-center" action="https://formsubmit.co/48090d7f1262d34d3daf5c913146ecf8" method="POST">
+                <input type="hidden" name="_subject" value="New Shop Product Notification Request">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://miltonlearn.com/thank-you.html">
+                
+                <div class="col-md-8">
+                  <input type="email" name="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <small class="text-muted">We respect your privacy and will never share your information.</small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Why Choose Our Resources -->
       <section class="my-5">
-        <h2 class="text-center fw-bold mb-5">What to Expect</h2>
+        <h2 class="text-center fw-bold mb-5">Why Choose MiltonLearn Resources?</h2>
         
         <div class="row g-4">
-          <div class="col-md-4">
-            <div class="product-category text-center">
-              <div class="product-category-icon mx-auto">
-                <i class="bi bi-book"></i>
-              </div>
-              <h3 class="h4 mb-3">Study Guides</h3>
-              <p>Comprehensive study guides for various subjects, designed to simplify complex concepts and help you master your coursework.</p>
+          <div class="col-md-4 text-center">
+            <div class="mb-3">
+              <i class="bi bi-award" style="font-size: 3rem; color: var(--primary);"></i>
             </div>
+            <h4>Quality Assured</h4>
+            <p>All our resources are created by experienced educators and reviewed for accuracy and relevance to current syllabi.</p>
           </div>
           
-          <div class="col-md-4">
-            <div class="product-category text-center">
-              <div class="product-category-icon mx-auto">
-                <i class="bi bi-journal-text"></i>
-              </div>
-              <h3 class="h4 mb-3">Practice Materials</h3>
-              <p>High-quality practice questions, past papers, and worksheets to help you prepare effectively for exams and assessments.</p>
+          <div class="col-md-4 text-center">
+            <div class="mb-3">
+              <i class="bi bi-lightning-charge" style="font-size: 3rem; color: var(--primary);"></i>
             </div>
+            <h4>Instant Access</h4>
+            <p>Download your resources immediately after purchase. No waiting, no shipping delays - start studying right away.</p>
           </div>
           
-          <div class="col-md-4">
-            <div class="product-category text-center">
-              <div class="product-category-icon mx-auto">
-                <i class="bi bi-pc-display"></i>
-              </div>
-              <h3 class="h4 mb-3">Digital Resources</h3>
-              <p>Interactive digital resources, software, and learning tools to enhance your educational experience with technology.</p>
+          <div class="col-md-4 text-center">
+            <div class="mb-3">
+              <i class="bi bi-headset" style="font-size: 3rem; color: var(--primary);"></i>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Notification Form -->
-      <section class="my-5">
-        <div class="notification-form">
-          <h3 class="text-center mb-4">Get Notified When We Launch</h3>
-          <p class="text-center mb-4">Subscribe to receive updates about our shop launch and be the first to access our educational resources.</p>
-          
-          <form class="row g-3 justify-content-center" action="https://formsubmit.co/48090d7f1262d34d3daf5c913146ecf8" method="POST">
-            <!-- Form configuration -->
-            <input type="hidden" name="_subject" value="New Shop Launch Notification Request">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://miltonlearn.com/thank-you.html">
-            
-            <div class="col-md-8">
-              <input type="email" name="email" class="form-control form-control-lg" placeholder="Your email address" required>
-            </div>
-            <div class="col-md-4">
-              <button type="submit" class="btn btn-primary btn-lg w-100 btn-custom">Notify Me</button>
-            </div>
-            <div class="col-12 text-center mt-3">
-              <small class="text-muted">We respect your privacy and will never share your information.</small>
-            </div>
-          </form>
-        </div>
-      </section>
-      
-      <!-- FAQ Section -->
-      <section class="my-5">
-        <h2 class="text-center fw-bold mb-5">Frequently Asked Questions</h2>
-        
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="accordion" id="shopFAQ">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    When will the shop be launched?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#shopFAQ">
-                  <div class="accordion-body">
-                    We're currently working on curating high-quality educational resources and expect to launch our shop in the coming months. Subscribe to our notification list to be among the first to know when we go live!
-                  </div>
-                </div>
-              </div>
-              
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    What types of products will be available?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#shopFAQ">
-                  <div class="accordion-body">
-                    Our shop will feature a wide range of educational products including digital study guides, practice materials, worksheets, exam preparation resources, and interactive learning tools designed to enhance your educational journey.
-                  </div>
-                </div>
-              </div>
-              
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Will the resources be available internationally?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#shopFAQ">
-                  <div class="accordion-body">
-                    Yes! As most of our resources will be digital, they will be available for purchase internationally. We're committed to making quality educational resources accessible to learners worldwide.
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h4>Support Included</h4>
+            <p>Get help when you need it. Our team is available to answer questions about our study materials.</p>
           </div>
         </div>
       </section>
@@ -360,6 +504,27 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Category filtering functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        const products = document.querySelectorAll('[data-category]');
+        
+        products.forEach(product => {
+          if (filter === 'all' || product.getAttribute('data-category') === filter) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
