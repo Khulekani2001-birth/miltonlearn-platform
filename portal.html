@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiltonLearn Student Portal</title>
+  <meta name="description" content="Access your purchased study materials and manage your MiltonLearn account.">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E4Y24C156P');
+  </script>
+  
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Import MiltonLearn brand styles */
+    .navbar {
+      background: white;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid #f0f0f0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 600;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+    
+    .purchased-badge {
+      background: linear-gradient(45deg, #28a745, #20c997);
+    }
+    
+    .coming-soon-badge {
+      background: linear-gradient(45deg, #6c757d, #495057);
+    }
+    
+    .product-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .product-icon i {
+      color: white;
+      font-size: 28px;
+    }
+    
+    .auth-container {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .auth-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 900px;
+      margin: auto;
+    }
+    
+    .auth-brand {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .dashboard-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 40px 0;
+      margin-bottom: 30px;
+      border-radius: 0 0 30px 30px;
+    }
+    
+    .nav-pills .nav-link {
+      background: #f8f9fa;
+      color: #6c757d;
+      border-radius: 10px;
+      margin: 5px 0;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link:hover {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border: none;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-outline-primary {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-primary:hover {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .stats-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .stats-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .viewer-container {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .progress-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0deg, #e9ecef 180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .progress-circle::before {
+      content: '';
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+    }
+    
+    .progress-text {
+      position: relative;
+      z-index: 1;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .loading-spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid var(--primary);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .alert-custom {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .brand-text {
+      margin-left: 10px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .auth-card {
+        margin: 1rem;
+        border-radius: 15px;
+      }
+      
+      .auth-brand {
+        padding: 2rem 1rem;
+      }
+      
+      .dashboard-header {
+        padding: 30px 0;
+      }
+      
+      .product-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="auth-container">
+    <div class="container text-center">
+      <div class="loading-spinner"></div>
+      <h4 class="text-white mt-3">Loading MiltonLearn...</h4>
+    </div>
+  </div>
+
+  <!-- Authentication Screen -->
+  <div id="authScreen" class="auth-container" style="display: none;">
+    <div class="container">
+      <div class="auth-card">
+        <div class="row g-0">
+          <div class="col-lg-5 auth-brand">
+            <img src="logo.png" alt="MiltonLearn" style="width: 60px; height: 60px; margin-bottom: 1rem;">
+            <h2 class="fw-bold mb-3">MiltonLearn Portal</h2>
+            <p class="mb-4">Access your study materials and track your learning progress</p>
+            <div class="d-flex justify-content-center gap-3">
+              <i class="bi bi-book" style="font-size: 2rem; opacity: 0.8;"></i>
+              <i class="bi bi-mortarboard" style="font-size: 2rem; opacity: 0.8;"></i>
+              <i class="bi bi-trophy" style="font-size: 2rem; opacity: 0.8;"></i>
+            </div>
+          </div>
+          
+          <div class="col-lg-7 p-5">
+            <!-- Login Form -->
+            <div id="loginForm">
+              <h3 class="fw-bold mb-4">Welcome Back</h3>
+              <div id="loginError" class="alert alert-danger alert-custom" style="display: none;"></div>
+              
+              <form id="loginFormElement">
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Email Address</label>
+                  <input type="email" class="form-control form-control-lg" id="loginEmail" required 
+                         placeholder="your.email@example.com">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label fw-semibold">Password</label>
+                  <input type="password" class="form-control form-control-lg" id="loginPassword" required 
+                         placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 mb-3" id="loginBtn">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                </button>
+              </form>
+              
+              <div class="text-center">
+                <p class="mb-2">Don't have an account? <a href="#" class="text-decoration-none fw-semibold" onclick="showRegister()">Create Account</a></p>
+                <a href="#" class="text-muted small" onclick="resetPassword()">Forgot Password?</a>
+              </div>
+            </div>
+
+                <!-- Register Form -->
+                <div id="registerForm" style="display: none;">
+                <h3 class="fw-bold mb-4">Create Account</h3>
+                <div id="registerError" class="alert alert-danger alert-custom" style="display: none;"></div>
+                
+                <form id="registerFormElement">
+                    <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control form-control-lg" id="registerName" required 
+                            placeholder="John Smith">
+                    </div>
+                    <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address</label>
+                    <input type="email" class="form-control form-control-lg" id="registerEmail" required 
+                            placeholder="john.smith@example.com">
+                    </div>
+                    <div class="mb-3">
+                    <label class="form-label fw-semibold">Password</label>
+                    <input type="password" class="form-control form-control-lg" id="registerPassword" required 
+                            placeholder="Create a secure password" minlength="6">
+                    <div class="form-text">Password must be at least 6 characters long</div>
+                    </div>
+                    <div class="mb-4">
+                    <label class="form-label fw-semibold">Confirm Password</label>
+                    <input type="password" class="form-control form-control-lg" id="confirmPassword" required 
+                            placeholder="Confirm your password">
+                    <div id="passwordMatch" class="form-text"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3" id="registerBtn">
+                    <i class="bi bi-person-plus me-2"></i>Create Account
+                    </button>
+                </form>
+            
+
+              
+              <div class="text-center">
+                <p>Already have an account? <a href="#" class="text-decoration-none fw-semibold" onclick="showLogin()">Sign In</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="dashboardScreen" style="display: none;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+          <img src="logo.png" alt="MiltonLearn Logo" style="width: 40px; height: 40px;">
+          <span class="brand-text">MiltonLearn</span>
+        </a>
+        
+        <div class="d-flex align-items-center gap-3">
+          <div class="user-avatar" id="userAvatar">JS</div>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <span id="userDisplayName">John Smith</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" onclick="showSection('profile')"><i class="bi bi-person me-2"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="/shop.html"><i class="bi bi-cart me-2"></i>Shop</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" onclick="signOut()"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-5 fw-bold mb-3">Welcome back, <span id="welcomeName">John</span>!</h1>
+            <p class="lead mb-0">Continue your learning journey with MiltonLearn</p>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <div class="d-flex align-items-center justify-content-md-end gap-3">
+              <div class="progress-circle">
+                <span class="progress-text">75%</span>
+              </div>
+              <div>
+                <small class="d-block opacity-75">Overall Progress</small>
+                <strong>Keep it up!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar Navigation -->
+        <div class="col-lg-3 mb-4">
+          <div class="card product-card">
+            <div class="card-body">
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link active" href="#" onclick="showSection('dashboard')" data-section="dashboard">
+                  <i class="bi bi-house me-2"></i>Dashboard
+                </a>
+                <a class="nav-link" href="#" onclick="showSection('myBooks')" data-section="myBooks">
+                  <i class="bi bi-collection me-2"></i>My Books
+                </a>
+                <a class="nav-link" href="#" onclick="showSection('shop')" data-section="shop">
+                  <i class="bi bi-cart me-2"></i>Shop More
+                </a>
+                <a class="nav-link" href="#" onclick="showSection('profile')" data-section="profile">
+                  <i class="bi bi-person me-2"></i>Profile
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9">
+          <!-- Dashboard Section -->
+          <div id="dashboardSection">
+            <!-- Stats Cards -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-4">
+                <div class="stats-card">
+                  <i class="bi bi-collection text-primary mb-2" style="font-size: 2.5rem;"></i>
+                  <h3 class="mb-1" id="booksCount">1</h3>
+                  <p class="text-muted mb-0">Books Purchased</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stats-card">
+                  <i class="bi bi-clock-history text-success mb-2" style="font-size: 2.5rem;"></i>
+                  <h3 class="mb-1">24h</h3>
+                  <p class="text-muted mb-0">Study Time</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stats-card">
+                  <i class="bi bi-trophy text-warning mb-2" style="font-size: 2.5rem;"></i>
+                  <h3 class="mb-1">85%</h3>
+                  <p class="text-muted mb-0">Avg. Progress</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="card product-card">
+              <div class="card-header bg-transparent border-0 pb-0">
+                <h5 class="fw-bold">Recent Activity</h5>
+              </div>
+              <div class="card-body" id="recentActivity">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-book text-primary me-3" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <div class="fw-semibold">Opened AS Pure Math 1</div>
+                    <small class="text-muted">2 hours ago</small>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person-plus text-success me-3" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <div class="fw-semibold">Joined MiltonLearn</div>
+                    <small class="text-muted">Today</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- My Books Section -->
+          <div id="myBooksSection" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="fw-bold">My Study Materials</h2>
+              <a href="/shop.html" class="btn btn-outline-primary">
+                <i class="bi bi-plus-circle me-2"></i>Browse Shop
+              </a>
+            </div>
+            
+            <div class="row g-4" id="userBooks">
+              <!-- Books will be loaded here -->
+              <div class="col-12">
+                <div class="text-center py-5">
+                  <i class="bi bi-book text-muted" style="font-size: 4rem;"></i>
+                  <h4 class="mt-3">No books purchased yet</h4>
+                  <p class="text-muted">Visit our shop to get started with your learning journey!</p>
+                  <a href="/shop.html" class="btn btn-primary">Browse Shop</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shop Section -->
+          <div id="shopSection" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="fw-bold">Available Study Materials</h2>
+              <a href="/shop.html" class="btn btn-outline-primary">View Full Shop</a>
+            </div>
+            
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="product-card">
+                  <span class="product-badge coming-soon-badge">Coming Soon</span>
+                  <div class="product-icon">
+                    <i class="bi bi-graph-up"></i>
+                  </div>
+                  <h5>AS Pure Mathematics 2</h5>
+                  <p class="text-muted">Advanced topics in Pure Mathematics</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-primary">R250.00</span>
+                    <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="product-card">
+                  <span class="product-badge coming-soon-badge">Coming Soon</span>
+                  <div class="product-icon">
+                    <i class="bi bi-laptop"></i>
+                  </div>
+                  <h5>AS Computer Science 1</h5>
+                  <p class="text-muted">Programming fundamentals and theory</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-primary">R280.00</span>
+                    <button class="btn btn-outline-secondary" disabled>Coming Soon</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Section -->
+          <div id="profileSection" style="display: none;">
+            <h2 class="fw-bold mb-4">Profile Settings</h2>
+            
+            <div class="card product-card">
+              <div class="card-body">
+                <form id="profileForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-semibold">Full Name</label>
+                      <input type="text" class="form-control" id="profileName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-semibold">Email</label>
+                      <input type="email" class="form-control" id="profileEmail" readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-semibold">Phone (Optional)</label>
+                      <input type="tel" class="form-control" id="profilePhone" placeholder="+268 7840 4553">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-semibold">School/Institution</label>
+                      <input type="text" class="form-control" id="profileSchool" placeholder="Your school name">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check2 me-2"></i>Update Profile
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secure Book Viewer Modal -->
+  <div class="modal fade" id="bookViewerModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookTitle">Loading...</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="viewer-container">
+            <div class="text-center">
+              <div class="loading-spinner"></div>
+              <p>Loading your secure study material...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Firebase SDK -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+    import { getFirestore, doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+    // Firebase configuration - Replace with your config
+    const firebaseConfig = {
+        apiKey: "AIzaSyBvXKjeLSDsbjtfu6EECGG2jbd_pEYeSZ0",
+        authDomain: "miltonlearn-portal.firebaseapp.com",
+        projectId: "miltonlearn-portal",
+        storageBucket: "miltonlearn-portal.firebasestorage.app",
+        messagingSenderId: "759946967299",
+        appId: "1:759946967299:web:cc4e38777faa57c39f1136",
+        measurementId: "G-JRZPSHFNGG"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Global variables
+    let currentUser = null;
+    let userPurchases = [];
+
+    // DOM Elements
+    const loadingScreen = document.getElementById('loadingScreen');
+    const authScreen = document.getElementById('authScreen');
+    const dashboardScreen = document.getElementById('dashboardScreen');
+    const loginForm = document.getElementById('loginFormElement');
+    const registerForm = document.getElementById('registerFormElement');
+
+    // Show/Hide functions
+    function showAuth() {
+      loadingScreen.style.display = 'none';
+      authScreen.style.display = 'flex';
+      dashboardScreen.style.display = 'none';
+    }
+
+    function showDashboard() {
+      loadingScreen.style.display = 'none';
+      authScreen.style.display = 'none';
+      dashboardScreen.style.display = 'block';
+    }
+
+    function showLoading() {
+      loadingScreen.style.display = 'flex';
+      authScreen.style.display = 'none';
+      dashboardScreen.style.display = 'none';
+    }
+
+    // Auth state observer
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        currentUser = user;
+        await loadUserData();
+        showDashboard();
+        updateUserInterface();
+      } else {
+        currentUser = null;
+        showAuth();
+      }
+    });
+
+    // Login function
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      const loginBtn = document.getElementById('loginBtn');
+      const loginError = document.getElementById('loginError');
+
+      loginBtn.disabled = true;
+      loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Signing In...';
+      loginError.style.display = 'none';
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch (error) {
+        loginError.textContent = getErrorMessage(error.code);
+        loginError.style.display = 'block';
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.innerHTML = '<i class="bi bi-box-arrow-in-right me-2"></i>Sign In';
+      }
+    });
+
+    // Register function
+    // ADD this JavaScript to your portal.html (around line 600, before the register form listener)
+
+// Password confirmation validation
+document.getElementById('confirmPassword').addEventListener('input', function() {
+  const password = document.getElementById('registerPassword').value;
+  const confirmPassword = this.value;
+  const matchDiv = document.getElementById('passwordMatch');
+  
+  if (confirmPassword === '') {
+    matchDiv.textContent = '';
+    matchDiv.className = 'form-text';
+    return;
+  }
+  
+  if (password === confirmPassword) {
+    matchDiv.textContent = '✓ Passwords match';
+    matchDiv.className = 'form-text text-success';
+  } else {
+    matchDiv.textContent = '✗ Passwords do not match';
+    matchDiv.className = 'form-text text-danger';
+  }
+});
+
+document.getElementById('registerPassword').addEventListener('input', function() {
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  if (confirmPassword !== '') {
+    document.getElementById('confirmPassword').dispatchEvent(new Event('input'));
+  }
+});
+
+    // UPDATE the register form listener to include password validation:
+    registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('registerName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const registerBtn = document.getElementById('registerBtn');
+    const registerError = document.getElementById('registerError');
+
+    // Validate passwords match
+    if (password !== confirmPassword) {
+        registerError.textContent = 'Passwords do not match.';
+        registerError.style.display = 'block';
+        return;
+    }
+
+    registerBtn.disabled = true;
+    registerBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Creating Account...';
+    registerError.style.display = 'none';
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(userCredential.user, { displayName: name });
+        
+        // Create user document in Firestore
+        await setDoc(doc(db, 'users', userCredential.user.uid), {
+        name: name,
+        email: email,
+        createdAt: new Date(),
+        purchases: []
+        });
+
+    } catch (error) {
+        registerError.textContent = getErrorMessage(error.code);
+        registerError.style.display = 'block';
+    } finally {
+        registerBtn.disabled = false;
+        registerBtn.innerHTML = '<i class="bi bi-person-plus me-2"></i>Create Account';
+    }
+    });
+    // Load user data
+    async function loadUserData() {
+      if (!currentUser) return;
+
+      try {
+        const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          userPurchases = userData.purchases || [];
+          
+          // Update UI with user data
+          document.getElementById('profileName').value = userData.name || currentUser.displayName || '';
+          document.getElementById('profileEmail').value = currentUser.email;
+          document.getElementById('profilePhone').value = userData.phone || '';
+          document.getElementById('profileSchool').value = userData.school || '';
+        }
+      } catch (error) {
+        console.error('Error loading user data:', error);
+      }
+    }
+
+    // Update user interface
+    function updateUserInterface() {
+      if (!currentUser) return;
+
+      const displayName = currentUser.displayName || 'Student';
+      const firstName = displayName.split(' ')[0];
+      const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase();
+
+      document.getElementById('userDisplayName').textContent = displayName;
+      document.getElementById('welcomeName').textContent = firstName;
+      document.getElementById('userAvatar').textContent = initials;
+      document.getElementById('booksCount').textContent = userPurchases.length;
+
+      // Load user's books
+      loadUserBooks();
+    }
+
+    // Load user's purchased books
+    function loadUserBooks() {
+      const userBooksContainer = document.getElementById('userBooks');
+      
+      if (userPurchases.length === 0) {
+        userBooksContainer.innerHTML = `
+          <div class="col-12">
+            <div class="text-center py-5">
+              <i class="bi bi-book text-muted" style="font-size: 4rem;"></i>
+              <h4 class="mt-3">No books purchased yet</h4>
+              <p class="text-muted">Visit our shop to get started with your learning journey!</p>
+              <a href="/shop.html" class="btn btn-primary">Browse Shop</a>
+            </div>
+          </div>`;
+        return;
+      }
+
+      userBooksContainer.innerHTML = '';
+      
+      userPurchases.forEach(purchase => {
+        const bookCard = createBookCard(purchase);
+        userBooksContainer.appendChild(bookCard);
+      });
+    }
+
+    // Create book card element
+    function createBookCard(purchase) {
+      const col = document.createElement('div');
+      col.className = 'col-lg-6';
+      
+      const progressPercent = Math.floor(Math.random() * 40) + 60; // Random progress for demo
+      
+      col.innerHTML = `
+        <div class="product-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div class="product-icon" style="width: 60px; height: 60px;">
+              <i class="bi bi-calculator"></i>
+            </div>
+            <span class="product-badge purchased-badge">Purchased</span>
+          </div>
+          <h5>${purchase.productName}</h5>
+          <p class="text-muted small">${purchase.description}</p>
+          
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <small class="text-muted">Progress</small>
+              <small class="text-muted">${progressPercent}%</small>
+            </div>
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar" style="width: ${progressPercent}%"></div>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary w-100 mb-2" onclick="openBook('${purchase.productId}')">
+            <i class="bi bi-book-open me-2"></i>Continue Reading
+          </button>
+          <small class="text-muted">Purchased on ${new Date(purchase.purchaseDate).toLocaleDateString()}</small>
+        </div>`;
+      
+      return col;
+    }
+
+    // Navigation functions
+    window.showSection = function(sectionName) {
+      // Hide all sections
+      const sections = ['dashboardSection', 'myBooksSection', 'shopSection', 'profileSection'];
+      sections.forEach(section => {
+        document.getElementById(section).style.display = 'none';
+      });
+      
+      // Show selected section
+      document.getElementById(sectionName + 'Section').style.display = 'block';
+      
+      // Update navigation
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.section === sectionName) {
+          link.classList.add('active');
+        }
+      });
+    };
+
+    // Auth form toggles
+    window.showLogin = function() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'none';
+    };
+
+    window.showRegister = function() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+    };
+
+    // Password reset
+    window.resetPassword = async function() {
+      const email = document.getElementById('loginEmail').value;
+      if (!email) {
+        alert('Please enter your email address first.');
+        return;
+      }
+
+      try {
+        await sendPasswordResetEmail(auth, email);
+        alert('Password reset email sent! Check your inbox.');
+      } catch (error) {
+        alert('Error sending password reset email: ' + getErrorMessage(error.code));
+      }
+    };
+
+    // Sign out
+    window.signOut = async function() {
+      try {
+        await firebaseSignOut(auth);
+      } catch (error) {
+        console.error('Error signing out:', error);
+      }
+    };
+
+    // Open book viewer
+    window.openBook = function(bookId) {
+      const modal = new bootstrap.Modal(document.getElementById('bookViewerModal'));
+      document.getElementById('bookTitle').textContent = 'AS Pure Mathematics 1 - Secure Viewer';
+      
+      // In a real implementation, you would:
+      // 1. Verify user owns this book
+      // 2. Generate secure viewing token
+      // 3. Load the secure viewer with user's session
+      
+      const viewerContainer = document.querySelector('.viewer-container');
+      viewerContainer.innerHTML = `
+        <div class="text-center mb-4">
+          <div class="alert alert-info alert-custom">
+            <i class="bi bi-shield-check me-2"></i>
+            This is a secure viewing session for ${currentUser.email}
+          </div>
+        </div>
+        <div class="embed-responsive" style="height: 80vh;">
+          <iframe src="/secure-viewer/as-pure-1?token=${generateSecureToken()}" 
+                  width="100%" height="100%" frameborder="0"
+                  style="border-radius: 10px;">
+          </iframe>
+        </div>
+        <div class="text-center mt-3">
+          <small class="text-muted">
+            <i class="bi bi-info-circle me-1"></i>
+            This content is protected and tied to your account
+          </small>
+        </div>`;
+      
+      modal.show();
+    };
+
+    // Generate secure token (demo)
+    function generateSecureToken() {
+      return btoa(currentUser.uid + ':' + Date.now()).replace(/[^a-zA-Z0-9]/g, '');
+    }
+
+    // Profile update
+    document.getElementById('profileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('profileName').value;
+      const phone = document.getElementById('profilePhone').value;
+      const school = document.getElementById('profileSchool').value;
+
+      try {
+        // Update Firebase Auth profile
+        await updateProfile(currentUser, { displayName: name });
+        
+        // Update Firestore document
+        await updateDoc(doc(db, 'users', currentUser.uid), {
+          name: name,
+          phone: phone,
+          school: school,
+          updatedAt: new Date()
+        });
+
+        updateUserInterface();
+        
+        // Show success message
+        const alert = document.createElement('div');
+        alert.className = 'alert alert-success alert-custom';
+        alert.innerHTML = '<i class="bi bi-check-circle me-2"></i>Profile updated successfully!';
+        document.getElementById('profileSection').insertBefore(alert, document.getElementById('profileSection').firstChild);
+        
+        setTimeout(() => alert.remove(), 3000);
+        
+      } catch (error) {
+        console.error('Error updating profile:', error);
+        alert('Error updating profile. Please try again.');
+      }
+    });
+
+    // Paystack webhook handler (for demo purposes)
+    // In real implementation, this would be handled by your backend
+    window.handlePaystackSuccess = async function(reference, email, productId) {
+      if (!currentUser || currentUser.email !== email) {
+        console.error('User mismatch');
+        return;
+      }
+
+      const purchase = {
+        productId: productId,
+        productName: getProductName(productId),
+        description: getProductDescription(productId),
+        purchaseDate: new Date().toISOString(),
+        paystackReference: reference,
+        amount: getProductPrice(productId)
+      };
+
+      try {
+        // Add to user's purchases
+        const userRef = doc(db, 'users', currentUser.uid);
+        const userDoc = await getDoc(userRef);
+        const currentPurchases = userDoc.data().purchases || [];
+        
+        await updateDoc(userRef, {
+          purchases: [...currentPurchases, purchase]
+        });
+
+        // Reload user data
+        await loadUserData();
+        updateUserInterface();
+        
+        // Show success message
+        alert('Purchase successful! Your study material is now available in "My Books".');
+        
+      } catch (error) {
+        console.error('Error processing purchase:', error);
+      }
+    };
+
+    // Utility functions
+    function getProductName(productId) {
+      const products = {
+        'as-pure-1': 'AS Pure Mathematics 1',
+        'as-pure-2': 'AS Pure Mathematics 2',
+        'as-cs-1': 'AS Computer Science 1',
+        'as-cs-2': 'AS Computer Science 2',
+        'as-physics-2': 'AS Physics 2'
+      };
+      return products[productId] || 'Unknown Product';
+    }
+
+    function getProductDescription(productId) {
+      const descriptions = {
+        'as-pure-1': 'Comprehensive topical past exam questions with detailed solutions',
+        'as-pure-2': 'Advanced algebraic and calculus topics',
+        'as-cs-1': 'Programming fundamentals and theory',
+        'as-cs-2': 'Practical programming and problem-solving',
+        'as-physics-2': 'Electricity, waves, and modern physics'
+      };
+      return descriptions[productId] || 'Study material';
+    }
+
+    function getProductPrice(productId) {
+      const prices = {
+        'as-pure-1': 250,
+        'as-pure-2': 250,
+        'as-cs-1': 280,
+        'as-cs-2': 280,
+        'as-physics-2': 270
+      };
+      return prices[productId] || 0;
+    }
+
+    function getErrorMessage(errorCode) {
+      const errors = {
+        'auth/user-not-found': 'No account found with this email address.',
+        'auth/wrong-password': 'Incorrect password.',
+        'auth/email-already-in-use': 'An account with this email already exists.',
+        'auth/weak-password': 'Password should be at least 6 characters.',
+        'auth/invalid-email': 'Please enter a valid email address.',
+        'auth/network-request-failed': 'Network error. Please check your connection.',
+        'auth/too-many-requests': 'Too many failed attempts. Please try again later.'
+      };
+      return errors[errorCode] || 'An error occurred. Please try again.';
+    }
+
+    // Initialize app
+    showLoading();
+
+    // Demo: Add sample purchase for testing
+    window.addSamplePurchase = async function() {
+      if (!currentUser) return;
+      
+      const samplePurchase = {
+        productId: 'as-pure-1',
+        productName: 'AS Pure Mathematics 1',
+        description: 'Comprehensive topical past exam questions with detailed solutions',
+        purchaseDate: new Date().toISOString(),
+        paystackReference: 'demo_' + Date.now(),
+        amount: 250
+      };
+
+      try {
+        const userRef = doc(db, 'users', currentUser.uid);
+        const userDoc = await getDoc(userRef);
+        const currentPurchases = userDoc.data().purchases || [];
+        
+        await updateDoc(userRef, {
+          purchases: [...currentPurchases, samplePurchase]
+        });
+
+        await loadUserData();
+        updateUserInterface();
+        
+        alert('Sample purchase added! Check "My Books" section.');
+      } catch (error) {
+        console.error('Error adding sample purchase:', error);
+      }
+    };
+
+    // Auto-logout after inactivity (30 minutes)
+    let inactivityTimer;
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        if (currentUser) {
+          alert('Session expired due to inactivity. Please sign in again.');
+          signOut();
+        }
+      }, 30 * 60 * 1000);
+    }
+
+    // Track user activity
+    ['click', 'keypress', 'scroll', 'mousemove'].forEach(event => {
+      document.addEventListener(event, resetInactivityTimer);
+    });
+
+    resetInactivityTimer();
+  </script>
+</body>
+</html>
