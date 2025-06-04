@@ -24,41 +24,64 @@
 
   <body class="d-flex flex-column">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/index.html">
-          <img src="logo.png" alt="MiltonLearn Logo">
-          <span class="brand-text">MiltonLearn</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Get Started
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">MAMTutor</a></li>
-                <li><a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">ExamEase</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link nav-custom" href="/request_tutor.html">
-              <i class="bi bi-person-plus me-1"></i>Request Tutor
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo">
+        <span class="brand-text">MiltonLearn</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-grid me-2"></i>Learning Solutions
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/request_tutor.html">
+                  <i class="bi bi-person-video3 me-2 text-success"></i>
+                  <strong>1-on-1 Tutoring</strong><br>
+                  <small class="text-muted">Expert human guidance</small>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">
+                  <i class="bi bi-robot me-2 text-primary"></i>
+                  <strong>MAMTutor AI</strong><br>
+                  <small class="text-muted">24/7 AI learning assistant</small>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">
+                  <i class="bi bi-journal-check me-2 text-info"></i>
+                  <strong>ExamEase</strong><br>
+                  <small class="text-muted">Smart exam preparation</small>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_tutor.html">
+              <i class="bi bi-person-plus me-1"></i>Get Started
             </a>
           </li>
-            <li class="nav-item">
-            <a class="nav-link nav-custom" href="/shop.html">Shop</a>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link nav-custom" href="/about.html">About</a>
-            </li>
-          </ul>
-        </div>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
     
     <style>
     .dropdown:hover .dropdown-menu {
