@@ -124,6 +124,80 @@
       margin-top: 1rem;
       font-weight: 600;
     }
+
+    /* ADDED: Minimal completion tracking styles */
+    .completion-indicator {
+      background: rgba(40, 167, 69, 0.1);
+      border: 1px solid rgba(40, 167, 69, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .completion-text {
+      color: #28a745;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .field-check {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #28a745;
+      font-size: 1.1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 5;
+    }
+    
+    .field-check.show {
+      opacity: 1;
+    }
+    
+    .form-group {
+      position: relative;
+    }
+    
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .missing-fields-alert {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      color: #856404;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      display: none;
+      font-size: 0.9rem;
+    }
+    
+    .missing-fields-alert.show {
+      display: block;
+    }
+    
+    .auto-save {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(40, 167, 69, 0.9);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    
+    .auto-save.show {
+      opacity: 1;
+    }
     </style>
 
   <section class="py-4">
@@ -149,138 +223,183 @@
                 <strong>Note for students outside South Africa and Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
               </div>
             </div>
+
+            <!-- ADDED: Completion indicator -->
+            <div class="completion-indicator">
+              <p class="completion-text" id="completionText">Complete all required fields to submit your request</p>
+            </div>
+            
+            <!-- ADDED: Missing fields alert -->
+            <div class="missing-fields-alert" id="missingFieldsAlert">
+              <strong>Please complete:</strong> <span id="missingFieldsList"></span>
+            </div>
+
             <form id="tutorForm" class="row g-3 needs-validation" novalidate onsubmit="return false;">
               <div class="col-md-6">
-                <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="parentName" name="parentName" required>
-                <div class="invalid-feedback">
-                  Please provide the parent/guardian's full name.
+                <div class="form-group">
+                  <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="parentName" name="parentName" required>
+                  <i class="bi bi-check-circle-fill field-check" id="parentName-check"></i>
+                  <div class="invalid-feedback">
+                    Please provide the parent/guardian's full name.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="studentName" name="studentName" required>
-                <div class="invalid-feedback">
-                  Please provide the student's full name.
+                <div class="form-group">
+                  <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="studentName" name="studentName" required>
+                  <i class="bi bi-check-circle-fill field-check" id="studentName-check"></i>
+                  <div class="invalid-feedback">
+                    Please provide the student's full name.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
-                <div class="invalid-feedback">
-                  Please provide a valid email address.
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                  <i class="bi bi-check-circle-fill field-check" id="email-check"></i>
+                  <div class="invalid-feedback">
+                    Please provide a valid email address.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="parentNumber" class="form-label">Parent Phone Number (Please include country code) <span class="text-danger">*</span></label>
-                <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
-                <div class="invalid-feedback">
-                  Please provide the parent's phone number.
+                <div class="form-group">
+                  <label for="parentNumber" class="form-label">Parent Phone Number (Please include country code) <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
+                  <i class="bi bi-check-circle-fill field-check" id="parentNumber-check"></i>
+                  <div class="invalid-feedback">
+                    Please provide the parent's phone number.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)</label>
-                <input type="tel" class="form-control" id="studentNumber" name="studentNumber">
-                <div class="invalid-feedback">
-                  Please provide the student's phone number.
+                <div class="form-group">
+                  <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)</label>
+                  <input type="tel" class="form-control" id="studentNumber" name="studentNumber">
+                  <i class="bi bi-check-circle-fill field-check" id="studentNumber-check"></i>
+                  <div class="invalid-feedback">
+                    Please provide the student's phone number.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
-                <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
-                  <option value="" disabled selected>Select below</option>
-                  <option value="Parent">Parent</option>
-                  <option value="Student">Student</option>
-                  <option value="Other">Other</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select whether you are a parent or student.
+                <div class="form-group">
+                  <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
+                  <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
+                    <option value="" disabled selected>Select below</option>
+                    <option value="Parent">Parent</option>
+                    <option value="Student">Student</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="parentOrStudent-check"></i>
+                  <div class="invalid-feedback">
+                    Please select whether you are a parent or student.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="meetingLocation" class="form-label">Meeting Location <span class="text-danger">*</span></label>
-                <select class="form-select" id="meetingLocation" name="meetingLocation" required>
-                  <option value="Online" selected>Online (Zoom, Teams, or Google Meet)</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select your meeting location.
+                <div class="form-group">
+                  <label for="meetingLocation" class="form-label">Meeting Location <span class="text-danger">*</span></label>
+                  <select class="form-select" id="meetingLocation" name="meetingLocation" required>
+                    <option value="Online" selected>Online (Zoom, Teams, or Google Meet)</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="meetingLocation-check"></i>
+                  <div class="invalid-feedback">
+                    Please select your meeting location.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="day" class="form-label">Day <span class="text-danger">*</span></label>
-                <select class="form-select" id="day" name="day" required>
-                  <option value="" disabled selected>Select a day</option>
-                  <option value="Monday">Monday</option>
-                  <option value="Tuesday">Tuesday</option>
-                  <option value="Wednesday">Wednesday</option>
-                  <option value="Thursday">Thursday</option>
-                  <option value="Friday">Friday</option>
-                  <option value="Saturday">Saturday</option>
-                  <option value="Sunday">Sunday</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a day.
+                <div class="form-group">
+                  <label for="day" class="form-label">Day <span class="text-danger">*</span></label>
+                  <select class="form-select" id="day" name="day" required>
+                    <option value="" disabled selected>Select a day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="day-check"></i>
+                  <div class="invalid-feedback">
+                    Please select a day.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
-                <select class="form-select" id="level" name="level" required>
-                  <option value="" disabled selected>Select your level of study</option>
-                  <option value="Grade 7">Grade 7</option>
-                  <option value="Grade 8">Grade 8 /Form 1</option>
-                  <option value="Grade 9">Grade 9 / Form 2</option>
-                  <option value="Grade 10">Grade 10 / Form 3</option>
-                  <option value="Grade 11">Grade 11 / Form 4</option>
-                  <option value="Grade 12">Grade 12 / Form 5 / IGCSE / IEB / NSC</option>
-                  <option value="AS Level">AS Level</option>
-                  <option value="A Level">A Level</option>
-                  <option value="Other Grade">Other (Please specify under Additional Info)</option>
-    
-                </select>
-                <div class="invalid-feedback">
-                  Please select your level of study.
+                <div class="form-group">
+                  <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
+                  <select class="form-select" id="level" name="level" required>
+                    <option value="" disabled selected>Select your level of study</option>
+                    <option value="Grade 7">Grade 7</option>
+                    <option value="Grade 8">Grade 8 /Form 1</option>
+                    <option value="Grade 9">Grade 9 / Form 2</option>
+                    <option value="Grade 10">Grade 10 / Form 3</option>
+                    <option value="Grade 11">Grade 11 / Form 4</option>
+                    <option value="Grade 12">Grade 12 / Form 5 / IGCSE / IEB / NSC</option>
+                    <option value="AS Level">AS Level</option>
+                    <option value="A Level">A Level</option>
+                    <option value="Other Grade">Other (Please specify under Additional Info)</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="level-check"></i>
+                  <div class="invalid-feedback">
+                    Please select your level of study.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
-                <select class="form-select" id="subject" name="subject" required>
-                  <option value="" disabled selected>Select a subject</option>
-                  <option value="Biology">Biology</option>
-                  <option value="Chemistry">Chemistry</option>
-                  <option value="Computer Science">Computer Science</option>
-                  <option value="Economics">Economics</option>
-                  <option value="Information Communication Technology">Information Communication Technology</option>
-                  <option value="Mathematics">Mathematics</option>
-                  <option value="Physics">Physics</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a subject.
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                  <select class="form-select" id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Information Communication Technology">Information Communication Technology</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="subject-check"></i>
+                  <div class="invalid-feedback">
+                    Please select a subject.
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6">
-                <label for="package" class="form-label">Select Package <span class="text-danger">*</span></label>
-                <select class="form-select" id="package" name="package" required>
-                  <option value="" disabled selected>Choose a pricing package</option>
-                  <option value="Starter">Starter Package - R500/month (R125/hr, 4 sessions)</option>
-                  <option value="Basic">Basic Package - R750/month (R125/hr, 6 sessions)</option>
-                  <option value="Standard">Standard Package - R1200/month (R100/hr, 12 sessions)</option>
-                  <option value="Premium">Premium Package - R1800/month (R90/hr, 20 sessions)</option>
-                  <option value="PayAsYouGo">Pay-As-You-Go - R150/hour (Flexible scheduling)</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a package.
+                <div class="form-group">
+                  <label for="package" class="form-label">Select Package <span class="text-danger">*</span></label>
+                  <select class="form-select" id="package" name="package" required>
+                    <option value="" disabled selected>Choose a pricing package</option>
+                    <option value="Starter">Starter Package - R500/month (R125/hr, 4 sessions)</option>
+                    <option value="Basic">Basic Package - R750/month (R125/hr, 6 sessions)</option>
+                    <option value="Standard">Standard Package - R1200/month (R100/hr, 12 sessions)</option>
+                    <option value="Premium">Premium Package - R1800/month (R90/hr, 20 sessions)</option>
+                    <option value="PayAsYouGo">Pay-As-You-Go - R150/hour (Flexible scheduling)</option>
+                  </select>
+                  <i class="bi bi-check-circle-fill field-check" id="package-check"></i>
+                  <div class="invalid-feedback">
+                    Please select a package.
+                  </div>
                 </div>
               </div>
               <div class="col-md-12">
-                <label for="details" class="form-label">Additional Info</label>
-                <textarea class="form-control" id="details" name="details" rows="3" placeholder="Tell us about your learning goals, specific topics you need help with, or any special requirements..."></textarea>
-                <div class="invalid-feedback">
-                  Please provide additional information.
+                <div class="form-group">
+                  <label for="details" class="form-label">Additional Info</label>
+                  <textarea class="form-control" id="details" name="details" rows="3" placeholder="Tell us about your learning goals, specific topics you need help with, or any special requirements..."></textarea>
+                  <div class="invalid-feedback">
+                    Please provide additional information.
+                  </div>
                 </div>
               </div>
               <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">
+                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" disabled>
                   <i class="bi bi-send me-2"></i>Request Tutor
                 </button>
               </div>
@@ -294,8 +413,10 @@
     </br>
   </section>
   
-
-  
+  <!-- ADDED: Auto-save indicator -->
+  <div class="auto-save" id="autoSave">
+    <i class="bi bi-check-circle me-1"></i>Progress saved
+  </div>
 
   <!-- Footer -->
   <footer class="mt-auto">
@@ -371,7 +492,119 @@
       }
     });
 
-    // Form validation and submission
+    // ADDED: Form completion tracking
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('tutorForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const completionText = document.getElementById('completionText');
+      const missingFieldsAlert = document.getElementById('missingFieldsAlert');
+      const missingFieldsList = document.getElementById('missingFieldsList');
+      const autoSave = document.getElementById('autoSave');
+      
+      // Get all required fields
+      const requiredFields = form.querySelectorAll('[required]');
+      let autoSaveTimeout;
+      
+      // Check completion status
+      function checkCompletion() {
+        const completedFields = Array.from(requiredFields).filter(field => {
+          return field.value.trim() !== '' && field.checkValidity();
+        });
+        
+        const totalRequired = requiredFields.length;
+        const completed = completedFields.length;
+        const isComplete = completed === totalRequired;
+        
+        // Update completion text
+        if (isComplete) {
+          completionText.textContent = `✓ All required fields completed! Ready to submit.`;
+          completionText.style.color = '#28a745';
+          submitBtn.disabled = false;
+          missingFieldsAlert.classList.remove('show');
+        } else {
+          completionText.textContent = `${completed} of ${totalRequired} required fields completed`;
+          completionText.style.color = '#856404';
+          submitBtn.disabled = true;
+          
+          // Show missing fields
+          const missingFields = Array.from(requiredFields)
+            .filter(field => field.value.trim() === '' || !field.checkValidity())
+            .map(field => field.previousElementSibling.textContent.replace(' *', ''));
+          
+          if (completed > 0 && missingFields.length > 0) {
+            missingFieldsList.textContent = missingFields.join(', ');
+            missingFieldsAlert.classList.add('show');
+          }
+        }
+        
+        // Update field check icons
+        requiredFields.forEach(field => {
+          const checkIcon = document.getElementById(field.id + '-check');
+          if (checkIcon) {
+            if (field.value.trim() !== '' && field.checkValidity()) {
+              checkIcon.classList.add('show');
+            } else {
+              checkIcon.classList.remove('show');
+            }
+          }
+        });
+      }
+      
+      // Auto-save function
+      function autoSaveProgress() {
+        const formData = new FormData(form);
+        const data = {};
+        for (let [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+        localStorage.setItem('tutorFormData', JSON.stringify(data));
+        
+        // Show auto-save indicator
+        autoSave.classList.add('show');
+        setTimeout(() => autoSave.classList.remove('show'), 2000);
+      }
+      
+      // Load saved data
+      function loadSavedData() {
+        const saved = localStorage.getItem('tutorFormData');
+        if (saved) {
+          try {
+            const data = JSON.parse(saved);
+            Object.keys(data).forEach(key => {
+              const field = document.getElementById(key);
+              if (field && data[key]) {
+                field.value = data[key];
+              }
+            });
+            checkCompletion();
+          } catch (e) {
+            console.error('Error loading saved data:', e);
+          }
+        }
+      }
+      
+      // Add event listeners to all form fields
+      const allFields = form.querySelectorAll('input, select, textarea');
+      allFields.forEach(field => {
+        field.addEventListener('input', () => {
+          checkCompletion();
+          
+          // Auto-save with debounce
+          clearTimeout(autoSaveTimeout);
+          autoSaveTimeout = setTimeout(autoSaveProgress, 2000);
+        });
+        
+        field.addEventListener('change', checkCompletion);
+      });
+      
+      // Load saved data on page load
+      loadSavedData();
+      
+      // Initial check
+      checkCompletion();
+    });
+
+    // Original form validation and submission
     document.addEventListener('DOMContentLoaded', function() {
       'use strict';
 
@@ -434,6 +667,9 @@
             showSuccessModal();
             form.reset();
             form.classList.remove('was-validated');
+            
+            // Clear saved data on successful submission
+            localStorage.removeItem('tutorFormData');
           })
           .catch(function(error) {
             console.error('Request sending failed:', error);
