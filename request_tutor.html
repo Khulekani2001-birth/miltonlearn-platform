@@ -93,9 +93,38 @@
       margin-top: 0;
       transition: all 0.2s;
     }
+
+    .pricing-highlight {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+    }
+
+    .pricing-highlight h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-highlight .lead {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .savings-badge {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
     </style>
-
-
 
   <section class="py-4">
     <div class="container">
@@ -105,15 +134,22 @@
             <div class="pricing-plans text-center mb-5">
               <h2>Fill the form below to request a tutor</h2>
               <p>Choose from our range of tutoring packages designed to fit your needs.</p>
+              
+              <!-- Pricing Highlight Section -->
+              <div class="pricing-highlight">
+                <h3><i class="bi bi-lightning-charge me-2"></i>Sessions Start From R150/hr</h3>
+                
+                <a href="pricing.html" class="btn btn-light btn-lg mt-3">
+                  <i class="bi bi-eye me-2"></i>View All Package Details
+                </a>
+              </div>
+
               <p>When facing challenges Call/WhatsApp <a href="tel:+2687840455">+268 7840 4553</a> or <a href="tel:+27839678191">+27 83 967 8191</a>, or email <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>.</p>
               <div class="alert alert-info">
                 <strong>Note for students outside South Africa and Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
               </div>
-              <p>
-                <a href="pricing.html" class="btn btn-primary">View Pricing Details</a>
-              </p>
             </div>
-            <form id="tutorForm" class="row g-3 needs-validation" novalidate>
+            <form id="tutorForm" class="row g-3 needs-validation" novalidate onsubmit="return false;">
               <div class="col-md-6">
                 <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="parentName" name="parentName" required>
@@ -144,7 +180,7 @@
               </div>
               <div class="col-md-6">
                 <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)</label>
-                <input type="tel" class="form-control" id="studentNumber" name="studentNumber" optional>
+                <input type="tel" class="form-control" id="studentNumber" name="studentNumber">
                 <div class="invalid-feedback">
                   Please provide the student's phone number.
                 </div>
@@ -206,7 +242,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="subject" class="form-label">Subject</label>
+                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
                 <select class="form-select" id="subject" name="subject" required>
                   <option value="" disabled selected>Select a subject</option>
                   <option value="Biology">Biology</option>
@@ -226,25 +262,27 @@
                 <label for="package" class="form-label">Select Package <span class="text-danger">*</span></label>
                 <select class="form-select" id="package" name="package" required>
                   <option value="" disabled selected>Choose a pricing package</option>
-                  <option value="Starter">Starter Package (R350/month)</option>
-                  <option value="Basic">Basic Package (R500/month)</option>
-                  <option value="Standard">Standard Package (R800/month)</option>
-                  <option value="Premium">Premium Package (R1200/month)</option>
-                  <option value="PayAsYouGo">Pay-As-You-Go (R150/hour)</option>
+                  <option value="Starter">Starter Package - R500/month (R125/hr, 4 sessions)</option>
+                  <option value="Basic">Basic Package - R750/month (R125/hr, 6 sessions)</option>
+                  <option value="Standard">Standard Package - R1200/month (R100/hr, 12 sessions)</option>
+                  <option value="Premium">Premium Package - R1800/month (R90/hr, 20 sessions)</option>
+                  <option value="PayAsYouGo">Pay-As-You-Go - R150/hour (Flexible scheduling)</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a package.
                 </div>
               </div>
               <div class="col-md-12">
-                <label for="details" class="form-label">Additional Info </label>
-                <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+                <label for="details" class="form-label">Additional Info</label>
+                <textarea class="form-control" id="details" name="details" rows="3" placeholder="Tell us about your learning goals, specific topics you need help with, or any special requirements..."></textarea>
                 <div class="invalid-feedback">
                   Please provide additional information.
                 </div>
               </div>
               <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">Request Tutor</button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="bi bi-send me-2"></i>Request Tutor
+                </button>
               </div>
             </form>
             <div id="loading" class="spinner-border text-primary mt-3" role="status" style="display: none;">
@@ -306,76 +344,122 @@
       <p>Your tutor request has been successfully sent. Our team will contact you within 24 hours to discuss the next steps.</p>
     </div>
   </div>
+  
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.emailjs.com/dist/dist/email.min.js"></script>
+  
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
   <script>
+    // Initialize EmailJS
     (function(){
       emailjs.init("JR2sVi6C36Fta6Ddr");
     })();
 
-    // Form validation
-    (function () {
-      'use strict'
+    // Set current year in footer and clean URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYearElement = document.getElementById('current-year');
+      if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+      }
 
-      var form = document.getElementById('tutorForm')
+      // Clean URL parameters if they exist
+      if (window.location.search) {
+        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+    });
+
+    // Form validation and submission
+    document.addEventListener('DOMContentLoaded', function() {
+      'use strict';
+
+      const form = document.getElementById('tutorForm');
+      const loadingSpinner = document.getElementById('loading');
+      
+      if (!form) {
+        console.error('Form not found');
+        return;
+      }
+
       form.addEventListener('submit', function (event) {
-        event.preventDefault()
-        event.stopPropagation()
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        
+        console.log('Form submitted');
         
         if (form.checkValidity()) {
-          sendEmail()
+          console.log('Form is valid, sending email...');
+          sendEmail();
         } else {
-          form.classList.add('was-validated')
+          console.log('Form is invalid');
+          form.classList.add('was-validated');
         }
-      }, false)
-    })()
+        
+        return false; // Extra prevention
+      }, false);
 
-    function sendEmail() {
-      document.getElementById('loading').style.display = 'block';
-      
-      var templateParams = {
-        studentName: document.getElementById('studentName').value,
-        parentName: document.getElementById('parentName').value,
-        reply_to: document.getElementById('email').value,
-        parentNumber: document.getElementById('parentNumber').value,
-        studentNumber: document.getElementById('studentNumber').value,
-        day: document.getElementById('day').value,
-        level: document.getElementById('level').value,
-        subject: document.getElementById('subject').value,
-        details: document.getElementById('details').value,
-        parentOrStudent: document.getElementById('parentOrStudent').value,
-        package: document.getElementById('package').value,
-        meetingLocation: document.getElementById('meetingLocation').value
-      };
-      
-      emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
-        .then(function(response) {
-          console.log('Email sent successfully:', response);
-          document.getElementById('loading').style.display = 'none';
-          showSuccessModal();
-          document.getElementById('tutorForm').reset();
-          document.getElementById('tutorForm').classList.remove('was-validated');
-        }, function(error) {
-          console.error('Request sending failed:', error);
-          document.getElementById('loading').style.display = 'none';
-          alert('Failed to send request. Please try again.');
-        });
-    }
-    // Function to show the success modal
-    function showSuccessModal() {
-      var modal = document.getElementById('successModal');
-      modal.style.display = 'block';
-    }
-
-    // Close the modal when clicking the close button or outside the modal
-    window.onclick = function(event) {
-      var modal = document.getElementById('successModal');
-      if (event.target == modal || event.target.className == 'custom-modal-close') {
-        modal.style.display = 'none';
+      function sendEmail() {
+        if (loadingSpinner) {
+          loadingSpinner.style.display = 'block';
+        }
+        
+        // Get form values
+        const templateParams = {
+          studentName: document.getElementById('studentName')?.value || '',
+          parentName: document.getElementById('parentName')?.value || '',
+          reply_to: document.getElementById('email')?.value || '',
+          parentNumber: document.getElementById('parentNumber')?.value || '',
+          studentNumber: document.getElementById('studentNumber')?.value || '',
+          day: document.getElementById('day')?.value || '',
+          level: document.getElementById('level')?.value || '',
+          subject: document.getElementById('subject')?.value || '',
+          details: document.getElementById('details')?.value || '',
+          parentOrStudent: document.getElementById('parentOrStudent')?.value || '',
+          package: document.getElementById('package')?.value || '',
+          meetingLocation: document.getElementById('meetingLocation')?.value || ''
+        };
+        
+        console.log('Template params:', templateParams);
+        
+        // Send email using EmailJS
+        emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
+          .then(function(response) {
+            console.log('Email sent successfully:', response);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+            showSuccessModal();
+            form.reset();
+            form.classList.remove('was-validated');
+          })
+          .catch(function(error) {
+            console.error('Request sending failed:', error);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+            alert('Failed to send request. Please try again or contact us directly.');
+          });
       }
-    }
 
+      // Function to show the success modal
+      function showSuccessModal() {
+        const modal = document.getElementById('successModal');
+        if (modal) {
+          modal.style.display = 'block';
+        }
+      }
+
+      // Close the modal when clicking the close button or outside the modal
+      window.onclick = function(event) {
+        const modal = document.getElementById('successModal');
+        if (modal && (event.target == modal || event.target.className == 'custom-modal-close')) {
+          modal.style.display = 'none';
+        }
+      };
+    });
   </script>
 </body>
 </html>
