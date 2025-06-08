@@ -94,37 +94,6 @@
       transition: all 0.2s;
     }
 
-    .pricing-highlight {
-      background: linear-gradient(135deg, #28a745, #20c997);
-      color: white;
-      padding: 2rem;
-      border-radius: 15px;
-      margin: 2rem 0;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
-    }
-
-    .pricing-highlight h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .pricing-highlight .lead {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.95;
-    }
-
-    .savings-badge {
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      display: inline-block;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-
     /* ADDED: Minimal completion tracking styles */
     .completion-indicator {
       background: rgba(40, 167, 69, 0.1);
@@ -198,26 +167,49 @@
     .auto-save.show {
       opacity: 1;
     }
+
+    /* Enhanced scroll targeting */
+    .form-container {
+      scroll-margin-top: 100px;
+    }
+
+    /* Subtle form highlight animation */
+    @keyframes formHighlight {
+      0% { 
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+        transform: scale(1);
+      }
+      50% { 
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0.1);
+        transform: scale(1.005);
+      }
+      100% { 
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+        transform: scale(1);
+      }
+    }
+
+    .form-highlight {
+      animation: formHighlight 2s ease-out;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    /* Smooth focus styles */
+    .form-control:focus, .form-select:focus {
+      border-color: #28a745;
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
     </style>
 
-  <section class="py-4">
+  <section class="py-3">
     <div class="container">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10 form-container" id="tutorFormCard">
-            <div class="pricing-plans text-center mb-5">
-              <h2>Fill the form below to request a tutor</h2>
-              <p>Choose from our range of tutoring packages designed to fit your needs.</p>
-              
-              <!-- Pricing Highlight Section -->
-              <div class="pricing-highlight">
-                <h3><i class="bi bi-lightning-charge me-2"></i>Sessions Start From R150/hr</h3>
-                
-                <a href="pricing.html" class="btn btn-light btn-lg mt-3">
-                  <i class="bi bi-eye me-2"></i>View All Package Details
-                </a>
-              </div>
-
+            <div class="text-center mb-4">
+              <h2>Request a Tutor</h2>
+              <p class="lead">Sessions start from R150/hr - Fill out the form below to get started</p>
               <p>When facing challenges Call/WhatsApp <a href="tel:+2687840455">+268 7840 4553</a> or <a href="tel:+27839678191">+27 83 967 8191</a>, or email <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>.</p>
               <div class="alert alert-info">
                 <strong>Note for students outside South Africa and Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
@@ -490,6 +482,47 @@
         const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
         window.history.replaceState({}, document.title, cleanUrl);
       }
+
+      // Auto-scroll to form with enhanced targeting
+      setTimeout(function() {
+        const formContainer = document.getElementById('tutorFormCard');
+        const completionIndicator = document.querySelector('.completion-indicator');
+        
+        if (formContainer) {
+          // Add highlight animation class
+          formContainer.classList.add('form-highlight');
+          
+          // Calculate precise scroll position
+          const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 70;
+          const headerHeight = document.querySelector('.text-center.mb-4')?.offsetHeight || 100;
+          const targetElement = completionIndicator || formContainer;
+          const targetPosition = targetElement.offsetTop - navbarHeight - 30;
+          
+          // Smooth scroll with longer duration
+          window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: 'smooth'
+          });
+          
+          // Focus on first input after scroll completes
+          setTimeout(function() {
+            const firstInput = document.getElementById('parentName');
+            if (firstInput) {
+              firstInput.focus();
+              firstInput.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center',
+                inline: 'nearest'
+              });
+            }
+          }, 1000);
+          
+          // Remove highlight class after animation
+          setTimeout(function() {
+            formContainer.classList.remove('form-highlight');
+          }, 2500);
+        }
+      }, 500); // Reduced delay for faster response
     });
 
     // ADDED: Form completion tracking
