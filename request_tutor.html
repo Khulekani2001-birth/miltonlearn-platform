@@ -94,12 +94,12 @@
       transition: all 0.2s;
     }
 
-    /* ADDED: Minimal completion tracking styles */
+    /* Enhanced completion tracking styles */
     .completion-indicator {
-      background: rgba(40, 167, 69, 0.1);
+      background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%);
       border: 1px solid rgba(40, 167, 69, 0.3);
-      border-radius: 8px;
-      padding: 1rem;
+      border-radius: 12px;
+      padding: 1.2rem;
       margin-bottom: 1.5rem;
       text-align: center;
     }
@@ -108,26 +108,29 @@
       color: #28a745;
       font-weight: 600;
       margin: 0;
+      font-size: 0.95rem;
     }
     
     .field-check {
       position: absolute;
-      right: 10px;
+      right: 15px;
       top: 50%;
       transform: translateY(-50%);
       color: #28a745;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: all 0.3s ease;
       z-index: 5;
     }
     
     .field-check.show {
       opacity: 1;
+      transform: translateY(-50%) scale(1.1);
     }
     
     .form-group {
       position: relative;
+      margin-bottom: 1.5rem;
     }
     
     .btn-primary:disabled {
@@ -136,36 +139,45 @@
     }
     
     .missing-fields-alert {
-      background: #fff3cd;
+      background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
       border: 1px solid #ffeaa7;
       color: #856404;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      margin-bottom: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
       display: none;
       font-size: 0.9rem;
     }
     
     .missing-fields-alert.show {
       display: block;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .auto-save {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: rgba(40, 167, 69, 0.9);
+      background: rgba(40, 167, 69, 0.95);
       color: white;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 500;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: all 0.3s ease;
       z-index: 1000;
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
     }
     
     .auto-save.show {
       opacity: 1;
+      transform: translateY(-5px);
     }
 
     /* Enhanced scroll targeting */
@@ -180,8 +192,8 @@
         transform: scale(1);
       }
       50% { 
-        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0.1);
-        transform: scale(1.005);
+        box-shadow: 0 0 0 15px rgba(40, 167, 69, 0.1);
+        transform: scale(1.002);
       }
       100% { 
         box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
@@ -190,15 +202,86 @@
     }
 
     .form-highlight {
-      animation: formHighlight 2s ease-out;
+      animation: formHighlight 2.5s ease-out;
       border-radius: 15px;
       transition: all 0.3s ease;
     }
 
-    /* Smooth focus styles */
+    /* Enhanced focus styles */
     .form-control:focus, .form-select:focus {
       border-color: #28a745;
-      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+      box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.15);
+      transform: translateY(-1px);
+      transition: all 0.2s ease;
+    }
+    
+    .form-control, .form-select {
+      border-radius: 8px;
+      border: 1.5px solid #dee2e6;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    
+    .form-control:hover, .form-select:hover {
+      border-color: #28a745;
+    }
+    
+    /* Session info callout */
+    .session-info {
+      background: linear-gradient(135deg, #e3f2fd 0%, #f1f8e9 100%);
+      border: 1px solid #90caf9;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .session-info i {
+      color: #1976d2;
+      font-size: 1.5rem;
+    }
+    
+    .session-info-text {
+      color: #1565c0;
+      font-weight: 500;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    
+    /* Optional field styling */
+    .optional-label {
+      color: #6c757d;
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+    
+    /* Form sections */
+    .form-section {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .form-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .section-title {
+      color: #495057;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .section-title i {
+      color: #28a745;
     }
     </style>
 
@@ -208,192 +291,218 @@
         <div class="row justify-content-center">
           <div class="col-md-10 form-container" id="tutorFormCard">
             <div class="text-center mb-4">
-              <h2>Request a Tutor</h2>
-              <p class="lead">Sessions start from R150/hr - Fill out the form below to get started</p>
-              <p>When facing challenges Call/WhatsApp <a href="tel:+2687840455">+268 7840 4553</a> or <a href="tel:+27839678191">+27 83 967 8191</a>, or email <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>.</p>
+              <h2>Request Your Tutor</h2>
+              <p class="lead">Start your personalized learning journey today</p>
+              <p>Need help? Call/WhatsApp <a href="tel:+2687840455">+268 7840 4553</a> or <a href="tel:+27839678191">+27 83 967 8191</a>, or email <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>.</p>
+              
+              <!-- Session info callout -->
+              <div class="session-info">
+                <i class="bi bi-camera-video"></i>
+                <p class="session-info-text">All sessions are conducted live online via Zoom with scheduled appointments. Flexible timing available!</p>
+              </div>
+              
               <div class="alert alert-info">
-                <strong>Note for students outside South Africa and Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
+                <strong>International Students:</strong> Email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> for pricing in your region.
               </div>
             </div>
 
-            <!-- ADDED: Completion indicator -->
+            <!-- Completion indicator -->
             <div class="completion-indicator">
-              <p class="completion-text" id="completionText">Complete all required fields to submit your request</p>
+              <p class="completion-text" id="completionText">Complete the required fields below to submit your request</p>
             </div>
             
-            <!-- ADDED: Missing fields alert -->
+            <!-- Missing fields alert -->
             <div class="missing-fields-alert" id="missingFieldsAlert">
-              <strong>Please complete:</strong> <span id="missingFieldsList"></span>
+              <i class="bi bi-exclamation-triangle me-2"></i><strong>Please complete:</strong> <span id="missingFieldsList"></span>
             </div>
 
             <form id="tutorForm" class="row g-3 needs-validation" novalidate onsubmit="return false;">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="parentName" name="parentName" required>
-                  <i class="bi bi-check-circle-fill field-check" id="parentName-check"></i>
-                  <div class="invalid-feedback">
-                    Please provide the parent/guardian's full name.
+              
+              <!-- Contact Information Section -->
+              <div class="col-12 form-section">
+                <h4 class="section-title">
+                  <i class="bi bi-person-circle"></i>Contact Information
+                </h4>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="parentName" name="parentName" required>
+                      <i class="bi bi-check-circle-fill field-check" id="parentName-check"></i>
+                      <div class="invalid-feedback">
+                        Please provide the parent/guardian's full name.
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="studentName" name="studentName" required>
-                  <i class="bi bi-check-circle-fill field-check" id="studentName-check"></i>
-                  <div class="invalid-feedback">
-                    Please provide the student's full name.
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="studentName" name="studentName" required>
+                      <i class="bi bi-check-circle-fill field-check" id="studentName-check"></i>
+                      <div class="invalid-feedback">
+                        Please provide the student's full name.
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email">
-                  <i class="bi bi-check-circle-fill field-check" id="email-check"></i>
-                  <div class="invalid-feedback">
-                    Please provide a valid email address.
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                      <i class="bi bi-check-circle-fill field-check" id="email-check"></i>
+                      <div class="invalid-feedback">
+                        Please provide a valid email address.
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="parentNumber" class="form-label">Parent Phone Number (Please include country code) <span class="text-danger">*</span></label>
-                  <input type="tel" class="form-control" id="parentNumber" name="parentNumber" required>
-                  <i class="bi bi-check-circle-fill field-check" id="parentNumber-check"></i>
-                  <div class="invalid-feedback">
-                    Please provide the parent's phone number.
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="parentNumber" class="form-label">Primary Phone Number <span class="text-danger">*</span></label>
+                      <input type="tel" class="form-control" id="parentNumber" name="parentNumber" placeholder="Include country code (e.g., +27)" required>
+                      <i class="bi bi-check-circle-fill field-check" id="parentNumber-check"></i>
+                      <div class="invalid-feedback">
+                        Please provide a valid phone number with country code.
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="studentNumber" class="form-label">Student Phone Number (Please include country code)</label>
-                  <input type="tel" class="form-control" id="studentNumber" name="studentNumber">
-                  <i class="bi bi-check-circle-fill field-check" id="studentNumber-check"></i>
-                  <div class="invalid-feedback">
-                    Please provide the student's phone number.
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="studentNumber" class="form-label">Student Phone Number <span class="optional-label">(optional)</span></label>
+                      <input type="tel" class="form-control" id="studentNumber" name="studentNumber" placeholder="Include country code (e.g., +27)">
+                      <i class="bi bi-check-circle-fill field-check" id="studentNumber-check"></i>
+                      <div class="invalid-feedback">
+                        Please provide a valid phone number with country code.
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="parentOrStudent" class="form-label">Are you a parent or student? <span class="text-danger">*</span></label>
-                  <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
-                    <option value="" disabled selected>Select below</option>
-                    <option value="Parent">Parent</option>
-                    <option value="Student">Student</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="parentOrStudent-check"></i>
-                  <div class="invalid-feedback">
-                    Please select whether you are a parent or student.
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="meetingLocation" class="form-label">Meeting Location <span class="text-danger">*</span></label>
-                  <select class="form-select" id="meetingLocation" name="meetingLocation" required>
-                    <option value="Online" selected>Online (Zoom, Teams, or Google Meet)</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="meetingLocation-check"></i>
-                  <div class="invalid-feedback">
-                    Please select your meeting location.
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="day" class="form-label">Day <span class="text-danger">*</span></label>
-                  <select class="form-select" id="day" name="day" required>
-                    <option value="" disabled selected>Select a day</option>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="day-check"></i>
-                  <div class="invalid-feedback">
-                    Please select a day.
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
-                  <select class="form-select" id="level" name="level" required>
-                    <option value="" disabled selected>Select your level of study</option>
-                    <option value="Grade 7">Grade 7</option>
-                    <option value="Grade 8">Grade 8 /Form 1</option>
-                    <option value="Grade 9">Grade 9 / Form 2</option>
-                    <option value="Grade 10">Grade 10 / Form 3</option>
-                    <option value="Grade 11">Grade 11 / Form 4</option>
-                    <option value="Grade 12">Grade 12 / Form 5 / IGCSE / IEB / NSC</option>
-                    <option value="AS Level">AS Level</option>
-                    <option value="A Level">A Level</option>
-                    <option value="Other Grade">Other (Please specify under Additional Info)</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="level-check"></i>
-                  <div class="invalid-feedback">
-                    Please select your level of study.
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
-                  <select class="form-select" id="subject" name="subject" required>
-                    <option value="" disabled selected>Select a subject</option>
-                    <option value="Biology">Biology</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Economics">Economics</option>
-                    <option value="Information Communication Technology">Information Communication Technology</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="subject-check"></i>
-                  <div class="invalid-feedback">
-                    Please select a subject.
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="parentOrStudent" class="form-label">Are you the parent or student? <span class="text-danger">*</span></label>
+                      <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
+                        <option value="" disabled selected>Select below</option>
+                        <option value="Parent">Parent/Guardian</option>
+                        <option value="Student">Student</option>
+                        <option value="Other">Other (family member, etc.)</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill field-check" id="parentOrStudent-check"></i>
+                      <div class="invalid-feedback">
+                        Please select your relationship to the student.
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="package" class="form-label">Select Package <span class="text-danger">*</span></label>
-                  <select class="form-select" id="package" name="package" required>
-                    <option value="" disabled selected>Choose a pricing package</option>
-                    <option value="Starter">Starter Package - R500/month (R125/hr, 4 sessions)</option>
-                    <option value="Basic">Basic Package - R750/month (R125/hr, 6 sessions)</option>
-                    <option value="Standard">Standard Package - R1200/month (R100/hr, 12 sessions)</option>
-                    <option value="Premium">Premium Package - R1800/month (R90/hr, 20 sessions)</option>
-                    <option value="PayAsYouGo">Pay-As-You-Go - R150/hour (Flexible scheduling)</option>
-                  </select>
-                  <i class="bi bi-check-circle-fill field-check" id="package-check"></i>
-                  <div class="invalid-feedback">
-                    Please select a package.
+              <!-- Academic Information Section -->
+              <div class="col-12 form-section">
+                <h4 class="section-title">
+                  <i class="bi bi-book"></i>Academic Information
+                </h4>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
+                      <select class="form-select" id="level" name="level" required>
+                        <option value="" disabled selected>Select your level of study</option>
+                        <option value="Grade 7">Grade 7</option>
+                        <option value="Grade 8">Grade 8 / Form 1</option>
+                        <option value="Grade 9">Grade 9 / Form 2</option>
+                        <option value="Grade 10">Grade 10 / Form 3</option>
+                        <option value="Grade 11">Grade 11 / Form 4</option>
+                        <option value="Grade 12">Grade 12 / Form 5 / IGCSE / IEB / NSC</option>
+                        <option value="AS Level">AS Level</option>
+                        <option value="A Level">A Level</option>
+                        <option value="Other Grade">Other (specify in additional info)</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill field-check" id="level-check"></i>
+                      <div class="invalid-feedback">
+                        Please select your level of study.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                      <select class="form-select" id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Computer Science">Computer Science</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill field-check" id="subject-check"></i>
+                      <div class="invalid-feedback">
+                        Please select a subject.
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="details" class="form-label">Additional Info</label>
-                  <textarea class="form-control" id="details" name="details" rows="3" placeholder="Tell us about your learning goals, specific topics you need help with, or any special requirements..."></textarea>
-                  <div class="invalid-feedback">
-                    Please provide additional information.
+
+              <!-- Scheduling Section -->
+              <div class="col-12 form-section">
+                <h4 class="section-title">
+                  <i class="bi bi-calendar-week"></i>Preferred Schedule
+                </h4>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="day" class="form-label">Preferred Day <span class="text-danger">*</span></label>
+                      <select class="form-select" id="day" name="day" required>
+                        <option value="" disabled selected>Select a day</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                        <option value="Multiple days">Multiple days (flexible)</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill field-check" id="day-check"></i>
+                      <div class="invalid-feedback">
+                        Please select your preferred day(s).
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="timePreference" class="form-label">Preferred Time <span class="optional-label">(optional)</span></label>
+                      <select class="form-select" id="timePreference" name="timePreference">
+                        <option value="" selected>We'll discuss timing together</option>
+                        <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+                        <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+                        <option value="Evening (5pm-8pm)">Evening (5pm-8pm)</option>
+                        <option value="Flexible">Flexible timing</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill field-check" id="timePreference-check"></i>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Additional Information Section -->
+              <div class="col-12 form-section">
+                <h4 class="section-title">
+                  <i class="bi bi-chat-dots"></i>Additional Information
+                </h4>
+                
+                <div class="form-group">
+                  <label for="details" class="form-label">Learning Goals & Special Requirements <span class="optional-label">(optional)</span></label>
+                  <textarea class="form-control" id="details" name="details" rows="4" placeholder="Tell us about your learning goals, specific topics you need help with, current challenges, or any special requirements..."></textarea>
+                  <div class="form-text">This helps us match you with the perfect tutor and prepare for your first session.</div>
+                </div>
+              </div>
+
               <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" disabled>
-                  <i class="bi bi-send me-2"></i>Request Tutor
+                <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn" disabled>
+                  <i class="bi bi-rocket-takeoff me-2"></i>Start My Learning Journey
                 </button>
+                <div class="mt-2">
+                  <small class="text-muted">We'll contact you within 24 hours to discuss pricing and schedule your first session</small>
+                </div>
               </div>
             </form>
             <div id="loading" class="spinner-border text-primary mt-3" role="status" style="display: none;">
@@ -405,9 +514,9 @@
     </br>
   </section>
   
-  <!-- ADDED: Auto-save indicator -->
+  <!-- Auto-save indicator -->
   <div class="auto-save" id="autoSave">
-    <i class="bi bi-check-circle me-1"></i>Progress saved
+    <i class="bi bi-cloud-check me-1"></i>Progress saved
   </div>
 
   <!-- Footer -->
@@ -454,7 +563,7 @@
         <i class="bi bi-check-circle-fill"></i>
       </div>
       <h2>Request Submitted!</h2>
-      <p>Your tutor request has been successfully sent. Our team will contact you within 24 hours to discuss the next steps.</p>
+      <p>Your tutor request has been successfully sent. Our team will contact you within 24 hours to discuss pricing, schedule your first session, and answer any questions.</p>
     </div>
   </div>
   
@@ -522,10 +631,10 @@
             formContainer.classList.remove('form-highlight');
           }, 2500);
         }
-      }, 500); // Reduced delay for faster response
+      }, 500);
     });
 
-    // ADDED: Form completion tracking
+    // Enhanced form completion tracking
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('tutorForm');
       const submitBtn = document.getElementById('submitBtn');
@@ -550,12 +659,12 @@
         
         // Update completion text
         if (isComplete) {
-          completionText.textContent = `✓ All required fields completed! Ready to submit.`;
+          completionText.innerHTML = `<i class="bi bi-check-circle me-2"></i>All required fields completed! Ready to submit.`;
           completionText.style.color = '#28a745';
           submitBtn.disabled = false;
           missingFieldsAlert.classList.remove('show');
         } else {
-          completionText.textContent = `${completed} of ${totalRequired} required fields completed`;
+          completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>${completed} of ${totalRequired} required fields completed`;
           completionText.style.color = '#856404';
           submitBtn.disabled = true;
           
@@ -570,11 +679,16 @@
           }
         }
         
-        // Update field check icons
-        requiredFields.forEach(field => {
+        // Update field check icons (including optional fields that have values)
+        const allFields = form.querySelectorAll('input, select, textarea');
+        allFields.forEach(field => {
           const checkIcon = document.getElementById(field.id + '-check');
           if (checkIcon) {
-            if (field.value.trim() !== '' && field.checkValidity()) {
+            const isRequired = field.hasAttribute('required');
+            const hasValue = field.value.trim() !== '';
+            const isValid = field.checkValidity();
+            
+            if (hasValue && isValid) {
               checkIcon.classList.add('show');
             } else {
               checkIcon.classList.remove('show');
@@ -637,7 +751,7 @@
       checkCompletion();
     });
 
-    // Original form validation and submission
+    // Enhanced form validation and submission
     document.addEventListener('DOMContentLoaded', function() {
       'use strict';
 
@@ -664,7 +778,7 @@
           form.classList.add('was-validated');
         }
         
-        return false; // Extra prevention
+        return false;
       }, false);
 
       function sendEmail() {
@@ -678,14 +792,14 @@
           parentName: document.getElementById('parentName')?.value || '',
           reply_to: document.getElementById('email')?.value || '',
           parentNumber: document.getElementById('parentNumber')?.value || '',
-          studentNumber: document.getElementById('studentNumber')?.value || '',
+          studentNumber: document.getElementById('studentNumber')?.value || 'Not provided',
           day: document.getElementById('day')?.value || '',
           level: document.getElementById('level')?.value || '',
           subject: document.getElementById('subject')?.value || '',
-          details: document.getElementById('details')?.value || '',
+          details: document.getElementById('details')?.value || 'No additional information provided',
           parentOrStudent: document.getElementById('parentOrStudent')?.value || '',
-          package: document.getElementById('package')?.value || '',
-          meetingLocation: document.getElementById('meetingLocation')?.value || ''
+          timePreference: document.getElementById('timePreference')?.value || 'To be discussed',
+          meetingLocation: 'Online (Zoom)' // Fixed value since all sessions are online
         };
         
         console.log('Template params:', templateParams);
@@ -703,13 +817,28 @@
             
             // Clear saved data on successful submission
             localStorage.removeItem('tutorFormData');
+            
+            // Reset completion tracking
+            document.querySelectorAll('.field-check').forEach(check => {
+              check.classList.remove('show');
+            });
+            
+            // Reset completion text
+            const completionText = document.getElementById('completionText');
+            if (completionText) {
+              completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>Complete the required fields below to submit your request`;
+              completionText.style.color = '#856404';
+            }
+            
+            // Disable submit button
+            document.getElementById('submitBtn').disabled = true;
           })
           .catch(function(error) {
             console.error('Request sending failed:', error);
             if (loadingSpinner) {
               loadingSpinner.style.display = 'none';
             }
-            alert('Failed to send request. Please try again or contact us directly.');
+            alert('Failed to send request. Please try again or contact us directly at info@miltonlearn.com or call +268 7840 4553.');
           });
       }
 
@@ -730,5 +859,92 @@
       };
     });
   </script>
+
+  <style>
+    /* Success Modal Styles */
+    .custom-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .custom-modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 2rem;
+      border: none;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .custom-modal-close {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .custom-modal-close:hover,
+    .custom-modal-close:focus {
+      color: #28a745;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 1rem;
+      animation: successPulse 0.6s ease-out;
+    }
+
+    @keyframes successPulse {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .custom-modal h2 {
+      color: #28a745;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .custom-modal p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  </style>
 </body>
 </html>
