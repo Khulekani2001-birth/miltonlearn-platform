@@ -659,12 +659,12 @@
         
         // Update completion text
         if (isComplete) {
-          completionText.innerHTML = `<i class="bi bi-check-circle me-2"></i>All required fields completed! Ready to submit.`;
+          completionText.innerHTML = `<i class="bi bi-check-circle me-2"></i>All required fields completed! Submit to get started with your first FREE consultation.`;
           completionText.style.color = '#28a745';
           submitBtn.disabled = false;
           missingFieldsAlert.classList.remove('show');
         } else {
-          completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>${completed} of ${totalRequired} required fields completed`;
+          completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>${completed} of ${totalRequired} required fields completed to get your first FREE consultation.`;
           completionText.style.color = '#856404';
           submitBtn.disabled = true;
           
