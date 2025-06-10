@@ -248,50 +248,128 @@
 
   <main class="flex-shrink-0">
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="mb-4">
-              <span class="curriculum-badge">NSC</span>
-              <span class="curriculum-badge">IEB</span>
-              <span class="curriculum-badge">EGCSE/IGCSE</span>
-              <span class="curriculum-badge">AS Level</span>
-              <span class="curriculum-badge">A Level</span>
-            </div>
-            <h1 class="display-4 fw-bold mb-4">
-              Excel in Your Studies with 
-              <span class="gradient-text">Expert Tutoring & AI Technology</span>
-            </h1>
-            <p class="lead mb-4">
-              MiltonLearn combines the best of human expertise and intelligent technology to provide personalized learning support for students. Get 1-on-1 tutoring plus 24/7 AI assistance in Maths, Physical Sciences (Physics + Chemistry), and Computer Science.
-            </p>
-            <div class="d-flex flex-wrap gap-3 mb-4">
-              <div class="d-flex align-items-center">
-                <i class="bi bi-phone mobile-first-icon me-2"></i>
-                <span>Mobile-First Design</span>
-              </div>
-              
-              <div class="d-flex align-items-center">
-                <i class="bi bi-currency-dollar mobile-first-icon me-2"></i>
-                <span>Affordable Pricing</span>
-              </div>
-            </div>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="/request_tutor.html" class="btn btn-success btn-lg pulse-btn">
-                <i class="bi bi-person-plus me-2"></i>Start with a Tutor
-              </a>
-              <a href="https://www.mamtutor.com" class="btn btn-outline-primary btn-lg" target="_blank">
-                <i class="bi bi-robot me-2"></i>Try AI Assistant Free
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-6 text-center mt-5 mt-lg-0">
-            <img src="/imgs/edtech.jpg" alt="AI Learning Technology" class="img-fluid rounded shadow-lg">
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="mb-4">
+          <span class="curriculum-badge">NSC</span>
+          <span class="curriculum-badge">IEB</span>
+          <span class="curriculum-badge">EGCSE/IGCSE</span>
+          <span class="curriculum-badge">AS Level</span>
+          <span class="curriculum-badge">A Level</span>
+        </div>
+        <h1 class="display-4 fw-bold mb-4">
+          Excel in Your Studies with 
+          <span class="gradient-text">Expert Tutoring & AI Technology</span>
+        </h1>
+        <p class="lead mb-4">
+          MiltonLearn combines the best of human expertise and intelligent technology to provide personalized learning support for students. Get 1-on-1 tutoring plus 24/7 AI assistance in Maths, Physical Sciences (Physics + Chemistry), and Computer Science.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-phone mobile-first-icon me-2"></i>
+            <span>Mobile-First Design</span>
+          </div>                     
+          <div class="d-flex align-items-center">
+            <i class="bi bi-currency-dollar mobile-first-icon me-2"></i>
+            <span>Affordable Pricing</span>
           </div>
         </div>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="/request_tutor.html" class="btn btn-success btn-lg pulse-btn">
+            <i class="bi bi-person-plus me-2"></i>Start with a Tutor
+          </a>
+          <a href="https://www.mamtutor.com" class="btn btn-outline-primary btn-lg" target="_blank">
+            <i class="bi bi-robot me-2"></i>Try AI Assistant Free
+          </a>
+        </div>
       </div>
-    </section>
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <div class="video-container rounded shadow-lg overflow-hidden">
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1091972548?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="MiltonLearn Welcome">
+
+          </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+          
+        
+      
+    </div>
+  </div>
+</section>
+
+<style>
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.responsive-video {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .responsive-video {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-video {
+    height: 200px;
+  }
+}
+
+/* Assuming these styles exist in your main CSS */
+.hero {
+  padding: 4rem 0;
+}
+
+.curriculum-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mobile-first-icon {
+  color: #28a745;
+}
+
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+</style>
     <!-- Founder Achievement Section -->
     <section class="py-5 bg-light">
       <div class="container">
