@@ -24,6 +24,7 @@
 
   <body class="d-flex flex-column">
     <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/index.html">
@@ -83,17 +84,7 @@
     </div>
   </nav>
     
-    <style>
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    
-    /* Optional: Add a small delay to prevent accidental triggering */
-    .dropdown-menu {
-      margin-top: 0;
-      transition: all 0.2s;
-    }
-    </style>
+
 
   <section class="hero text-center">
     <div class="container">
@@ -104,13 +95,18 @@
           <i class="bi bi-lightning-charge me-1"></i>
           All packages include personalized learning plans and expert tutors
         </div>
+        <div class="badge bg-info fs-6 px-3 py-2 ms-2">
+          <i class="bi bi-globe me-1"></i>
+          Available worldwide with flexible scheduling
+        </div>
       </div>
     </div>
   </section>
 
   <div class="container my-5">
     <div class="alert alert-info text-center">
-      <strong>Note for students outside South Africa and Eswatini:</strong> To request a tutorial please email <a href="mailto:milton@miltonlearn.com" target="_blank">milton@miltonlearn.com</a> to get relevant information. 
+      <strong>International students welcome!</strong> We offer online tutoring worldwide. 
+      <strong>South African & Eswatini students:</strong> Special local rates apply - see pricing in Rand below.
     </div>
     
     <!-- Value proposition section -->
@@ -156,9 +152,12 @@
         <div class="card h-100 pricing-card border-2">
           <div class="card-body">
             <h3 class="card-title text-primary">IGCSE/IEB/NSC</h3>
-            <h4 class="card-subtitle mb-2">R1080<span class="text-muted h5">/month</span></h4>
+            <h4 class="card-subtitle mb-2">$60<span class="text-muted h5">/month</span></h4>
+            <div class="local-pricing mb-2">
+              <small class="text-muted">SA/Eswatini: R1080/month</small>
+            </div>
             <div class="text-success mb-3">
-              <small><strong>R300/class</strong> • Save R120/month</small>
+              <small><strong>$16/class</strong> <span class="text-muted">(R300/class)</span> • Save $7/month</small>
             </div>
             <div class="feature-list">
               <div class="feature-item"><i class="bi bi-check-circle-fill text-success me-2"></i>4 x Monthly 1-1 tutoring sessions</div>
@@ -179,9 +178,12 @@
         <div class="card h-100 pricing-card border-2">
           <div class="card-body">
             <h3 class="card-title text-primary">AS/A Level</h3>
-            <h4 class="card-subtitle mb-2">R1620<span class="text-muted h5">/month</span></h4>
+            <h4 class="card-subtitle mb-2">$90<span class="text-muted h5">/month</span></h4>
+            <div class="local-pricing mb-2">
+              <small class="text-muted">SA/Eswatini: R1620/month</small>
+            </div>
             <div class="text-success mb-3">
-              <small><strong>R450/class</strong> • Save R180/month</small>
+              <small><strong>$25/class</strong> <span class="text-muted">(R450/class)</span> • Save $10/month</small>
             </div>
             <div class="feature-list">
               <div class="feature-item"><i class="bi bi-check-circle-fill text-success me-2"></i>4 x Monthly 1-1 tutoring sessions</div>
@@ -211,7 +213,10 @@
         <div class="card h-100 pricing-card border-2">
           <div class="card-body">
             <h3 class="card-title text-primary">Grade 12-on-Go!</h3>
-            <h4 class="card-subtitle mb-2">R300<span class="text-muted h5">/class</span></h4>
+            <h4 class="card-subtitle mb-2">$16<span class="text-muted h5">/class</span></h4>
+            <div class="local-pricing mb-2">
+              <small class="text-muted">SA/Eswatini: R300/class</small>
+            </div>
             <div class="text-muted mb-3">
               <small>Perfect for occasional help</small>
             </div>
@@ -235,7 +240,10 @@
         <div class="card h-100 pricing-card border-2">
           <div class="card-body">
             <h3 class="card-title text-primary">AS/A Level-on-Go!</h3>
-            <h4 class="card-subtitle mb-2">R450<span class="text-muted h5">/class</span></h4>
+            <h4 class="card-subtitle mb-2">$25<span class="text-muted h5">/class</span></h4>
+            <div class="local-pricing mb-2">
+              <small class="text-muted">SA/Eswatini: R450/class</small>
+            </div>
             <div class="text-muted mb-3">
               <small>Perfect for occasional help</small>
             </div>
@@ -261,37 +269,46 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-6 text-center text-md-start">
-          <h5 class="mb-3">Contact Us</h5>
+          <h5 class="mb-3">🌍 Global Contact</h5>
           <p class="mb-2">
             <i class="bi bi-telephone me-2"></i>
             <a href="tel:+26878404553">+268 7840 4553</a>
+            <small class="text-muted">(WhatsApp available)</small>
           </p>
-          <p class="mb-0">
+          <p class="mb-2">
             <i class="bi bi-envelope me-2"></i>
             <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
           </p>
+          <p class="mb-0">
+            <i class="bi bi-clock me-2"></i>
+            <small class="text-muted">Available across all timezones</small>
+          </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <h5 class="mb-3">Follow Us</h5>
+          <h5 class="mb-3">Follow Our Global Community</h5>
           <div class="social-links">
-            <a href="https://www.facebook.com/miltonlearn/" target="_blank">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/miltonlearn/" target="_blank">
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank" title="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank">
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" title="LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
           </div>
+          <p class="mt-2 mb-0">
+            <small class="text-muted">Connecting students worldwide since 2019</small>
+          </p>
         </div>
       </div>
       <hr class="my-4">
       <p class="text-center mb-0">
-        © <span id="current-year"></span> MiltonLearn. All rights reserved.
+        © <span id="current-year"></span> MiltonLearn. Empowering global education. All rights reserved.
       </p>
     </div>
   </footer>
+
 
   <style>
     /* Ensure cards have equal height and proper spacing */
@@ -344,19 +361,13 @@
     .feature-item:last-child {
       margin-bottom: 0;
     }
-    
-    /* Responsive adjustments */
-    @media (max-width: 991px) {
-      .col-lg-6 {
-        margin-bottom: 1.5rem;
-      }
+
+    /* Local pricing styling */
+    .local-pricing {
+      font-style: italic;
     }
     
-    @media (min-width: 1200px) {
-      .container {
-        max-width: 1140px;
-      }
-    }
+
     
     /* Card title styling */
     .card-title {
