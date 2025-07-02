@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us · MiltonLearn</title>
-  <meta name="description" content="MiltonLearn is reshaping education through AI-powered tutoring. Discover our mission, goals, and the story behind our journey.">
+  <meta name="description" content="MiltonLearn builds AI-powered learning tools for students worldwide. Founded by the 2019 world #1 AS Level Mathematics student, we create MAMTutor AI and ExamEase platforms.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,8 @@
     gtag('js', new Date());
     gtag('config', 'G-E4Y24C156P');
   </script>
-  <style>    /* Content Sections */
+  <style>    
+    /* Content Sections */
     .content-section { padding: 2rem; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 2rem; }
     .founder-quote { font-style: italic; background-color: #e9ecef; padding: 1rem; border-left: 4px solid #4a90e2; border-radius: 4px; margin-top: 1.5rem; }
     .founder-details { text-align: right; font-weight: 600; color: #333; margin-top: 1rem; }
@@ -30,6 +31,23 @@
     .contact-form .btn-primary { padding: 10px 20px; font-weight: 600; }
     .invalid-feedback { display: none; font-size: 0.875rem; color: #dc3545; }
     .is-invalid ~ .invalid-feedback { display: block; }
+
+    .stat-item {
+      background: linear-gradient(135deg, var(--primary), var(--info));
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .tool-highlight {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      border-left: 4px solid var(--success);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -40,7 +58,7 @@
       "logo": "https://www.miltonlearn.com/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+27839678191",
+        "telephone": "+268-7840-4553",
         "contactType": "customer service",
         "email": "info@miltonlearn.com"
       },
@@ -54,9 +72,9 @@
   </script>
 </head>
 
-<body >
+<body class="d-flex flex-column h-100">
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
@@ -115,24 +133,15 @@
     </div>
   </nav>
   
-  <style>
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  /* Optional: Add a small delay to prevent accidental triggering */
-  .dropdown-menu {
-    margin-top: 0;
-    transition: all 0.2s;
-  }
-  </style>
+
+
 <main class="flex-shrink-0">
 
   <section class="hero">
     <div class="container">
       <h1>About MiltonLearn</h1>
       <div class="fancy-text" data-aos="fade-up" data-aos-delay="100">
-        <p class="lead mb-5">Advancing education through focused tutoring, technology and innovation</p>
+        <p class="lead mb-5">We build AI-powered learning tools that make expert-level education accessible to students worldwide</p>
       </div>
     </div>
   </section>
@@ -141,35 +150,46 @@
     <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="content-section">
-          <h2 class="section-title">Our Mission</h2>
-          <p>At MiltonLearn, our mission is to leverage technology to make learning more accessible, personalized, and effective. We create intuitive, AI-powered platforms that foster an engaging learning environment, helping students achieve academic success with confidence.</p>
+          <h2 class="section-title">What We Do</h2>
+          <p>MiltonLearn creates two main AI-powered learning platforms:</p>
+          
+          <div class="tool-highlight">
+            <h5><i class="bi bi-robot text-primary me-2"></i>MAMTutor</h5>
+            <p class="mb-0">A personal AI tutor that provides access to the latest AI models at affordable costs. Students upload images of their questions and get detailed, step-by-step explanations.</p>
+          </div>
+
+          <div class="tool-highlight">
+            <h5><i class="bi bi-journal-check text-success me-2"></i>ExamEase</h5>
+            <p class="mb-0">Past paper questions organized by topic with interactive solution spaces. Students practice with real exam questions while getting instant feedback and AI assistance.</p>
+          </div>
+
+          <p class="mt-3">Both tools serve students in IGCSE, GCSE, AS Level, A Level, IEB, and NSC curricula.</p>
         </div>
+
+
+
         <div class="content-section">
-          <h2 class="section-title">Our Goals</h2>
+          <h2 class="section-title">The Problem We Solve</h2>
           <ul>
-            <li><strong>Empower students globally:</strong> Provide innovative tools that support students in mastering complex subjects.</li>
-            <li><strong>Enable personalized learning:</strong> Tailor tutoring experiences to individual needs for an optimized learning path.</li>
-            <li><strong>Transform the educational landscape:</strong> Equip educators with technology solutions that enhance classroom experiences and streamline teaching.</li>
+            <li><strong>Expensive tutoring:</strong> Traditional 1-on-1 tutoring costs $50-80+ per hour. Our AI tools start at $10/month.</li>
+            <li><strong>Limited access:</strong> Quality educational help isn't available 24/7 across all timezones. Our AI never sleeps.</li>
+            <li><strong>Scattered resources:</strong> Students struggle to find organized past papers and practice materials. We provide thousands in one place.</li>
+            <li><strong>Language barriers:</strong> Educational content is often only in English. Our AI responds in 50+ languages.</li>
           </ul>
-        </div>
-        <div class="content-section">
-          <h2 class="section-title">Words from the Founder</h2>
-          <blockquote class="founder-quote">
-            "When I was in high school, I struggled academically, until the guidance of a mentor, and use of educational technology tools, which led me to
-             improve dramatically, eventually achieving the 
-            <a href='https://www.facebook.com/EswatiniGov/posts/243630570463783/' target='_blank'>Top in The World</a> 
-            award in AS Level Mathematics. Noticing such, I fell in love with online learning, the fact that you can learn at your pace, anywhere and at anytime. 
-            One thing missing, was learning at the best way for my character - I needed learning that can be moulded to my needs and experiences, I needed learning that was in line with my interests and passions.
-            Today, our team is dedicated to providing students with the educational tools they need to excel and reach their full potential whilst also seeing the bigger picture of their goals. 
-            We do not leave teachers behind. We also develop tools that make the admin jobs of teachers easier and allow them to focus on the job that matters."
-          </blockquote>
-          <p class="founder-details">~ Khulekani Ngwenya, Founder & CEO, MiltonLearn</p>
         </div>
       </div>
 
       <div class="col-lg-6">
+        
+
         <div class="content-section contact-form">
           <h2 class="section-title text-center">Contact Us</h2>
+          <div class="mb-4 text-center">
+            <p class="mb-2"><strong>Email:</strong> info@miltonlearn.com</p>
+            <p class="mb-2"><strong>WhatsApp:</strong> +268 7840 4553</p>
+            <p class="mb-0"><strong>Response Time:</strong> Within 24 hours</p>
+          </div>
+          
           <form id="contactForm" class="row g-3" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
@@ -180,6 +200,17 @@
               <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
               <input type="email" class="form-control" id="email" name="email" required>
               <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <select class="form-control" id="subject" name="subject">
+                <option value="">Select a topic...</option>
+                <option value="MAMTutor Support">MAMTutor Support</option>
+                <option value="ExamEase Support">ExamEase Support</option>
+                <option value="School Partnership">School Partnership</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Technical Issue">Technical Issue</option>
+              </select>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
@@ -198,6 +229,7 @@
     </div>
   </div>
 </main>
+
   <!-- Footer -->
   <footer class="mt-auto">
     <div class="container">
@@ -215,11 +247,11 @@
           </p>
           <p class="mb-0">
             <i class="bi bi-clock me-2"></i>
-            <small class="text-muted">Available across all timezones</small>
+            <small class="text-muted">AI available 24/7 across all timezones</small>
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <h5 class="mb-3">Follow Our Global Community</h5>
+          <h5 class="mb-3">Follow Our Progress</h5>
           <div class="social-links">
             <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
               <i class="bi bi-facebook"></i>
@@ -232,22 +264,23 @@
             </a>
           </div>
           <p class="mt-2 mb-0">
-            <small class="text-muted">Connecting students worldwide since 2019</small>
+            <small class="text-muted">Building AI learning tools since 2019</small>
           </p>
         </div>
       </div>
       <hr class="my-4">
       <p class="text-center mb-0">
-        © <span id="current-year"></span> MiltonLearn. Empowering global education. All rights reserved.
+        © <span id="current-year"></span> MiltonLearn. Building AI learning tools for students worldwide. All rights reserved.
       </p>
     </div>
   </footer>
-
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
     (function() {
       emailjs.init("JR2sVi6C36Fta6Ddr"); // Replace with your actual EmailJS user ID
     })();
@@ -296,6 +329,7 @@
       var templateParams = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
       };
 
@@ -314,6 +348,7 @@
           alert('Failed to send message. Please try again.');
         });
     }
+
     document.addEventListener('DOMContentLoaded', function() {
       const scrollArrow = document.getElementById('scrollArrow');
       let lastScrollTop = 0;
