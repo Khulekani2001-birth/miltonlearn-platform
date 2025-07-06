@@ -4,8 +4,8 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us · MiltonLearn</title>
-  <meta name="description" content="MiltonLearn builds AI-powered learning tools for students worldwide. Founded by the 2019 world #1 AS Level Mathematics student, we create MAMTutor AI and ExamEase platforms.">
+  <title>About Us · MiltonLearn - Building AI Educational Technology</title>
+  <meta name="description" content="MiltonLearn builds revolutionary AI-powered learning technology for students worldwide. Founded by the 2019 world #1 AS Level Mathematics student, we create MAMTutor AI and ExamEase platforms.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -48,11 +48,25 @@
       margin: 1rem 0;
       border-radius: 0 8px 8px 0;
     }
+
+    .mission-section {
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .tech-stack {
+      background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
   </style>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "TechCompany",
       "name": "MiltonLearn",
       "url": "https://www.miltonlearn.com",
       "logo": "https://www.miltonlearn.com/logo.png",
@@ -67,14 +81,16 @@
         "https://www.facebook.com/MiltonLearn",
         "https://www.twitter.com/MiltonLearn",
         "https://www.instagram.com/MiltonLearn"
-      ]
+      ],
+      "industry": "Educational Technology",
+      "foundingDate": "2019"
     }
   </script>
 </head>
 
 <body class="d-flex flex-column h-100">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
@@ -87,17 +103,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
-              <i class="bi bi-grid me-2"></i>Learning Solutions
+              <i class="bi bi-grid me-2"></i>Our Technology
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/request_tutor.html">
-                  <i class="bi bi-person-video3 me-2 text-success"></i>
-                  <strong>1-on-1 Tutoring</strong><br>
-                  <small class="text-muted">Expert human guidance</small>
-                </a>
-              </li>
-              <li><hr class="dropdown-divider"></li>
               <li>
                 <a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">
                   <i class="bi bi-robot me-2 text-primary"></i>
@@ -114,9 +122,9 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link fw-semibold" href="/pricing.html">Pricing</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link fw-semibold" href="/shop.html">Shop</a>
           </li>
@@ -124,8 +132,8 @@
             <a class="nav-link fw-semibold" href="/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_tutor.html">
-              <i class="bi bi-person-plus me-1"></i>Get Started
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="https://www.mamtutor.com" target="_blank">
+              <i class="bi bi-robot me-1"></i>Try MAMTutor
             </a>
           </li>
         </ul>
@@ -133,15 +141,13 @@
     </div>
   </nav>
   
-
-
 <main class="flex-shrink-0">
 
   <section class="hero">
     <div class="container">
       <h1>About MiltonLearn</h1>
       <div class="fancy-text" data-aos="fade-up" data-aos-delay="100">
-        <p class="lead mb-5">We build AI-powered learning tools that make expert-level education accessible to students worldwide</p>
+        <p class="lead mb-5">We build AI learning tools that work for students worldwide</p>
       </div>
     </div>
   </section>
@@ -150,40 +156,92 @@
     <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="content-section">
-          <h2 class="section-title">What We Do</h2>
-          <p>MiltonLearn creates two main AI-powered learning platforms:</p>
-          
-          <div class="tool-highlight">
-            <h5><i class="bi bi-robot text-primary me-2"></i>MAMTutor</h5>
-            <p class="mb-0">A personal AI tutor that provides access to the latest AI models at affordable costs. Students upload images of their questions and get detailed, step-by-step explanations.</p>
+          <h2 class="section-title">Our Mission</h2>
+          <div class="mission-section">
+            <h4 class="text-primary mb-3">🚀 Making Learning Accessible</h4>
+            <p class="mb-3">Good education should be available to every student. Our AI tools solve common problems:</p>
+            <ul class="mb-3">
+              <li><strong>Always Available:</strong> AI works anytime you need help</li>
+              <li><strong>Affordable:</strong> Free tiers and low-cost options</li>
+              <li><strong>Easy to Use:</strong> Works on any device with internet</li>
+              <li><strong>Smart Help:</strong> Understands your questions and explains clearly</li>
+            </ul>
+            <p class="text-muted">Students learn at their own pace. Teachers get tools to help their students better.</p>
           </div>
-
-          <div class="tool-highlight">
-            <h5><i class="bi bi-journal-check text-success me-2"></i>ExamEase</h5>
-            <p class="mb-0">Past paper questions organized by topic with interactive solution spaces. Students practice with real exam questions while getting instant feedback and AI assistance.</p>
-          </div>
-
-          <p class="mt-3">Both tools serve students in IGCSE, GCSE, AS Level, A Level, IEB, and NSC curricula.</p>
         </div>
 
-
+        
 
         <div class="content-section">
-          <h2 class="section-title">The Problem We Solve</h2>
-          <ul>
-            <li><strong>Expensive tutoring:</strong> Traditional 1-on-1 tutoring costs $50-80+ per hour. Our AI tools start at $10/month.</li>
-            <li><strong>Limited access:</strong> Quality educational help isn't available 24/7 across all timezones. Our AI never sleeps.</li>
-            <li><strong>Scattered resources:</strong> Students struggle to find organized past papers and practice materials. We provide thousands in one place.</li>
-            <li><strong>Language barriers:</strong> Educational content is often only in English. Our AI responds in 50+ languages.</li>
-          </ul>
+          <h2 class="section-title">Why We Built This</h2>
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="border-start border-3 border-danger ps-3 mb-3">
+                <h6 class="text-danger">🚫 Common Problems</h6>
+                <ul class="small mb-0">
+                  <li><strong>Expensive:</strong> Good tutoring costs a lot per hour</li>
+                  <li><strong>Not Always Available:</strong> Tutors aren't available anytime</li>
+                  <li><strong>Location Matters:</strong> Hard to find good tutors everywhere</li>
+                  <li><strong>Hard to Find:</strong> Study materials are scattered</li>
+                  <li><strong>Confusing:</strong> No clear explanations when stuck</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="border-start border-3 border-success ps-3">
+                <h6 class="text-success">✅ Our Solutions</h6>
+                <ul class="small mb-0">
+                  <li><strong>Affordable:</strong> Free tiers and low-cost options</li>
+                  <li><strong>Always On:</strong> AI works anytime you need help</li>
+                  <li><strong>Works Everywhere:</strong> Any device with internet</li>
+                  <li><strong>Organized:</strong> Everything in one place</li>
+                  <li><strong>Clear Help:</strong> Step-by-step explanations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="col-lg-6">
-        
+        <div class="content-section">
+          <h2 class="section-title">Our Focus</h2>
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="stat-item">
+                <h4 class="mb-1">AI</h4>
+                <small>Smart Technology</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-item">
+                <h4 class="mb-1">24/7</h4>
+                <small>Always Available</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-item">
+                <h4 class="mb-1">Free</h4>
+                <small>Tier Available</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-item">
+                <h4 class="mb-1">Easy</h4>
+                <small>To Use</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-light p-3 rounded">
+            <h6 class="text-primary mb-2">🏫 School Partnerships</h6>
+            <p class="small mb-2">We work with schools worldwide to add AI learning tools to their classrooms.</p>
+            <p class="small mb-0 text-muted">Our tools help students during class and when they study at home.</p>
+          </div>
+        </div>
 
         <div class="content-section contact-form">
-          <h2 class="section-title text-center">Contact Us</h2>
+          <h2 class="section-title text-center">Contact Our Team</h2>
           <div class="mb-4 text-center">
             <p class="mb-2"><strong>Email:</strong> info@miltonlearn.com</p>
             <p class="mb-2"><strong>WhatsApp:</strong> +268 7840 4553</p>
@@ -205,9 +263,10 @@
               <label for="subject" class="form-label">Subject</label>
               <select class="form-control" id="subject" name="subject">
                 <option value="">Select a topic...</option>
-                <option value="MAMTutor Support">MAMTutor Support</option>
+                <option value="MAMTutor Support">MAMTutor AI Support</option>
                 <option value="ExamEase Support">ExamEase Support</option>
-                <option value="School Partnership">School Partnership</option>
+                <option value="School Partnership">Educational Partnership</option>
+                <option value="Technology Integration">Technology Integration</option>
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Technical Issue">Technical Issue</option>
               </select>
@@ -235,7 +294,7 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-6 text-center text-md-start">
-          <h5 class="mb-3">🌍 Global Contact</h5>
+          <h5 class="mb-3">🌍 Contact Us</h5>
           <p class="mb-2">
             <i class="bi bi-telephone me-2"></i>
             <a href="tel:+26878404553">+268 7840 4553</a>
@@ -247,11 +306,11 @@
           </p>
           <p class="mb-0">
             <i class="bi bi-clock me-2"></i>
-            <small class="text-muted">AI available 24/7 across all timezones</small>
+            <small class="text-muted">AI available 24/7 worldwide</small>
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <h5 class="mb-3">Follow Our Progress</h5>
+          <h5 class="mb-3">Follow Us</h5>
           <div class="social-links">
             <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
               <i class="bi bi-facebook"></i>
