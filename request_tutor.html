@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request Tutor · MiltonLearn</title>
-    <meta name="description" content="MiltonLearn is reshaping education through AI-powered personalized tutoring. Experience the future of learning with our innovative educational solutions.">
+    <title>Request Our Services · MiltonLearn</title>
+    <meta name="description" content="Partner with MiltonLearn for AI-powered education solutions. From AI tutoring with MAMTutor to exam preparation with ExamEase and educational AI consulting for institutions.">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-  
+
       gtag('config', 'G-E4Y24C156P');
     </script>
     <!-- Styles -->
@@ -20,6 +20,110 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      /* Service-specific styles */
+      .service-card {
+        border: none;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        padding: 2rem;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .trust-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 3rem 0;
+        border-radius: 16px;
+      }
+
+      .uct-badge {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        display: inline-block;
+      }
+
+      .form-container {
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .section-divider {
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--info));
+        border-radius: 2px;
+        margin: 3rem 0;
+        opacity: 0.3;
+      }
+
+      .hero-services {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 80px 0;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-services::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        opacity: 0.5;
+      }
+
+      .hero-services .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-feature {
+        display: flex;
+        align-items: start;
+        margin-bottom: 1rem;
+      }
+
+      .service-feature i {
+        color: var(--success);
+        margin-right: 0.75rem;
+        margin-top: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .badge-ai {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
 
 <body class="d-flex flex-column h-100">
@@ -67,7 +171,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_tutor.html">
-              <i class="bi bi-person-plus me-1"></i>Get A Tutor
+              <i class="bi bi-stars me-1"></i>Request Service
             </a>
           </li>
         </ul>
@@ -75,248 +179,351 @@
     </div>
   </nav>
 
-  <section class="py-3">
+  <!-- Hero Section -->
+  <section class="hero-services">
     <div class="container">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-10 form-container" id="tutorFormCard">
-            <div class="text-center mb-4">
-              <h2>Request Your Tutor</h2>
-              <p class="lead">Start your personalized learning journey today</p>
-              <p>Need help? Call/WhatsApp <a href="tel:+2687840455">+268 7840 4553</a> or <a href="tel:+27839678191">+27 83 967 8191</a>, or email <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>.</p>
-              
-              <!-- Session info callout -->
-              <div class="session-info">
-                <i class="bi bi-camera-video"></i>
-                <p class="session-info-text">Sessions are conducted live online via Zoom with scheduled appointments. Flexible timing available!</p>
-              </div>
-              
-              <div class="alert alert-info">
-                <strong>To learn more about pricing.</strong> Check out <a href="/tutoring_pricing.html">Pricing Information.</a>
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="badge-ai mb-3">
+            <i class="bi bi-lightning-charge-fill me-2"></i>AI-Powered Education Solutions
+          </div>
+          <h1 class="display-4 fw-bold mb-4">
+            Transforming Education Through AI Innovation
+          </h1>
+          <p class="lead mb-4">
+            We partner with students, schools, and universities to deliver cutting-edge AI learning tools and educational technology consulting. From personalized AI tutoring to institutional transformation.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>AI Tutoring Platform</span>
+            </div>
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>Exam Preparation Tools</span>
+            </div>
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>Educational AI Consulting</span>
+            </div>
+          </div>
+          <a href="#request-form" class="btn btn-light btn-lg mt-3">
+            <i class="bi bi-arrow-down-circle me-2"></i>Request a Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3">Our AI Education Solutions</h2>
+        <p class="lead text-muted">Comprehensive services for students, educators, and institutions</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- MAMTutor AI Tutoring -->
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon bg-primary bg-gradient text-white">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h3 class="fw-bold mb-3">MAMTutor – AI Tutoring</h3>
+            <p class="text-muted mb-4">Personalized AI tutoring available 24/7 for Mathematics, Science, and Computer Science.</p>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Adaptive Learning</strong>
+                <p class="text-muted small mb-0">Personalized explanations that adapt to each student's learning style</p>
               </div>
             </div>
 
-            <!-- Completion indicator -->
-            <div class="completion-indicator">
-              <p class="completion-text" id="completionText">Complete the required fields below to submit your request</p>
-            </div>
-            
-            <!-- Missing fields alert -->
-            <div class="missing-fields-alert" id="missingFieldsAlert">
-              <i class="bi bi-exclamation-triangle me-2"></i><strong>Please complete:</strong> <span id="missingFieldsList"></span>
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Step-by-Step Reasoning</strong>
+                <p class="text-muted small mb-0">Clear, detailed explanations that build understanding</p>
+              </div>
             </div>
 
-            <form id="tutorForm" class="row g-3 needs-validation" novalidate onsubmit="return false;">
-              
-              <!-- Contact Information Section -->
-              <div class="col-12 form-section">
-                <h4 class="section-title">
-                  <i class="bi bi-person-circle"></i>Contact Information
-                </h4>
-                
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="parentName" class="form-label">Parent/Guardian Full Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="parentName" name="parentName" required>
-                      <i class="bi bi-check-circle-fill field-check" id="parentName-check"></i>
-                      <div class="invalid-feedback">
-                        Please provide the parent/guardian's full name.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="studentName" class="form-label">Student Full Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="studentName" name="studentName" required>
-                      <i class="bi bi-check-circle-fill field-check" id="studentName-check"></i>
-                      <div class="invalid-feedback">
-                        Please provide the student's full name.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" id="email" name="email" required>
-                      <i class="bi bi-check-circle-fill field-check" id="email-check"></i>
-                      <div class="invalid-feedback">
-                        Please provide a valid email address.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="parentNumber" class="form-label">Primary Phone Number <span class="text-danger">*</span></label>
-                      <input type="tel" class="form-control" id="parentNumber" name="parentNumber" placeholder="Include country code (e.g., +27)" required>
-                      <i class="bi bi-check-circle-fill field-check" id="parentNumber-check"></i>
-                      <div class="invalid-feedback">
-                        Please provide a valid phone number with country code.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="studentNumber" class="form-label">Student Phone Number <span class="optional-label">(optional)</span></label>
-                      <input type="tel" class="form-control" id="studentNumber" name="studentNumber" placeholder="Include country code (e.g., +27)">
-                      <i class="bi bi-check-circle-fill field-check" id="studentNumber-check"></i>
-                      <div class="invalid-feedback">
-                        Please provide a valid phone number with country code.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="parentOrStudent" class="form-label">Are you the parent or student? <span class="text-danger">*</span></label>
-                      <select class="form-select" id="parentOrStudent" name="parentOrStudent" required>
-                        <option value="" disabled selected>Select below</option>
-                        <option value="Parent">Parent/Guardian</option>
-                        <option value="Student">Student</option>
-                        <option value="Other">Other (family member, etc.)</option>
-                      </select>
-                      <i class="bi bi-check-circle-fill field-check" id="parentOrStudent-check"></i>
-                      <div class="invalid-feedback">
-                        Please select your relationship to the student.
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Student-Friendly Guidance</strong>
+                <p class="text-muted small mb-0">Patient, encouraging support for independent learners</p>
               </div>
+            </div>
 
-              <!-- Academic Information Section -->
-              <div class="col-12 form-section">
-                <h4 class="section-title">
-                  <i class="bi bi-book"></i>Academic Information
-                </h4>
-                
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="level" class="form-label">Level of Study <span class="text-danger">*</span></label>
-                      <select class="form-select" id="level" name="level" required>
-                        <option value="" disabled selected>Select your level of study</option>
-                        <option value="Grade 7">Grade 7</option>
-                        <option value="Grade 8">Grade 8 / Form 1</option>
-                        <option value="Grade 9">Grade 9 / Form 2</option>
-                        <option value="Grade 10">Grade 10 / Form 3</option>
-                        <option value="Grade 11">Grade 11 / Form 4</option>
-                        <option value="Grade 12">Grade 12 / Form 5 / IGCSE / IEB / NSC</option>
-                        <option value="AS Level">AS Level</option>
-                        <option value="A Level">A Level</option>
-                        <option value="Other Grade">Other (specify in additional info)</option>
-                      </select>
-                      <i class="bi bi-check-circle-fill field-check" id="level-check"></i>
-                      <div class="invalid-feedback">
-                        Please select your level of study.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
-                      <select class="form-select" id="subject" name="subject" required>
-                        <option value="" disabled selected>Select a subject</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Physics">Physics</option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="ICT">ICT</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Other Subject">Other (specify in additional info)</option>
-                      </select>
-                      <i class="bi bi-check-circle-fill field-check" id="subject-check"></i>
-                      <div class="invalid-feedback">
-                        Please select a subject.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">Independent Learners</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">Homework Help</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Exam Preparation</span>
+            </div>
+          </div>
+        </div>
 
-              <!-- Scheduling Section -->
-              <div class="col-12 form-section">
-                <h4 class="section-title">
-                  <i class="bi bi-calendar-week"></i>Preferred Schedule
-                </h4>
-                
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="day" class="form-label">Preferred Day <span class="text-danger">*</span></label>
-                      <select class="form-select" id="day" name="day" required>
-                        <option value="" disabled selected>Select a day</option>
-                        <option value="Monday">Monday</option>
-                        <option value="Tuesday">Tuesday</option>
-                        <option value="Wednesday">Wednesday</option>
-                        <option value="Thursday">Thursday</option>
-                        <option value="Friday">Friday</option>
-                        <option value="Saturday">Saturday</option>
-                        <option value="Sunday">Sunday</option>
-                        <option value="Multiple days">Multiple days (flexible)</option>
-                      </select>
-                      <i class="bi bi-check-circle-fill field-check" id="day-check"></i>
-                      <div class="invalid-feedback">
-                        Please select your preferred day(s).
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="timePreference" class="form-label">Preferred Time <span class="optional-label">(optional)</span></label>
-                      <select class="form-select" id="timePreference" name="timePreference">
-                        <option value="" selected>We'll discuss timing together</option>
-                        <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
-                        <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
-                        <option value="Evening (5pm-8pm)">Evening (5pm-8pm)</option>
-                        <option value="Flexible">Flexible timing</option>
-                      </select>
-                      <i class="bi bi-check-circle-fill field-check" id="timePreference-check"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- ExamEase -->
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon bg-info bg-gradient text-white">
+              <i class="bi bi-journal-check"></i>
+            </div>
+            <h3 class="fw-bold mb-3">ExamEase – Exam Preparation</h3>
+            <p class="text-muted mb-4">Structured exam practice using past papers with AI-powered feedback and topic mastery tracking.</p>
 
-              <!-- Additional Information Section -->
-              <div class="col-12 form-section">
-                <h4 class="section-title">
-                  <i class="bi bi-chat-dots"></i>Additional Information
-                </h4>
-                
-                <div class="form-group">
-                  <label for="details" class="form-label">Learning Goals & Special Requirements <span class="optional-label">(optional)</span></label>
-                  <textarea class="form-control" id="details" name="details" rows="4" placeholder="Tell us about your learning goals, specific topics you need help with, current challenges, or any special requirements..."></textarea>
-                  <div class="form-text">This helps us match you with the perfect tutor and prepare for your first session.</div>
-                </div>
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Past Paper Practice</strong>
+                <p class="text-muted small mb-0">Extensive database of exam questions by topic and difficulty</p>
               </div>
+            </div>
 
-              <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn" disabled>
-                  <i class="bi bi-rocket-takeoff me-2"></i>Start My Learning Journey
-                </button>
-                <div class="mt-2">
-                  <small class="text-muted">We'll contact you within 24 hours to discuss pricing and schedule your first session</small>
-                </div>
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Topic-Based Mastery</strong>
+                <p class="text-muted small mb-0">Track progress and identify weak areas for focused improvement</p>
               </div>
-            </form>
-            <div id="loading" class="spinner-border text-primary mt-3" role="status" style="display: none;">
-              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Confidence Building</strong>
+                <p class="text-muted small mb-0">Systematic preparation that reduces exam anxiety</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-info bg-opacity-10 text-info me-2 mb-2">Exam-Focused Students</span>
+              <span class="badge bg-info bg-opacity-10 text-info me-2 mb-2">Schools</span>
+              <span class="badge bg-info bg-opacity-10 text-info mb-2">Revision Programs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Educational AI Consulting -->
+        <div class="col-lg-4">
+          <div class="service-card border-warning border-2">
+            <div class="service-icon bg-warning bg-gradient text-dark">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <h3 class="fw-bold mb-3">Educational AI Consulting</h3>
+            <p class="text-muted mb-4">Expert consulting to help institutions design, build, and deploy AI-powered educational solutions.</p>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>AI Tutors & Markers</strong>
+                <p class="text-muted small mb-0">Custom AI solutions for automated teaching and assessment</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Educational Automation</strong>
+                <p class="text-muted small mb-0">Streamline administrative and teaching processes with AI</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Full Lifecycle Support</strong>
+                <p class="text-muted small mb-0">From initial concept through prototype to full deployment</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-warning bg-opacity-10 text-dark me-2 mb-2">Schools & Universities</span>
+              <span class="badge bg-warning bg-opacity-10 text-dark me-2 mb-2">EdTech Startups</span>
+              <span class="badge bg-warning bg-opacity-10 text-dark mb-2">Education Businesses</span>
             </div>
           </div>
         </div>
       </div>
-    </br>
+    </div>
   </section>
-  
-  <!-- Auto-save indicator -->
-  <div class="auto-save" id="autoSave">
-    <i class="bi bi-cloud-check me-1"></i>Progress saved
-  </div>
+
+  <!-- Trust & Credibility Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="trust-section text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h3 class="fw-bold mb-4">Trusted by Leading Institutions</h3>
+            <div class="uct-badge mb-4">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/77/University_of_Cape_Town_logo.svg/200px-University_of_Cape_Town_logo.svg.png"
+                   alt="University of Cape Town"
+                   style="height: 80px; object-fit: contain;"
+                   onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div style="display: none; font-size: 1.2rem; font-weight: 600; color: #003366; padding: 1.5rem;">
+                University of Cape Town
+              </div>
+            </div>
+            <p class="lead mb-4">
+              We are proud to partner with the <strong>University of Cape Town (UCT)</strong>, collaborating on AI-based educational projects that advance learning technology and innovation.
+            </p>
+            <p class="text-muted">
+              Our work with leading institutions demonstrates our commitment to delivering reliable, research-backed AI solutions that meet the highest academic standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider container"></div>
+
+  <!-- Request Services Form -->
+  <section class="py-5 bg-light" id="request-form">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="form-container">
+            <div class="text-center mb-5">
+              <h2 class="display-6 fw-bold mb-3">Request a Consultation</h2>
+              <p class="lead text-muted">Tell us about your needs and we'll get back to you within 24 hours</p>
+              <p class="text-muted">
+                <i class="bi bi-telephone me-2"></i>Questions? Call/WhatsApp
+                <a href="tel:+2687840455">+268 7840 4553</a> or
+                <a href="tel:+27839678191">+27 83 967 8191</a>
+                <br>
+                <i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+              </p>
+            </div>
+
+            <form id="servicesForm" class="needs-validation" novalidate>
+              <div class="row g-4">
+                <!-- Full Name -->
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label fw-semibold">
+                    Full Name <span class="text-danger">*</span>
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="fullName"
+                         name="fullName"
+                         required
+                         placeholder="Enter your full name">
+                  <div class="invalid-feedback">
+                    Please provide your full name.
+                  </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">
+                    Email Address <span class="text-danger">*</span>
+                  </label>
+                  <input type="email"
+                         class="form-control form-control-lg"
+                         id="email"
+                         name="email"
+                         required
+                         placeholder="your.email@example.com">
+                  <div class="invalid-feedback">
+                    Please provide a valid email address.
+                  </div>
+                </div>
+
+                <!-- Organisation Type -->
+                <div class="col-12">
+                  <label for="organisationType" class="form-label fw-semibold">
+                    Organisation / School / Individual <span class="text-danger">*</span>
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="organisationType"
+                         name="organisationType"
+                         required
+                         placeholder="e.g., High School Student, ABC University, Individual Learner">
+                  <div class="form-text">Specify if you're an individual, school name, or organisation name</div>
+                  <div class="invalid-feedback">
+                    Please specify your organisation, school, or indicate you're an individual.
+                  </div>
+                </div>
+
+                <!-- Service Interested In -->
+                <div class="col-12">
+                  <label for="serviceInterest" class="form-label fw-semibold">
+                    Service Interested In <span class="text-danger">*</span>
+                  </label>
+                  <select class="form-select form-select-lg"
+                          id="serviceInterest"
+                          name="serviceInterest"
+                          required>
+                    <option value="" selected disabled>Choose a service...</option>
+                    <option value="AI Tutoring (MAMTutor)">AI Tutoring (MAMTutor)</option>
+                    <option value="Exam Preparation (ExamEase)">Exam Preparation (ExamEase)</option>
+                    <option value="Educational AI Consulting">Educational AI Consulting</option>
+                    <option value="Not sure / Want advice">Not sure / Want advice</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a service you're interested in.
+                  </div>
+                </div>
+
+                <!-- Description of Needs -->
+                <div class="col-12">
+                  <label for="needsDescription" class="form-label fw-semibold">
+                    Short Description of Needs <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control form-control-lg"
+                            id="needsDescription"
+                            name="needsDescription"
+                            rows="5"
+                            required
+                            placeholder="Please describe your specific needs, goals, or what you'd like to achieve with our services..."></textarea>
+                  <div class="form-text">
+                    Help us understand how we can best support you (e.g., subjects of interest, institutional goals, timeline, etc.)
+                  </div>
+                  <div class="invalid-feedback">
+                    Please provide a brief description of your needs.
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">
+                    <i class="bi bi-send me-2"></i>Request Consultation
+                  </button>
+                  <p class="text-muted mt-3 mb-0">
+                    <small>
+                      <i class="bi bi-lock me-1"></i>
+                      Your information is secure. Pricing is discussed after understanding your specific needs.
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </form>
+
+            <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Sending...</span>
+              </div>
+              <p class="text-muted mt-2">Sending your request...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="mt-auto">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-6 text-center text-md-start">
-          <h5 class="mb-3">🌍 Global Contact</h5>
+          <h5 class="mb-3">Global Contact</h5>
           <p class="mb-2">
             <i class="bi bi-telephone me-2"></i>
             <a href="tel:+26878404553">+268 7840 4553</a>
@@ -345,32 +552,38 @@
             </a>
           </div>
           <p class="mt-2 mb-0">
-            <small class="text-muted">Connecting students worldwide since 2019</small>
+            <small class="text-muted">Transforming education since 2019</small>
           </p>
         </div>
       </div>
       <hr class="my-4">
       <p class="text-center mb-0">
-        © <span id="current-year"></span> MiltonLearn. Empowering global education. All rights reserved.
+        © <span id="current-year"></span> MiltonLearn. AI-Powered Education. All rights reserved.
       </p>
     </div>
   </footer>
 
-
-  <div id="successModal" class="custom-modal">
-    <div class="custom-modal-content">
-      <span class="custom-modal-close" aria-label="Close modal">&times;</span>
-      <div class="success-icon">
-        <i class="bi bi-check-circle-fill"></i>
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body text-center p-5">
+          <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="fw-bold mb-3">Request Submitted Successfully!</h3>
+          <p class="text-muted mb-4">
+            Thank you for your interest in MiltonLearn's services. Our team will review your request and contact you within 24 hours to discuss your needs and provide tailored recommendations.
+          </p>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-      <h2>Request Submitted!</h2>
-      <p>Your tutor request has been successfully sent. Our team will contact you within 24 hours to discuss pricing, schedule your first session, and answer any questions.</p>
     </div>
   </div>
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- EmailJS -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
@@ -380,177 +593,21 @@
       emailjs.init("JR2sVi6C36Fta6Ddr");
     })();
 
-    // Set current year in footer and clean URL
+    // Set current year
     document.addEventListener('DOMContentLoaded', function() {
       const currentYearElement = document.getElementById('current-year');
       if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
       }
-
-      // Clean URL parameters if they exist
-      if (window.location.search) {
-        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
-      }
-
-      // Auto-scroll to form with enhanced targeting
-      setTimeout(function() {
-        const formContainer = document.getElementById('tutorFormCard');
-        const completionIndicator = document.querySelector('.completion-indicator');
-        
-        if (formContainer) {
-          // Add highlight animation class
-          formContainer.classList.add('form-highlight');
-          
-          // Calculate precise scroll position
-          const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 70;
-          const headerHeight = document.querySelector('.text-center.mb-4')?.offsetHeight || 100;
-          const targetElement = completionIndicator || formContainer;
-          const targetPosition = targetElement.offsetTop - navbarHeight - 30;
-          
-          
-          
-          // Focus on first input after scroll completes
-          setTimeout(function() {
-            const firstInput = document.getElementById('parentName');
-            if (firstInput) {
-              firstInput.focus();
-              
-            }
-          }, 1000);
-          
-          // Remove highlight class after animation
-          setTimeout(function() {
-            formContainer.classList.remove('form-highlight');
-          }, 2500);
-        }
-      }, 500);
     });
 
-    // Enhanced form completion tracking
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('tutorForm');
-      const submitBtn = document.getElementById('submitBtn');
-      const completionText = document.getElementById('completionText');
-      const missingFieldsAlert = document.getElementById('missingFieldsAlert');
-      const missingFieldsList = document.getElementById('missingFieldsList');
-      const autoSave = document.getElementById('autoSave');
-      
-      // Get all required fields
-      const requiredFields = form.querySelectorAll('[required]');
-      let autoSaveTimeout;
-      
-      // Check completion status
-      function checkCompletion() {
-        const completedFields = Array.from(requiredFields).filter(field => {
-          return field.value.trim() !== '' && field.checkValidity();
-        });
-        
-        const totalRequired = requiredFields.length;
-        const completed = completedFields.length;
-        const isComplete = completed === totalRequired;
-        
-        // Update completion text
-        if (isComplete) {
-          completionText.innerHTML = `<i class="bi bi-check-circle me-2"></i>All required fields completed! Submit to get started with your first FREE consultation.`;
-          completionText.style.color = '#28a745';
-          submitBtn.disabled = false;
-          missingFieldsAlert.classList.remove('show');
-        } else {
-          completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>${completed} of ${totalRequired} required fields completed to get your first FREE consultation.`;
-          completionText.style.color = '#856404';
-          submitBtn.disabled = true;
-          
-          // Show missing fields
-          const missingFields = Array.from(requiredFields)
-            .filter(field => field.value.trim() === '' || !field.checkValidity())
-            .map(field => field.previousElementSibling.textContent.replace(' *', ''));
-          
-          if (completed > 0 && missingFields.length > 0) {
-            missingFieldsList.textContent = missingFields.join(', ');
-            missingFieldsAlert.classList.add('show');
-          }
-        }
-        
-        // Update field check icons (including optional fields that have values)
-        const allFields = form.querySelectorAll('input, select, textarea');
-        allFields.forEach(field => {
-          const checkIcon = document.getElementById(field.id + '-check');
-          if (checkIcon) {
-            const isRequired = field.hasAttribute('required');
-            const hasValue = field.value.trim() !== '';
-            const isValid = field.checkValidity();
-            
-            if (hasValue && isValid) {
-              checkIcon.classList.add('show');
-            } else {
-              checkIcon.classList.remove('show');
-            }
-          }
-        });
-      }
-      
-      // Auto-save function
-      function autoSaveProgress() {
-        const formData = new FormData(form);
-        const data = {};
-        for (let [key, value] of formData.entries()) {
-          data[key] = value;
-        }
-        localStorage.setItem('tutorFormData', JSON.stringify(data));
-        
-        // Show auto-save indicator
-        autoSave.classList.add('show');
-        setTimeout(() => autoSave.classList.remove('show'), 2000);
-      }
-      
-      // Load saved data
-      function loadSavedData() {
-        const saved = localStorage.getItem('tutorFormData');
-        if (saved) {
-          try {
-            const data = JSON.parse(saved);
-            Object.keys(data).forEach(key => {
-              const field = document.getElementById(key);
-              if (field && data[key]) {
-                field.value = data[key];
-              }
-            });
-            checkCompletion();
-          } catch (e) {
-            console.error('Error loading saved data:', e);
-          }
-        }
-      }
-      
-      // Add event listeners to all form fields
-      const allFields = form.querySelectorAll('input, select, textarea');
-      allFields.forEach(field => {
-        field.addEventListener('input', () => {
-          checkCompletion();
-          
-          // Auto-save with debounce
-          clearTimeout(autoSaveTimeout);
-          autoSaveTimeout = setTimeout(autoSaveProgress, 2000);
-        });
-        
-        field.addEventListener('change', checkCompletion);
-      });
-      
-      // Load saved data on page load
-      loadSavedData();
-      
-      // Initial check
-      checkCompletion();
-    });
-
-    // Enhanced form validation and submission
+    // Form validation and submission
     document.addEventListener('DOMContentLoaded', function() {
       'use strict';
 
-      const form = document.getElementById('tutorForm');
-      const loadingSpinner = document.getElementById('loading');
-      
+      const form = document.getElementById('servicesForm');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+
       if (!form) {
         console.error('Form not found');
         return;
@@ -559,18 +616,13 @@
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         event.stopPropagation();
-        event.stopImmediatePropagation();
-        
-        console.log('Form submitted');
-        
+
         if (form.checkValidity()) {
-          console.log('Form is valid, sending email...');
           sendEmail();
         } else {
-          console.log('Form is invalid');
           form.classList.add('was-validated');
         }
-        
+
         return false;
       }, false);
 
@@ -578,53 +630,32 @@
         if (loadingSpinner) {
           loadingSpinner.style.display = 'block';
         }
-        
+
         // Get form values
         const templateParams = {
-          studentName: document.getElementById('studentName')?.value || '',
-          parentName: document.getElementById('parentName')?.value || '',
+          fullName: document.getElementById('fullName')?.value || '',
           reply_to: document.getElementById('email')?.value || '',
-          parentNumber: document.getElementById('parentNumber')?.value || '',
-          studentNumber: document.getElementById('studentNumber')?.value || 'Not provided',
-          day: document.getElementById('day')?.value || '',
-          level: document.getElementById('level')?.value || '',
-          subject: document.getElementById('subject')?.value || '',
-          details: document.getElementById('details')?.value || 'No additional information provided',
-          parentOrStudent: document.getElementById('parentOrStudent')?.value || '',
-          timePreference: document.getElementById('timePreference')?.value || 'To be discussed',
-          meetingLocation: 'Online (Zoom)' // Fixed value since all sessions are online
+          organisationType: document.getElementById('organisationType')?.value || '',
+          serviceInterest: document.getElementById('serviceInterest')?.value || '',
+          needsDescription: document.getElementById('needsDescription')?.value || '',
+          timestamp: new Date().toLocaleString()
         };
-        
-        console.log('Template params:', templateParams);
-        
+
         // Send email using EmailJS
-        emailjs.send('service_jytz61d', 'template_kjcid8m', templateParams)
+        emailjs.send('service_jytz61d', 'template_services', templateParams)
           .then(function(response) {
             console.log('Email sent successfully:', response);
             if (loadingSpinner) {
               loadingSpinner.style.display = 'none';
             }
-            showSuccessModal();
+
+            // Show success modal
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Reset form
             form.reset();
             form.classList.remove('was-validated');
-            
-            // Clear saved data on successful submission
-            localStorage.removeItem('tutorFormData');
-            
-            // Reset completion tracking
-            document.querySelectorAll('.field-check').forEach(check => {
-              check.classList.remove('show');
-            });
-            
-            // Reset completion text
-            const completionText = document.getElementById('completionText');
-            if (completionText) {
-              completionText.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>Complete the required fields below to submit your request`;
-              completionText.style.color = '#856404';
-            }
-            
-            // Disable submit button
-            document.getElementById('submitBtn').disabled = true;
           })
           .catch(function(error) {
             console.error('Request sending failed:', error);
@@ -634,22 +665,25 @@
             alert('Failed to send request. Please try again or contact us directly at info@miltonlearn.com or call +268 7840 4553.');
           });
       }
+    });
 
-      // Function to show the success modal
-      function showSuccessModal() {
-        const modal = document.getElementById('successModal');
-        if (modal) {
-          modal.style.display = 'block';
-        }
-      }
-
-      // Close the modal when clicking the close button or outside the modal
-      window.onclick = function(event) {
-        const modal = document.getElementById('successModal');
-        if (modal && (event.target == modal || event.target.className == 'custom-modal-close')) {
-          modal.style.display = 'none';
-        }
-      };
+    // Smooth scroll to form
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href="#request-form"]');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector('#request-form');
+          if (target) {
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 70;
+            const targetPosition = target.offsetTop - navbarHeight - 20;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
     });
   </script>
 </body>
