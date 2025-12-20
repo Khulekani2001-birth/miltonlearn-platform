@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Our Services · MiltonLearn</title>
+    <meta name="description" content="Partner with MiltonLearn for AI-powered education solutions. From AI tutoring with MAMTutor to exam preparation with ExamEase and educational AI consulting for institutions.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E4Y24C156P');
+    </script>
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      /* Service-specific styles */
+      .service-card {
+        border: none;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        padding: 2rem;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .trust-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 3rem 0;
+        border-radius: 16px;
+      }
+
+      .uct-badge {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        display: inline-block;
+      }
+
+      .form-container {
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .section-divider {
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--info));
+        border-radius: 2px;
+        margin: 3rem 0;
+        opacity: 0.3;
+      }
+
+      .hero-services {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 80px 0;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-services::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        opacity: 0.5;
+      }
+
+      .hero-services .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-feature {
+        display: flex;
+        align-items: start;
+        margin-bottom: 1rem;
+      }
+
+      .service-feature i {
+        color: var(--success);
+        margin-right: 0.75rem;
+        margin-top: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .badge-ai {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+<body class="d-flex flex-column h-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo">
+        <span class="brand-text">MiltonLearn</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-grid me-2"></i>Our Technology
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">
+                  <i class="bi bi-robot me-2 text-primary"></i>
+                  <strong>MAMTutor AI</strong><br>
+                  <small class="text-muted">24/7 AI learning assistant</small>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">
+                  <i class="bi bi-journal-check me-2 text-info"></i>
+                  <strong>ExamEase</strong><br>
+                  <small class="text-muted">Smart exam preparation</small>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_services.html">
+              <i class="bi bi-stars me-1"></i>Request Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-services">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="badge-ai mb-3">
+            <i class="bi bi-lightning-charge-fill me-2"></i>AI-Powered Education Solutions
+          </div>
+          <h1 class="display-4 fw-bold mb-4">
+            Transforming Education Through AI Innovation
+          </h1>
+          <p class="lead mb-4">
+            We partner with students, schools, and universities to deliver cutting-edge AI learning tools and educational technology consulting. From personalized AI tutoring to institutional transformation.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>AI Tutoring Platform</span>
+            </div>
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>Exam Preparation Tools</span>
+            </div>
+            <div class="d-flex align-items-center text-white">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <span>Educational AI Consulting</span>
+            </div>
+          </div>
+          <a href="#request-form" class="btn btn-light btn-lg mt-3">
+            <i class="bi bi-arrow-down-circle me-2"></i>Request a Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3">Our AI Education Solutions</h2>
+        <p class="lead text-muted">Comprehensive services for students, educators, and institutions</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- MAMTutor AI Tutoring -->
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon bg-primary bg-gradient text-white">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h3 class="fw-bold mb-3">MAMTutor – AI Tutoring</h3>
+            <p class="text-muted mb-4">Personalized AI tutoring available 24/7 for Mathematics, Science, and Computer Science.</p>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Adaptive Learning</strong>
+                <p class="text-muted small mb-0">Personalized explanations that adapt to each student's learning style</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Step-by-Step Reasoning</strong>
+                <p class="text-muted small mb-0">Clear, detailed explanations that build understanding</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Student-Friendly Guidance</strong>
+                <p class="text-muted small mb-0">Patient, encouraging support for independent learners</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">Independent Learners</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">Homework Help</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Exam Preparation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ExamEase -->
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon bg-info bg-gradient text-white">
+              <i class="bi bi-journal-check"></i>
+            </div>
+            <h3 class="fw-bold mb-3">ExamEase – Exam Preparation</h3>
+            <p class="text-muted mb-4">Structured exam practice using past papers with AI-powered feedback and topic mastery tracking.</p>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Past Paper Practice</strong>
+                <p class="text-muted small mb-0">Extensive database of exam questions by topic and difficulty</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Topic-Based Mastery</strong>
+                <p class="text-muted small mb-0">Track progress and identify weak areas for focused improvement</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Confidence Building</strong>
+                <p class="text-muted small mb-0">Systematic preparation that reduces exam anxiety</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-info bg-opacity-10 text-info me-2 mb-2">Exam-Focused Students</span>
+              <span class="badge bg-info bg-opacity-10 text-info me-2 mb-2">Schools</span>
+              <span class="badge bg-info bg-opacity-10 text-info mb-2">Revision Programs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Educational AI Consulting -->
+        <div class="col-lg-4">
+          <div class="service-card border-warning border-2">
+            <div class="service-icon bg-warning bg-gradient text-dark">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <h3 class="fw-bold mb-3">Educational AI Consulting</h3>
+            <p class="text-muted mb-4">Expert consulting to help institutions design, build, and deploy AI-powered educational solutions.</p>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>AI Tutors & Markers</strong>
+                <p class="text-muted small mb-0">Custom AI solutions for automated teaching and assessment</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Educational Automation</strong>
+                <p class="text-muted small mb-0">Streamline administrative and teaching processes with AI</p>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Full Lifecycle Support</strong>
+                <p class="text-muted small mb-0">From initial concept through prototype to full deployment</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+              <p class="small text-muted mb-2"><strong>Ideal for:</strong></p>
+              <span class="badge bg-warning bg-opacity-10 text-dark me-2 mb-2">Schools & Universities</span>
+              <span class="badge bg-warning bg-opacity-10 text-dark me-2 mb-2">EdTech Startups</span>
+              <span class="badge bg-warning bg-opacity-10 text-dark mb-2">Education Businesses</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Credibility Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="trust-section text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h3 class="fw-bold mb-4">Trusted by Leading Institutions</h3>
+            <div class="uct-badge mb-4">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/77/University_of_Cape_Town_logo.svg/200px-University_of_Cape_Town_logo.svg.png"
+                   alt="University of Cape Town"
+                   style="height: 80px; object-fit: contain;"
+                   onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div style="display: none; font-size: 1.2rem; font-weight: 600; color: #003366; padding: 1.5rem;">
+                University of Cape Town
+              </div>
+            </div>
+            <p class="lead mb-4">
+              We are proud to partner with the <strong>University of Cape Town (UCT)</strong>, collaborating on AI-based educational projects that advance learning technology and innovation.
+            </p>
+            <p class="text-muted">
+              Our work with leading institutions demonstrates our commitment to delivering reliable, research-backed AI solutions that meet the highest academic standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider container"></div>
+
+  <!-- Request Services Form -->
+  <section class="py-5 bg-light" id="request-form">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="form-container">
+            <div class="text-center mb-5">
+              <h2 class="display-6 fw-bold mb-3">Request a Consultation</h2>
+              <p class="lead text-muted">Tell us about your needs and we'll get back to you within 24 hours</p>
+              <p class="text-muted">
+                <i class="bi bi-telephone me-2"></i>Questions? Call/WhatsApp
+                <a href="tel:+2687840455">+268 7840 4553</a> or
+                <a href="tel:+27839678191">+27 83 967 8191</a>
+                <br>
+                <i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+              </p>
+            </div>
+
+            <form id="servicesForm" class="needs-validation" novalidate>
+              <div class="row g-4">
+                <!-- Full Name -->
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label fw-semibold">
+                    Full Name <span class="text-danger">*</span>
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="fullName"
+                         name="fullName"
+                         required
+                         placeholder="Enter your full name">
+                  <div class="invalid-feedback">
+                    Please provide your full name.
+                  </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">
+                    Email Address <span class="text-danger">*</span>
+                  </label>
+                  <input type="email"
+                         class="form-control form-control-lg"
+                         id="email"
+                         name="email"
+                         required
+                         placeholder="your.email@example.com">
+                  <div class="invalid-feedback">
+                    Please provide a valid email address.
+                  </div>
+                </div>
+
+                <!-- Organisation Type -->
+                <div class="col-12">
+                  <label for="organisationType" class="form-label fw-semibold">
+                    Organisation / School / Individual <span class="text-danger">*</span>
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="organisationType"
+                         name="organisationType"
+                         required
+                         placeholder="e.g., High School Student, ABC University, Individual Learner">
+                  <div class="form-text">Specify if you're an individual, school name, or organisation name</div>
+                  <div class="invalid-feedback">
+                    Please specify your organisation, school, or indicate you're an individual.
+                  </div>
+                </div>
+
+                <!-- Service Interested In -->
+                <div class="col-12">
+                  <label for="serviceInterest" class="form-label fw-semibold">
+                    Service Interested In <span class="text-danger">*</span>
+                  </label>
+                  <select class="form-select form-select-lg"
+                          id="serviceInterest"
+                          name="serviceInterest"
+                          required>
+                    <option value="" selected disabled>Choose a service...</option>
+                    <option value="AI Tutoring (MAMTutor)">AI Tutoring (MAMTutor)</option>
+                    <option value="Exam Preparation (ExamEase)">Exam Preparation (ExamEase)</option>
+                    <option value="Educational AI Consulting">Educational AI Consulting</option>
+                    <option value="Not sure / Want advice">Not sure / Want advice</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a service you're interested in.
+                  </div>
+                </div>
+
+                <!-- Description of Needs -->
+                <div class="col-12">
+                  <label for="needsDescription" class="form-label fw-semibold">
+                    Short Description of Needs <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control form-control-lg"
+                            id="needsDescription"
+                            name="needsDescription"
+                            rows="5"
+                            required
+                            placeholder="Please describe your specific needs, goals, or what you'd like to achieve with our services..."></textarea>
+                  <div class="form-text">
+                    Help us understand how we can best support you (e.g., subjects of interest, institutional goals, timeline, etc.)
+                  </div>
+                  <div class="invalid-feedback">
+                    Please provide a brief description of your needs.
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">
+                    <i class="bi bi-send me-2"></i>Request Consultation
+                  </button>
+                  <p class="text-muted mt-3 mb-0">
+                    <small>
+                      <i class="bi bi-lock me-1"></i>
+                      Your information is secure. Pricing is discussed after understanding your specific needs.
+                    </small>
+                  </p>
+                </div>
+              </div>
+            </form>
+
+            <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Sending...</span>
+              </div>
+              <p class="text-muted mt-2">Sending your request...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">Global Contact</h5>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+26878404553">+268 7840 4553</a>
+            <small class="text-muted">(WhatsApp available)</small>
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-clock me-2"></i>
+            <small class="text-muted">Available across all timezones</small>
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Our Global Community</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <p class="mt-2 mb-0">
+            <small class="text-muted">Transforming education since 2019</small>
+          </p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">
+        © <span id="current-year"></span> MiltonLearn. AI-Powered Education. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body text-center p-5">
+          <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="fw-bold mb-3">Request Submitted Successfully!</h3>
+          <p class="text-muted mb-4">
+            Thank you for your interest in MiltonLearn's services. Our team will review your request and contact you within 24 hours to discuss your needs and provide tailored recommendations.
+          </p>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script>
+    // Initialize EmailJS
+    (function(){
+      emailjs.init("JR2sVi6C36Fta6Ddr");
+    })();
+
+    // Set current year
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYearElement = document.getElementById('current-year');
+      if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+      }
+    });
+
+    // Form validation and submission
+    document.addEventListener('DOMContentLoaded', function() {
+      'use strict';
+
+      const form = document.getElementById('servicesForm');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+
+      if (!form) {
+        console.error('Form not found');
+        return;
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (form.checkValidity()) {
+          sendEmail();
+        } else {
+          form.classList.add('was-validated');
+        }
+
+        return false;
+      }, false);
+
+      function sendEmail() {
+        if (loadingSpinner) {
+          loadingSpinner.style.display = 'block';
+        }
+
+        // Get form values
+        const templateParams = {
+          fullName: document.getElementById('fullName')?.value || '',
+          reply_to: document.getElementById('email')?.value || '',
+          organisationType: document.getElementById('organisationType')?.value || '',
+          serviceInterest: document.getElementById('serviceInterest')?.value || '',
+          needsDescription: document.getElementById('needsDescription')?.value || '',
+          timestamp: new Date().toLocaleString()
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_jytz61d', 'template_services', templateParams)
+          .then(function(response) {
+            console.log('Email sent successfully:', response);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+
+            // Show success modal
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Reset form
+            form.reset();
+            form.classList.remove('was-validated');
+          })
+          .catch(function(error) {
+            console.error('Request sending failed:', error);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+            alert('Failed to send request. Please try again or contact us directly at info@miltonlearn.com or call +268 7840 4553.');
+          });
+      }
+    });
+
+    // Smooth scroll to form
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href="#request-form"]');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector('#request-form');
+          if (target) {
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 70;
+            const targetPosition = target.offsetTop - navbarHeight - 20;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
