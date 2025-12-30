@@ -1,57 +1,557 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting... · MiltonLearn</title>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Tutor · MiltonLearn - Expert 1-on-1 Tutoring</title>
+    <meta name="description" content="Book personalized 1-on-1 tutoring sessions with MiltonLearn's expert tutors. Get customized support in Math, Physics, Computer Science, Chemistry, and Biology.">
 
-  <!-- Redirect to new services page -->
-  <meta http-equiv="refresh" content="0; url=/request_services.html">
-  <link rel="canonical" href="/request_services.html">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E4Y24C156P');
+    </script>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-    .redirect-message {
-      text-align: center;
-    }
-    .spinner {
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-top: 4px solid white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    a {
-      color: white;
-      text-decoration: underline;
-    }
-  </style>
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      .form-container {
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+      }
+
+      .benefit-card {
+        background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        border-left: 4px solid var(--warning);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .time-checkbox {
+        display: inline-block;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-divider {
+        border-top: 2px solid #e9ecef;
+        margin: 2rem 0;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Educational Tutoring",
+        "provider": {
+          "@type": "TechCompany",
+          "name": "MiltonLearn",
+          "url": "https://www.miltonlearn.com"
+        },
+        "areaServed": "Worldwide",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://www.miltonlearn.com/request_tutor.html"
+        }
+      }
+    </script>
+  </head>
+
+<body class="d-flex flex-column h-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo">
+        <span class="brand-text">MiltonLearn</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="https://www.mamtutor.com" target="_blank">
+              <i class="bi bi-robot me-2"></i>MAMTutor
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_services.html">
+              <i class="bi bi-stars me-1"></i>Request Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1><i class="bi bi-person-video3 me-2"></i>Book Expert 1-on-1 Tutoring</h1>
+      <div class="fancy-text">
+        <p class="lead mb-4">Get personalized tutoring from expert educators in STEM subjects</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Booking Form -->
+        <div class="col-lg-8">
+          <div class="form-container">
+            <div class="text-center mb-4">
+              <h2 class="h3 fw-bold mb-3">Book Your Tutoring Session</h2>
+              <p class="text-muted">Fill out the form below and we'll match you with the perfect tutor</p>
+              <p class="text-muted mb-4">
+                <i class="bi bi-telephone me-2"></i><a href="tel:+26878404553">+268 7840 4553</a> •
+                <i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+              </p>
+            </div>
+
+            <form id="tutoringForm" class="needs-validation" novalidate>
+              <!-- Student Information Section -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-person-circle me-2"></i>Student Information</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="studentName" class="form-label fw-semibold">
+                      Student Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="studentName" name="studentName" required placeholder="Full name">
+                    <div class="invalid-feedback">Please provide the student's name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label fw-semibold">
+                      Email Address <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="your.email@example.com">
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label fw-semibold">
+                      Phone Number <span class="text-danger">*</span>
+                    </label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+268 7840 4553">
+                    <div class="form-text">Include country code for WhatsApp contact</div>
+                    <div class="invalid-feedback">Please provide a phone number.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gradeLevel" class="form-label fw-semibold">
+                      Grade/Level <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="gradeLevel" name="gradeLevel" required>
+                      <option value="" selected disabled>Select level...</option>
+                      <option value="Grade 8-9">Grade 8-9</option>
+                      <option value="Grade 10-12 (IGCSE/O-Level)">Grade 10-12 (IGCSE/O-Level)</option>
+                      <option value="AS/A-Level">AS/A-Level</option>
+                      <option value="University/College (Undergraduate)">University/College (Undergraduate)</option>
+                      <option value="University/College (Postgraduate)">University/College (Postgraduate)</option>
+                      <option value="Adult Learner">Adult Learner</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a grade level.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
+              <!-- Subject and Session Details -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-book me-2"></i>Session Details</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="subject" class="form-label fw-semibold">
+                      Subject <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="subject" name="subject" required>
+                      <option value="" selected disabled>Choose subject...</option>
+                      <option value="Mathematics">Mathematics</option>
+                      <option value="Physics">Physics</option>
+                      <option value="Chemistry">Chemistry</option>
+                      <option value="Biology">Biology</option>
+                      <option value="Computer Science">Computer Science</option>
+                      <option value="Programming">Programming</option>
+                      <option value="Statistics">Statistics</option>
+                      <option value="Multiple Subjects">Multiple Subjects</option>
+                      <option value="Other">Other (specify in description)</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a subject.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="sessionMode" class="form-label fw-semibold">
+                      Tutoring Mode <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="sessionMode" name="sessionMode" required>
+                      <option value="" selected disabled>Choose mode...</option>
+                      <option value="Online (Zoom/Teams)">Online (Zoom/Teams)</option>
+                      <option value="In-Person">In-Person (if available)</option>
+                      <option value="Hybrid (Both)">Hybrid (Both)</option>
+                      <option value="No Preference">No Preference</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a tutoring mode.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="sessionFrequency" class="form-label fw-semibold">
+                      Session Frequency <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="sessionFrequency" name="sessionFrequency" required>
+                      <option value="" selected disabled>How often?</option>
+                      <option value="Once a week">Once a week</option>
+                      <option value="Twice a week">Twice a week</option>
+                      <option value="Three times a week">Three times a week</option>
+                      <option value="Daily">Daily</option>
+                      <option value="As needed/Occasional">As needed/Occasional</option>
+                      <option value="Intensive (Exam prep)">Intensive (Exam prep)</option>
+                    </select>
+                    <div class="invalid-feedback">Please select frequency.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="sessionDuration" class="form-label fw-semibold">
+                      Session Duration <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="sessionDuration" name="sessionDuration" required>
+                      <option value="" selected disabled>How long?</option>
+                      <option value="30 minutes">30 minutes</option>
+                      <option value="1 hour">1 hour</option>
+                      <option value="1.5 hours">1.5 hours</option>
+                      <option value="2 hours">2 hours</option>
+                    </select>
+                    <div class="invalid-feedback">Please select duration.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
+              <!-- Scheduling Preferences -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-calendar-check me-2"></i>Preferred Times</h5>
+                <label class="form-label fw-semibold mb-3">
+                  What times work best for you? <span class="text-muted">(Select all that apply)</span>
+                </label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Mornings" id="time1" name="preferredTimes">
+                      <label class="form-check-label" for="time1">Weekday Mornings (8am-12pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Afternoons" id="time2" name="preferredTimes">
+                      <label class="form-check-label" for="time2">Weekday Afternoons (12pm-5pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Evenings" id="time3" name="preferredTimes">
+                      <label class="form-check-label" for="time3">Weekday Evenings (5pm-9pm)</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekend Mornings" id="time4" name="preferredTimes">
+                      <label class="form-check-label" for="time4">Weekend Mornings (8am-12pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekend Afternoons" id="time5" name="preferredTimes">
+                      <label class="form-check-label" for="time5">Weekend Afternoons (12pm-5pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Flexible" id="time6" name="preferredTimes">
+                      <label class="form-check-label" for="time6">Flexible/Any time</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
+              <!-- Learning Goals -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-target me-2"></i>Learning Goals & Topics</h5>
+                <div class="mb-3">
+                  <label for="specificTopics" class="form-label fw-semibold">
+                    Specific Topics to Cover <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control" id="specificTopics" name="specificTopics" rows="3" required
+                    placeholder="E.g., Calculus integration, Organic Chemistry reactions, Python programming basics, etc."></textarea>
+                  <div class="form-text">List the specific topics or areas where you need help</div>
+                  <div class="invalid-feedback">Please describe the topics you'd like to cover.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="learningGoals" class="form-label fw-semibold">
+                    Learning Goals <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control" id="learningGoals" name="learningGoals" rows="3" required
+                    placeholder="E.g., Prepare for final exams, improve grades, understand difficult concepts, homework help, etc."></textarea>
+                  <div class="form-text">What do you hope to achieve through tutoring?</div>
+                  <div class="invalid-feedback">Please describe your learning goals.</div>
+                </div>
+              </div>
+
+              <!-- Additional Information -->
+              <div class="mb-4">
+                <label for="additionalInfo" class="form-label fw-semibold">
+                  Additional Information <span class="text-muted">(Optional)</span>
+                </label>
+                <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3"
+                  placeholder="Any special requirements, learning preferences, or other details we should know..."></textarea>
+                <div class="form-text">Any other information that will help us match you with the right tutor</div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-warning btn-lg px-5">
+                  <i class="bi bi-calendar-check me-2"></i>Book Tutoring Session
+                </button>
+                <p class="text-muted mt-3 mb-0">
+                  <small>
+                    <i class="bi bi-clock-history me-1"></i>
+                    We'll contact you within 24 hours to confirm your booking and discuss pricing
+                  </small>
+                </p>
+              </div>
+            </form>
+
+            <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+              <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Sending...</span>
+              </div>
+              <p class="text-muted mt-2">Submitting your request...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose Us Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 100px;">
+            <h5 class="fw-bold mb-4"><i class="bi bi-stars me-2"></i>Why Choose Our Tutoring?</h5>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-person-check text-warning me-2"></i>Expert Tutors</h6>
+              <p class="small mb-0 text-muted">Qualified educators with proven track records in teaching STEM subjects</p>
+            </div>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-graph-up text-warning me-2"></i>Personalized Approach</h6>
+              <p class="small mb-0 text-muted">Customized lesson plans tailored to your learning style and goals</p>
+            </div>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-clock text-warning me-2"></i>Flexible Scheduling</h6>
+              <p class="small mb-0 text-muted">Choose times that work for you, including evenings and weekends</p>
+            </div>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-laptop text-warning me-2"></i>Online & In-Person</h6>
+              <p class="small mb-0 text-muted">Learn from anywhere with online sessions or meet in person if available</p>
+            </div>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-trophy text-warning me-2"></i>Proven Results</h6>
+              <p class="small mb-0 text-muted">Students see improved grades and deeper understanding of concepts</p>
+            </div>
+
+            <div class="benefit-card">
+              <h6 class="fw-bold mb-2"><i class="bi bi-shield-check text-warning me-2"></i>Trusted by UCT</h6>
+              <p class="small mb-0 text-muted">Partnered with leading institutions for quality education</p>
+            </div>
+
+            <div class="mt-4 p-3 bg-light rounded">
+              <h6 class="fw-bold mb-2">Need AI Tutoring Instead?</h6>
+              <p class="small text-muted mb-2">Try MAMTutor for 24/7 AI-powered homework help</p>
+              <a href="https://www.mamtutor.com" class="btn btn-sm btn-outline-primary" target="_blank">
+                <i class="bi bi-robot me-1"></i>Try MAMTutor
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">Contact</h5>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+26878404553">+268 7840 4553</a>
+            <small class="text-muted">(WhatsApp available)</small>
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">
+        © <span id="current-year"></span> MiltonLearn. AI-Powered Education. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body text-center p-5">
+          <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+          </div>
+          <h3 class="fw-bold mb-3">Booking Request Submitted!</h3>
+          <p class="text-muted mb-4">
+            Thank you for choosing MiltonLearn tutoring. Our team will review your request and contact you within 24 hours to confirm your session and discuss pricing.
+          </p>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
   <script>
-    // JavaScript redirect as backup
-    window.location.href = '/request_services.html';
+    // Initialize EmailJS
+    (function(){
+      emailjs.init("37JYNPRfsiVRfJeAv");
+    })();
+
+    // Set current year
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYearElement = document.getElementById('current-year');
+      if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+      }
+    });
+
+    // Form validation and submission
+    document.addEventListener('DOMContentLoaded', function() {
+      'use strict';
+
+      const form = document.getElementById('tutoringForm');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+
+      if (!form) {
+        console.error('Form not found');
+        return;
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (form.checkValidity()) {
+          sendEmail();
+        } else {
+          form.classList.add('was-validated');
+        }
+
+        return false;
+      }, false);
+
+      function sendEmail() {
+        if (loadingSpinner) {
+          loadingSpinner.style.display = 'block';
+        }
+
+        // Get preferred times checkboxes
+        const preferredTimesCheckboxes = document.querySelectorAll('input[name="preferredTimes"]:checked');
+        const preferredTimesArray = Array.from(preferredTimesCheckboxes).map(cb => cb.value);
+        const preferredTimesString = preferredTimesArray.length > 0 ? preferredTimesArray.join(', ') : 'Not specified';
+
+        // Get form values
+        const templateParams = {
+          studentName: document.getElementById('studentName')?.value || '',
+          reply_to: document.getElementById('email')?.value || '',
+          phone: document.getElementById('phone')?.value || '',
+          gradeLevel: document.getElementById('gradeLevel')?.value || '',
+          subject: document.getElementById('subject')?.value || '',
+          sessionMode: document.getElementById('sessionMode')?.value || '',
+          sessionFrequency: document.getElementById('sessionFrequency')?.value || '',
+          sessionDuration: document.getElementById('sessionDuration')?.value || '',
+          preferredTimes: preferredTimesString,
+          specificTopics: document.getElementById('specificTopics')?.value || '',
+          learningGoals: document.getElementById('learningGoals')?.value || '',
+          additionalInfo: document.getElementById('additionalInfo')?.value || 'None provided',
+          timestamp: new Date().toLocaleString()
+        };
+
+        // Send email using EmailJS service
+        emailjs.send('service_jytz61d', 'template_tutoring', templateParams)
+          .then(function(response) {
+            console.log('Email sent successfully:', response);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+
+            // Show success modal
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Reset form
+            form.reset();
+            form.classList.remove('was-validated');
+          })
+          .catch(function(error) {
+            console.error('Booking request sending failed:', error);
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+            alert('Failed to submit your booking request. Please try again or contact us directly at info@miltonlearn.com or call +268 7840 4553.');
+          });
+      }
+    });
   </script>
-</head>
-<body>
-  <div class="redirect-message">
-    <h1>Redirecting to Our Services...</h1>
-    <div class="spinner"></div>
-    <p>If you are not redirected automatically, <a href="/request_services.html">click here</a>.</p>
-  </div>
 </body>
 </html>
