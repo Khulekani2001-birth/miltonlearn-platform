@@ -210,15 +210,54 @@
 
               <div class="section-divider"></div>
 
+              <!-- Scheduling Preferences -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-calendar-check me-2"></i>Preferred Times</h5>
+                <label class="form-label fw-semibold mb-3">
+                  What times work best for you? <span class="text-muted">(Select all that apply)</span>
+                </label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Mornings" id="time1" name="preferredTimes">
+                      <label class="form-check-label" for="time1">Weekday Mornings (8am-12pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Afternoons" id="time2" name="preferredTimes">
+                      <label class="form-check-label" for="time2">Weekday Afternoons (12pm-5pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekday Evenings" id="time3" name="preferredTimes">
+                      <label class="form-check-label" for="time3">Weekday Evenings (5pm-9pm)</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekend Mornings" id="time4" name="preferredTimes">
+                      <label class="form-check-label" for="time4">Weekend Mornings (8am-12pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Weekend Afternoons" id="time5" name="preferredTimes">
+                      <label class="form-check-label" for="time5">Weekend Afternoons (12pm-5pm)</label>
+                    </div>
+                    <div class="form-check time-checkbox">
+                      <input class="form-check-input" type="checkbox" value="Flexible" id="time6" name="preferredTimes">
+                      <label class="form-check-label" for="time6">Flexible/Any time</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
               <!-- Message -->
               <div class="mb-4">
                 <label for="message" class="form-label fw-semibold">
-                  Message <span class="text-danger">*</span>
+                  Additional Information <span class="text-muted">(Optional)</span>
                 </label>
-                <textarea class="form-control" id="message" name="message" rows="4" required
-                  placeholder="Tell us what you need help with and any preferences you have for scheduling..."></textarea>
-                <div class="form-text">We'll discuss session details, scheduling, and pricing when we contact you</div>
-                <div class="invalid-feedback">Please provide some details about what you need.</div>
+                <textarea class="form-control" id="message" name="message" rows="4"
+                  placeholder="Any specific topics, learning goals, or other details you'd like to share..."></textarea>
+                <div class="form-text">Tell us more about what you need help with</div>
               </div>
 
               <!-- Submit Button -->
@@ -406,6 +445,11 @@
           loadingSpinner.style.display = 'block';
         }
 
+        // Get preferred times checkboxes
+        const preferredTimesCheckboxes = document.querySelectorAll('input[name="preferredTimes"]:checked');
+        const preferredTimesArray = Array.from(preferredTimesCheckboxes).map(cb => cb.value);
+        const preferredTimesString = preferredTimesArray.length > 0 ? preferredTimesArray.join(', ') : 'Not specified';
+
         // Get form values
         const templateParams = {
           studentName: document.getElementById('studentName')?.value || '',
@@ -413,7 +457,8 @@
           phone: document.getElementById('phone')?.value || '',
           gradeLevel: document.getElementById('gradeLevel')?.value || '',
           subject: document.getElementById('subject')?.value || '',
-          message: document.getElementById('message')?.value || '',
+          preferredTimes: preferredTimesString,
+          message: document.getElementById('message')?.value || 'None provided',
           timestamp: new Date().toLocaleString()
         };
 
