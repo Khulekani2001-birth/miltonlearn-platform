@@ -80,22 +80,6 @@
   <link rel="icon" type="image/x-icon" href="logo.png">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    .clickable-card {
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .clickable-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    a:has(.clickable-card) {
-      color: inherit;
-    }
-  </style>
-
 </head>
 
 <body class="d-flex flex-column">
@@ -201,10 +185,9 @@
         <div class="row g-4 justify-content-center">
           <!-- MAMTutor AI -->
           <div class="col-lg-4">
-            <a href="https://www.mamtutor.com" target="_blank" class="text-decoration-none h-100 d-block">
-              <div class="card feature-card h-100 border-primary border-2 shadow position-relative clickable-card">
-                <div class="pricing-badge">AI-Powered</div>
-                <div class="card-body p-4">
+            <div class="card feature-card h-100 border-primary border-2 shadow position-relative">
+              <div class="pricing-badge">AI-Powered</div>
+              <div class="card-body p-4">
                 <div class="text-center mb-4">
                   <div class="bg-primary text-white rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
                     <i class="bi bi-robot" style="font-size: 2rem;"></i>
@@ -245,15 +228,14 @@
                   </a>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- Human Tutoring -->
           <div class="col-lg-4">
-            <a href="/request_tutor.html" class="text-decoration-none h-100 d-block">
-              <div class="card feature-card h-100 border-warning border-2 shadow position-relative clickable-card">
-                <div class="pricing-badge bg-warning text-dark">Expert Tutors</div>
-                <div class="card-body p-4">
+            <div class="card feature-card h-100 border-warning border-2 shadow position-relative">
+              <div class="pricing-badge bg-warning text-dark">Expert Tutors</div>
+              <div class="card-body p-4">
                 <div class="text-center mb-4">
                   <div class="bg-warning text-dark rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
                     <i class="bi bi-person-video3" style="font-size: 2rem;"></i>
@@ -292,15 +274,14 @@
                   </a>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- EdTech Consulting -->
           <div class="col-lg-4">
-            <a href="/request_services.html" class="text-decoration-none h-100 d-block">
-              <div class="card feature-card h-100 shadow border-success border-2 clickable-card">
-                <div class="pricing-badge bg-success">Trusted by UCT</div>
-                <div class="card-body p-4">
+            <div class="card feature-card h-100 shadow border-success border-2">
+              <div class="pricing-badge bg-success">Trusted by UCT</div>
+              <div class="card-body p-4">
                 <div class="text-center mb-4">
                   <div class="bg-success text-white rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
                     <i class="bi bi-building" style="font-size: 2rem;"></i>
@@ -337,7 +318,7 @@
                   </a>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
