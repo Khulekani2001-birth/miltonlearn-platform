@@ -183,13 +183,13 @@
 
               <div class="section-divider"></div>
 
-              <!-- Subject and Session Details -->
+              <!-- Subject Selection -->
               <div class="mb-4">
-                <h5 class="text-primary mb-3"><i class="bi bi-book me-2"></i>Session Details</h5>
+                <h5 class="text-primary mb-3"><i class="bi bi-book me-2"></i>Subject</h5>
                 <div class="row g-3">
-                  <div class="col-md-6">
+                  <div class="col-12">
                     <label for="subject" class="form-label fw-semibold">
-                      Subject <span class="text-danger">*</span>
+                      Which subject do you need help with? <span class="text-danger">*</span>
                     </label>
                     <select class="form-select" id="subject" name="subject" required>
                       <option value="" selected disabled>Choose subject...</option>
@@ -201,131 +201,24 @@
                       <option value="Programming">Programming</option>
                       <option value="Statistics">Statistics</option>
                       <option value="Multiple Subjects">Multiple Subjects</option>
-                      <option value="Other">Other (specify in description)</option>
+                      <option value="Other">Other</option>
                     </select>
                     <div class="invalid-feedback">Please select a subject.</div>
                   </div>
-
-                  <div class="col-md-6">
-                    <label for="sessionMode" class="form-label fw-semibold">
-                      Tutoring Mode <span class="text-danger">*</span>
-                    </label>
-                    <select class="form-select" id="sessionMode" name="sessionMode" required>
-                      <option value="" selected disabled>Choose mode...</option>
-                      <option value="Online (Zoom/Teams)">Online (Zoom/Teams)</option>
-                      <option value="In-Person">In-Person (if available)</option>
-                      <option value="Hybrid (Both)">Hybrid (Both)</option>
-                      <option value="No Preference">No Preference</option>
-                    </select>
-                    <div class="invalid-feedback">Please select a tutoring mode.</div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="sessionFrequency" class="form-label fw-semibold">
-                      Session Frequency <span class="text-danger">*</span>
-                    </label>
-                    <select class="form-select" id="sessionFrequency" name="sessionFrequency" required>
-                      <option value="" selected disabled>How often?</option>
-                      <option value="Once a week">Once a week</option>
-                      <option value="Twice a week">Twice a week</option>
-                      <option value="Three times a week">Three times a week</option>
-                      <option value="Daily">Daily</option>
-                      <option value="As needed/Occasional">As needed/Occasional</option>
-                      <option value="Intensive (Exam prep)">Intensive (Exam prep)</option>
-                    </select>
-                    <div class="invalid-feedback">Please select frequency.</div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="sessionDuration" class="form-label fw-semibold">
-                      Session Duration <span class="text-danger">*</span>
-                    </label>
-                    <select class="form-select" id="sessionDuration" name="sessionDuration" required>
-                      <option value="" selected disabled>How long?</option>
-                      <option value="30 minutes">30 minutes</option>
-                      <option value="1 hour">1 hour</option>
-                      <option value="1.5 hours">1.5 hours</option>
-                      <option value="2 hours">2 hours</option>
-                    </select>
-                    <div class="invalid-feedback">Please select duration.</div>
-                  </div>
                 </div>
               </div>
 
               <div class="section-divider"></div>
 
-              <!-- Scheduling Preferences -->
+              <!-- Message -->
               <div class="mb-4">
-                <h5 class="text-primary mb-3"><i class="bi bi-calendar-check me-2"></i>Preferred Times</h5>
-                <label class="form-label fw-semibold mb-3">
-                  What times work best for you? <span class="text-muted">(Select all that apply)</span>
+                <label for="message" class="form-label fw-semibold">
+                  Message <span class="text-danger">*</span>
                 </label>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Weekday Mornings" id="time1" name="preferredTimes">
-                      <label class="form-check-label" for="time1">Weekday Mornings (8am-12pm)</label>
-                    </div>
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Weekday Afternoons" id="time2" name="preferredTimes">
-                      <label class="form-check-label" for="time2">Weekday Afternoons (12pm-5pm)</label>
-                    </div>
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Weekday Evenings" id="time3" name="preferredTimes">
-                      <label class="form-check-label" for="time3">Weekday Evenings (5pm-9pm)</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Weekend Mornings" id="time4" name="preferredTimes">
-                      <label class="form-check-label" for="time4">Weekend Mornings (8am-12pm)</label>
-                    </div>
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Weekend Afternoons" id="time5" name="preferredTimes">
-                      <label class="form-check-label" for="time5">Weekend Afternoons (12pm-5pm)</label>
-                    </div>
-                    <div class="form-check time-checkbox">
-                      <input class="form-check-input" type="checkbox" value="Flexible" id="time6" name="preferredTimes">
-                      <label class="form-check-label" for="time6">Flexible/Any time</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="section-divider"></div>
-
-              <!-- Learning Goals -->
-              <div class="mb-4">
-                <h5 class="text-primary mb-3"><i class="bi bi-target me-2"></i>Learning Goals & Topics</h5>
-                <div class="mb-3">
-                  <label for="specificTopics" class="form-label fw-semibold">
-                    Specific Topics to Cover <span class="text-danger">*</span>
-                  </label>
-                  <textarea class="form-control" id="specificTopics" name="specificTopics" rows="3" required
-                    placeholder="E.g., Calculus integration, Organic Chemistry reactions, Python programming basics, etc."></textarea>
-                  <div class="form-text">List the specific topics or areas where you need help</div>
-                  <div class="invalid-feedback">Please describe the topics you'd like to cover.</div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="learningGoals" class="form-label fw-semibold">
-                    Learning Goals <span class="text-danger">*</span>
-                  </label>
-                  <textarea class="form-control" id="learningGoals" name="learningGoals" rows="3" required
-                    placeholder="E.g., Prepare for final exams, improve grades, understand difficult concepts, homework help, etc."></textarea>
-                  <div class="form-text">What do you hope to achieve through tutoring?</div>
-                  <div class="invalid-feedback">Please describe your learning goals.</div>
-                </div>
-              </div>
-
-              <!-- Additional Information -->
-              <div class="mb-4">
-                <label for="additionalInfo" class="form-label fw-semibold">
-                  Additional Information <span class="text-muted">(Optional)</span>
-                </label>
-                <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3"
-                  placeholder="Any special requirements, learning preferences, or other details we should know..."></textarea>
-                <div class="form-text">Any other information that will help us match you with the right tutor</div>
+                <textarea class="form-control" id="message" name="message" rows="4" required
+                  placeholder="Tell us what you need help with and any preferences you have for scheduling..."></textarea>
+                <div class="form-text">We'll discuss session details, scheduling, and pricing when we contact you</div>
+                <div class="invalid-feedback">Please provide some details about what you need.</div>
               </div>
 
               <!-- Submit Button -->
@@ -336,7 +229,7 @@
                 <p class="text-muted mt-3 mb-0">
                   <small>
                     <i class="bi bi-clock-history me-1"></i>
-                    We'll contact you within 24 hours to confirm your booking and discuss pricing
+                    We'll contact you within 24 hours to discuss session details, scheduling, and pricing
                   </small>
                 </p>
               </div>
@@ -386,7 +279,15 @@
               <p class="small mb-0 text-muted">Partnered with leading institutions for quality education</p>
             </div>
 
-            <div class="mt-4 p-3 bg-light rounded">
+            <div class="mt-4 p-3 bg-warning bg-opacity-10 border border-warning rounded">
+              <h6 class="fw-bold mb-2"><i class="bi bi-currency-dollar text-warning me-2"></i>Tutoring Pricing</h6>
+              <p class="small text-muted mb-2">View our competitive rates and pricing packages</p>
+              <a href="/tutoring_pricing.html" class="btn btn-sm btn-warning">
+                <i class="bi bi-tag me-1"></i>View Pricing
+              </a>
+            </div>
+
+            <div class="mt-3 p-3 bg-light rounded">
               <h6 class="fw-bold mb-2">Need AI Tutoring Instead?</h6>
               <p class="small text-muted mb-2">Try MAMTutor for 24/7 AI-powered homework help</p>
               <a href="https://www.mamtutor.com" class="btn btn-sm btn-outline-primary" target="_blank">
@@ -445,9 +346,9 @@
           <div class="mb-4">
             <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
           </div>
-          <h3 class="fw-bold mb-3">Booking Request Submitted!</h3>
+          <h3 class="fw-bold mb-3">Request Submitted!</h3>
           <p class="text-muted mb-4">
-            Thank you for choosing MiltonLearn tutoring. Our team will review your request and contact you within 24 hours to confirm your session and discuss pricing.
+            Thank you for choosing MiltonLearn tutoring. Our team will contact you within 24 hours to discuss session details, scheduling, and pricing.
           </p>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
         </div>
@@ -505,11 +406,6 @@
           loadingSpinner.style.display = 'block';
         }
 
-        // Get preferred times checkboxes
-        const preferredTimesCheckboxes = document.querySelectorAll('input[name="preferredTimes"]:checked');
-        const preferredTimesArray = Array.from(preferredTimesCheckboxes).map(cb => cb.value);
-        const preferredTimesString = preferredTimesArray.length > 0 ? preferredTimesArray.join(', ') : 'Not specified';
-
         // Get form values
         const templateParams = {
           studentName: document.getElementById('studentName')?.value || '',
@@ -517,13 +413,7 @@
           phone: document.getElementById('phone')?.value || '',
           gradeLevel: document.getElementById('gradeLevel')?.value || '',
           subject: document.getElementById('subject')?.value || '',
-          sessionMode: document.getElementById('sessionMode')?.value || '',
-          sessionFrequency: document.getElementById('sessionFrequency')?.value || '',
-          sessionDuration: document.getElementById('sessionDuration')?.value || '',
-          preferredTimes: preferredTimesString,
-          specificTopics: document.getElementById('specificTopics')?.value || '',
-          learningGoals: document.getElementById('learningGoals')?.value || '',
-          additionalInfo: document.getElementById('additionalInfo')?.value || 'None provided',
+          message: document.getElementById('message')?.value || '',
           timestamp: new Date().toLocaleString()
         };
 
