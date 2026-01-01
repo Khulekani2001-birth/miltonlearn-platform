@@ -112,14 +112,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <!-- Booking Form -->
-        <div class="col-lg-8 col-xl-7">
+        <div class="col-lg-10 col-xl-9">
           <div class="form-container">
             <div class="text-center mb-4">
               <h2 class="h3 fw-bold mb-3">Book Your Tutoring Session</h2>
               <p class="text-muted">Fill out the form below and we'll match you with the perfect tutor</p>
               <div class="alert alert-info d-inline-block mb-3">
-                <i class="bi bi-laptop me-1"></i><strong>Online sessions worldwide</strong> •
-                <i class="bi bi-geo-alt me-1 ms-2"></i>Library meetings in Manzini & Mbabane
+                <i class="bi bi-laptop me-1"></i><strong>Online sessions</strong> •
+                <i class="bi bi-geo-alt me-1 ms-2"></i>Library meetings in Manzini & Mbabane upon request
               </div>
               <div class="mb-3">
                 <a href="/tutoring_pricing.html" class="btn btn-warning btn-lg">
@@ -397,19 +397,40 @@
         const preferredTimesString = preferredTimesArray.length > 0 ? preferredTimesArray.join(', ') : 'Not specified';
 
         // Get form values
+        const studentName = document.getElementById('studentName')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const phone = document.getElementById('phone')?.value || '';
+        const gradeLevel = document.getElementById('gradeLevel')?.value || '';
+        const subject = document.getElementById('subject')?.value || '';
+        const additionalInfo = document.getElementById('message')?.value || '';
+
+        // Format all details into a message for the contact form template
+        const formattedMessage = `
+TUTORING REQUEST
+
+Student Name: ${studentName}
+Email: ${email}
+Phone: ${phone}
+Grade/Level: ${gradeLevel}
+Subject: ${subject}
+Preferred Times: ${preferredTimesString}
+
+Additional Information:
+${additionalInfo || 'None provided'}
+
+Submitted: ${new Date().toLocaleString()}
+        `.trim();
+
+        // Use contact form template with formatted message
         const templateParams = {
-          studentName: document.getElementById('studentName')?.value || '',
-          reply_to: document.getElementById('email')?.value || '',
-          phone: document.getElementById('phone')?.value || '',
-          gradeLevel: document.getElementById('gradeLevel')?.value || '',
-          subject: document.getElementById('subject')?.value || '',
-          preferredTimes: preferredTimesString,
-          message: document.getElementById('message')?.value || 'None provided',
-          timestamp: new Date().toLocaleString()
+          from_name: studentName,
+          reply_to: email,
+          subject: 'Tutoring Request',
+          message: formattedMessage
         };
 
-        // Send email using EmailJS service
-        emailjs.send('service_jytz61d', 'template_tutoring', templateParams)
+        // Send email using the same template as contact form
+        emailjs.send('service_jytz61d', 'template_lcunkpm', templateParams)
           .then(function(response) {
             console.log('Email sent successfully:', response);
             if (loadingSpinner) {
