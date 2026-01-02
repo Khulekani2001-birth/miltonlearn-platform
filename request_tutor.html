@@ -133,6 +133,38 @@
             </div>
 
             <form id="tutoringForm" class="needs-validation" novalidate>
+              <!-- Parent/Guardian Information Section -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-person-badge me-2"></i>Parent/Guardian Information</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="parentName" class="form-label fw-semibold">
+                      Parent/Guardian Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="parentName" name="parentName" required placeholder="Full name">
+                    <div class="invalid-feedback">Please provide parent/guardian name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="parentPhone" class="form-label fw-semibold">
+                      Phone Number <span class="text-danger">*</span>
+                    </label>
+                    <input type="tel" class="form-control" id="parentPhone" name="parentPhone" required placeholder="+268 7840 4553">
+                    <div class="form-text">Include country code for WhatsApp contact</div>
+                    <div class="invalid-feedback">Please provide a phone number.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="parentEmail" class="form-label fw-semibold">
+                      Email Address <span class="text-muted">(Optional)</span>
+                    </label>
+                    <input type="email" class="form-control" id="parentEmail" name="parentEmail" placeholder="your.email@example.com">
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
               <!-- Student Information Section -->
               <div class="mb-4">
                 <h5 class="text-primary mb-3"><i class="bi bi-person-circle me-2"></i>Student Information</h5>
@@ -143,23 +175,6 @@
                     </label>
                     <input type="text" class="form-control" id="studentName" name="studentName" required placeholder="Full name">
                     <div class="invalid-feedback">Please provide the student's name.</div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="email" class="form-label fw-semibold">
-                      Email Address <span class="text-danger">*</span>
-                    </label>
-                    <input type="email" class="form-control" id="email" name="email" required placeholder="your.email@example.com">
-                    <div class="invalid-feedback">Please provide a valid email address.</div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="phone" class="form-label fw-semibold">
-                      Phone Number <span class="text-danger">*</span>
-                    </label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+268 7840 4553">
-                    <div class="form-text">Include country code for WhatsApp contact</div>
-                    <div class="invalid-feedback">Please provide a phone number.</div>
                   </div>
 
                   <div class="col-md-6">
@@ -176,6 +191,20 @@
                       <option value="Adult Learner">Adult Learner</option>
                     </select>
                     <div class="invalid-feedback">Please select a grade level.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="studentPhone" class="form-label fw-semibold">
+                      Phone Number <span class="text-muted">(Optional)</span>
+                    </label>
+                    <input type="tel" class="form-control" id="studentPhone" name="studentPhone" placeholder="+268 7840 4553">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="studentEmail" class="form-label fw-semibold">
+                      Email Address <span class="text-muted">(Optional)</span>
+                    </label>
+                    <input type="email" class="form-control" id="studentEmail" name="studentEmail" placeholder="student.email@example.com">
                   </div>
                 </div>
               </div>
@@ -397,9 +426,12 @@
         const preferredTimesString = preferredTimesArray.length > 0 ? preferredTimesArray.join(', ') : 'Not specified';
 
         // Get form values
+        const parentName = document.getElementById('parentName')?.value || '';
+        const parentPhone = document.getElementById('parentPhone')?.value || '';
+        const parentEmail = document.getElementById('parentEmail')?.value || '';
         const studentName = document.getElementById('studentName')?.value || '';
-        const email = document.getElementById('email')?.value || '';
-        const phone = document.getElementById('phone')?.value || '';
+        const studentPhone = document.getElementById('studentPhone')?.value || '';
+        const studentEmail = document.getElementById('studentEmail')?.value || '';
         const gradeLevel = document.getElementById('gradeLevel')?.value || '';
         const subject = document.getElementById('subject')?.value || '';
         const additionalInfo = document.getElementById('message')?.value || '';
@@ -408,10 +440,18 @@
         const formattedMessage = `
 TUTORING REQUEST
 
-Student Name: ${studentName}
-Email: ${email}
-Phone: ${phone}
+PARENT/GUARDIAN INFORMATION:
+Name: ${parentName}
+Phone: ${parentPhone}
+Email: ${parentEmail || 'Not provided'}
+
+STUDENT INFORMATION:
+Name: ${studentName}
 Grade/Level: ${gradeLevel}
+Phone: ${studentPhone || 'Not provided'}
+Email: ${studentEmail || 'Not provided'}
+
+SESSION DETAILS:
 Subject: ${subject}
 Preferred Times: ${preferredTimesString}
 
@@ -423,8 +463,8 @@ Submitted: ${new Date().toLocaleString()}
 
         // Use contact form template with formatted message
         const templateParams = {
-          from_name: studentName,
-          reply_to: email,
+          from_name: parentName,
+          reply_to: parentEmail || parentPhone,
           subject: 'Tutoring Request',
           message: formattedMessage
         };
