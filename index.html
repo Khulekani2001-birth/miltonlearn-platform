@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MiltonLearn - Know Your Math | Premium Online Tutoring</title>
   <meta name="description" content="Master Mathematics and Computer Science with expert 1-to-1 online tutoring. IGCSE, AS/A Level. Real understanding, lasting confidence.">
-  <link rel="stylesheet" href="css/style.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,13 +21,18 @@
       font-family: 'Inter', sans-serif;
       color: #333;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     
     /* Navbar */
     .navbar {
-      background: white;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      padding: 1rem 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 0;
+      transition: all 0.3s ease;
     }
     
     .navbar-brand {
@@ -37,6 +42,11 @@
       font-size: 1.4rem;
       color: #333;
       text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+      transform: translateY(-2px);
     }
     
     .navbar-brand img {
@@ -44,15 +54,25 @@
       margin-right: 0.5rem;
     }
     
+    .brand-text {
+      font-weight: 700;
+    }
+    
     .nav-link {
-      font-weight: 500;
+      font-weight: 600;
       margin: 0 0.5rem;
       color: #333;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
     }
     
     .nav-link:hover {
       color: #198754;
+      transform: translateY(-1px);
+    }
+    
+    .nav-link.fw-semibold {
+      font-weight: 600;
     }
     
     .btn-success {
@@ -61,18 +81,34 @@
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
       font-weight: 600;
+      transition: all 0.3s ease;
     }
     
     .btn-success:hover {
       background-color: #157347;
       border-color: #157347;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(21, 115, 71, 0.3);
+    }
+    
+    .pulse-btn {
+      animation: pulse-shadow 2s infinite;
+    }
+    
+    @keyframes pulse-shadow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
+      }
     }
     
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #198754 0%, #20c997 100%);
       color: white;
-      padding: 6rem 0 4rem;
+      padding: 6rem 0 5rem;
       position: relative;
       overflow: hidden;
     }
@@ -84,8 +120,24 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" opacity="0.1" fill="white">∑ π ∫ √</text></svg>') repeat;
-      animation: float 20s linear infinite;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" opacity="0.05" fill="white">∑ π ∫ √ x² θ α β</text></svg>') repeat;
+      animation: float 25s linear infinite;
+    }
+    
+    @keyframes float {
+      from { 
+        transform: translateY(0) translateX(0); 
+      }
+      to { 
+        transform: translateY(-100px) translateX(50px); 
+      }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     @keyframes float {
@@ -388,27 +440,7 @@
       background: #198754;
       transform: translateY(-3px);
     }
-    .service-card-link {
-      display: block;
-      height: 100%;
-      color: inherit;
-    }
     
-    .service-card-link:hover .service-card {
-      transform: translateY(-8px);
-      border-color: #198754;
-      box-shadow: 0 12px 32px rgba(25,135,84,0.15);
-      cursor: pointer;
-    }
-    
-    .service-card-link .service-card h4 {
-      color: #333;
-      transition: color 0.3s ease;
-    }
-    
-    .service-card-link:hover .service-card h4 {
-      color: #198754;
-    }
     /* Responsive */
     @media (max-width: 768px) {
       .hero {
@@ -432,7 +464,7 @@
     <div class="container">
       <a class="navbar-brand" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
-        <span>MiltonLearn</span>
+        <span class="brand-text">MiltonLearn</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -512,7 +544,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="philosophy-card">
-            <h3><i class="bi bi-lightbulb-fill me-3"></i>Our Philosophy: </h3>
+            <h3><i class="bi bi-lightbulb-fill me-3"></i>Our Philosophy:</h3>
             <p class="lead mb-4">
               At MiltonLearn, we believe true learning is not about memorizing formulas or cramming for exams. It is about genuine understanding that lasts a lifetime.
             </p>
@@ -528,62 +560,64 @@
     </div>
   </section>
 
-  <!--Services Section -->
+  <!-- Services Section -->
   <section id="services">
-<div class="container">
-        <h2 class="section-title">Our Services</h2>
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
-
-<div class="col-lg-4">
-  <div class="service-card" data-link="/request_services.html">
-    <div class="service-icon">
-      <i class="bi bi-calculator-fill"></i>
+      
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-calculator-fill"></i>
+            </div>
+            <h4>Mathematics Tutoring</h4>
+            <p class="mb-3">IGCSE and AS/A Level Mathematics with personalized 1-to-1 attention. We build deep conceptual understanding, strengthen problem-solving skills, and prepare students for exams with confidence.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pure Mathematics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Statistics & Probability</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mechanics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4>Computer Science Tutoring</h4>
+            <p class="mb-3">IGCSE and AS/A Level Computer Science with hands-on coding practice in Java and Python. From algorithms to real-world applications, we make programming clear and engaging.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Python Programming</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Java Development</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Algorithm Design</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Data Structures</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h4>AI-Enhanced Learning</h4>
+            <p class="mb-3">Access our intelligent learning platform between sessions. Get instant explanations, practice problems, step-by-step solutions, and personalized revision powered by advanced AI.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Assistance</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Adaptive Practice</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Instant Explanations</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Progress Tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <h4>Mathematics Tutoring</h4>
-    <p class="mb-3">IGCSE and AS/A Level Mathematics with personalized 1-to-1 attention. We build deep conceptual understanding, strengthen problem-solving skills, and prepare students for exams with confidence.</p>
-    <ul class="list-unstyled">
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pure Mathematics</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Statistics & Probability</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mechanics</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
-    </ul>
-  </div>
-</div>
-
-<div class="col-lg-4">
-  <div class="service-card" data-link="/request_services.html">
-    <div class="service-icon">
-      <i class="bi bi-code-slash"></i>
-    </div>
-    <h4>Computer Science Tutoring</h4>
-    <p class="mb-3">IGCSE and AS/A Level Computer Science with hands-on coding practice in Java and Python. From algorithms to real-world applications, we make programming clear and engaging.</p>
-    <ul class="list-unstyled">
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Python Programming</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Java Development</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Algorithm Design</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Data Structures</li>
-    </ul>
-  </div>
-</div>
-
-<div class="col-lg-4">
-  <div class="service-card" data-link="https://www.mamtutor.com" data-external="true">
-    <div class="service-icon">
-      <i class="bi bi-robot"></i>
-    </div>
-    <h4>AI-Enhanced Learning</h4>
-    <p class="mb-3">Access our intelligent learning platform between sessions. Get instant explanations, practice problems, step-by-step solutions, and personalized revision powered by advanced AI.</p>
-    <ul class="list-unstyled">
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Assistance</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Adaptive Practice</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Instant Explanations</li>
-      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Progress Tracking</li>
-    </ul>
-  </div>
-</div>
-    </div>
-</div>
   </section>
+
   <!-- How We Help Section -->
   <section id="how-we-help" class="bg-light">
     <div class="container">
@@ -761,6 +795,8 @@
       </div>
     </div>
   </section>
+
+
   <!-- Footer -->
   <footer class="mt-auto">
     <div class="container">
