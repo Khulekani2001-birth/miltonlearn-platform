@@ -1,84 +1,440 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiltonLearn - AI-Powered Automation & Software Solutions</title>
-  <meta name="description" content="AI-powered automation and software solutions for businesses. Custom GPT applications, workflow automation, and intelligent systems that simplify processes and drive efficiency.">
+  <title>MiltonLearn - Know Your Math | Premium Online Tutoring</title>
+  <meta name="description" content="Master Mathematics and Computer Science with expert 1-to-1 online tutoring. IGCSE, AS/A Level. Real understanding, lasting confidence.">
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="MiltonLearn - AI-Powered Automation & Software Solutions">
-  <meta property="og:description" content="Build intelligent systems that automate workflows, streamline operations, and scale your business with custom AI solutions.">
-  <meta property="og:image" content="https://miltonlearn.com/imgs/og-image.jpg">
-  <meta property="og:url" content="https://miltonlearn.com">
-  <meta property="og:type" content="website">
-
-  <!-- SEO meta tags -->
-  <meta name="keywords" content="AI automation, custom GPT solutions, business process automation, AI consulting, workflow automation, intelligent software, AI integration, custom AI applications">
-  <meta name="author" content="MiltonLearn">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://miltonlearn.com">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MiltonLearn",
-    "description": "AI-powered automation and software solutions for businesses",
-    "url": "https://miltonlearn.com",
-    "logo": "https://miltonlearn.com/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+268-7840-4553",
-      "contactType": "customer service",
-      "email": "info@miltonlearn.com"
-    },
-    "areaServed": "Worldwide"
-  }
-  </script>
-  
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E4Y24C156P');
-  </script>
-  
-  <!-- Styles -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="logo.png">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.5rem;
+      color: #333;
+      transition: color 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: #198754;
+    }
+    
+    .btn-success {
+      background-color: #198754;
+      border-color: #198754;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    
+    .btn-success:hover {
+      background-color: #157347;
+      border-color: #157347;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+      color: white;
+      padding: 6rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" opacity="0.1" fill="white">∑ π ∫ √</text></svg>') repeat;
+      animation: float 20s linear infinite;
+    }
+    
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100px); }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      opacity: 0.95;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    
+    /* Animated Code Elements */
+    .code-animation {
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      overflow: hidden;
+    }
+    
+    .code-line {
+      opacity: 0;
+      animation: fadeInCode 0.5s forwards;
+    }
+    
+    .code-line:nth-child(1) { animation-delay: 0.2s; }
+    .code-line:nth-child(2) { animation-delay: 0.5s; }
+    .code-line:nth-child(3) { animation-delay: 0.8s; }
+    .code-line:nth-child(4) { animation-delay: 1.1s; }
+    .code-line:nth-child(5) { animation-delay: 1.4s; }
+    .code-line:nth-child(6) { animation-delay: 1.7s; }
+    
+    @keyframes fadeInCode {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .keyword { color: #ff79c6; }
+    .function { color: #50fa7b; }
+    .string { color: #f1fa8c; }
+    .comment { color: #6272a4; opacity: 0.7; }
+    
+    /* Math Animation */
+    .math-equation {
+      font-size: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 3rem;
+    }
+    
+    /* Philosophy Section */
+    .philosophy {
+      background: #f8f9fa;
+      position: relative;
+    }
+    
+    .philosophy-card {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-left: 4px solid #198754;
+    }
+    
+    .philosophy-card h3 {
+      color: #198754;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Services Grid */
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #198754;
+      box-shadow: 0 12px 32px rgba(25,135,84,0.15);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #198754, #20c997);
+      color: white;
+    }
+    
+    .service-card h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    /* Process Steps */
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #198754, #20c997);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 24px rgba(25,135,84,0.3);
+    }
+    
+    /* Benefits List */
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      border-left: 4px solid #198754;
+    }
+    
+    .benefit-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    
+    .benefit-icon {
+      font-size: 1.8rem;
+      color: #198754;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: grid 20s linear infinite;
+    }
+    
+    @keyframes grid {
+      from { transform: rotate(0deg) translateY(0); }
+      to { transform: rotate(360deg) translateY(50px); }
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .btn-cta {
+      background: white;
+      color: #198754;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .btn-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+      color: #198754;
+    }
+    
+    .btn-outline-custom {
+      border: 2px solid white;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      background: transparent;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-outline-custom:hover {
+      background: white;
+      color: #198754;
+    }
+    
+    /* Footer */
+    footer {
+      background: #1e293b;
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+    
+    footer a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    footer a:hover {
+      color: #20c997;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: #198754;
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .code-animation {
+        font-size: 0.75rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
-
-<body class="d-flex flex-column">
+<body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+      <a class="navbar-brand" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
-        <span class="brand-text">MiltonLearn</span>
+        <span>MiltonLearn</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link fw-semibold" href="https://www.mamtutor.com" target="_blank">
-              <i class="bi bi-robot me-2"></i>MAMTutor
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#how-we-help">How We Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.mamtutor.com" target="_blank">
+              <i class="bi bi-robot me-1"></i>MAMTutor
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold" href="/about.html">About</a>
+            <a class="nav-link" href="/about.html">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_services.html">
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-success text-white" href="/request_services.html">
               <i class="bi bi-envelope me-1"></i>Get Started
             </a>
           </li>
@@ -90,144 +446,62 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="row align-items-center">
-        <h1 class="display-4 fw-bold mb-4">
-            <span class="gradient-text">Intelligent Automation for Modern Businesses</span>
-          </h1>
-        <div class="col-lg-6">        
-          <p class="lead mb-4">
-            MiltonLearn builds AI-powered software systems that automate workflows, streamline operations, and solve complex business challenges. From custom GPT applications to end-to-end process automation, we help organizations work smarter.
+      <div class="row align-items-center hero-content">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1>Know Your Math.<br>Master Your Future.</h1>
+          <p class="hero-subtitle">
+            Premium 1-to-1 online help in Mathematics and Computer Science. Real understanding, lasting confidence, exceptional results.
           </p>
-          
-          <div class="alert alert-info mb-4 border-0">
-            <div class="d-flex align-items-start">
-              <i class="bi bi-lightbulb-fill text-primary me-3" style="font-size: 1.5rem;"></i>
-              <div>
-                <strong>Our approach:</strong>
-                <p class="mb-0 mt-1">We design intelligent systems that scale with your business—automating repetitive tasks, accelerating decision-making, and freeing your team to focus on high-value work.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <h5 class="fw-bold mb-3">What We Build:</h5>
-            <div class="row g-2">
-              <div class="col-md-6">
-                <div class="d-flex align-items-center p-2 bg-light rounded">
-                  <i class="bi bi-robot mobile-first-icon me-2 text-primary"></i>
-                  <span><strong>Custom AI Applications</strong></span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center p-2 bg-light rounded">
-                  <i class="bi bi-gear-fill mobile-first-icon me-2 text-success"></i>
-                  <span><strong>Workflow Automation</strong></span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center p-2 bg-light rounded">
-                  <i class="bi bi-cpu mobile-first-icon me-2 text-danger"></i>
-                  <span><strong>GPT Integration</strong></span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center p-2 bg-light rounded">
-                  <i class="bi bi-diagram-3 mobile-first-icon me-2 text-warning"></i>
-                  <span><strong>Process Optimization</strong></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-flex flex-wrap gap-3 mb-3">
-            <a class="btn btn-success btn-lg pulse-btn" href="/request_services.html">
-              <i class="bi bi-calendar-check me-2"></i>Schedule Consultation
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/request_tutor.html" class="btn-cta">
+              <i class="bi bi-calendar-check me-2"></i>Book Your Session
             </a>
-            <a href="https://www.mamtutor.com" class="btn btn-outline-success btn-lg" target="_blank">
-              <i class="bi bi-box-arrow-up-right me-2"></i>MAMTutor
+            <a href="/request_services.html" class="btn-outline-custom">
+              Learn More
             </a>
           </div>
-          
-          <p class="text-muted small">
-            <i class="bi bi-check-circle-fill text-success me-1"></i>
-            Custom solutions • Rapid deployment • Scalable architecture
-          </p>
+          <div class="mt-4">
+            <small style="opacity: 0.9;">
+              <i class="bi bi-check-circle-fill me-2"></i>IGCSE & AS/A Level
+              <i class="bi bi-check-circle-fill mx-2"></i>Java & Python
+              <i class="bi bi-check-circle-fill mx-2"></i>AI-Enhanced Learning
+            </small>
+          </div>
         </div>
         
-        <div class="col-lg-6 text-center mt-5 mt-lg-0">
-          <div class="card border-0 shadow-lg">
-            <div class="card-body p-5 text-center">
-              <h3 class="fw-bold mb-3">AI-Powered Business Solutions</h3>
-              <div class="row g-3 mb-4">
-                <div class="col-6">
-                  <div class="p-3 bg-light rounded">
-                    <i class="bi bi-lightning-charge-fill text-warning" style="font-size: 2rem;"></i>
-                    <p class="small fw-bold mb-0 mt-2">Fast Delivery</p>
-                    <p class="text-muted small mb-0">Rapid Deployment</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="p-3 bg-light rounded">
-                    <i class="bi bi-shield-check-fill text-primary" style="font-size: 2rem;"></i>
-                    <p class="small fw-bold mb-0 mt-2">Proven Results</p>
-                    <p class="text-muted small mb-0">Real Impact</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="p-3 bg-light rounded">
-                    <i class="bi bi-graph-up-arrow text-success" style="font-size: 2rem;"></i>
-                    <p class="small fw-bold mb-0 mt-2">Scalable</p>
-                    <p class="text-muted small mb-0">Built to Grow</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="p-3 bg-light rounded">
-                    <i class="bi bi-sliders text-info" style="font-size: 2rem;"></i>
-                    <p class="small fw-bold mb-0 mt-2">Custom Built</p>
-                    <p class="text-muted small mb-0">Your Needs</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="badge bg-primary">AI Automation</span>
-                <span class="badge bg-success">Custom GPT</span>
-                <span class="badge bg-info text-white">Integration</span>
-                <span class="badge bg-secondary">Analytics</span>
-              </div>
-            </div>
+        <div class="col-lg-6">
+          <div class="code-animation">
+            <div class="code-line"><span class="keyword">def</span> <span class="function">master_mathematics</span>():</div>
+            <div class="code-line">    <span class="comment"># From confusion to clarity</span></div>
+            <div class="code-line">    understanding = <span class="function">build_foundation</span>()</div>
+            <div class="code-line">    confidence = <span class="function">practice_consistently</span>()</div>
+            <div class="code-line">    success = understanding + confidence</div>
+            <div class="code-line">    <span class="keyword">return</span> <span class="string">success</span></div>
+          </div>
+          <div class="math-equation mt-4">
+            ∫ <span style="font-style: italic;">knowledge</span> d<span style="font-style: italic;">t</span> = <span style="font-weight: 800;">mastery</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What We Do Section -->
-  <section class="py-5 bg-light">
+  <!-- Philosophy Section -->
+  <section class="philosophy">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">What We Do</h2>
-        <p class="lead">AI-powered solutions that transform how businesses operate</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="text-center h-100 d-flex flex-column">
-            <div class="bg-primary text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3 mx-auto" style="width: 70px; height: 70px;">
-              <i class="bi bi-robot" style="font-size: 2rem;"></i>
-            </div>
-            <h4 class="fw-bold">AI Product Development</h4>
-            <p class="text-muted flex-grow-1">We build intelligent software products from the ground up—AI assistants, automation tools, and smart platforms designed to solve real business problems at scale.</p>
-            <a href="https://www.mamtutor.com" class="btn btn-primary" target="_blank">See MAMTutor Example →</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="text-center h-100 d-flex flex-column">
-            <div class="bg-success text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3 mx-auto" style="width: 70px; height: 70px;">
-              <i class="bi bi-gear-fill" style="font-size: 2rem;"></i>
-            </div>
-            <h4 class="fw-bold">AI Consulting & Integration</h4>
-            <p class="text-muted flex-grow-1">We help businesses integrate AI into existing workflows—from custom GPT applications and API automation to intelligent data processing and decision-support systems.</p>
-            <a href="/request_services.html" class="btn btn-success">Start a Project →</a>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="philosophy-card">
+            <h3><i class="bi bi-lightbulb-fill me-3"></i>Our Philosophy: </h3>
+            <p class="lead mb-4">
+              At MiltonLearn, we believe true learning is not about memorizing formulas or cramming for exams. It is about genuine understanding that lasts a lifetime.
+            </p>
+            <p class="mb-4">
+              This means moving from confusion to clarity, from anxiety to confidence. It means seeing the patterns, understanding the logic, and building skills that extend far beyond the classroom. Every student who works with us learns to think critically, solve problems creatively, and approach challenges with confidence.
+            </p>
+            <p class="mb-0">
+              We combine human assistance with intelligent AI-powered tools to create a personalized learning experience. We do not just teach, we mentor, guide, and inspire. Our AI does not replace human connection, it enhances practice, provides instant explanations, and adapts to each student's pace. Together, this creates something powerful: education that truly transforms.
+            </p>
           </div>
         </div>
       </div>
@@ -235,148 +509,139 @@
   </section>
 
   <!-- Services Section -->
-  <section class="py-5">
+  <section id="services">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">Our Services</h2>
-        <p class="lead">Comprehensive AI solutions tailored to your business</p>
-      </div>
-
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
+      
       <div class="row g-4">
         <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-diagram-3-fill text-primary" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">Custom AI Development</h4>
-              <p class="text-muted">Build bespoke AI applications tailored to your specific needs—from intelligent chatbots and recommendation engines to automated content generation and data analysis tools.</p>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-calculator-fill"></i>
             </div>
+            <h4>Mathematics Tutoring</h4>
+            <p class="mb-3"> Grade 8 - 12, IEB, IGCSE and AS/A Level Mathematics with personalized 1-to-1 attention. We build deep conceptual understanding, strengthen problem-solving skills, and prepare students for exams with confidence.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pure Mathematics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Statistics & Probability</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mechanics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
+            </ul>
           </div>
         </div>
-
+        
         <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-arrows-move text-success" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">Workflow Automation</h4>
-              <p class="text-muted">Streamline operations with intelligent automation—eliminate manual tasks, accelerate processes, and reduce errors with AI-powered workflows that scale with your business.</p>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-code-slash"></i>
             </div>
+            <h4>Computer Science Tutoring</h4>
+            <p class="mb-3">IGCSE and AS/A Level Computer Science with hands-on coding practice in Java and Python. From algorithms to real-world applications, we make Computer science fundamentals and programming clear and engaging.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Programming</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pseudocode</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Algorithm Design</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Data Structures</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>All CS aligned with your curriculum</li>
+            </ul>
           </div>
         </div>
-
+        
         <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-puzzle-fill text-warning" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">GPT Integration</h4>
-              <p class="text-muted">Integrate cutting-edge language models into your systems—custom GPT applications, API integrations, knowledge bases, and intelligent interfaces that enhance user experience.</p>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-robot"></i>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-bar-chart-fill text-info" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">Data Analytics & Insights</h4>
-              <p class="text-muted">Transform data into actionable intelligence—automated reporting, predictive analytics, pattern recognition, and AI-driven insights that inform better decisions.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-robot text-danger" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">AI Assistant Development</h4>
-              <p class="text-muted">Create intelligent assistants for your business—customer service bots, internal knowledge systems, virtual agents, and conversational AI that understands context.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="text-center mb-3">
-                <i class="bi bi-layers-fill text-secondary" style="font-size: 3rem;"></i>
-              </div>
-              <h4 class="fw-bold text-center mb-3">System Integration</h4>
-              <p class="text-muted">Connect AI capabilities to your existing infrastructure—seamless API integration, data pipeline automation, and intelligent middleware that bridges systems.</p>
-            </div>
+            <h4>AI-Enhanced Learning</h4>
+            <p class="mb-3">Access our intelligent learning platform between sessions. Get instant explanations, practice problems, step-by-step solutions, and personalized revision powered by advanced AI.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Assistance</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Adaptive Practice</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Instant Explanations</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Progress Tracking</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Case Study Section -->
-  <section class="py-5 bg-light">
+  <!-- How We Help Section -->
+  <section id="how-we-help" class="bg-light">
     <div class="container">
-      <div class="row align-items-center">
+      <h2 class="section-title">How We Help Students Master Math</h2>
+      <p class="section-subtitle">A comprehensive approach to learning that works</p>
+      
+      <div class="row g-4 mb-5">
         <div class="col-lg-6">
-          <h2 class="display-6 fw-bold mb-4">Case Study: MAMTutor</h2>
-          <p class="lead mb-4">An intelligent AI assistant platform that demonstrates our capabilities in building scalable, automated systems.</p>
-          
-          <div class="mb-4">
-            <div class="d-flex align-items-start mb-3">
-              <i class="bi bi-check-circle-fill text-success me-3 mt-1" style="font-size: 1.5rem;"></i>
-              <div>
-                <h5 class="fw-bold mb-1">Intelligent Response System</h5>
-                <p class="text-muted mb-0">Built custom AI logic that processes queries and generates contextual responses automatically</p>
-              </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-person-fill-check"></i>
             </div>
-            <div class="d-flex align-items-start mb-3">
-              <i class="bi bi-check-circle-fill text-success me-3 mt-1" style="font-size: 1.5rem;"></i>
-              <div>
-                <h5 class="fw-bold mb-1">Image Processing Integration</h5>
-                <p class="text-muted mb-0">Implemented computer vision capabilities for document analysis and problem solving</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-start mb-3">
-              <i class="bi bi-check-circle-fill text-success me-3 mt-1" style="font-size: 1.5rem;"></i>
-              <div>
-                <h5 class="fw-bold mb-1">24/7 Automated Operation</h5>
-                <p class="text-muted mb-0">Designed scalable architecture that serves users globally without manual intervention</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-start">
-              <i class="bi bi-check-circle-fill text-success me-3 mt-1" style="font-size: 1.5rem;"></i>
-              <div>
-                <h5 class="fw-bold mb-1">User-Friendly Interface</h5>
-                <p class="text-muted mb-0">Created intuitive frontend with seamless interaction design</p>
-              </div>
+            <div>
+              <h5 class="fw-bold mb-2">Personalized 1-to-1 Attention</h5>
+              <p class="mb-0">Every session is tailored to your learning style, pace, and goals. No crowded classrooms, no one-size-fits-all approach. Just focused instruction designed for you.</p>
             </div>
           </div>
-
-          <a href="https://www.mamtutor.com" class="btn btn-primary btn-lg" target="_blank">
-            <i class="bi bi-box-arrow-up-right me-2"></i>Explore MAMTutor
-          </a>
         </div>
-        <div class="col-lg-6 text-center mt-4 mt-lg-0">
-          <div class="card border-primary shadow-lg">
-            <div class="card-body p-4">
-              <i class="bi bi-robot text-primary mb-3" style="font-size: 4rem;"></i>
-              <h4 class="fw-bold mb-3">Full-Stack AI Product</h4>
-              <p class="text-muted mb-4">MAMTutor showcases our ability to design, build, and deploy complete AI-powered applications—from concept to production-ready platform.</p>
-              <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-                <span class="badge bg-primary">GPT Integration</span>
-                <span class="badge bg-success">Computer Vision</span>
-                <span class="badge bg-info text-white">Real-time</span>
-              </div>
-              <div class="d-flex justify-content-center gap-2 flex-wrap">
-                <span class="badge bg-secondary">Python</span>
-                <span class="badge bg-secondary">FastAPI</span>
-                <span class="badge bg-secondary">React</span>
-              </div>
+        
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-2">Build True Understanding</h5>
+              <p class="mb-0">We do not teach tricks. We build deep conceptual knowledge. You will understand the "why" behind every formula, making math intuitive instead of intimidating.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-2">Flexible Scheduling</h5>
+              <p class="mb-0">Online sessions that fit your life. Study from anywhere in the world at times that work for you. Early morning, evening, or weekend sessions available.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-trophy-fill"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-2">Exam Excellence</h5>
+              <p class="mb-0">Strategic exam preparation that builds confidence. We analyze past papers, teach time management, and develop the problem-solving skills examiners reward.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-2">AI-Powered Practice</h5>
+              <p class="mb-0">Between sessions, use our intelligent platform for practice, revision, and instant help. The AI adapts to your progress, targeting areas that need work.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-2">Confidence & Character</h5>
+              <p class="mb-0">We cultivate not just academic skills but resilience, curiosity, and critical thinking. These are qualities that serve students throughout life.</p>
             </div>
           </div>
         </div>
@@ -385,182 +650,41 @@
   </section>
 
   <!-- Process Section -->
-  <section class="py-5">
+  <section>
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">How We Work</h2>
-        <p class="lead">A streamlined process from discovery to deployment</p>
-      </div>
-
+      <h2 class="section-title">Your Learning Journey</h2>
+      <p class="section-subtitle">A proven pathway from struggle to success</p>
+      
       <div class="row g-4">
         <div class="col-md-3">
-          <div class="text-center">
-            <div class="bg-primary text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 70px; height: 70px;">
-              <span class="h3 mb-0">1</span>
-            </div>
-            <h5 class="fw-bold">Discovery</h5>
-            <p class="text-muted">We analyze your workflows, identify automation opportunities, and define clear objectives for your AI solution.</p>
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h5 class="fw-bold mb-3">Discovery Call</h5>
+            <p>We discuss your goals, challenges, and learning style to create a personalized plan.</p>
           </div>
         </div>
+        
         <div class="col-md-3">
-          <div class="text-center">
-            <div class="bg-success text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 70px; height: 70px;">
-              <span class="h3 mb-0">2</span>
-            </div>
-            <h5 class="fw-bold">Design</h5>
-            <p class="text-muted">We architect intelligent systems tailored to your needs—selecting the right AI models, tools, and integration points.</p>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h5 class="fw-bold mb-3">Assessment</h5>
+            <p>We identify knowledge gaps and strengths to focus your learning where it matters most.</p>
           </div>
         </div>
+        
         <div class="col-md-3">
-          <div class="text-center">
-            <div class="bg-warning text-dark rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 70px; height: 70px;">
-              <span class="h3 mb-0">3</span>
-            </div>
-            <h5 class="fw-bold">Development</h5>
-            <p class="text-muted">We build, test, and refine your solution—delivering production-ready software with clean code and documentation.</p>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h5 class="fw-bold mb-3">Expert Tutoring</h5>
+            <p>Regular 1-to-1 sessions with expert guidance, clear explanations, and focused practice.</p>
           </div>
         </div>
+        
         <div class="col-md-3">
-          <div class="text-center">
-            <div class="bg-info text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 70px; height: 70px;">
-              <span class="h3 mb-0">4</span>
-            </div>
-            <h5 class="fw-bold">Deployment</h5>
-            <p class="text-muted">We deploy your AI system, provide training, and ensure smooth integration with ongoing support as needed.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">Industries We Serve</h2>
-        <p class="lead">AI automation across diverse sectors</p>
-      </div>
-
-      <div class="row g-4 text-center">
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-book-fill text-primary" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">Education & EdTech</h5>
-            <p class="text-muted small">Learning platforms, assessment automation, intelligent content tools</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-cart-fill text-success" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">E-commerce & Retail</h5>
-            <p class="text-muted small">Customer service automation, inventory optimization, personalization</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-building text-primary" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">Professional Services</h5>
-            <p class="text-muted small">Document processing, client communication, workflow automation</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-graph-up text-success" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">Finance & Analytics</h5>
-            <p class="text-muted small">Data analysis, reporting automation, predictive insights</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-heart-pulse-fill text-danger" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">Healthcare & Wellness</h5>
-            <p class="text-muted small">Patient engagement, scheduling automation, data management</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-megaphone-fill text-info" style="font-size: 2rem;"></i>
-            </div>
-            <h5 class="fw-bold">Marketing & Content</h5>
-            <p class="text-muted small">Content generation, campaign automation, analytics tools</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="display-5 fw-bold mb-4">About MiltonLearn</h2>
-          <p class="lead text-muted mb-4">
-            MiltonLearn is a technology company specializing in AI-powered automation and intelligent software solutions.
-          </p>
-          <p class="mb-4">
-            We partner with businesses across industries to design and build custom AI systems that streamline operations, reduce costs, and unlock new capabilities. From workflow automation and GPT integration to full-scale product development, we deliver practical AI solutions that drive measurable results.
-          </p>
-          <p class="text-muted">
-            Our approach combines technical expertise with deep business understanding—we don't just build technology, we solve problems. Whether you're looking to automate a single process or build an entirely new AI-powered platform, we bring the skills and experience to make it happen.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">Trusted by Organizations</h2>
-        <p class="lead">Delivering intelligent solutions since 2019</p>
-      </div>
-
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-8">
-          <div class="alert alert-success border-0 shadow-sm">
-            <div class="row align-items-center">
-              <div class="col-md-2 text-center mb-3 mb-md-0">
-                <img src="imgs/uct_logo.svg" alt="University of Cape Town" style="height: 60px; object-fit: contain;" onerror="this.style.display='none'">
-              </div>
-              <div class="col-md-10">
-                <h6 class="fw-bold mb-2"><i class="bi bi-patch-check-fill text-success me-2"></i>Partnering with Leading Institutions</h6>
-                <p class="mb-0 small">Currently collaborating with the University of Cape Town on AI-based innovation and intelligent assessment systems.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row g-4 justify-content-center text-center mt-4">
-        <div class="col-md-3">
-          <div class="stat-item">
-            <h3 class="fw-bold text-primary mb-1">5+ Years</h3>
-            <p class="mb-0">Building AI Solutions</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="stat-item">
-            <h3 class="fw-bold text-success mb-1">Custom</h3>
-            <p class="mb-0">Tailored Systems</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="stat-item">
-            <h3 class="fw-bold text-warning mb-1">AI-First</h3>
-            <p class="mb-0">Technology Approach</p>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h5 class="fw-bold mb-3">Continuous Growth</h5>
+            <p>Track progress, refine strategies, and build lasting mastery supported by AI tools.</p>
           </div>
         </div>
       </div>
@@ -568,57 +692,58 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="py-5 bg-success text-white">
-    <div class="container text-center">
-      <h2 class="display-5 fw-bold mb-3">Ready to Automate Your Business?</h2>
-      <p class="lead mb-4">Let's discuss how AI can transform your operations. Schedule a consultation to explore what's possible.</p>
-      
-      <div class="row justify-content-center mb-4">
-        <div class="col-lg-8">
-          <div class="bg-white text-dark p-4 rounded shadow">
-            <h5 class="fw-bold mb-3">📞 Get in Touch</h5>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="d-flex align-items-center justify-content-center">
-                  <i class="bi bi-whatsapp me-2" style="font-size: 1.5rem; color: #25D366;"></i>
-                  <div class="text-start">
-                    <small class="text-muted d-block">WhatsApp</small>
-                    <strong>+268 7840 4553</strong>
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="display-4 fw-bold mb-4">Ready to Know Your Math?</h2>
+        <p class="lead mb-5">
+          Join students who have transformed confusion into confidence. Book your consultation today and discover what personalized learning can achieve.
+        </p>
+        
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <div class="bg-white text-dark p-4 rounded shadow">
+              <h5 class="fw-bold mb-4">Get in Touch</h5>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-whatsapp me-3" style="font-size: 2rem; color: #25D366;"></i>
+                    <div class="text-start">
+                      <small class="text-muted d-block">WhatsApp</small>
+                      <strong style="font-size: 1.1rem;">+268 7840 4553</strong>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center justify-content-center">
-                  <i class="bi bi-envelope-fill me-2 text-primary" style="font-size: 1.5rem;"></i>
-                  <div class="text-start">
-                    <small class="text-muted d-block">Email</small>
-                    <strong>info@miltonlearn.com</strong>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-envelope-fill me-3" style="font-size: 2rem; color: #198754;"></i>
+                    <div class="text-start">
+                      <small class="text-muted d-block">Email</small>
+                      <strong style="font-size: 1.1rem;">info@miltonlearn.com</strong>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a href="/request_tutor.html" class="btn btn-light btn-lg shadow-sm">
-          <i class="bi bi-calendar-check me-2"></i>Schedule Consultation
-        </a>
-        <a href="https://www.mamtutor.com" class="btn btn-outline-light btn-lg" target="_blank">
-          <i class="bi bi-box-arrow-up-right me-2"></i>View Our Work
-        </a>
-      </div>
-      
-      <div class="mt-4">
-        <small class="opacity-75">
-          <i class="bi bi-shield-check me-1"></i>
-          Custom AI Solutions • Workflow Automation • GPT Integration • Business Intelligence
-        </small>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+          <a href="/request_services.html" class="btn-cta">
+            <i class="bi bi-telephone-fill me-2"></i>Schedule Consultation
+          </a>
+          <a href="https://www.mamtutor.com" class="btn-outline-custom" target="_blank">
+            <i class="bi bi-robot me-2"></i>Try MAMTutor AI
+          </a>
+        </div>
+        
+        <p class="small opacity-75 mb-0">
+          <i class="bi bi-shield-check me-2"></i>
+          Expert Tutors • Proven Results • IGCSE & AS/A Level • Java & Python Coding
+        </p>
       </div>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="mt-auto">
     <div class="container">
