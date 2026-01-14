@@ -293,7 +293,22 @@
       font-weight: 700;
       margin-bottom: 1rem;
     }
+    .service-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
     
+    .service-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
     /* Process Steps */
     .process-step {
       text-align: center;
@@ -561,62 +576,83 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
-      
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="service-card">
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
+
+    <div class="row g-4">
+
+      <!-- Tutoring -->
+      <div class="col-lg-4">
+        <a href="request_tutor.html" class="service-link">
+          <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-calculator-fill"></i>
             </div>
-            <h4>Mathematics Tutoring</h4>
-            <p class="mb-3">IGCSE and AS/A Level Mathematics with personalized 1-to-1 attention. We build deep conceptual understanding, strengthen problem-solving skills, and prepare students for exams with confidence.</p>
+            <h4>Tutoring</h4>
+            <p class="mb-3">
+              Personalized 1-to-1 tutoring in Mathematics and Computer Science.
+              We focus on deep understanding, exam success, and confidence.
+            </p>
             <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pure Mathematics</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Statistics & Probability</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mechanics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>IGCSE & AS/A Level</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths & Computer Science</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>1-on-1 Support</li>
             </ul>
           </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="service-card">
+        </a>
+      </div>
+
+      <!-- EdTech Consulting -->
+      <div class="col-lg-4">
+        <a href="request_services.html" class="service-link">
+          <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-code-slash"></i>
             </div>
-            <h4>Computer Science Tutoring</h4>
-            <p class="mb-3">IGCSE and AS/A Level Computer Science with hands-on coding practice in Java and Python. From algorithms to real-world applications, we make programming clear and engaging.</p>
+            <h4>Educational Technology Consulting</h4>
+            <p class="mb-3">
+              We help schools, tutors, and institutions design, build, and
+              implement AI-powered educational systems and platforms.
+            </p>
             <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Python Programming</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Java Development</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Algorithm Design</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Data Structures</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>AI Tutors & Chatbots</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Assessment Automation</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>LMS & EdTech Systems</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Solutions</li>
             </ul>
           </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="service-card">
+        </a>
+      </div>
+
+      <!-- MAMTutor -->
+      <div class="col-lg-4">
+        <a href="https://www.mamtutor.com" target="_blank" class="service-link">
+          <div class="service-card h-100">
             <div class="service-icon">
               <i class="bi bi-robot"></i>
             </div>
-            <h4>AI-Enhanced Learning</h4>
-            <p class="mb-3">Access our intelligent learning platform between sessions. Get instant explanations, practice problems, step-by-step solutions, and personalized revision powered by advanced AI.</p>
+            <h4>MAMTutor</h4>
+            <p class="mb-3">
+              Our AI-powered tutor that helps students understand concepts,
+              practice questions, and revise intelligently anytime, anywhere.
+            </p>
             <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Assistance</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Adaptive Practice</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Instant Explanations</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Progress Tracking</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Tutor</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths & Science Support</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Step-by-Step Solutions</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Personalized Learning</li>
             </ul>
           </div>
-        </div>
+        </a>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- How We Help Section -->
   <section id="how-we-help" class="bg-light">
