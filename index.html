@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
   
   <style>
     * {
@@ -26,7 +27,7 @@
       flex-direction: column;
     }
     
-    /* Navbar */
+    /* Navbar - Matching About Page */
     .navbar {
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
@@ -47,6 +48,7 @@
     
     .navbar-brand:hover {
       transform: translateY(-2px);
+      color: #333;
     }
     
     .navbar-brand img {
@@ -56,6 +58,7 @@
     
     .brand-text {
       font-weight: 700;
+      color: #333;
     }
     
     .nav-link {
@@ -138,11 +141,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-    
-    @keyframes float {
-      from { transform: translateY(0); }
-      to { transform: translateY(-100px); }
     }
     
     .hero-content {
@@ -293,22 +291,13 @@
       font-weight: 700;
       margin-bottom: 1rem;
     }
+    
     .service-link {
       text-decoration: none;
       color: inherit;
       display: block;
     }
     
-    .service-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    }
-
     /* Process Steps */
     .process-step {
       text-align: center;
@@ -352,6 +341,134 @@
       color: #198754;
       margin-right: 1.5rem;
       flex-shrink: 0;
+    }
+    
+    /* Testimonials Section */
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #198754;
+      overflow: hidden;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    
+    .testimonial-screenshot {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
+    }
+    
+    .placeholder-testimonial {
+      /* Fallback styling if image doesn't load */
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid #f0f0f0;
+    }
+    
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #198754, #20c997);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    
+    .rating {
+      color: #ffc107;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+      padding: 4rem 0;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border-left: 4px solid #198754;
+    }
+    
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      background: white;
+      border: none;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .faq-question.active {
+      background-color: #198754;
+      color: white;
+    }
+    
+    .faq-icon {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    
+    .faq-question.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.5rem;
+    }
+    
+    .faq-answer.active {
+      max-height: 500px;
+      padding: 1.25rem 1.5rem;
+    }
+    
+    .faq-answer p {
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
     }
     
     /* CTA Section */
@@ -474,10 +591,10 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar - Matching About Page -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="/index.html">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
         <img src="logo.png" alt="MiltonLearn Logo">
         <span class="brand-text">MiltonLearn</span>
       </a>
@@ -485,24 +602,34 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#how-we-help">How We Help</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.mamtutor.com" target="_blank">
-              <i class="bi bi-robot me-1"></i>MAMTutor
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-grid me-2"></i>Our Apps
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="https://www.mamtutor.com" target="_blank">
+                  <i class="bi bi-robot me-2 text-primary"></i>
+                  <strong>MAMTutor AI</strong><br>
+                  <small class="text-muted">24/7 AI learning assistant</small>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://examease.miltonlearn.com" target="_blank">
+                  <i class="bi bi-journal-check me-2 text-info"></i>
+                  <strong>ExamEase</strong><br>
+                  <small class="text-muted">Smart exam preparation</small>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about.html">About</a>
+            <a class="nav-link fw-semibold" href="/about.html">About Us</a>
           </li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-success text-white" href="/request_services.html">
-              <i class="bi bi-envelope me-1"></i>Get Started
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_services.html">
+              <i class="bi bi-stars me-1"></i>Request Service
             </a>
           </li>
         </ul>
@@ -520,7 +647,7 @@
             Premium 1-to-1 online help in Mathematics and Computer Science. Real understanding, lasting confidence, exceptional results.
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="/request_tutor.html" class="btn-cta">
+            <a href="/request_tutor.html" class="btn-cta pulse-btn">
               <i class="bi bi-calendar-check me-2"></i>Book Your Session
             </a>
             <a href="/request_services.html" class="btn-outline-custom">
@@ -559,7 +686,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="philosophy-card">
-            <h3><i class="bi bi-lightbulb-fill me-3"></i>Our Philosophy:</h3>
+            <h3><i class="bi bi-lightbulb-fill me-3"></i>Our Philosophy</h3>
             <p class="lead mb-4">
               At MiltonLearn, we believe true learning is not about memorizing formulas or cramming for exams. It is about genuine understanding that lasts a lifetime.
             </p>
@@ -576,86 +703,111 @@
   </section>
 
   <!-- Services Section -->
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Expert tutoring enhanced by intelligent technology</p>
 
-    <div class="row g-4">
-
-      <!-- Tutoring -->
-      <div class="col-lg-4">
-        <a href="request_tutor.html" class="service-link">
-          <div class="service-card h-100">
-            <div class="service-icon">
-              <i class="bi bi-calculator-fill"></i>
+      <div class="row g-4">
+        <!-- Tutoring -->
+        <div class="col-lg-4">
+          <a href="request_tutor.html" class="service-link">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-calculator-fill"></i>
+              </div>
+              <h4>Tutoring</h4>
+              <p class="mb-3">
+                Personalized 1-to-1 tutoring in Mathematics, Physics and Computer Science.
+                We focus on deep understanding, exam success, and confidence.
+              </p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Grade 8 -12, IGCSE & AS/A Level</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths, Physics & Computer Science</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>1-on-1 Support</li>
+              </ul>
             </div>
-            <h4>Tutoring</h4>
-            <p class="mb-3">
-              Personalized 1-to-1 tutoring in Mathematics, Physics and Computer Science.
-              We focus on deep understanding, exam success, and confidence.
-            </p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Grade 8 -12, IGCSE & AS/A Level</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths, Physics & Computer Science</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exam Preparation</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>1-on-1 Support</li>
-            </ul>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <!-- EdTech Consulting -->
-      <div class="col-lg-4">
-        <a href="request_services.html" class="service-link">
-          <div class="service-card h-100">
-            <div class="service-icon">
-              <i class="bi bi-code-slash"></i>
+        <!-- EdTech Consulting -->
+        <div class="col-lg-4">
+          <a href="request_services.html" class="service-link">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h4>Educational Technology Consulting</h4>
+              <p class="mb-3">
+                We help schools, tutors, and institutions design, build, and
+                implement AI-powered educational systems and platforms.
+              </p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>AI Tutors & Chatbots</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Assessment Automation</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>LMS & EdTech Systems</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Solutions</li>
+              </ul>
             </div>
-            <h4>Educational Technology Consulting</h4>
-            <p class="mb-3">
-              We help schools, tutors, and institutions design, build, and
-              implement AI-powered educational systems and platforms.
-            </p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>AI Tutors & Chatbots</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Assessment Automation</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>LMS & EdTech Systems</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Solutions</li>
-            </ul>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <!-- MAMTutor -->
-      <div class="col-lg-4">
-        <a href="https://www.mamtutor.com" target="_blank" class="service-link">
-          <div class="service-card h-100">
-            <div class="service-icon">
-              <i class="bi bi-robot"></i>
+        <!-- MAMTutor -->
+        <div class="col-lg-4">
+          <a href="https://www.mamtutor.com" target="_blank" class="service-link">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-robot"></i>
+              </div>
+              <h4>MAMTutor</h4>
+              <p class="mb-3">
+                Our AI-powered tutor that helps students understand concepts,
+                practice questions, and revise intelligently anytime, anywhere.
+              </p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Tutor</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths & Science Support</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Step-by-Step Solutions</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Personalized Learning</li>
+              </ul>
             </div>
-            <h4>MAMTutor</h4>
-            <p class="mb-3">
-              Our AI-powered tutor that helps students understand concepts,
-              practice questions, and revise intelligently anytime, anywhere.
-            </p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 AI Tutor</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Maths & Science Support</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Step-by-Step Solutions</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Personalized Learning</li>
-            </ul>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+    <!-- Testimonials Section -->
+      <section class="bg-light">
+        <div class="container">
+          <h2 class="section-title">What Students & Parents Say</h2>
+          <p class="section-subtitle">Real results from students who transformed their learning</p>
+          
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <img src="imgs/testimonials/testimony_1.png" alt="Student Testimonial 1" class="testimonial-screenshot">
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <img src="imgs/testimonials/testimony_4.png" alt="Student Testimonial 2" class="testimonial-screenshot">
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <img src="imgs/testimonials/testimony_4.png" alt="Student Testimonial 3" class="testimonial-screenshot">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
   <!-- How We Help Section -->
-  <section id="how-we-help" class="bg-light">
+  <section id="how-we-help">
     <div class="container">
       <h2 class="section-title">How We Help Students Master Math</h2>
       <p class="section-subtitle">A comprehensive approach to learning that works</p>
@@ -729,6 +881,98 @@
             <div>
               <h5 class="fw-bold mb-2">Confidence & Character</h5>
               <p class="mb-0">We cultivate not just academic skills but resilience, curiosity, and critical thinking. These are qualities that serve students throughout life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about our tutoring services</p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What subjects do you tutor?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We specialize in Mathematics (all levels from Grade 8 through AS/A Level), Physics, and Computer Science (including Java and Python programming). We cover IGCSE, AS Level, and A Level curricula with expert knowledge of exam requirements and marking schemes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How do online tutoring sessions work?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sessions are conducted via video call using platforms like Zoom or Google Meet. We use a digital whiteboard where both tutor and student can write and solve problems together in real-time. You'll need a stable internet connection, a computer or tablet, and headphones for the best experience. All sessions are one-to-one for personalized attention.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is MAMTutor AI and how does it complement tutoring?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>MAMTutor AI is our 24/7 AI-powered learning assistant that provides instant help with homework, practice problems, and concept reviews between your scheduled tutoring sessions. It gives step-by-step explanations and adapts to your learning pace. Think of it as having a study buddy available anytime you need help, while your human tutor provides deep teaching and personalized guidance during your sessions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How much do tutoring sessions cost?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Pricing varies depending on the subject, level, and frequency of sessions. We offer flexible packages including single sessions, weekly sessions, and intensive exam preparation courses. Check out our pricing <a href="tutoring_pricing.html">here</a> us at info@miltonlearn.com or WhatsApp +268 7840 4553 for detailed pricing tailored to your needs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Can you help with exam preparation?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! Exam preparation is one of our specialties. We analyze past papers, teach exam techniques, time management strategies, and focus on high-yield topics. We also provide practice under timed conditions and detailed feedback on your work to ensure you're fully prepared and confident for your exams.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What if I need to reschedule a session?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We understand that schedules change. Sessions can be rescheduled with at least 24 hours' notice at no charge. If you need to cancel with less notice, please contact us as soon as possible and we'll work with you to find a solution.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you offer group tutoring or only 1-to-1?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We primarily offer 1-to-1 tutoring for maximum personalized attention and results. However, we can arrange small group sessions (2-3 students) for friends or siblings studying the same curriculum at similar levels. Contact us to discuss group options and pricing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How do I get started?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Getting started is easy! Simply contact us via WhatsApp at +268 7840 4553 or email info@miltonlearn.com. We'll schedule a free consultation to discuss your goals, assess your current level, and create a personalized learning plan. You can also click the "Book Your Session" button on this page to get started right away.</p>
             </div>
           </div>
         </div>
@@ -832,30 +1076,28 @@
     </div>
   </section>
 
-
   <!-- Footer -->
   <footer class="mt-auto">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-6 text-center text-md-start">
-          <h5 class="mb-3"><i class="bi bi-building-fill me-2"></i>MiltonLearn</h5>
-          <p class="text-muted small mb-2">AI-Powered Automation & Software Solutions</p>
+          <h5 class="mb-3">🌍 Contact Us</h5>
           <p class="mb-2">
             <i class="bi bi-telephone me-2"></i>
             <a href="tel:+26878404553">+268 7840 4553</a>
-            <small class="text-muted">(WhatsApp)</small>
+            <small class="text-muted">(WhatsApp available)</small>
           </p>
           <p class="mb-2">
             <i class="bi bi-envelope me-2"></i>
             <a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a>
           </p>
           <p class="mb-0">
-            <i class="bi bi-geo-alt me-2"></i>
-            <small class="text-muted">Serving clients worldwide</small>
+            <i class="bi bi-clock me-2"></i>
+            <small class="text-muted">Available across South Africa & Eswatini</small>
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <h5 class="mb-3">Connect</h5>
+          <h5 class="mb-3">Follow Our Community</h5>
           <div class="social-links">
             <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook">
               <i class="bi bi-facebook"></i>
@@ -863,18 +1105,18 @@
             <a href="https://www.instagram.com/miltonlearn/" target="_blank" title="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/miltonkngwenya" target="_blank" title="LinkedIn">
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" title="LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
           </div>
-          <p class="mt-3 mb-0">
-            <small class="text-muted">Innovative technology solutions since 2019</small>
+          <p class="mt-2 mb-0">
+            <small class="text-muted">Empowering local education since 2019</small>
           </p>
         </div>
       </div>
       <hr class="my-4">
       <p class="text-center mb-0">
-        © <span id="current-year"></span> MiltonLearn. AI-powered business solutions. All rights reserved.
+        © <span id="current-year"></span> MiltonLearn. Empowering local education. All rights reserved.
       </p>
     </div>
   </footer>
@@ -882,6 +1124,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const isActive = button.classList.contains('active');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        q.nextElementSibling.classList.remove('active');
+      });
+      
+      // Toggle current FAQ
+      if (!isActive) {
+        button.classList.add('active');
+        answer.classList.add('active');
+      }
+    }
   </script>
 </body>
-</html>
+</html> 
