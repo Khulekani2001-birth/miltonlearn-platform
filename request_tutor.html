@@ -55,6 +55,14 @@
         border-top: 2px solid #e9ecef;
         margin: 2rem 0;
       }
+
+      .pricing-info {
+        background: #f8f9fa;
+        border-left: 4px solid #198754;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+      }
     </style>
 
     <script type="application/ld+json">
@@ -98,8 +106,8 @@
             <a class="nav-link fw-semibold" href="/about.html">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_services.html">
-              <i class="bi bi-stars me-1"></i>Request Service
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_tutor.html">
+              <i class="bi bi-stars me-1"></i>Request a Tutor
             </a>
           </li>
         </ul>
@@ -238,6 +246,40 @@
 
               <div class="section-divider"></div>
 
+              <!-- Pricing Package Selection -->
+              <div class="mb-4">
+                <h5 class="text-primary mb-3"><i class="bi bi-currency-dollar me-2"></i>Select Package</h5>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="pricingPackage" class="form-label fw-semibold">
+                      Choose your preferred package <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" id="pricingPackage" name="pricingPackage" required>
+                      <option value="" selected disabled>Select package...</option>
+                      <optgroup label="Pay-As-You-Go (IGCSE/IEB/NSC)">
+                        <option value="Grade 12-on-Go - R300/class (International: $16/class)">Grade 12-on-Go! - R300/class (International: $16/class)</option>
+                      </optgroup>
+                      <optgroup label="Pay-As-You-Go (AS/A Level)">
+                        <option value="AS/A Level-on-Go - R450/class (International: $25/class)">AS/A Level-on-Go! - R450/class (International: $25/class)</option>
+                      </optgroup>
+                      <optgroup label="Monthly Packages (Best Value)">
+                        <option value="IGCSE/IEB/NSC Monthly - R1,080/month (R270/class) (International: $60/month, $15/class)">IGCSE/IEB/NSC Monthly - R1,080/month • 4 sessions (R270/class) • International: $60/month ($15/class)</option>
+                        <option value="AS/A Level Monthly - R1,620/month (R405/class) (International: $90/month, $22.50/class)">AS/A Level Monthly - R1,620/month • 4 sessions (R405/class) • International: $90/month ($22.50/class)</option>
+                      </optgroup>
+                    </select>
+                    <div class="invalid-feedback">Please select a package.</div>
+                    <div id="packageInfo" class="pricing-info" style="display: none;">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-info-circle-fill text-success me-2 mt-1"></i>
+                        <div id="packageDetails"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-divider"></div>
+
               <!-- Scheduling Preferences -->
               <div class="mb-4">
                 <h5 class="text-primary mb-3"><i class="bi bi-calendar-check me-2"></i>Preferred Times</h5>
@@ -296,7 +338,7 @@
                 <p class="text-muted mt-3 mb-0">
                   <small>
                     <i class="bi bi-clock-history me-1"></i>
-                    We'll contact you within 24 hours to discuss session details, scheduling, and pricing
+                    We'll contact you within 24 hours to discuss session details and confirm scheduling
                   </small>
                 </p>
               </div>
@@ -362,7 +404,7 @@
           </div>
           <h3 class="fw-bold mb-3">Request Submitted!</h3>
           <p class="text-muted mb-4">
-            Thank you for choosing MiltonLearn. Our team will contact you within 24 hours to discuss session details, scheduling, and pricing.
+            Thank you for choosing MiltonLearn. Our team will contact you within 24 hours to discuss session details and confirm scheduling.
           </p>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
         </div>
@@ -387,6 +429,43 @@
       const currentYearElement = document.getElementById('current-year');
       if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
+      }
+
+      // Package selection info display
+      const pricingSelect = document.getElementById('pricingPackage');
+      const packageInfo = document.getElementById('packageInfo');
+      const packageDetails = document.getElementById('packageDetails');
+
+      const packageDescriptions = {
+        'Grade 12-on-Go - R300/class (International: $16/class)': {
+          title: 'Grade 12-on-Go!',
+          details: 'One-on-one session • 48-hours study content access • No commitment • Flexible scheduling'
+        },
+        'AS/A Level-on-Go - R450/class (International: $25/class)': {
+          title: 'AS/A Level-on-Go!',
+          details: 'One-on-one session • 48-hours study content access • No commitment • Flexible scheduling'
+        },
+        'IGCSE/IEB/NSC Monthly - R1,080/month (R270/class) (International: $60/month, $15/class)': {
+          title: 'IGCSE/IEB/NSC Monthly Package',
+          details: '4 monthly sessions • Full MAMTutor AI access • Priority scheduling • WhatsApp support • Progress tracking • Save R120/month'
+        },
+        'AS/A Level Monthly - R1,620/month (R405/class) (International: $90/month, $22.50/class)': {
+          title: 'AS/A Level Monthly Package',
+          details: '4 monthly sessions • Full MAMTutor AI access • Priority scheduling • WhatsApp support • Progress tracking • Save R180/month'
+        }
+      };
+
+      if (pricingSelect) {
+        pricingSelect.addEventListener('change', function() {
+          const selectedValue = this.value;
+          if (selectedValue && packageDescriptions[selectedValue]) {
+            const pkg = packageDescriptions[selectedValue];
+            packageDetails.innerHTML = `<strong>${pkg.title}</strong><br><small>${pkg.details}</small>`;
+            packageInfo.style.display = 'block';
+          } else {
+            packageInfo.style.display = 'none';
+          }
+        });
       }
     });
 
@@ -434,6 +513,7 @@
         const studentEmail = document.getElementById('studentEmail')?.value || '';
         const gradeLevel = document.getElementById('gradeLevel')?.value || '';
         const subject = document.getElementById('subject')?.value || '';
+        const pricingPackage = document.getElementById('pricingPackage')?.value || '';
         const additionalInfo = document.getElementById('message')?.value || '';
 
         // Format all details into a message for the contact form template
@@ -453,6 +533,7 @@ Email: ${studentEmail || 'Not provided'}
 
 SESSION DETAILS:
 Subject: ${subject}
+Selected Package: ${pricingPackage}
 Preferred Times: ${preferredTimesString}
 
 Additional Information:
@@ -484,6 +565,12 @@ Submitted: ${new Date().toLocaleString()}
             // Reset form
             form.reset();
             form.classList.remove('was-validated');
+            
+            // Hide package info
+            const packageInfo = document.getElementById('packageInfo');
+            if (packageInfo) {
+              packageInfo.style.display = 'none';
+            }
           })
           .catch(function(error) {
             console.error('Booking request sending failed:', error);
