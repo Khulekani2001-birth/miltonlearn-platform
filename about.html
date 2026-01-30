@@ -62,6 +62,33 @@
       padding: 1.5rem;
       margin: 1rem 0;
     }
+
+    .founder-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 4px solid #4a90e2;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      float: right;
+      margin: 0 0 1rem 1.5rem;
+    }
+
+    .teaching-photo {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 576px) {
+      .founder-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1.5rem auto;
+      }
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -135,6 +162,7 @@
       <div class="col-lg-6 mb-4">
         <div class="content-section">
           <h2 class="section-title">Hi, I'm Khulekani Milton Ngwenya</h2>
+          <img src="imgs/milton-portrait.jpg" alt="Khulekani Milton Ngwenya" class="founder-photo">
           <p class="lead mb-4">I hold a BSc in Mathematics and Computer Science from the University of Cape Town, and I've always had a passion for teaching and technology.</p>
 
           <div class="mb-4">
@@ -182,6 +210,7 @@
 
           <div class="mb-4">
             <h5 class="text-primary mb-3">What I Do Now</h5>
+            <img src="imgs/milton-teaching.jpg" alt="Milton teaching mathematics on a chalkboard" class="teaching-photo">
             <p>Today, I don't just tutor how to solve problems. I understand that every student needs a mentor - someone who has walked the same path and can help them see what's possible.</p>
             <ul class="list-unstyled">
               <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>1-on-1 Tutoring:</strong> Personalized mentorship in Math, Physics & Code</li>
