@@ -19,11 +19,15 @@
     gtag('js', new Date());
     gtag('config', 'G-E4Y24C156P');
   </script>
-  <style>    
+  <style>
+    /* Compact hero for about page */
+    .hero { padding: 40px 0; }
+    .hero .lead { margin-bottom: 1rem !important; }
+
     /* Content Sections */
-    .content-section { padding: 2rem; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 2rem; }
-    .founder-quote { font-style: italic; background-color: #e9ecef; padding: 1rem; border-left: 4px solid #4a90e2; border-radius: 4px; margin-top: 1.5rem; }
-    .founder-details { text-align: right; font-weight: 600; color: #333; margin-top: 1rem; }
+    .content-section { padding: 1.5rem; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 1.5rem; }
+    .founder-quote { font-style: italic; background-color: #e9ecef; padding: 1rem; border-left: 4px solid #4a90e2; border-radius: 4px; margin-top: 1rem; }
+    .founder-details { text-align: right; font-weight: 600; color: #333; margin-top: 0.5rem; }
     .content-section ul { padding-left: 1.5rem; }
 
     /* Contact Form */
@@ -35,10 +39,10 @@
     .stat-item {
       background: linear-gradient(135deg, var(--primary), var(--info));
       color: white;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 12px;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .tool-highlight {
@@ -152,12 +156,12 @@
     <div class="container">
       <h1>My Story</h1>
       <div class="fancy-text" data-aos="fade-up" data-aos-delay="100">
-        <p class="lead mb-5">From 9% to Top in the World - and why I believe everyone can excel</p>
+        <p class="lead">From 9% to Top in the World - and why I believe everyone can excel</p>
       </div>
     </div>
   </section>
 
-  <div class="container my-5">
+  <div class="container my-4">
     <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="content-section">
@@ -181,6 +185,8 @@
             <p>"Mathematics goes deeper than equations - it's a way to build confidence that usually falls onto other subjects too."</p>
             <div class="founder-details">- Khulekani Milton Ngwenya</div>
           </div>
+
+          <img src="imgs/milton-teaching.jpg" alt="Milton teaching mathematics on a chalkboard" class="teaching-photo mt-3">
         </div>
       </div>
 
@@ -210,7 +216,6 @@
 
           <div class="mb-4">
             <h5 class="text-primary mb-3">What I Do Now</h5>
-            <img src="imgs/milton-teaching.jpg" alt="Milton teaching mathematics on a chalkboard" class="teaching-photo">
             <p>Today, I don't just tutor how to solve problems. I understand that every student needs a mentor - someone who has walked the same path and can help them see what's possible.</p>
             <ul class="list-unstyled">
               <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>1-on-1 Tutoring:</strong> Personalized mentorship in Math, Physics & Code</li>
@@ -219,30 +224,35 @@
             </ul>
           </div>
 
-          <div class="bg-light p-4 rounded mb-4">
+          <div class="bg-light p-3 rounded">
             <h6 class="text-primary mb-2">Ready to Start Your Journey?</h6>
-            <p class="mb-3">Whether you're struggling like I once was, or you want to take your skills to the next level, I'm here to help.</p>
+            <p class="mb-2">Whether you're struggling like I once was, or you want to take your skills to the next level, I'm here to help.</p>
             <a href="/request_tutor.html" class="btn btn-success"><i class="bi bi-calendar-check me-2"></i>Book a Session</a>
           </div>
         </div>
+      </div>
+    </div>
 
+    <!-- Contact Form - Full Width -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
         <div class="content-section contact-form">
           <h2 class="section-title text-center">Get In Touch</h2>
-          <div class="mb-4 text-center">
-            <p class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a></p>
-            <p class="mb-0"><i class="bi bi-whatsapp me-2"></i><a href="tel:+26878404553">+268 7840 4553</a></p>
+          <div class="mb-3 text-center">
+            <span class="me-4"><i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a></span>
+            <span><i class="bi bi-whatsapp me-2"></i><a href="tel:+26878404553">+268 7840 4553</a></span>
           </div>
 
-          <form id="contactForm" class="row g-3" novalidate>
-            <div class="mb-3">
+          <form id="contactForm" class="row g-2" novalidate>
+            <div class="col-md-6">
               <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="name" name="name" required>
             </div>
-            <div class="mb-3">
+            <div class="col-md-6">
               <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
               <input type="email" class="form-control" id="email" name="email" required>
             </div>
-            <div class="mb-3">
+            <div class="col-12">
               <label for="subject" class="form-label">Topic</label>
               <select class="form-control" id="subject" name="subject">
                 <option value="">Select...</option>
@@ -254,11 +264,11 @@
                 <option value="General">General Question</option>
               </select>
             </div>
-            <div class="mb-3">
+            <div class="col-12">
               <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
             </div>
-            <div class="text-center">
+            <div class="col-12 text-center mt-2">
               <button type="button" onclick="sendContactEmail()" class="btn btn-primary px-4">Send Message</button>
             </div>
           </form>
