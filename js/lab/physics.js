@@ -45,9 +45,9 @@
       const T_END = 10;
       let t = 0, playing = false;
       const playBtn = $('#mo-play');
-      const road = Lab.canvas($('#mo-road'), 0.2, () => draw());
-      const dtc = Lab.canvas($('#mo-dt'), 0.72, () => draw());
-      const vtc = Lab.canvas($('#mo-vt'), 0.72, () => draw());
+      const road = Lab.canvas($('#mo-road'), w => Math.max(0.17, 120 / w), () => draw());
+      const dtc = Lab.canvas($('#mo-dt'), 0.62, () => draw());
+      const vtc = Lab.canvas($('#mo-vt'), 0.62, () => draw());
 
       const uCtl = range($('#mo-u'), $('#mo-u-val'), v => `${v} m/s`, () => { preset.set('custom', false); reset(); });
       const aCtl = range($('#mo-a'), $('#mo-a-val'), v => `${v} m/s²`, () => { preset.set('custom', false); reset(); });
@@ -118,6 +118,16 @@
         const s = dist(t);
         const x = m + track * (s / sMax);
         const y = groundY - carH - carW * 0.12;
+        const front = x + carW;
+        ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 2; ctx.setLineDash([3, 3]);
+        ctx.beginPath(); ctx.moveTo(front, 26); ctx.lineTo(front, groundY); ctx.stroke(); ctx.setLineDash([]);
+        const tag = `${fmt(s, 1)} m`;
+        ctx.font = '700 11px Inter, sans-serif';
+        const tw = ctx.measureText(tag).width + 12;
+        const tx = Math.min(Math.max(front - tw / 2, 2), w - tw - 2), ty = 30;
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath(); ctx.roundRect ? ctx.roundRect(tx, ty, tw, 17, 5) : ctx.rect(tx, ty, tw, 17); ctx.fill();
+        ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(tag, tx + tw / 2, ty + 12.5);
         // body
         ctx.fillStyle = GREEN;
         ctx.beginPath();
@@ -167,13 +177,17 @@
         playBtn.innerHTML = p ? '<i class="bi bi-pause-fill"></i>Pause' : (t >= T_END ? '<i class="bi bi-arrow-repeat"></i>Replay' : '<i class="bi bi-play-fill"></i>Play');
         if (p) anim.start(); else anim.stop();
       }
-      function reset() { setPlaying(false); t = 0; note(); draw(); setPlaying(false); }
+      function reset() {
+        const wasPlaying = playing;
+        setPlaying(false); t = 0; note(); draw();
+        if (wasPlaying) setPlaying(true);
+      }
       playBtn.addEventListener('click', () => {
         if (playing) return setPlaying(false);
         if (t >= T_END) t = 0;
         setPlaying(true);
       });
-      $('#mo-reset').addEventListener('click', reset);
+      $('#mo-reset').addEventListener('click', () => { setPlaying(false); reset(); });
       reset();
       this._pause = () => setPlaying(false);
     },
