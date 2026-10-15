@@ -53,19 +53,41 @@
     return { get value() { return value; }, set };
   }
 
-  /* Range slider bound to a value label. */
+  /* Range slider bound to a value label, with a number box beside it so a value can be
+     typed or nudged with the arrow keys. The label's unit (e.g. "m/s") moves next to the box. */
   function range(input, label, fmt = v => v, onInput) {
-    const update = (fire) => {
+    const row = el('div', { class: 'range-row' });
+    input.parentNode.insertBefore(row, input);
+    row.appendChild(input);
+    const box = el('span', { class: 'num-box' }, row);
+    const num = el('input', {
+      type: 'number', class: 'lab-num', min: input.min, max: input.max, step: input.step || 1,
+      inputmode: 'decimal', 'aria-label': (input.getAttribute('aria-label') || input.id || 'value') + ' (type a value)'
+    }, box);
+    const unitEl = el('span', { class: 'num-unit' }, box);
+    if (label) label.hidden = true;
+
+    const update = (fire, fromBox = false) => {
       const v = parseFloat(input.value);
-      if (label) label.textContent = fmt(v);
+      const shown = String(fmt(v));
+      if (label) label.textContent = shown;
+      unitEl.textContent = shown.replace(String(v), '').trim();
+      if (!fromBox) num.value = v;
       if (fire && onInput) onInput(v);
     };
     input.addEventListener('input', () => update(true));
+    num.addEventListener('input', () => {
+      const v = parseFloat(num.value);
+      if (isNaN(v)) return;
+      input.value = clamp(v, parseFloat(input.min), parseFloat(input.max));
+      update(true, true);
+    });
+    num.addEventListener('change', () => { num.value = input.value; });
     update(false);
     return {
       get value() { return parseFloat(input.value); },
       set(v, fire = false) { input.value = v; update(fire); },
-      setRange(min, max) { input.min = min; input.max = max; update(false); }
+      setRange(min, max) { input.min = num.min = min; input.max = num.max = max; update(false); }
     };
   }
 
@@ -166,6 +188,13 @@
     $$('.tool-panel', subjectPanel).forEach(p => { p.hidden = p !== panel; });
     $$('.tool-pill', subjectPanel).forEach(p => p.classList.toggle('active', p.dataset.tool === id));
 
+    const soon = $('#alevel-soon');
+    if (soon && !soon.hidden) {
+      soon.hidden = true;
+      if ($('.next-up')) $('.next-up').hidden = false;
+      $$('.curr-chip').forEach(ch => { const on = ch.dataset.curriculum === 'igcse'; ch.classList.toggle('active', on); ch.setAttribute('aria-checked', on); });
+    }
+
     const def = tools.get(id);
     if (def) {
       if (!def.inited) {
@@ -182,6 +211,27 @@
       const bar = $('.subject-bar');
       const y = bar.getBoundingClientRect().top + window.scrollY - 70;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  /* Only IGCSE is live; AS & A Level shows a coming-soon card in place of the tools. */
+  function setCurriculum(c) {
+    $$('.curr-chip').forEach(ch => {
+      const on = ch.dataset.curriculum === c;
+      ch.classList.toggle('active', on);
+      ch.setAttribute('aria-checked', on);
+    });
+    const soon = $('#alevel-soon');
+    const teaser = $('.next-up');
+    if (teaser) teaser.hidden = c === 'alevel';
+    if (c === 'alevel') {
+      const cur = currentId && tools.get(currentId);
+      if (cur && cur.stop) cur.stop();
+      $$('.subject-panel').forEach(p => { p.hidden = true; });
+      if (soon) soon.hidden = false;
+    } else {
+      if (soon) soon.hidden = true;
+      if (currentId) showTool(currentId, { updateHash: false });
     }
   }
 
@@ -214,6 +264,7 @@
       if (panelFor(target)) showTool(target, { scroll: true });
       else showSubject(target, { scroll: true });
     }));
+    $$('[data-curriculum]').forEach(chip => chip.addEventListener('click', () => setCurriculum(chip.dataset.curriculum)));
     window.addEventListener('hashchange', () => route(true));
     route(!!location.hash);
     const yr = $('#current-year');
