@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGCSE Learning Lab · MiltonLearn</title>
+  <meta name="description" content="Free interactive IGCSE Learning Lab: build organic molecules, animate reactions, code Python in your browser, play with binary, logic gates and sorting algorithms, explore physics simulations and maths graphs.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="css/lab.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Y24C156P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E4Y24C156P');
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="logo.png" alt="MiltonLearn Logo">
+        <span class="brand-text">MiltonLearn</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold active" href="/igcse.html"><i class="bi bi-lightning-charge-fill me-2"></i>Learning Lab</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white px-3 ms-2" href="/request_tutor.html">
+              <i class="bi bi-stars me-1"></i>Request a Tutor
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="lab-hero">
+    <div class="floating-symbols" aria-hidden="true">
+      <span style="top:12%;left:4%;font-size:3rem">C=C</span>
+      <span style="top:68%;left:8%;font-size:2.4rem;animation-delay:-2s">1011</span>
+      <span style="top:18%;left:46%;font-size:2.2rem;animation-delay:-4s">v=fλ</span>
+      <span style="top:78%;left:44%;font-size:2.6rem;animation-delay:-6s">sin θ</span>
+      <span style="top:40%;left:90%;font-size:2.6rem;animation-delay:-3s">⇌</span>
+    </div>
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="hero-badge"><i class="bi bi-stars"></i>New · Free for every student</span>
+          <h1>IGCSE Learning Lab</h1>
+          <p class="lead">Stop memorising, start playing. Build molecules, write and test real Python code, watch algorithms sort, send packets across a network and bend light, all in your browser.</p>
+          <div class="hero-stats">
+            <div><strong>15</strong>interactive tools</div>
+            <div><strong>4</strong>IGCSE subjects</div>
+            <div><strong>0</strong>sign-ups needed</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-subjects">
+            <a href="#chemistry" class="hero-subject" data-open="chemistry">
+              <i class="bi bi-hexagon"></i>
+              <h3>Chemistry</h3>
+              <p>Organic molecules, reaction animations and an atom builder</p>
+            </a>
+            <a href="#cs" class="hero-subject" data-open="cs">
+              <i class="bi bi-cpu"></i>
+              <h3>Computer Science</h3>
+              <p>Python challenges, binary, logic gates, algorithms and networks</p>
+            </a>
+            <a href="#physics" class="hero-subject" data-open="physics">
+              <i class="bi bi-lightning"></i>
+              <h3>Physics</h3>
+              <p>Motion graphs, waves, circuits and refraction</p>
+            </a>
+            <a href="#maths" class="hero-subject" data-open="maths">
+              <i class="bi bi-graph-up"></i>
+              <h3>Mathematics</h3>
+              <p>Graphs, trigonometry, transformations and probability</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subject bar -->
+  <div class="subject-bar">
+    <div class="container">
+      <div class="subject-tabs" role="tablist">
+        <button class="subject-tab" data-subject="chemistry" role="tab"><i class="bi bi-hexagon"></i>Chemistry</button>
+        <button class="subject-tab" data-subject="cs" role="tab"><i class="bi bi-cpu"></i>Computer Science</button>
+        <button class="subject-tab" data-subject="physics" role="tab"><i class="bi bi-lightning"></i>Physics</button>
+        <button class="subject-tab" data-subject="maths" role="tab"><i class="bi bi-graph-up"></i>Mathematics</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="lab-main">
+    <div class="container">
+
+      <!-- ===================== CHEMISTRY ===================== -->
+      <section class="subject-panel" data-subject="chemistry" hidden>
+        <div class="subject-head">
+          <div class="subject-icon"><i class="bi bi-hexagon"></i></div>
+          <div>
+            <h2>Chemistry</h2>
+            <p>Cambridge IGCSE Chemistry (0620): see the structures you are asked to draw.</p>
+          </div>
+        </div>
+        <div class="tool-pills">
+          <button class="tool-pill" data-tool="chem-organic"><i class="bi bi-diagram-3"></i>Molecule Builder</button>
+          <button class="tool-pill" data-tool="chem-reactions"><i class="bi bi-play-circle"></i>Reaction Animator</button>
+          <button class="tool-pill" data-tool="chem-atom"><i class="bi bi-circle"></i>Atom Builder</button>
+        </div>
+
+        <!-- Organic molecule builder -->
+        <div class="tool-panel" data-tool="chem-organic" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0620 · Organic chemistry</span>
+            <h3>Organic Molecule Builder</h3>
+            <p>Pick a homologous series, choose the chain length and move the functional group to discover structural isomers. Switch between the displayed formula you draw in exams and a 3D-style ball &amp; stick model.</p>
+          </div>
+          <div class="tool-body">
+            <div>
+              <div class="tool-stage">
+                <span class="stage-overlay-label" id="org-view-label">Displayed formula</span>
+                <div class="mol-name" id="org-name">ethane</div>
+                <svg id="org-svg" class="mol-svg" role="img" aria-label="Molecule diagram"></svg>
+              </div>
+              <div class="tool-stage mt-3" id="org-quiz-box" hidden>
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                  <strong class="me-auto"><i class="bi bi-patch-question me-1"></i>Name this molecule</strong>
+                  <span class="small text-muted">Streak: <b id="org-streak">0</b></span>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                  <input class="lab-input" id="org-quiz-input" placeholder="e.g. propan-1-ol" autocomplete="off">
+                  <button class="lab-btn" id="org-quiz-check">Check</button>
+                  <button class="lab-btn ghost" id="org-quiz-next" title="New molecule"><i class="bi bi-arrow-repeat"></i></button>
+                </div>
+                <div class="feedback mt-2" id="org-quiz-fb"></div>
+              </div>
+              <div class="readouts mt-3">
+                <div class="readout accent"><small>Molecular formula</small><b id="org-mf"></b></div>
+                <div class="readout"><small>Structural formula</small><b id="org-sf"></b></div>
+                <div class="readout"><small>General formula</small><b id="org-gf"></b></div>
+                <div class="readout"><small>Relative mass <span class="sym">M<sub>r</sub></span></small><b id="org-mr"></b></div>
+                <div class="readout"><small>State at r.t.p.</small><b id="org-state"></b></div>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Homologous series</span>
+                <div class="seg" id="org-series">
+                  <button data-v="alkane" class="active">Alkanes</button>
+                  <button data-v="alkene">Alkenes</button>
+                  <button data-v="alcohol">Alcohols</button>
+                  <button data-v="acid">Carboxylic acids</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="org-n">Carbon atoms <span class="val" id="org-n-val">2</span></label>
+                <input type="range" class="lab-range" id="org-n" min="1" max="8" value="2">
+              </div>
+              <div class="ctrl-group" id="org-pos-group">
+                <label class="ctrl-label" for="org-pos"><span id="org-pos-label">Position of C=C</span> <span class="val" id="org-pos-val">1</span></label>
+                <input type="range" class="lab-range" id="org-pos" min="1" max="1" value="1">
+              </div>
+              <div class="ctrl-group">
+                <span class="ctrl-label">View</span>
+                <div class="seg" id="org-view">
+                  <button data-v="displayed" class="active">Displayed</button>
+                  <button data-v="ball">Ball &amp; stick</button>
+                </div>
+              </div>
+              <div class="btn-row">
+                <button class="lab-btn outline" id="org-vibrate"><i class="bi bi-activity"></i>Vibrate bonds</button>
+                <button class="lab-btn" id="org-quiz"><i class="bi bi-patch-question"></i>Quiz me</button>
+              </div>
+              <div class="info-card" id="org-facts"></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> in a <em>displayed formula</em> every atom and every bond must be shown, including the O–H bond. Count the bonds on each carbon: it must always be 4.</div></div>
+        </div>
+
+        <!-- Reaction animator -->
+        <div class="tool-panel" data-tool="chem-reactions" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0620 · Alkenes &amp; fuels</span>
+            <h3>Reaction Animator</h3>
+            <p>Watch bonds break and form. Press play, or drag the slider to scrub through the reaction one step at a time.</p>
+          </div>
+          <div class="tool-body">
+            <div>
+              <div class="tool-stage">
+                <svg id="rx-svg" viewBox="0 0 480 260" role="img" aria-label="Reaction animation"></svg>
+                <div class="d-flex align-items-center gap-2 mt-2">
+                  <button class="lab-btn sm" id="rx-play"><i class="bi bi-play-fill"></i>Play</button>
+                  <input type="range" class="lab-range" id="rx-t" min="0" max="1000" value="0" aria-label="Reaction progress">
+                </div>
+              </div>
+              <div class="info-card mt-3" style="font-size:1.05rem"><span id="rx-eq"></span></div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Reaction</span>
+                <div class="seg" id="rx-pick">
+                  <button data-v="bromine" class="active">Bromine water test</button>
+                  <button data-v="hydrogenation">Hydrogenation</button>
+                  <button data-v="hydration">Hydration (steam)</button>
+                  <button data-v="combustion">Combustion</button>
+                </div>
+              </div>
+              <div class="readouts">
+                <div class="readout accent"><small>Type of reaction</small><b id="rx-type" class="txt"></b></div>
+                <div class="readout"><small>Conditions</small><b id="rx-cond" class="txt"></b></div>
+              </div>
+              <div class="info-card"><h6>What you would observe</h6><p id="rx-obs"></p></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> the test for an alkene is bromine water turning from <strong>orange to colourless</strong>. Never write "clear", which examiners do not accept; colourless is the word.</div></div>
+        </div>
+
+        <!-- Atom builder -->
+        <div class="tool-panel" data-tool="chem-atom" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0620 · Atomic structure</span>
+            <h3>Atom Builder</h3>
+            <p>Add protons, neutrons and electrons to build any of the first 20 elements, their isotopes and their ions. Watch the electronic configuration change shell by shell.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage">
+              <canvas id="atom-canvas" aria-label="Bohr model of the atom"></canvas>
+            </div>
+            <aside class="tool-controls">
+              <div class="d-flex gap-3 align-items-center">
+                <div class="element-tile">
+                  <span class="mass" id="atom-A">12</span>
+                  <span class="sym" id="atom-sym">C</span>
+                  <span class="ename" id="atom-name">Carbon</span>
+                  <span class="z" id="atom-Z">6</span>
+                </div>
+                <div class="small text-muted">Mass number (top) = protons + neutrons.<br>Atomic number (bottom) = protons.</div>
+              </div>
+              <div class="stepper"><span class="name"><span style="color:#ef4444">●</span> Protons</span><button data-k="p" data-d="-1" aria-label="Remove proton">−</button><span class="num" id="atom-p">6</span><button data-k="p" data-d="1" aria-label="Add proton">+</button></div>
+              <div class="stepper"><span class="name"><span style="color:#94a3b8">●</span> Neutrons</span><button data-k="n" data-d="-1" aria-label="Remove neutron">−</button><span class="num" id="atom-n">6</span><button data-k="n" data-d="1" aria-label="Add neutron">+</button></div>
+              <div class="stepper"><span class="name"><span style="color:#0ea5e9">●</span> Electrons</span><button data-k="e" data-d="-1" aria-label="Remove electron">−</button><span class="num" id="atom-e">6</span><button data-k="e" data-d="1" aria-label="Add electron">+</button></div>
+              <div class="readouts">
+                <div class="readout accent"><small>Configuration</small><b id="atom-config"></b></div>
+                <div class="readout"><small>Charge</small><b id="atom-charge"></b></div>
+                <div class="readout"><small>Group / Period</small><b id="atom-gp"></b></div>
+              </div>
+              <div class="info-card" id="atom-note"></div>
+              <div class="btn-row">
+                <button class="lab-btn outline sm" id="atom-neutral">Make neutral atom</button>
+                <button class="lab-btn ghost sm" id="atom-random"><i class="bi bi-shuffle"></i>Random element</button>
+              </div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> metals <strong>lose</strong> electrons to form positive ions; non-metals <strong>gain</strong> electrons to form negative ions. Either way, they end up with a full outer shell like a noble gas.</div></div>
+        </div>
+      </section>
+
+      <!-- ===================== COMPUTER SCIENCE ===================== -->
+      <section class="subject-panel" data-subject="cs" hidden>
+        <div class="subject-head">
+          <div class="subject-icon"><i class="bi bi-cpu"></i></div>
+          <div>
+            <h2>Computer Science</h2>
+            <p>Cambridge IGCSE Computer Science (0478): code it, run it, see it.</p>
+          </div>
+        </div>
+        <div class="tool-pills">
+          <button class="tool-pill" data-tool="cs-code"><i class="bi bi-code-slash"></i>Python Challenges</button>
+          <button class="tool-pill" data-tool="cs-binary"><i class="bi bi-toggles"></i>Binary &amp; Hex</button>
+          <button class="tool-pill" data-tool="cs-logic"><i class="bi bi-diagram-2"></i>Logic Gates</button>
+          <button class="tool-pill" data-tool="cs-algo"><i class="bi bi-bar-chart-steps"></i>Algorithm Visualiser</button>
+          <button class="tool-pill" data-tool="cs-network"><i class="bi bi-router"></i>Packet Switching</button>
+        </div>
+
+        <!-- Python challenges -->
+        <div class="tool-panel" data-tool="cs-code" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0478 · Paper 2 programming</span>
+            <h3>Python Challenges</h3>
+            <p>Write real Python in your browser. Press <strong>Run</strong> to try your code, then <strong>Submit</strong> to check it against our hidden tests. Your progress is saved on this device.</p>
+          </div>
+          <div class="code-layout">
+            <div class="challenge-list" id="code-list"></div>
+            <div style="min-width:0">
+              <div class="challenge-brief" id="code-brief"></div>
+              <div class="editor-wrap">
+                <div class="editor-gutter" id="code-gutter">1</div>
+                <textarea class="editor" id="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Python code editor"></textarea>
+              </div>
+              <div class="editor-bar">
+                <span class="py-status" id="py-status"><span class="dot"></span><span class="txt">Python loads when you first run code</span></span>
+                <div class="btn-row">
+                  <button class="lab-btn ghost sm" id="code-hint" style="color:#cbd5e1"><i class="bi bi-lightbulb"></i>Hint</button>
+                  <button class="lab-btn ghost sm" id="code-reset" style="color:#cbd5e1"><i class="bi bi-arrow-counterclockwise"></i>Reset</button>
+                  <button class="lab-btn outline sm" id="code-run"><i class="bi bi-play-fill"></i>Run</button>
+                  <button class="lab-btn sm" id="code-test"><i class="bi bi-check2-circle"></i>Submit</button>
+                </div>
+              </div>
+              <details class="mt-2" id="code-stdin-wrap">
+                <summary class="small fw-semibold text-muted">Program input (one line per <code>input()</code> call)</summary>
+                <textarea class="lab-input mono mt-2" id="code-stdin" rows="3" placeholder="Type the values your program will read with input()"></textarea>
+              </details>
+              <div class="console" id="code-console"><span class="muted">Output appears here.</span></div>
+              <div class="test-results" id="code-results"></div>
+            </div>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> in Paper 2 you are marked on <em>logic</em>, not perfect syntax. Use meaningful variable names, initialise totals and counters before loops, and validate input with a loop.</div></div>
+        </div>
+
+        <!-- Binary -->
+        <div class="tool-panel" data-tool="cs-binary" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0478 · Data representation</span>
+            <h3>Binary &amp; Hex Playground</h3>
+            <p>Flip bits to build numbers, shift them, add them and see two's complement in action. Then test yourself in challenge mode.</p>
+          </div>
+          <div class="seg mb-3" id="bin-mode" style="max-width:520px">
+            <button data-v="convert" class="active"><i class="bi bi-toggles me-1"></i>Converter</button>
+            <button data-v="add"><i class="bi bi-plus-slash-minus me-1"></i>Binary addition</button>
+            <button data-v="challenge"><i class="bi bi-trophy me-1"></i>Challenge</button>
+          </div>
+
+          <div id="bin-convert">
+            <div class="tool-body">
+              <div class="tool-stage">
+                <div class="bits" id="bin-bits"></div>
+                <div class="bit-sum mt-3" id="bin-sum"></div>
+                <div class="feedback text-center mt-1" id="bin-shift-msg"></div>
+              </div>
+              <aside class="tool-controls">
+                <div class="readouts">
+                  <div class="readout accent big"><small>Denary</small><b id="bin-den">0</b></div>
+                  <div class="readout big"><small>Hexadecimal</small><b id="bin-hex">00</b></div>
+                </div>
+                <div class="ctrl-group">
+                  <label class="ctrl-label" for="bin-den-in">Type a denary number</label>
+                  <input type="number" class="lab-input mono" id="bin-den-in" min="0" max="255" value="0">
+                </div>
+                <div class="ctrl-group">
+                  <span class="ctrl-label">Interpretation</span>
+                  <div class="seg" id="bin-signed">
+                    <button data-v="unsigned" class="active">Unsigned (0–255)</button>
+                    <button data-v="twos">Two's complement</button>
+                  </div>
+                </div>
+                <div class="btn-row">
+                  <button class="lab-btn outline sm" id="bin-shl">« Shift left</button>
+                  <button class="lab-btn outline sm" id="bin-shr">Shift right »</button>
+                  <button class="lab-btn ghost sm" id="bin-not">NOT</button>
+                  <button class="lab-btn ghost sm" id="bin-clear">Clear</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div id="bin-add" hidden>
+            <div class="tool-body">
+              <div class="tool-stage">
+                <div class="bin-row-label"><span>Carry</span></div>
+                <div class="bits" id="bin-carry"></div>
+                <div class="bin-row-label"><span>A</span><b id="bin-a-val">0</b></div>
+                <div class="bits" id="bin-a"></div>
+                <div class="bin-row-label"><span>+ B</span><b id="bin-b-val">0</b></div>
+                <div class="bits" id="bin-b"></div>
+                <div class="add-rule"></div>
+                <div class="bin-row-label"><span>Result</span><b id="bin-r-val"></b></div>
+                <div class="bits" id="bin-r"></div>
+              </div>
+              <aside class="tool-controls">
+                <p class="small text-muted mb-0">Click bits in A and B, then press <strong>Add</strong> to watch the column-by-column addition from right to left.</p>
+                <div class="btn-row">
+                  <button class="lab-btn" id="bin-add-go"><i class="bi bi-play-fill"></i>Add</button>
+                  <button class="lab-btn ghost" id="bin-add-rand"><i class="bi bi-shuffle"></i>Random</button>
+                </div>
+                <div class="info-card" id="bin-add-msg">Rules: 0+0=0 · 0+1=1 · 1+1=0 carry 1 · 1+1+1=1 carry 1</div>
+              </aside>
+            </div>
+          </div>
+
+          <div id="bin-challenge" hidden>
+            <div class="tool-body">
+              <div class="tool-stage">
+                <div class="text-center mb-3"><span class="syllabus-tag" id="bin-ch-kind"></span><div class="mol-name mt-2" id="bin-ch-q"></div></div>
+                <div class="bits" id="bin-ch-bits"></div>
+                <div class="mt-3" id="bin-ch-input-wrap" hidden>
+                  <input class="lab-input mono text-center" id="bin-ch-in" autocomplete="off" style="font-size:1.4rem;max-width:280px;margin:0 auto;display:block">
+                </div>
+                <div class="feedback text-center mt-3" id="bin-ch-fb"></div>
+              </div>
+              <aside class="tool-controls">
+                <div class="readouts">
+                  <div class="readout accent big"><small>Score</small><b id="bin-ch-score">0</b></div>
+                  <div class="readout big"><small>Streak</small><b id="bin-ch-streak">0</b></div>
+                </div>
+                <div class="btn-row">
+                  <button class="lab-btn" id="bin-ch-check"><i class="bi bi-check2"></i>Check</button>
+                  <button class="lab-btn ghost" id="bin-ch-skip">Skip</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> each hex digit is exactly 4 bits (a nibble). To convert binary to hex, split into nibbles from the right and convert each one: 1011 0110 → B6.</div></div>
+        </div>
+
+        <!-- Logic gates -->
+        <div class="tool-panel" data-tool="cs-logic" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0478 · Boolean logic</span>
+            <h3>Logic Gate Simulator</h3>
+            <p>Click the input switches to turn them on and off. Green wires carry a 1. Click any row of the truth table to jump to that input combination.</p>
+          </div>
+          <div class="seg mb-3" id="gate-mode" style="max-width:360px">
+            <button data-v="single" class="active">Single gates</button>
+            <button data-v="circuit">Logic circuits</button>
+          </div>
+          <div class="tool-body wide-controls">
+            <div>
+              <div class="tool-stage">
+                <svg id="gate-svg" class="gate-svg" viewBox="0 0 600 280" role="img" aria-label="Logic gate diagram"></svg>
+              </div>
+              <div class="info-card mt-3"><h6>Logic expression</h6><p id="gate-expr" style="font-family:var(--ml-mono);font-weight:700"></p></div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group" id="gate-type-group">
+                <span class="ctrl-label">Gate</span>
+                <div class="seg" id="gate-type">
+                  <button data-v="AND" class="active">AND</button>
+                  <button data-v="OR">OR</button>
+                  <button data-v="NOT">NOT</button>
+                  <button data-v="NAND">NAND</button>
+                  <button data-v="NOR">NOR</button>
+                  <button data-v="XOR">XOR</button>
+                </div>
+              </div>
+              <div class="ctrl-group" id="gate-circuit-group" hidden>
+                <span class="ctrl-label">Circuit</span>
+                <div class="seg" id="gate-circuit">
+                  <button data-v="c1" class="active">Circuit 1</button>
+                  <button data-v="c2">Circuit 2</button>
+                  <button data-v="c3">Circuit 3</button>
+                  <button data-v="alarm">Alarm system</button>
+                </div>
+              </div>
+              <table class="truth-table" id="gate-table"></table>
+              <p class="small text-muted mb-0" id="gate-note"></p>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> with 3 inputs there are 2³ = 8 rows. Fill in the input columns in binary order (000, 001, 010…) and add a working column for each gate's output so you never lose marks.</div></div>
+        </div>
+
+        <!-- Algorithm visualiser -->
+        <div class="tool-panel" data-tool="cs-algo" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0478 · Algorithms</span>
+            <h3>Algorithm Visualiser</h3>
+            <p>Watch standard sorting and searching algorithms run step by step, with the pseudocode line being executed highlighted as it goes.</p>
+          </div>
+          <div class="tool-body wide-controls">
+            <div>
+              <div class="tool-stage">
+                <div class="algo-bars" id="algo-bars"></div>
+                <div class="algo-msg" id="algo-msg"></div>
+                <div class="legend" id="algo-legend"></div>
+              </div>
+              <div class="readouts mt-3">
+                <div class="readout accent"><small>Comparisons</small><b id="algo-cmp">0</b></div>
+                <div class="readout"><small id="algo-swp-label">Swaps</small><b id="algo-swp">0</b></div>
+                <div class="readout"><small>Items</small><b id="algo-n">0</b></div>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="algo-pick">Algorithm</label>
+                <select class="lab-select" id="algo-pick">
+                  <option value="bubble">Bubble sort</option>
+                  <option value="insertion">Insertion sort</option>
+                  <option value="merge">Merge sort (A Level preview)</option>
+                  <option value="linear">Linear search</option>
+                  <option value="binary">Binary search (A Level preview)</option>
+                </select>
+              </div>
+              <div class="ctrl-group" id="algo-target-group" hidden>
+                <label class="ctrl-label" for="algo-target">Search for</label>
+                <input type="number" class="lab-input mono" id="algo-target">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="algo-size">Items <span class="val" id="algo-size-val">12</span></label>
+                <input type="range" class="lab-range" id="algo-size" min="5" max="30" value="12">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="algo-speed">Speed <span class="val" id="algo-speed-val">5</span></label>
+                <input type="range" class="lab-range" id="algo-speed" min="1" max="10" value="5">
+              </div>
+              <div class="btn-row">
+                <button class="lab-btn" id="algo-play"><i class="bi bi-play-fill"></i>Play</button>
+                <button class="lab-btn outline" id="algo-step"><i class="bi bi-skip-end-fill"></i>Step</button>
+                <button class="lab-btn ghost" id="algo-new"><i class="bi bi-shuffle"></i>New data</button>
+              </div>
+              <pre class="pseudo" id="algo-pseudo"></pre>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> an efficient bubble sort stops early when a whole pass makes <strong>no swaps</strong>, and it shrinks the range checked each pass. Mention both if asked how to make it more efficient.</div></div>
+        </div>
+
+        <!-- Packet switching -->
+        <div class="tool-panel" data-tool="cs-network" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0478 · Data transmission</span>
+            <h3>Packet Switching Simulator</h3>
+            <p>Type a message and send it. It is split into packets that each find their own route through the routers, arrive out of order, and are reassembled using their packet numbers.</p>
+          </div>
+          <div class="tool-body wide-controls">
+            <div>
+              <div class="tool-stage">
+                <svg id="net-svg" class="net-svg" viewBox="0 0 640 300" role="img" aria-label="Network of routers"></svg>
+              </div>
+              <div class="tool-stage mt-3">
+                <div class="bin-row-label"><span>Arrival order</span></div>
+                <div class="packet-chips" id="net-arrived"></div>
+                <div class="bin-row-label mt-2"><span>Reassembled by packet number</span></div>
+                <div class="reassembly" id="net-reasm"></div>
+                <div class="feedback mt-2" id="net-final"></div>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="net-msg">Message</label>
+                <input class="lab-input" id="net-msg" maxlength="48" value="Hello from MiltonLearn!">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="net-size">Payload per packet <span class="val" id="net-size-val">4 chars</span></label>
+                <input type="range" class="lab-range" id="net-size" min="2" max="8" value="4">
+              </div>
+              <label class="d-flex align-items-center gap-2 small fw-semibold"><input type="checkbox" id="net-loss" class="form-check-input m-0"> Simulate a lost packet</label>
+              <button class="lab-btn" id="net-send"><i class="bi bi-send-fill"></i>Send message</button>
+              <div class="info-card">
+                <h6>Packet header <span class="fw-normal text-muted">(click a packet)</span></h6>
+                <table class="header-table" id="net-header"></table>
+              </div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> a packet header contains the <strong>source IP address</strong>, <strong>destination IP address</strong> and <strong>packet number</strong>. Packets may take different routes, so the packet number is what allows them to be put back in the right order.</div></div>
+        </div>
+      </section>
+
+      <!-- ===================== PHYSICS ===================== -->
+      <section class="subject-panel" data-subject="physics" hidden>
+        <div class="subject-head">
+          <div class="subject-icon"><i class="bi bi-lightning"></i></div>
+          <div>
+            <h2>Physics</h2>
+            <p>Cambridge IGCSE Physics (0625): change the variables and watch the physics happen.</p>
+          </div>
+        </div>
+        <div class="tool-pills">
+          <button class="tool-pill" data-tool="phy-motion"><i class="bi bi-speedometer2"></i>Motion Graphs</button>
+          <button class="tool-pill" data-tool="phy-waves"><i class="bi bi-soundwave"></i>Waves</button>
+          <button class="tool-pill" data-tool="phy-circuits"><i class="bi bi-lightbulb"></i>Circuits</button>
+          <button class="tool-pill" data-tool="phy-light"><i class="bi bi-brightness-high"></i>Refraction</button>
+        </div>
+
+        <!-- Motion -->
+        <div class="tool-panel" data-tool="phy-motion" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0625 · Motion</span>
+            <h3>Motion Graphs</h3>
+            <p>Set the car's starting speed and acceleration, then press play. The distance–time and speed–time graphs are drawn live as it moves.</p>
+          </div>
+          <div class="tool-body">
+            <div>
+              <div class="tool-stage"><canvas id="mo-road" aria-label="Car on a road"></canvas></div>
+              <div class="graph-pair">
+                <div class="graph-box"><h6>Distance–time</h6><canvas id="mo-dt"></canvas></div>
+                <div class="graph-box"><h6>Speed–time</h6><canvas id="mo-vt"></canvas></div>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Scenario</span>
+                <div class="seg" id="mo-preset">
+                  <button data-v="const" class="active">Constant speed</button>
+                  <button data-v="accel">Speeding up</button>
+                  <button data-v="brake">Braking</button>
+                  <button data-v="custom">Custom</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="mo-u">Initial speed <span class="sym">u</span> <span class="val" id="mo-u-val">10 m/s</span></label>
+                <input type="range" class="lab-range" id="mo-u" min="0" max="20" step="1" value="10">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="mo-a">Acceleration <span class="sym">a</span> <span class="val" id="mo-a-val">0 m/s²</span></label>
+                <input type="range" class="lab-range" id="mo-a" min="-4" max="4" step="0.5" value="0">
+              </div>
+              <div class="btn-row">
+                <button class="lab-btn" id="mo-play"><i class="bi bi-play-fill"></i>Play</button>
+                <button class="lab-btn ghost" id="mo-reset"><i class="bi bi-arrow-counterclockwise"></i>Reset</button>
+              </div>
+              <div class="readouts">
+                <div class="readout"><small>Time</small><b id="mo-t">0.0 s</b></div>
+                <div class="readout accent"><small>Speed</small><b id="mo-v">0 m/s</b></div>
+                <div class="readout"><small>Distance</small><b id="mo-s">0 m</b></div>
+              </div>
+              <div class="info-card" id="mo-note"></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> the <strong>gradient</strong> of a distance–time graph is speed; the <strong>gradient</strong> of a speed–time graph is acceleration; the <strong>area under</strong> a speed–time graph is the distance travelled (the shaded region).</div></div>
+        </div>
+
+        <!-- Waves -->
+        <div class="tool-panel" data-tool="phy-waves" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0625 · Waves</span>
+            <h3>Wave Machine</h3>
+            <p>Compare transverse and longitudinal waves. Follow the red particle: it only vibrates about one spot while the wave's energy travels along.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage"><canvas id="wv-canvas" aria-label="Wave animation"></canvas></div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Wave type</span>
+                <div class="seg" id="wv-type">
+                  <button data-v="transverse" class="active">Transverse</button>
+                  <button data-v="longitudinal">Longitudinal</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="wv-A">Amplitude <span class="val" id="wv-A-val">0.5 m</span></label>
+                <input type="range" class="lab-range" id="wv-A" min="0.1" max="1" step="0.05" value="0.5">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="wv-f">Frequency <span class="sym">f</span> <span class="val" id="wv-f-val">0.5 Hz</span></label>
+                <input type="range" class="lab-range" id="wv-f" min="0.1" max="2" step="0.05" value="0.5">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="wv-l">Wavelength <span class="sym">λ</span> <span class="val" id="wv-l-val">3 m</span></label>
+                <input type="range" class="lab-range" id="wv-l" min="1" max="6" step="0.25" value="3">
+              </div>
+              <div class="readouts">
+                <div class="readout accent"><small>Wave speed <span class="sym">v = fλ</span></small><b id="wv-v"></b></div>
+                <div class="readout"><small>Period <span class="sym">T = 1/f</span></small><b id="wv-T"></b></div>
+              </div>
+              <button class="lab-btn ghost sm" id="wv-pause"><i class="bi bi-pause-fill"></i>Pause</button>
+              <div class="info-card" id="wv-note"></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> light and water waves are transverse; sound is longitudinal. Wavelength can be measured crest to crest <em>or</em> compression to compression.</div></div>
+        </div>
+
+        <!-- Circuits -->
+        <div class="tool-panel" data-tool="phy-circuits" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0625 · Electricity</span>
+            <h3>Circuit Lab</h3>
+            <p>Two lamps, one battery. Wire them in series or parallel, change the voltage and resistances, and watch the current flow and the lamps glow.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage"><svg id="ck-svg" viewBox="0 0 520 300" role="img" aria-label="Circuit diagram"></svg></div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Connection</span>
+                <div class="seg" id="ck-mode">
+                  <button data-v="series" class="active">Series</button>
+                  <button data-v="parallel">Parallel</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="ck-V">Battery e.m.f. <span class="val" id="ck-V-val">6 V</span></label>
+                <input type="range" class="lab-range" id="ck-V" min="1.5" max="12" step="0.5" value="6">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="ck-R1">Lamp 1 resistance R₁ <span class="val" id="ck-R1-val">4 Ω</span></label>
+                <input type="range" class="lab-range" id="ck-R1" min="1" max="20" step="1" value="4">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="ck-R2">Lamp 2 resistance R₂ <span class="val" id="ck-R2-val">8 Ω</span></label>
+                <input type="range" class="lab-range" id="ck-R2" min="1" max="20" step="1" value="8">
+              </div>
+              <div class="ctrl-group">
+                <span class="ctrl-label">Show</span>
+                <div class="seg" id="ck-flow">
+                  <button data-v="conv" class="active">Conventional current</button>
+                  <button data-v="electron">Electron flow</button>
+                </div>
+              </div>
+              <div class="readouts">
+                <div class="readout accent"><small>Total resistance</small><b id="ck-Rt"></b></div>
+                <div class="readout accent"><small>Total current</small><b id="ck-I"></b></div>
+              </div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> in series, current is the same everywhere and the voltages add up to the e.m.f. In parallel, each branch gets the full voltage and the branch currents add up to the total.</div></div>
+        </div>
+
+        <!-- Refraction -->
+        <div class="tool-panel" data-tool="phy-light" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0625 · Light</span>
+            <h3>Refraction &amp; Total Internal Reflection</h3>
+            <p>Change the angle of incidence and the material. Go from glass to air and push past the critical angle to see total internal reflection, the physics behind optical fibres.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage"><svg id="lt-svg" viewBox="0 0 520 320" role="img" aria-label="Ray diagram"></svg></div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Direction</span>
+                <div class="seg" id="lt-dir">
+                  <button data-v="in" class="active">Air → material</button>
+                  <button data-v="out">Material → air</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <span class="ctrl-label">Material</span>
+                <div class="seg" id="lt-mat">
+                  <button data-v="1.33">Water</button>
+                  <button data-v="1.5" class="active">Glass</button>
+                  <button data-v="2.42">Diamond</button>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="lt-i">Angle of incidence <span class="sym">i</span> <span class="val" id="lt-i-val">40°</span></label>
+                <input type="range" class="lab-range" id="lt-i" min="0" max="89" step="1" value="40">
+              </div>
+              <div class="readouts">
+                <div class="readout accent"><small>Angle of refraction</small><b id="lt-r"></b></div>
+                <div class="readout"><small>Refractive index <span class="sym">n</span></small><b id="lt-n"></b></div>
+                <div class="readout"><small>Critical angle</small><b id="lt-c"></b></div>
+                <div class="readout"><small>Speed of light in it</small><b id="lt-v" style="font-size:.95rem"></b></div>
+              </div>
+              <div class="info-card" id="lt-msg"></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> angles are always measured from the <strong>normal</strong>, not the surface. Use n = sin i / sin r, and sin c = 1/n for the critical angle.</div></div>
+        </div>
+      </section>
+
+      <!-- ===================== MATHS ===================== -->
+      <section class="subject-panel" data-subject="maths" hidden>
+        <div class="subject-head">
+          <div class="subject-icon"><i class="bi bi-graph-up"></i></div>
+          <div>
+            <h2>Mathematics</h2>
+            <p>Cambridge IGCSE Mathematics (0580): see what the algebra means.</p>
+          </div>
+        </div>
+        <div class="tool-pills">
+          <button class="tool-pill" data-tool="math-graphs"><i class="bi bi-graph-up-arrow"></i>Graph Explorer</button>
+          <button class="tool-pill" data-tool="math-trig"><i class="bi bi-triangle"></i>Trigonometry</button>
+          <button class="tool-pill" data-tool="math-transform"><i class="bi bi-arrows-move"></i>Transformations</button>
+          <button class="tool-pill" data-tool="math-prob"><i class="bi bi-dice-5"></i>Probability</button>
+        </div>
+
+        <!-- Graphs -->
+        <div class="tool-panel" data-tool="math-graphs" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0580 · Graphs of functions</span>
+            <h3>Graph Explorer</h3>
+            <p>Drag the sliders to see how each number in the equation changes the graph. Pin a graph to compare it with the next one. Hover over the graph to trace coordinates.</p>
+          </div>
+          <div class="tool-body">
+            <div>
+              <div class="tool-stage">
+                <div class="mol-name" id="gr-eq" style="font-size:1.5rem"></div>
+                <canvas id="gr-canvas" aria-label="Graph"></canvas>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Function</span>
+                <div class="seg" id="gr-type">
+                  <button data-v="linear" class="active">Linear</button>
+                  <button data-v="quadratic">Quadratic</button>
+                  <button data-v="cubic">Cubic</button>
+                  <button data-v="reciprocal">Reciprocal</button>
+                  <button data-v="exponential">Exponential</button>
+                </div>
+              </div>
+              <div id="gr-params" class="d-flex flex-column gap-3"></div>
+              <div class="btn-row">
+                <button class="lab-btn outline sm" id="gr-pin"><i class="bi bi-pin-angle"></i>Pin graph</button>
+                <button class="lab-btn ghost sm" id="gr-clear">Clear pins</button>
+                <button class="lab-btn ghost sm" id="gr-zoom-in" aria-label="Zoom in"><i class="bi bi-zoom-in"></i></button>
+                <button class="lab-btn ghost sm" id="gr-zoom-out" aria-label="Zoom out"><i class="bi bi-zoom-out"></i></button>
+              </div>
+              <div class="info-card"><h6>Key features</h6><div id="gr-features"></div></div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> in y = mx + c, m is the gradient and c is where the line crosses the y-axis. For a quadratic, the roots are where the curve crosses the x-axis, and the line of symmetry passes through the turning point.</div></div>
+        </div>
+
+        <!-- Trig -->
+        <div class="tool-panel" data-tool="math-trig" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0580 · Trigonometry</span>
+            <h3>SOHCAHTOA Triangle</h3>
+            <p>Change the angle and the hypotenuse to see how the sides relate. Then try the practice questions, rounding answers to 3 significant figures.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage"><svg id="tr-svg" viewBox="0 0 520 330" role="img" aria-label="Right-angled triangle"></svg></div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="tr-angle">Angle <span class="sym">θ</span> <span class="val" id="tr-angle-val">35°</span></label>
+                <input type="range" class="lab-range" id="tr-angle" min="5" max="80" step="1" value="35">
+              </div>
+              <div class="ctrl-group">
+                <label class="ctrl-label" for="tr-hyp">Hypotenuse <span class="val" id="tr-hyp-val">10 cm</span></label>
+                <input type="range" class="lab-range" id="tr-hyp" min="4" max="12" step="0.5" value="10">
+              </div>
+              <div class="ctrl-group">
+                <span class="ctrl-label">Highlight</span>
+                <div class="seg" id="tr-focus">
+                  <button data-v="sin" class="active">SOH</button>
+                  <button data-v="cos">CAH</button>
+                  <button data-v="tan">TOA</button>
+                </div>
+              </div>
+              <div id="tr-ratios"></div>
+              <div class="tool-stage">
+                <strong class="small"><i class="bi bi-pencil-square me-1"></i>Practice</strong>
+                <p class="small mb-2 mt-1" id="tr-q"></p>
+                <div class="d-flex gap-2">
+                  <input class="lab-input mono" id="tr-ans" placeholder="3 s.f." autocomplete="off">
+                  <button class="lab-btn sm" id="tr-check">Check</button>
+                  <button class="lab-btn ghost sm" id="tr-new" aria-label="New question"><i class="bi bi-arrow-repeat"></i></button>
+                </div>
+                <div class="feedback mt-2" id="tr-fb"></div>
+              </div>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> label the sides O, A, H relative to the angle you are using <em>before</em> choosing sin, cos or tan. Keep full calculator values until the final answer, then round to 3 s.f. (angles to 1 d.p.).</div></div>
+        </div>
+
+        <!-- Transformations -->
+        <div class="tool-panel" data-tool="math-transform" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0580 · Transformations</span>
+            <h3>Transformation Studio</h3>
+            <p>Choose a transformation and its details, then press <strong>Transform</strong> to watch shape A move onto its image A′. The full description is written for you, exactly as the examiner wants it.</p>
+          </div>
+          <div class="tool-body">
+            <div class="tool-stage"><svg id="tf-svg" viewBox="0 0 400 400" role="img" aria-label="Coordinate grid with shapes"></svg></div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Transformation</span>
+                <div class="seg" id="tf-type">
+                  <button data-v="translate" class="active">Translation</button>
+                  <button data-v="reflect">Reflection</button>
+                  <button data-v="rotate">Rotation</button>
+                  <button data-v="enlarge">Enlargement</button>
+                </div>
+              </div>
+              <div id="tf-params" class="d-flex flex-column gap-3"></div>
+              <div class="ctrl-group">
+                <span class="ctrl-label">Shape</span>
+                <div class="seg" id="tf-shape">
+                  <button data-v="tri" class="active">Triangle</button>
+                  <button data-v="flag">Flag</button>
+                  <button data-v="L">L-shape</button>
+                </div>
+              </div>
+              <button class="lab-btn" id="tf-apply"><i class="bi bi-magic"></i>Transform</button>
+              <div class="transform-desc" id="tf-desc"></div>
+              <table class="coord-table" id="tf-coords"></table>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> describe a <em>single</em> transformation fully: reflection needs the mirror line; rotation needs angle, direction and centre; enlargement needs scale factor and centre; translation needs a column vector.</div></div>
+        </div>
+
+        <!-- Probability -->
+        <div class="tool-panel" data-tool="math-prob" hidden>
+          <div class="tool-head">
+            <span class="syllabus-tag">0580 · Probability</span>
+            <h3>Probability Simulator</h3>
+            <p>Run the experiment many times. As the number of trials grows, the relative frequency (green bars) gets closer and closer to the theoretical probability (dashed lines).</p>
+          </div>
+          <div class="tool-body">
+            <div>
+              <div class="tool-stage">
+                <div class="dice-show" id="pr-show"></div>
+                <div class="prob-bars" id="pr-bars"></div>
+              </div>
+            </div>
+            <aside class="tool-controls">
+              <div class="ctrl-group">
+                <span class="ctrl-label">Experiment</span>
+                <div class="seg" id="pr-exp">
+                  <button data-v="coin" class="active">Flip a coin</button>
+                  <button data-v="die">Roll a die</button>
+                  <button data-v="two">Sum of two dice</button>
+                </div>
+              </div>
+              <div class="btn-row">
+                <button class="lab-btn" data-n="1">×1</button>
+                <button class="lab-btn outline" data-n="10">×10</button>
+                <button class="lab-btn outline" data-n="100">×100</button>
+                <button class="lab-btn outline" data-n="1000">×1000</button>
+                <button class="lab-btn ghost" id="pr-reset"><i class="bi bi-arrow-counterclockwise"></i></button>
+              </div>
+              <div class="readouts"><div class="readout accent big"><small>Total trials</small><b id="pr-trials">0</b></div></div>
+              <table class="freq-table" id="pr-table"></table>
+            </aside>
+          </div>
+          <div class="exam-tip"><i class="bi bi-mortarboard-fill"></i><div><strong>Exam tip:</strong> expected frequency = probability × number of trials. For two dice, a sum of 7 is most likely because there are 6 of the 36 outcomes that give it.</div></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Coming next -->
+  <section class="next-up">
+    <div class="container">
+      <div class="next-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <span class="hero-badge"><i class="bi bi-rocket-takeoff"></i>Coming next</span>
+            <h2>AS &amp; A Level Lab</h2>
+            <p class="mb-4" style="opacity:.85">We are building the next level: reaction mechanisms with curly arrows, optical isomers, recursion and data structures, SHM and fields, calculus visualised.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="/request_tutor.html" class="btn-cta"><i class="bi bi-calendar-check me-2"></i>Book a tutor</a>
+              <a href="/index.html" class="btn btn-outline-light">Back to home</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="next-list">
+              <li><i class="bi bi-arrow-repeat"></i>Mechanisms &amp; curly arrows</li>
+              <li><i class="bi bi-box"></i>3D molecule viewer</li>
+              <li><i class="bi bi-diagram-3"></i>Stacks, queues &amp; trees</li>
+              <li><i class="bi bi-infinity"></i>Recursion visualiser</li>
+              <li><i class="bi bi-magnet"></i>Electric &amp; magnetic fields</li>
+              <li><i class="bi bi-graph-up"></i>Differentiation, visualised</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 text-center text-md-start">
+          <h5 class="mb-3">🌍 Contact Us</h5>
+          <p class="mb-2"><i class="bi bi-telephone me-2"></i><a href="tel:+26878404553">+268 7840 4553</a> <small class="text-muted">(WhatsApp available)</small></p>
+          <p class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:info@miltonlearn.com">info@miltonlearn.com</a></p>
+          <p class="mb-0"><i class="bi bi-clock me-2"></i><small class="text-muted">Available across South Africa &amp; Eswatini</small></p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="mb-3">Follow Our Community</h5>
+          <div class="social-links">
+            <a href="https://www.facebook.com/miltonlearn/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/miltonlearn/" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/miltonlearn" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p class="mt-2 mb-0"><small class="text-muted">Empowering local education since 2019</small></p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">© <span id="current-year"></span> MiltonLearn. Empowering local education. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/lab/core.js"></script>
+  <script src="js/lab/chemistry.js"></script>
+  <script src="js/lab/cs.js"></script>
+  <script src="js/lab/code.js"></script>
+  <script src="js/lab/physics.js"></script>
+  <script src="js/lab/maths.js"></script>
+</body>
+</html>
