@@ -91,13 +91,13 @@
     };
   }
 
-  /* HiDPI canvas that refits itself to its CSS width. aspect = height / width. */
+  /* HiDPI canvas that refits itself to its CSS width. aspect = height / width (or a function of width). */
   function canvas(cv, aspect, onResize) {
     const ctx = cv.getContext('2d');
     const state = { ctx, w: 0, h: 0 };
     function fit(notify = true) {
       const w = cv.clientWidth || cv.parentElement.clientWidth || 600;
-      const h = Math.round(w * aspect);
+      const h = Math.round(w * (typeof aspect === 'function' ? aspect(w) : aspect));
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       cv.width = Math.round(w * dpr);
       cv.height = Math.round(h * dpr);

@@ -587,3 +587,10 @@ footer .text-muted { color: #94a3b8 !important; }
 @media (max-width: 1199.98px) {
   .tool-body, .tool-body.wide-controls { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Tools whose diagrams need the full width (e.g. motion graphs): controls go underneath. */
+.tool-body.controls-below { grid-template-columns: minmax(0, 1fr); }
+.tool-body.controls-below .tool-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem 1.5rem; align-items: start; }
+.tool-body.controls-below .tool-controls > .info-card { grid-column: 1 / -1; }
+.tool-body.controls-below .tool-controls > .readouts { grid-column: span 2; }
+@media (max-width: 767.98px) { .tool-body.controls-below .tool-controls > .readouts { grid-column: 1 / -1; } }
